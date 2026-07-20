@@ -1,0 +1,75 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model KnowledgeArticle {
+  id         Int      @id @default(autoincrement())
+  title      String
+  desc       String
+  image      String
+  level      String
+  nextBatch  String
+  instructor String
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+}
+
+model Course {
+  id               Int      @id @default(autoincrement())
+  title            String
+  desc             String
+  duration         String
+  mode             String
+  image            String
+  rating           String
+  studentsEnrolled String
+  level            String
+  nextBatch        String
+  instructor       String
+  features         String
+  certification    String
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+}
+
+model CaseStudy {
+  id          Int      @id @default(autoincrement())
+  type        String
+  title       String
+  challenge   String
+  solution    String
+  quote       String
+  quoteAuthor String
+  results     String
+  videoId     String
+  accentColor String
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model Testimonial {
+  id        Int      @id @default(autoincrement())
+  quote     String
+  author    String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Admin {
+  id        Int      @id @default(autoincrement())
+  email     String   @unique
+  password  String
+  name      String?
+  createdAt DateTime @default(now())
+}
+
+model AboutContent {
+  id          Int      @id @default(1)
+  contentJson String
+  updatedAt   DateTime @updatedAt
+}

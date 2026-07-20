@@ -1,0 +1,65 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Hide Next.js dev tools and route announcer for a cleaner view */
+nextjs-portal, #nextjs-dev-indicator, #next-route-announcer {
+  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+}
+
+@theme {
+  --color-brand-primary: #185D46;   /* The requested teal green */
+  --color-brand-secondary: #0F172A; /* Deep Navy Blue */
+  --color-brand-accent: #F59E0B;    /* Accent Orange/Yellow */
+  
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-serif: "Playfair Display", ui-serif, Georgia, serif;
+}
+
+:root {
+  --background: #FFFFFF;
+  --foreground: #334155;
+  --heading: #0F172A;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  min-height: 100vh;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--heading);
+  font-family: var(--font-serif);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #F1F5F9;
+}
+::-webkit-scrollbar-thumb {
+  background: #94A3B8;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #185D46;
+}
+
+/* Eduka Layout Utilities */
+.eduka-card {
+  @apply bg-white rounded-xl shadow-md border border-slate-100 hover:shadow-xl transition-all duration-300;
+}
+
+.eduka-btn-primary {
+  @apply inline-flex items-center justify-center px-6 py-3 bg-[#185D46] text-white font-medium rounded hover:bg-[#124836] transition-colors duration-300;
+}
+
+.eduka-btn-secondary {
+  @apply inline-flex items-center justify-center px-6 py-3 bg-[#0F172A] text-white font-medium rounded hover:bg-[#1e293b] transition-colors duration-300;
+}

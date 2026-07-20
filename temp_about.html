@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>About Us | INNOVEITY</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind Config -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "primary-container": "#008471",
+                    "on-tertiary-container": "#fefcff",
+                    "inverse-surface": "#213145",
+                    "on-tertiary-fixed": "#111c2d",
+                    "on-primary": "#ffffff",
+                    "secondary-container": "#fea619",
+                    "on-secondary-container": "#684000",
+                    "inverse-primary": "#67dac2",
+                    "background": "#f8f9ff",
+                    "surface-tint": "#006b5b",
+                    "surface-container-high": "#dce9ff",
+                    "surface-bright": "#f8f9ff",
+                    "tertiary-fixed-dim": "#bcc7de",
+                    "secondary": "#855300",
+                    "on-tertiary-fixed-variant": "#3c475a",
+                    "on-error": "#ffffff",
+                    "inverse-on-surface": "#eaf1ff",
+                    "on-background": "#0b1c30",
+                    "surface-container-low": "#eff4ff",
+                    "secondary-fixed": "#ffddb8",
+                    "on-primary-fixed": "#00201a",
+                    "on-primary-fixed-variant": "#005144",
+                    "on-tertiary": "#ffffff",
+                    "on-primary-container": "#f4fffa",
+                    "primary": "#006859",
+                    "on-surface-variant": "#3d4946",
+                    "surface-dim": "#cbdbf5",
+                    "primary-fixed": "#85f6de",
+                    "on-surface": "#0b1c30",
+                    "tertiary-container": "#6a758a",
+                    "secondary-fixed-dim": "#ffb95f",
+                    "primary-fixed-dim": "#67dac2",
+                    "on-error-container": "#93000a",
+                    "error": "#ba1a1a",
+                    "on-secondary-fixed": "#2a1700",
+                    "surface-container": "#e5eeff",
+                    "surface-variant": "#d3e4fe",
+                    "on-secondary-fixed-variant": "#653e00",
+                    "error-container": "#ffdad6",
+                    "tertiary": "#515c71",
+                    "outline-variant": "#bcc9c4",
+                    "on-secondary": "#ffffff",
+                    "surface-container-highest": "#d3e4fe",
+                    "surface": "#f8f9ff",
+                    "outline": "#6d7a76",
+                    "tertiary-fixed": "#d8e3fb",
+                    "surface-container-lowest": "#ffffff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.5rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "stack-lg": "2rem",
+                    "stack-md": "1rem",
+                    "section-padding": "5rem",
+                    "margin-mobile": "1rem",
+                    "gutter": "1.5rem",
+                    "stack-sm": "0.5rem",
+                    "margin-desktop": "2rem",
+                    "container-max": "1280px"
+            },
+            "fontFamily": {
+                    "label-md": ["Inter"],
+                    "body-md": ["Inter"],
+                    "headline-md": ["Hanken Grotesk"],
+                    "headline-lg": ["Hanken Grotesk"],
+                    "label-sm": ["Inter"],
+                    "headline-sm": ["Hanken Grotesk"],
+                    "body-lg": ["Inter"],
+                    "display-lg": ["Hanken Grotesk"]
+            },
+            "fontSize": {
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                    "headline-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "600"}],
+                    "headline-sm": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "display-lg": ["60px", {"lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(226, 232, 240, 1);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- Global Background Shader (Using existing 3D Nexus animation ID placeholder) -->
+<div class="fixed inset-0 -z-20 opacity-30 pointer-events-none">
+
+</div>
+<!-- TopNavBar -->
+<nav class="bg-surface/90 dark:bg-on-background/90 backdrop-blur-md fixed top-0 w-full z-50 border-b border-outline-variant">
+<div class="flex justify-between items-center h-20 px-margin-desktop max-w-container-max mx-auto">
+<a class="flex items-center gap-2" href="#">
+<img alt="Innoveity Logo" class="h-10 w-auto" src="https://lh3.googleusercontent.com/aida/AP1WRLs4lvfGjGGUqGFDi2baSms8rG28Q2YfWyAIye2miQ_Fjz9FXhM6H17RCWPxfo6Z7-A3am8WN6jrH0VmQqHiVQrceZazvrdXoSokkRX8SbM4_bysinMpIU_brvBMH3UL9sk3l2rn5p889KYiDRDavVkiniMxV3asxNmt_IUronfzgn7eGOuT3cQltIMHEz3j3E45FskXmUbvyBqgQZN4eaviZ0ivMIXsim3agBwJhCYYvRbojSymFL2-Elw"/>
+<span class="font-display-lg text-headline-sm font-bold tracking-tight text-primary">INNOVEITY</span>
+</a>
+<!-- Desktop Links -->
+<div class="hidden md:flex items-center gap-8">
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md" href="#">Home</a>
+<a class="text-primary font-semibold border-b-2 border-primary pb-1 font-label-md text-label-md" href="#">About Us</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md" href="#">Services</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md" href="#">Case Studies</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md" href="#">Knowledge Hub</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md" href="#">Contact</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="bg-secondary-container text-on-secondary-container px-6 py-2 rounded-full font-bold hover:scale-95 transition-transform">Join Now</button>
+<button class="md:hidden text-primary">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</div>
+</nav>
+<main class="pt-20">
+<!-- Hero Section -->
+<section class="relative min-h-[70vh] flex items-center overflow-hidden px-margin-desktop">
+<div class="max-w-container-max mx-auto grid grid-cols-1 lg:grid-cols-2 gap-gutter items-center relative">
+<div class="reveal z-10">
+<span class="inline-block bg-primary/10 text-primary px-4 py-1 rounded-full font-label-sm text-label-sm mb-stack-md uppercase tracking-wider">Our Visionary Journey</span>
+<h1 class="font-headline-lg text-headline-lg mb-stack-lg leading-tight text-on-background">
+                        Bridging the <span class="text-primary">Critical Gap</span> Between Academia and Industry
+                    </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-stack-lg max-w-xl">
+                        Innoveity is a premier educational consultancy dedicated to transforming the landscape of workforce development in Tamil Nadu and beyond.
+                    </p>
+<div class="flex flex-wrap gap-4">
+<button class="bg-primary text-on-primary px-8 py-4 rounded-lg font-bold hover:shadow-lg transition-shadow flex items-center gap-2">
+                            Explore Our Impact <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+<button class="border border-primary text-primary px-8 py-4 rounded-lg font-bold hover:bg-primary/5 transition-colors">
+                            Partner With Us
+                        </button>
+</div>
+</div>
+<!-- Hero visual: Using the existing 3D Nexus animation as requested -->
+<div class="relative h-[400px] lg:h-[600px] w-full">
+
+</div>
+</div>
+</section>
+<!-- Our Story Section -->
+<section class="py-section-padding bg-surface-container-lowest">
+<div class="max-w-container-max mx-auto px-margin-desktop">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-start">
+<div class="lg:col-span-5 reveal">
+<h2 class="font-headline-md text-headline-md mb-stack-md">The History of Innoveity</h2>
+<div class="h-1 w-20 bg-secondary-container mb-stack-lg"></div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-stack-md leading-relaxed">
+                            Founded in the vibrant industrial hub of Chennai, Tamil Nadu, Innoveity emerged from a simple yet profound observation: brilliant academic minds were entering a workforce that spoke a different language. 
+                        </p>
+<p class="font-body-md text-body-md text-on-surface-variant mb-stack-md leading-relaxed">
+                            What started as a small cohort of industrial veterans providing guest lectures grew into a systemic bridge. We recognized that traditional curriculum cycles were too slow for the breakneck speed of modern industry. 
+                        </p>
+<div class="mt-stack-lg p-stack-md border-l-4 border-primary bg-primary/5 italic font-body-lg text-on-surface-variant">
+                            "Our roots in Tamil Nadu's diverse industrial ecosystem—from manufacturing to deep tech—allow us to translate global industry demands into local academic excellence."
+                        </div>
+</div>
+<div class="lg:col-span-7 reveal" style="transition-delay: 200ms;">
+<h3 class="font-headline-sm text-headline-sm mb-stack-md">Our Journey in Pictures</h3>
+<div class="grid grid-cols-2 gap-4">
+<div class="space-y-4">
+<div class="rounded-lg overflow-hidden h-48 lg:h-64 shadow-md">
+<img alt="Innoveity team at an industrial site" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/AP1WRLt6v0zM79fmEp5bxxm3URXB_BV_wxlQKuVWI7s5D4INQ1o9fbYL4bAmVInuuVqQWy1lrVC4Jom3_hnZKNb0Lr7_6LVidudMTFW_TnSU4DieB1Q70QfN9oE9fGcOfo05XtwDmMTsZb4tqWLSjKrJ3qRqec2ykft8eEfxlS8R_f8f4CzVSm_qV9U1ANyotG1bWavj_aMoEos6dKRwh1b3zGLxODAgUV6YCxsO4UAuHdu3Edx84UuGZ6HU0Kc"/>
+</div>
+<div class="rounded-lg overflow-hidden h-48 lg:h-80 shadow-md">
+<img alt="Corporate training session with Innoveity" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/AP1WRLtA26RRAfIX-nXHTYk48mVrDVVT1qJqCPjoLHGEA4VUEYJUDBKxLY9wiPCkb4r1G3NDplbH12lujBJQiRgxpuY0Toxli5RNTGnwJNl-Y7G3hYhm5PxMgPWJrOXMlmwNS4oAmwwjACcj_dtP7ebVbz93ch-jCaq4ceBdcBam3MPBHjf4vYsmfNLDCSUG-Uo2lC_JmK93e8FoZR-6KdhQC0qRaHSIqwnaFWrupSWCeKzU3AWiFdAgnWqKquc"/>
+</div>
+</div>
+<div class="pt-8">
+<div class="rounded-lg overflow-hidden h-full shadow-md">
+<img alt="Large gathering of professionals at Innoveity campus" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/AP1WRLvlJe0NBXvJ7LT5ByIjc-KpJq3qheEXY7ho2wcUgjh3gDQtHAXq8vZOslwN709AVgSQT6Op8RWGDSblnEXKXefsj5t9ZPFVvpg_YGkbJOMeFmsg1Jj6VnEHmPYt1cnUSVAWKxxAAv24HWv4HGcSHaITRO7lfIlp6R7crfAaHWIq-JQTUMlqvODfLUelg8EySLB6r90EQ7B4F6_F_sgNWuoQZ0BX_Cv5oQrLyqFK37AudYkSZhIiXyTKN20"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Mission & Vision Bento -->
+<section class="py-section-padding px-margin-desktop">
+<div class="max-w-container-max mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Mission -->
+<div class="md:col-span-2 glass-card p-stack-lg rounded-xl reveal flex flex-col justify-between">
+<div>
+<span class="material-symbols-outlined text-primary text-4xl mb-stack-md" data-weight="fill">rocket_launch</span>
+<h3 class="font-headline-md text-headline-md mb-stack-md">Our Mission</h3>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl leading-relaxed">
+                                To empower the next generation of professionals by embedding real-world industry intelligence into the heart of academic learning, ensuring every student is industry-ready from day one.
+                            </p>
+</div>
+<div class="mt-stack-lg flex gap-12 border-t border-outline-variant pt-stack-md">
+<div>
+<span class="block font-headline-sm text-headline-sm text-primary">500+</span>
+<span class="font-label-md text-label-md text-on-surface-variant">Partnerships</span>
+</div>
+<div>
+<span class="block font-headline-sm text-headline-sm text-primary">15k+</span>
+<span class="font-label-md text-label-md text-on-surface-variant">Students Placed</span>
+</div>
+</div>
+</div>
+<!-- Vision -->
+<div class="bg-primary text-on-primary p-stack-lg rounded-xl reveal flex flex-col justify-between" style="transition-delay: 150ms;">
+<span class="material-symbols-outlined text-secondary-container text-4xl mb-stack-md" data-weight="fill">visibility</span>
+<div>
+<h3 class="font-headline-md text-headline-md mb-stack-md text-white">Our Vision</h3>
+<p class="font-body-md text-body-md text-on-primary-container leading-relaxed">
+                                To become the global gold standard for educational integration, where the boundary between classroom and career ceases to exist.
+                            </p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Impact Highlights Section -->
+<section class="py-section-padding bg-surface-container-high">
+<div class="max-w-container-max mx-auto px-margin-desktop">
+<div class="text-center mb-stack-lg reveal">
+<h2 class="font-headline-md text-headline-md mb-stack-sm">Impact Highlights</h2>
+<p class="font-body-md text-on-surface-variant">Tangible results of our commitment to excellence</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4 reveal" style="transition-delay: 100ms;">
+<div class="bg-surface p-6 rounded-xl text-center border border-outline-variant hover:shadow-md transition-shadow">
+<span class="block text-headline-md font-bold text-primary mb-2">85%</span>
+<p class="text-label-sm text-on-surface-variant">Avg. Placement Improvement for Engineering Colleges</p>
+</div>
+<div class="bg-surface p-6 rounded-xl text-center border border-outline-variant hover:shadow-md transition-shadow">
+<span class="block text-headline-md font-bold text-primary mb-2">2000+</span>
+<p class="text-label-sm text-on-surface-variant">Students Trained Annually</p>
+</div>
+<div class="bg-surface p-6 rounded-xl text-center border border-outline-variant hover:shadow-md transition-shadow">
+<span class="block text-headline-md font-bold text-primary mb-2">50+</span>
+<p class="text-label-sm text-on-surface-variant">Tamil Nadu Colleges as Active Partners</p>
+</div>
+<div class="bg-surface p-6 rounded-xl text-center border border-outline-variant hover:shadow-md transition-shadow">
+<span class="block text-headline-md font-bold text-primary mb-2">AICTE</span>
+<p class="text-label-sm text-on-surface-variant">Recognized Faculty Development Programs</p>
+</div>
+<div class="bg-surface p-6 rounded-xl text-center border border-outline-variant hover:shadow-md transition-shadow">
+<span class="block text-headline-md font-bold text-primary mb-2">15+ Yrs</span>
+<p class="text-label-sm text-on-surface-variant">ISO-Certified Trainers with Industry Experience</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Leadership Section -->
+<section class="py-section-padding bg-surface-container-low">
+<div class="max-w-container-max mx-auto px-margin-desktop">
+<div class="text-center mb-section-padding reveal">
+<h2 class="font-headline-md text-headline-md mb-stack-sm">The Minds Behind Innoveity</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-xl mx-auto">
+                        Our leadership team combines decades of experience in global corporate operations with a deep passion for pedagogical innovation.
+                    </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Leader 1 -->
+<div class="reveal group" style="transition-delay: 100ms;">
+<div class="relative rounded-lg overflow-hidden aspect-[4/5] mb-stack-md">
+<img alt="Dr. Arul Kumaran" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBMMwaTgMM-q0qtujyKjwf6QQFpDwJZx3xXDbSmV1lxb33sNvrPNkBVVufU-WPBU4sFy4JnAYECQPsIhlVMhY67kC0Q-QLXNuRbpDevfvEEYycnw-ZXI4Y3GyeN-ZxjSCYVxMzchCO6cukE053kEYYad4addli-X84OIKxrumg79kMoEq08C_mj3-34BEo829GG02iLcWqfDfjEGEh2B9wpTE97wdCYa6ohf2UPzCAPz1dTM94rGUbKBBAwEERC9AO0W9ewfnsWtqU"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+<div class="flex gap-4">
+<a class="text-white hover:text-secondary-container transition-colors" href="#"><span class="material-symbols-outlined">link</span></a>
+<a class="text-white hover:text-secondary-container transition-colors" href="#"><span class="material-symbols-outlined">alternate_email</span></a>
+</div>
+</div>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-on-background">Dr. Arul Kumaran</h4>
+<p class="font-label-md text-label-md text-primary mb-stack-sm uppercase tracking-wide">Chief Strategy Officer</p>
+<p class="font-body-md text-body-md text-on-surface-variant">Former CTO at a Fortune 500 firm with 25 years of experience in regional industrial scaling.</p>
+</div>
+<!-- Leader 2 -->
+<div class="reveal group" style="transition-delay: 200ms;">
+<div class="relative rounded-lg overflow-hidden aspect-[4/5] mb-stack-md">
+<img alt="Meera Venkat" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQgNYyHP40jVG81A2aZSMVq4gi0Sgn5u0a8c87DTLLKEy3V8OZURMQJMsu0kfbK6V9f0DH6OeGb5uxQoJ8C0cuMuvYGK1h5_laXikYruUWYrgCJ3DpwVqB1HBwUMLl4SaBKQWYwAi82pNH9Pw31bExCzB_lW7fs_gt0wY1RK7Pu5PH0oSeEtVS0vl49cTWn7d9PhjJ_MMo_ZBZFnhzuWp4_9MqOz2ZT1gNM9uoP87fj602uK83xsqqC-9wvmLgD2-e2dIUUDNIi3U"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+<div class="flex gap-4">
+<a class="text-white hover:text-secondary-container transition-colors" href="#"><span class="material-symbols-outlined">link</span></a>
+<a class="text-white hover:text-secondary-container transition-colors" href="#"><span class="material-symbols-outlined">alternate_email</span></a>
+</div>
+</div>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-on-background">Meera Venkat</h4>
+<p class="font-label-md text-label-md text-primary mb-stack-sm uppercase tracking-wide">Director of Academic Partnerships</p>
+<p class="font-body-md text-body-md text-on-surface-variant">Visionary educator with a track record of implementing future-ready curricula in over 50 universities.</p>
+</div>
+<!-- Leader 3 -->
+<div class="reveal group" style="transition-delay: 300ms;">
+<div class="relative rounded-lg overflow-hidden aspect-[4/5] mb-stack-md">
+<img alt="Siddharth Raja" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCHW-9_ngpPDf7JvLAZ1oCYz-jyrDyEhAhDCdP6h6G0GJc7WCgPl8LEH6C4jAaiUCxUn6huOK_mCVlEpcUwgplTW4t6wuw6G517P8qpcs9sXN041mVS1jiRPX0ZWYLF4KR4lKazvu8qQmsQDGMkYj4tGvvkcgPuaju_04nzphCjAQKTT8RKYj5eLaV4BGzjabJBT3B4GnruXm9ZJBmT1hAXkkfSSyXK3_ZD3un_BmTrDNx2FbaEkmv4sWrpmfteZA262bh0rNPsSl8"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+<div class="flex gap-4">
+<a class="text-white hover:text-secondary-container transition-colors" href="#"><span class="material-symbols-outlined">link</span></a>
+<a class="text-white hover:text-secondary-container transition-colors" href="#"><span class="material-symbols-outlined">alternate_email</span></a>
+</div>
+</div>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-on-background">Siddharth Raja</h4>
+<p class="font-label-md text-label-md text-primary mb-stack-sm uppercase tracking-wide">Head of Corporate Relations</p>
+<p class="font-body-md text-body-md text-on-surface-variant">Expert in talent acquisition strategies and building sustainable human capital pipelines for tech giants.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="py-section-padding px-margin-desktop">
+<div class="max-w-container-max mx-auto rounded-3xl bg-on-background p-12 md:p-24 relative overflow-hidden text-center reveal">
+<div class="absolute top-0 right-0 w-64 h-64 bg-primary/20 rounded-full blur-[80px] -translate-y-1/2 translate-x-1/2"></div>
+<div class="relative z-10">
+<h2 class="font-headline-lg text-headline-lg text-white mb-stack-lg">Ready to Shape the Future of Industry?</h2>
+<p class="font-body-lg text-body-lg text-surface-variant/80 mb-stack-lg max-w-2xl mx-auto">
+                        Whether you're an academic institution looking to upgrade your relevance or a corporate entity seeking elite talent, the bridge starts here.
+                    </p>
+<button class="bg-secondary-container text-on-secondary-container px-10 py-5 rounded-lg font-bold text-body-lg hover:scale-105 transition-transform">
+                        Schedule a Consultation
+                    </button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-on-background w-full pt-section-padding pb-stack-lg border-t border-outline-variant/20">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-desktop max-w-container-max mx-auto">
+<div class="space-y-stack-md">
+<div class="flex items-center gap-2 mb-4">
+<img alt="Innoveity Logo" class="h-8 w-auto brightness-200" src="https://lh3.googleusercontent.com/aida/AP1WRLs4lvfGjGGUqGFDi2baSms8rG28Q2YfWyAIye2miQ_Fjz9FXhM6H17RCWPxfo6Z7-A3am8WN6jrH0VmQqHiVQrceZazvrdXoSokkRX8SbM4_bysinMpIU_brvBMH3UL9sk3l2rn5p889KYiDRDavVkiniMxV3asxNmt_IUronfzgn7eGOuT3cQltIMHEz3j3E45FskXmUbvyBqgQZN4eaviZ0ivMIXsim3agBwJhCYYvRbojSymFL2-Elw"/>
+<span class="font-display-lg text-headline-sm font-bold text-surface">INNOVEITY</span>
+</div>
+<p class="font-body-md text-body-md text-surface-variant/80 leading-relaxed">
+                    © 2024 Innoveity. Bridging the gap between Education and Industry.
+                </p>
+</div>
+<div>
+<h5 class="text-white font-bold mb-4">Quick Links</h5>
+<ul class="space-y-2">
+<li><a class="text-surface-variant/80 hover:text-white transition-all duration-200 block font-label-sm text-label-sm" href="#">Academic Partners</a></li>
+<li><a class="text-surface-variant/80 hover:text-white transition-all duration-200 block font-label-sm text-label-sm" href="#">Corporate Training</a></li>
+<li><a class="text-surface-variant/80 hover:text-white transition-all duration-200 block font-label-sm text-label-sm" href="#">Sitemap</a></li>
+</ul>
+</div>
+<div>
+<h5 class="text-white font-bold mb-4">Legal</h5>
+<ul class="space-y-2">
+<li><a class="text-surface-variant/80 hover:text-white transition-all duration-200 block font-label-sm text-label-sm" href="#">Privacy Policy</a></li>
+<li><a class="text-surface-variant/80 hover:text-white transition-all duration-200 block font-label-sm text-label-sm" href="#">Terms of Service</a></li>
+<li><a class="text-surface-variant/80 hover:text-white transition-all duration-200 block font-label-sm text-label-sm" href="#">CSR Policy</a></li>
+</ul>
+</div>
+<div>
+<h5 class="text-white font-bold mb-4">Follow Us</h5>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-full border border-surface-variant/20 flex items-center justify-center text-white hover:bg-primary transition-colors" href="#">
+<span class="material-symbols-outlined">share</span>
+</a>
+<a class="w-10 h-10 rounded-full border border-surface-variant/20 flex items-center justify-center text-white hover:bg-primary transition-colors" href="#">
+<span class="material-symbols-outlined">public</span>
+</a>
+</div>
+</div>
+</div>
+</footer>
+<script>
+        // Intersection Observer for scroll entrance animations
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach((el) => {
+            observer.observe(el);
+        });
+    </script>
+</body></html>

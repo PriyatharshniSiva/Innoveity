@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>INNOVEITY | Bridging Education ↔ Industry</title>
+<meta content="Tamil Nadu's premier corporate training and college development partner. Bridging academic gaps with AICTE-recognized programs." name="description"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Hanken+Grotesk:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+              "primary": "#006859",
+              "secondary-container": "#fea619",
+              "surface-container-lowest": "#ffffff",
+              "inverse-primary": "#67dac2",
+              "on-surface": "#0b1c30",
+              "error-container": "#ffdad6",
+              "tertiary-container": "#6a758a",
+              "tertiary-fixed-dim": "#bcc7de",
+              "outline-variant": "#bcc9c4",
+              "surface-container-highest": "#d3e4fe",
+              "on-primary": "#ffffff",
+              "on-surface-variant": "#3d4946",
+              "surface-dim": "#cbdbf5",
+              "secondary-fixed-dim": "#ffb95f",
+              "background": "#f8f9ff",
+              "outline": "#6d7a76",
+              "on-secondary-fixed-variant": "#653e00",
+              "on-primary-fixed-variant": "#005144",
+              "surface-variant": "#d3e4fe",
+              "on-secondary-container": "#684000",
+              "on-error": "#ffffff",
+              "error": "#ba1a1a",
+              "surface": "#f8f9ff",
+              "on-tertiary-container": "#fefcff",
+              "on-primary-container": "#f4fffa",
+              "surface-tint": "#006b5b",
+              "surface-container-high": "#dce9ff",
+              "tertiary-fixed": "#d8e3fb",
+              "primary-container": "#008471",
+              "surface-bright": "#f8f9ff",
+              "on-primary-fixed": "#00201a",
+              "on-tertiary-fixed": "#111c2d",
+              "inverse-surface": "#213145",
+              "primary-fixed": "#85f6de",
+              "on-error-container": "#93000a",
+              "on-secondary-fixed": "#2a1700",
+              "on-background": "#0b1c30",
+              "secondary": "#855300",
+              "surface-container": "#e5eeff",
+              "tertiary": "#515c71",
+              "on-tertiary": "#ffffff",
+              "surface-container-low": "#eff4ff",
+              "secondary-fixed": "#ffddb8",
+              "on-secondary": "#ffffff",
+              "inverse-on-surface": "#eaf1ff",
+              "on-tertiary-fixed-variant": "#3c475a",
+              "primary-fixed-dim": "#67dac2"
+            },
+            "borderRadius": {
+              "DEFAULT": "0.25rem",
+              "lg": "0.5rem",
+              "xl": "0.75rem",
+              "full": "9999px"
+            },
+            "spacing": {
+              "section-padding": "5rem",
+              "container-max": "1280px",
+              "stack-lg": "2rem",
+              "stack-sm": "0.5rem",
+              "margin-desktop": "2rem",
+              "stack-md": "1rem",
+              "margin-mobile": "1rem",
+              "gutter": "1.5rem"
+            },
+            "fontFamily": {
+              "label-md": ["Inter"],
+              "label-sm": ["Inter"],
+              "body-lg": ["Inter"],
+              "headline-sm": ["Hanken Grotesk"],
+              "body-md": ["Inter"],
+              "headline-md": ["Hanken Grotesk"],
+              "display-lg": ["Hanken Grotesk"],
+              "headline-lg": ["Hanken Grotesk"]
+            },
+            "fontSize": {
+              "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500"}],
+              "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "600"}],
+              "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+              "headline-sm": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+              "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+              "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+              "display-lg": ["60px", {"lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+              "headline-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.01em", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .bento-card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .bento-card:hover {
+            box-shadow: 0 15px 15px -10px rgba(0, 104, 89, 0.04);
+            transform: translateY(-4px);
+        }
+        .glass-nav {
+            background: rgba(248, 249, 255, 0.8);
+            backdrop-filter: blur(12px);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md">
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-50 border-b border-outline-variant bg-surface/90 backdrop-blur-md">
+<nav class="flex justify-between items-center h-20 px-margin-desktop max-w-container-max mx-auto">
+<div class="flex items-center gap-2">
+<span class="font-display-lg text-headline-sm font-bold tracking-tight text-primary">INNOVEITY</span>
+</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-primary font-semibold border-b-2 border-primary pb-1 font-label-md text-label-md" href="#">Home</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md" href="#">About Us</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md" href="#">Services</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md" href="#">Case Studies</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md" href="#">Knowledge Hub</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md" href="#">Contact</a>
+</div>
+<button class="bg-secondary-container text-on-secondary-container px-6 py-2.5 rounded-lg font-bold hover:scale-95 transition-all shadow-sm">
+                Join Now
+            </button>
+</nav>
+</header>
+<main class="pt-20">
+<!-- Hero Section -->
+<section class="relative min-h-[921px] flex items-center overflow-hidden">
+
+<div class="relative z-10 max-w-container-max mx-auto px-margin-desktop grid grid-cols-1 lg:grid-cols-2 gap-gutter items-center">
+<div class="space-y-stack-lg">
+<div class="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-1.5 rounded-full">
+<span class="material-symbols-outlined text-[18px]">school</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider">Education ↔ Industry Bridge</span>
+</div>
+<h1 class="font-display-lg text-display-lg text-on-surface leading-tight">
+                        Bridging the Gap Between <span class="text-primary italic">Education</span> &amp; <span class="text-primary">Industry</span>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl">
+                        Tamil Nadu's premier training partner transforming institutions through innovative solutions, corporate upskilling, and sustainable ESG development.
+                    </p>
+<div class="flex flex-wrap gap-4 pt-4">
+<button class="bg-primary text-on-primary px-8 py-4 rounded-lg font-bold flex items-center gap-2 hover:bg-primary-container transition-all">
+                            For Institutions <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+<button class="border border-primary text-primary px-8 py-4 rounded-lg font-bold hover:bg-primary/5 transition-all">
+                            For Industries
+                        </button>
+</div>
+</div>
+<div class="hidden lg:block relative">
+<div class="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-white aspect-[4/3]">
+<img class="w-full h-full object-cover" data-alt="A professional group of diverse employees and students in a modern corporate lobby in Chennai, smiling and giving thumbs up. The lighting is warm and natural, emphasizing a collaborative and optimistic atmosphere. The scene captures high-resolution details of professional attire and architectural glass elements." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDY6RllwLk1oODOJHLaU6EjYcbtNr_6im72iiwKkPokxAPb7FlRkNBLYQK2Hr5bVaZwawXFPd0AEW3tmmFw95MPHJIfxjI7F_w93X8W8XenSEqBEHc0ApygmoGkyCYZiU1OjwDWVV-mtU8JV_2dR6xKRWx6vPwAMikKDPYsBg74tNk8FCljp5Bf4WORD3P9-h8xsFjqmRHcP_RgXm195fWLXqEiYvtCgP0IwjnEA5Gj0ez9fuJVZI5YKrHGnYNpHlu5M30_dLlC0NA"/>
+</div>
+<div class="absolute -bottom-8 -left-8 bg-white p-6 rounded-xl shadow-lg border border-outline-variant max-w-[240px]">
+<div class="flex items-center gap-4 mb-2">
+<div class="p-2 bg-secondary-container/20 rounded-lg">
+<span class="material-symbols-outlined text-secondary">verified</span>
+</div>
+<div>
+<p class="font-headline-sm text-headline-sm text-on-surface">ISO</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Certified Trainers</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Impact Stats (Bento Style) -->
+<section class="py-section-padding bg-white">
+<div class="max-w-container-max mx-auto px-margin-desktop">
+<div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Measurable Impact Across Tamil Nadu</h2>
+<p class="text-on-surface-variant font-body-md text-body-md">We deliver data-driven results that empower institutions and organizations to reach their full potential.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<div class="md:col-span-8 bg-surface-container-low rounded-xl p-8 flex flex-col justify-between border border-outline-variant hover:border-primary transition-all">
+<div class="flex justify-between items-start mb-12">
+<div class="space-y-2">
+<span class="text-primary font-bold text-6xl tracking-tighter">85%</span>
+<h3 class="font-headline-md text-headline-md">Placement Improvement</h3>
+<p class="text-on-surface-variant max-w-md">Average growth recorded across 50+ engineering colleges through our specialized bootcamp and skill development modules.</p>
+</div>
+<span class="material-symbols-outlined text-primary text-4xl">trending_up</span>
+</div>
+<div class="flex gap-4 items-center overflow-x-auto pb-2">
+<span class="bg-white px-4 py-2 rounded-lg text-label-sm font-label-sm whitespace-nowrap border border-outline-variant">Aptitude Coaching</span>
+<span class="bg-white px-4 py-2 rounded-lg text-label-sm font-label-sm whitespace-nowrap border border-outline-variant">Technical Upskilling</span>
+<span class="bg-white px-4 py-2 rounded-lg text-label-sm font-label-sm whitespace-nowrap border border-outline-variant">Mock Interviews</span>
+</div>
+</div>
+<div class="md:col-span-4 bg-primary text-on-primary rounded-xl p-8 flex flex-col justify-between">
+<span class="material-symbols-outlined text-4xl">groups</span>
+<div class="space-y-2 mt-8">
+<span class="font-bold text-5xl">2000+</span>
+<p class="font-headline-sm text-headline-sm">Students Trained Annually</p>
+<p class="opacity-80 text-body-md">In Chennai, Coimbatore, and Madurai hub centers.</p>
+</div>
+</div>
+<div class="md:col-span-4 bg-secondary-container text-on-secondary-container rounded-xl p-8">
+<div class="space-y-2">
+<span class="font-bold text-5xl">50+</span>
+<p class="font-headline-sm text-headline-sm">Partner Institutions</p>
+<p class="text-on-secondary-fixed-variant opacity-80 text-body-md">Leading universities and engineering colleges across the state.</p>
+</div>
+</div>
+<div class="md:col-span-8 bg-surface border border-outline-variant rounded-xl p-8 flex items-center gap-8">
+<div class="flex-1">
+<h3 class="font-headline-md text-headline-md mb-2">ROI Guarantee</h3>
+<p class="text-on-surface-variant font-body-md">Our corporate L&amp;D programs deliver 200-300% returns through measurable productivity metrics.</p>
+</div>
+<div class="h-24 w-24 bg-primary/10 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-4xl" style="font-variation-settings: 'FILL' 1;">currency_rupee</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Core Services -->
+<section class="py-section-padding bg-background relative overflow-hidden">
+<div class="max-w-container-max mx-auto px-margin-desktop relative z-10">
+<div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+<div class="max-w-2xl">
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-4">Core Transformation Pillars</h2>
+<p class="text-on-surface-variant text-body-lg font-body-lg">End-to-end solutions designed to bridge the academic-industry chasm and drive sustainable corporate growth.</p>
+</div>
+<button class="text-primary font-bold flex items-center gap-2 hover:gap-4 transition-all">
+                        View All Services <span class="material-symbols-outlined">east</span>
+</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Educational Solutions -->
+<div class="bento-card bg-white p-8 rounded-xl border border-outline-variant group">
+<div class="w-14 h-14 bg-primary/5 text-primary rounded-xl flex items-center justify-center mb-8 group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined text-3xl">school</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm mb-4">Educational Solutions</h3>
+<p class="text-on-surface-variant mb-6">Faculty development, student training, and placement assistance for next-gen institutions.</p>
+<ul class="space-y-3 mb-8">
+<li class="flex items-center gap-2 text-label-md font-label-md">
+<span class="material-symbols-outlined text-primary text-sm">check_circle</span> NEP 2020 Aligned
+                            </li>
+<li class="flex items-center gap-2 text-label-md font-label-md">
+<span class="material-symbols-outlined text-primary text-sm">check_circle</span> Technical Upskilling
+                            </li>
+</ul>
+<div class="w-full h-48 rounded-lg overflow-hidden border border-outline-variant/30 grayscale hover:grayscale-0 transition-all">
+<img class="w-full h-full object-cover" data-alt="A group of South Indian students in professional university uniforms engaged in a collaborative workshop, working on laptops and physical models in a bright, modern classroom. The setting reflects an atmosphere of focused innovation and academic excellence, using the brand's primary teal as subtle highlights." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCYN3OVpK4ZXloqNSM0-jYRyxYsNTBk3oE6pBDdPdRmc5JjXkwFkM76PMdk5LjyyrJ0XuANXdlKA5Eqt4aCZiMQbB1n2-gdOE6xygmm_DQCE_VZOTgtA8x4d-isEb4SAiZWxic889i5LYE1lW_bK5v40aagNcVNaembGRxxxRH0ZHeIN4I5z2M6em64PNEAOSC0ChUh123oESliH62ZnXCg3rUp2FVX4EN3jwg7rQbhXmZBGpmRks-_9z4NdoihJtBny-tAssrzZgo"/>
+</div>
+</div>
+<!-- Corporate Training -->
+<div class="bento-card bg-white p-8 rounded-xl border border-outline-variant group">
+<div class="w-14 h-14 bg-secondary-container/10 text-secondary rounded-xl flex items-center justify-center mb-8 group-hover:bg-secondary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined text-3xl">business_center</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm mb-4">Corporate Training</h3>
+<p class="text-on-surface-variant mb-6">Industry-focused skill development programs for modern manufacturing and IT sectors.</p>
+<ul class="space-y-3 mb-8">
+<li class="flex items-center gap-2 text-label-md font-label-md">
+<span class="material-symbols-outlined text-secondary text-sm">check_circle</span> Leadership Development
+                            </li>
+<li class="flex items-center gap-2 text-label-md font-label-md">
+<span class="material-symbols-outlined text-secondary text-sm">check_circle</span> Behavioral Workshops
+                            </li>
+</ul>
+<div class="w-full h-48 rounded-lg overflow-hidden border border-outline-variant/30 grayscale hover:grayscale-0 transition-all">
+<img class="w-full h-full object-cover" data-alt="A corporate training session in a high-tech boardroom in Coimbatore. A professional male facilitator is presenting to a group of attentive corporate employees in business casual attire. The lighting is crisp, showing clear whiteboards and digital displays, creating a mood of professional advancement and trust." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBmX6qDmVE8wsMvcUE0KCCpa5f1v-z_VFbnPxggdY-H6tzl7L-lkizb6TXvk5YYE_ZoGT2dO-mwx-oIiJiz34UDE7-CrKT89133bayifKSbE-6tglNpZ6oy8yRnsnz7usR8Kumqi9IYWgnR9OF3nI3bLw4S2Ze9cBWZ-XV0g9Twq6d14saowQzoWwRz3LG8dZTbQU1CQq3d_85u98ne5l26wQ_oqx6mY3alSGUSGQb01RmqWmDpHzZPsWopWUHzEJ9BuGBBCj7PDWE"/>
+</div>
+</div>
+<!-- ESG & Sustainability -->
+<div class="bento-card bg-white p-8 rounded-xl border border-outline-variant group">
+<div class="w-14 h-14 bg-primary/5 text-primary rounded-xl flex items-center justify-center mb-8 group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined text-3xl">nature_people</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm mb-4">ESG &amp; Sustainability</h3>
+<p class="text-on-surface-variant mb-6">Navigating complex environmental and social governance through strategic consulting.</p>
+<ul class="space-y-3 mb-8">
+<li class="flex items-center gap-2 text-label-md font-label-md">
+<span class="material-symbols-outlined text-primary text-sm">check_circle</span> CSR Implementation
+                            </li>
+<li class="flex items-center gap-2 text-label-md font-label-md">
+<span class="material-symbols-outlined text-primary text-sm">check_circle</span> Carbon Footprint Analysis
+                            </li>
+</ul>
+<div class="w-full h-48 rounded-lg overflow-hidden border border-outline-variant/30 grayscale hover:grayscale-0 transition-all">
+<img class="w-full h-full object-cover" data-alt="An outdoor tree plantation drive organized by a corporation. Volunteers in branded teal and yellow t-shirts are planting saplings in a green field under a clear blue sky. The image emphasizes environmental responsibility and community impact, with a focus on vibrant green foliage and natural light." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDl06vprUhGSxbYwLCqTVYxhT-Y21g-6Hw3Ybo_-vOTsTzEw-nKV6SFA9aY-ezMej9SEEviO182ox4WwIXLjnAHP7uhQ3D93VZau6VB9JyJlO5m4qbqbQY0QeCQxqVznZnPS7su2AvMSkhiW2RLz-IFdX4jeLbgC4X6vOVircbisG9zsDOQh8YKVNLKED_I-telqWSQcuaqUq4ieHF51_EKXvabreaIL1dvEfvUuEqrl_OrJYgFaUsdjrW3AvRpYM_Rt32U4JZBcC0"/>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Why Choose Us -->
+<section class="py-section-padding bg-on-background text-white relative">
+<div class="max-w-container-max mx-auto px-margin-desktop grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+<div class="space-y-stack-lg">
+<h2 class="font-headline-lg text-headline-lg">What makes <span class="text-secondary-container italic font-bold">INNOVEITY</span> different?</h2>
+<div class="space-y-8">
+<div class="flex gap-6">
+<div class="flex-shrink-0 w-12 h-12 bg-white/10 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary-container">language</span>
+</div>
+<div>
+<h4 class="font-headline-sm text-headline-sm mb-2">Bilingual Delivery</h4>
+<p class="text-white/70 font-body-md">Training delivered fluently in both English and Tamil to maximize retention and local resonance.</p>
+</div>
+</div>
+<div class="flex gap-6">
+<div class="flex-shrink-0 w-12 h-12 bg-white/10 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary-container">verified_user</span>
+</div>
+<div>
+<h4 class="font-headline-sm text-headline-sm mb-2">AICTE Recognized</h4>
+<p class="text-white/70 font-body-md">Our programs align strictly with AICTE and NEP 2020 guidelines, ensuring academic compliance.</p>
+</div>
+</div>
+<div class="flex gap-6">
+<div class="flex-shrink-0 w-12 h-12 bg-white/10 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary-container">speed</span>
+</div>
+<div>
+<h4 class="font-headline-sm text-headline-sm mb-2">Rapid Deployment</h4>
+<p class="text-white/70 font-body-md">Presence across Chennai, Coimbatore, and Madurai allows for onsite deployment within 48-72 hours.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="space-y-4">
+<div class="aspect-square rounded-xl overflow-hidden grayscale hover:grayscale-0 transition-all duration-500">
+<img class="w-full h-full object-cover" data-alt="A large group of professional faculty members and trainers posing together in a modern auditorium in Chennai after a successful development program. They are holding up certificates and smiling, reflecting professional pride and accomplishment in a high-key lit indoor environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCwu2FmpHZ41XWDqNXHiA7HsmxTSeriNuPshdaK8PGYe9mTA06FGkSnDdEiRm-IacvAz0r0KhQ19hRTWg6G4ohoMqHsaEsHuwQOOSxZjcLUOWYTfRz-JqAerJwFJ5tsil37nHUIsEFbvDmcL6yEEu0RJ9a6kDPejE889EpI4pD5aTgrvFyur6m4Xua8Qj69Q2Roki52OYUJ95fE6_oSpcNIomPCSWknS-WL16K4ciDxCVg3NzrP-45DERq0SfLq5HyPG-8JpTvy0io"/>
+</div>
+<div class="aspect-[3/4] rounded-xl overflow-hidden grayscale hover:grayscale-0 transition-all duration-500">
+<img class="w-full h-full object-cover" data-alt="An aerial drone shot of a lush green landscape in Tamil Nadu where a community reforestation project is taking place. Small dots representing people can be seen organizing saplings in a structured pattern, symbolizing large-scale impact and sustainability." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCHQyJjlqJxlWXHS57dsvtA9f7GBKuLy9pVky10PS0n-FRGvfQTT6aC4wDn544wwMrB-aw8nQ8AnQcKZXt1HyCwDjMmOyp9h3mPTj71EwutgUTTFdNwkOWiDC4X5fXvyapvnPpgn6D5pVwwJKqisgyRjOiJiiqUe7QfEEXnD63cgM0jcbB2hq5H5f9d4y0MnML0hkTcTSzucwbfMnK3k248M7ece-GFwTlcHVQEoqkFcygrrjVhZCzvmqnpA_X0ArYMyPWbILctens"/>
+</div>
+</div>
+<div class="space-y-4 pt-8">
+<div class="aspect-[3/4] rounded-xl overflow-hidden grayscale hover:grayscale-0 transition-all duration-500">
+<img class="w-full h-full object-cover" data-alt="A close-up shot of a trainer's hands gesturing toward a whiteboard filled with complex change management diagrams and industry workflow charts. The lighting is focused, highlighting the professional and educational depth of the training session." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAXMU3VK-bFjrBCLJBTUDw0vrGjlLqyof1LkWtqXDeF-FLq6_XDm-Z6OpUK9dfU5kkbWPaTxCiuWb6tR2SbGXW6axC1PM937C6XfKcHIkb8UeA1klZANqsf4riF9bQBiHnefZafOo9NckgiVOjL4TSXJlXui4URx4yZw5NCfASNMwvFec42ngVmU3OA4-FhfRc-5r9_40DKunDo2t7Ojy-pUIjBroajwGe2fhdVkZy9t1i4ze3pSoD00r6bWv2HiZL964szNBEN-GM"/>
+</div>
+<div class="aspect-square rounded-xl overflow-hidden grayscale hover:grayscale-0 transition-all duration-500">
+<img class="w-full h-full object-cover" data-alt="A wide-angle shot of a group of corporate employees in an industrial factory setting, wearing high-visibility vests and safety helmets, listening to a safety trainer. The mood is serious, professional, and safety-oriented, set against the backdrop of modern industrial machinery." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDGQ92l27F5O6wjUQDu0zpz1KhfsgW0fdV-KVpw-nwV7VBlzCNx9tPLa-Jw62grNaBvmvlhsEBJwZW9OsQjbVcPgsCkzruNzQeVUEtycvwiKhM-9LSHW1DNQC7nSs5Bw0GCHOSDQ6TRm4uvvkKu99HMWcYwiP2RM6nzovfvhkXm-sI3QrjHC33Zk28MGB_Nx4WSDjEOehHwCO3LiBNWVdjhb0DWjrnfs5PDtENRm6vpVH3lHIf7g-ttjd16b8QLKMiAGMZMZxabrQ0"/>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Presence Map -->
+<section class="py-section-padding bg-white overflow-hidden">
+<div class="max-w-container-max mx-auto px-margin-desktop">
+<div class="flex flex-col lg:flex-row gap-gutter items-center">
+<div class="lg:w-1/3 space-y-stack-lg">
+<span class="text-primary font-bold tracking-widest uppercase text-label-sm font-label-sm">Our Presence</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Nationwide Network, Local Expertise</h2>
+<p class="text-on-surface-variant font-body-md text-body-md">Serving educational hubs and industrial zones across major Indian cities with a stronghold in Tamil Nadu.</p>
+<div class="space-y-4">
+<div class="flex items-center gap-4 p-4 rounded-xl border border-outline-variant hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined text-primary">location_on</span>
+<div>
+<p class="font-bold">Chennai</p>
+<p class="text-label-sm text-on-surface-variant">Regional HQ &amp; Tech Hub</p>
+</div>
+</div>
+<div class="flex items-center gap-4 p-4 rounded-xl border border-outline-variant hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined text-primary">location_on</span>
+<div>
+<p class="font-bold">Coimbatore</p>
+<p class="text-label-sm text-on-surface-variant">Industrial &amp; Manufacturing Center</p>
+</div>
+</div>
+<div class="flex items-center gap-4 p-4 rounded-xl border border-outline-variant hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined text-primary">location_on</span>
+<div>
+<p class="font-bold">Madurai</p>
+<p class="text-label-sm text-on-surface-variant">Academic Transformation Hub</p>
+</div>
+</div>
+</div>
+</div>
+<div class="lg:w-2/3 w-full h-[500px] rounded-2xl overflow-hidden border border-outline-variant relative">
+<div class="absolute inset-0 bg-surface-container-high opacity-10"></div>
+<!-- Placeholder for Map Visualization -->
+<div class="w-full h-full flex items-center justify-center bg-surface-container-low">
+<img class="w-full h-full object-cover" data-alt="A stylized, clean, minimalist map of South India emphasizing the state of Tamil Nadu with glowing markers over Chennai, Coimbatore, and Madurai. The map uses a sophisticated color palette of light grays and brand teal accents, creating a high-tech corporate feel." data-location="Tamil Nadu, India" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBNzya6bpVT7ioqVH7IUV3lUci3ZgGSazXxiabpmHllhxmT_vezGTiTNMSHUled6XaqNKDPnZKfAhofBsKMUD8kOOdx6OmIPlOg9rKHMZr8ELR1yVGh8HhxE48t3juGaX_xHjROMi51YLK_TiOPJP1YssLyueJN5mgR65bhnXvYn5O0R-956GOJIG_UP3Q9GpkTsBV3QT9uXwPTRzyYQHomjCoK8ZOaAgMpVeG-hAAPpYu7lrhp_EobOWjSaPfTxBBiWL3oP07x2i8"/>
+</div>
+<div class="absolute bottom-6 right-6 bg-white p-4 rounded-lg shadow-xl border border-outline-variant max-w-xs">
+<p class="font-label-sm text-label-sm text-primary font-bold mb-1">Global Standards</p>
+<p class="text-on-surface-variant text-label-sm">International best practices partnered with world-leading corporate frameworks.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Testimonials -->
+<section class="py-section-padding bg-surface-container-low">
+<div class="max-w-container-max mx-auto px-margin-desktop">
+<div class="flex flex-col items-center text-center mb-16 space-y-4">
+<div class="flex gap-1 text-secondary-container">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg">Trusted by Industry Leaders</h2>
+<p class="text-on-surface-variant max-w-2xl font-body-md text-body-md">Our commitment to excellence is reflected in the success of our partners and participants.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Testimonial 1 -->
+<div class="bg-white p-8 rounded-xl border border-outline-variant flex flex-col justify-between shadow-sm">
+<div>
+<span class="material-symbols-outlined text-primary/20 text-5xl mb-4">format_quote</span>
+<p class="text-on-surface font-body-md mb-8 italic">"Exceptional training programs! INNOVEITY transformed our organization with their innovative approach to skill development. Highly recommended for corporate training."</p>
+</div>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-surface-container-high overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A professional portrait of an Indian male executive, Rajesh Kumar, in his late 40s, wearing a navy blue blazer and a crisp white shirt. He is smiling warmly against a blurred office background, conveying confidence and professional trust. High-resolution lighting, modern aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD7-_yagWCN5J0VGbkMjN1kzanzf9RYhPRS4_Dv-4aDCZi26b7jbJ5m3l-j1RQuBXEK_zrq7oCum6hpKW3l9cCm5_zqKDI9N_3whX9SjoN5wbC2q_nsQ2jtHG6881JzW7oWC_j9PZG_zYlqHpQO7PMffEDj9LWJ0P83ABZuT9SSuNHkAl2U_whkKdkyO79gmfXP61NHSfO_Y90BTmuM806-rmvHpcPMu0JBgGLgxntXzzyqsRvkNLvXTLOnpuqPxeK47LWn2lnSQuY"/>
+</div>
+<div>
+<p class="font-bold">Rajesh Kumar</p>
+<p class="text-label-sm text-on-surface-variant">Verified Corporate Partner</p>
+</div>
+</div>
+</div>
+<!-- Testimonial 2 -->
+<div class="bg-white p-8 rounded-xl border border-outline-variant flex flex-col justify-between shadow-sm">
+<div>
+<span class="material-symbols-outlined text-primary/20 text-5xl mb-4">format_quote</span>
+<p class="text-on-surface font-body-md mb-8 italic">"Outstanding ESG consulting services. Their tree plantation initiative helped us achieve our sustainability goals effectively. Professional and impactful work."</p>
+</div>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-surface-container-high overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A professional portrait of an Indian female executive, Priya Sharma, in her mid-30s, wearing smart business casual attire. She has a bright, intelligent expression and is photographed in a well-lit modern corporate environment with soft bokeh in the background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBG14zJ3sQtLj0NXflxBoeQdqCDFfSWs-g9qJiuh_2TbMPOvznELK9L3gIbpko1RGcm_RAAVwr1Mwh7cdro4NHA-jIbB7S9HRlAUK7z9suSuPgAfYKDk2vvXk1KUAoR9jVhio2EuKWolK4_0mO1MahEWVpssyoKonsZ0sYur7tudIraA6FjZVnu5t6rmXgb5OOdgduWe8V2OqHC4W1lCxX615OQ90714A7z4NRtXvdxUQgVsgeRblPAndIz4PptEJCT7A7B1gVgtns"/>
+</div>
+<div>
+<p class="font-bold">Priya Sharma</p>
+<p class="text-label-sm text-on-surface-variant">Sustainability Lead</p>
+</div>
+</div>
+</div>
+<!-- Testimonial 3 -->
+<div class="bg-white p-8 rounded-xl border border-outline-variant flex flex-col justify-between shadow-sm">
+<div>
+<span class="material-symbols-outlined text-primary/20 text-5xl mb-4">format_quote</span>
+<p class="text-on-surface font-body-md mb-8 italic">"Excellent leadership development programs. The training methodology is innovative and results-oriented. Our team's performance improved significantly."</p>
+</div>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-surface-container-high overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A professional portrait of an Indian male academic, Dr. Amit Patel, in his early 50s, wearing a formal suit and glasses. He has a scholarly and approachable look, photographed in a library or a high-end academic hall with warm, natural lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCjE62CHQ1IVpaNUJ2boInjulFrYV6ApW3sAVvqjyDEUkTJ3RAc_OIuTwcqXFKJPhr00he4e5cu6o8neObhsnYPvV9vXan2L8NPTzqvOqzuevy6Es4iMu4dYv8hGw49PQ8foLYkU_20IG-NahuQ3cipz9JfuGK4OzV4ERkpVtSUko8SiYAeyHC_N6DI_yXzaj1nCx9ZgqhdKkHGWlIUWOhBv2cwhC4wt_CW3jkMy_dldIi7lIEL7uxWoFyODb393RnziucAsHJAVWg"/>
+</div>
+<div>
+<p class="font-bold">Dr. Amit Patel</p>
+<p class="text-label-sm text-on-surface-variant">University Vice-Chancellor</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="py-section-padding relative">
+
+<div class="max-w-container-max mx-auto px-margin-desktop relative z-10 text-center">
+<div class="bg-primary p-12 md:p-20 rounded-3xl text-on-primary space-y-8 shadow-2xl overflow-hidden relative">
+<div class="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl"></div>
+<div class="absolute bottom-0 left-0 w-64 h-64 bg-secondary-container/10 rounded-full translate-y-1/2 -translate-x-1/2 blur-3xl"></div>
+<h2 class="font-headline-lg text-headline-lg text-white max-w-4xl mx-auto">Experience the <span class="text-secondary-container">INNOVEITY</span> Difference Yourself</h2>
+<p class="text-white/80 font-body-lg text-body-lg max-w-2xl mx-auto">Join 50+ leading institutions and 100+ corporate clients who trust us for their training and development requirements.</p>
+<div class="flex flex-wrap justify-center gap-4 pt-4">
+<button class="bg-secondary-container text-on-secondary-container px-10 py-5 rounded-lg font-bold text-lg hover:scale-105 transition-transform shadow-xl">
+                            Schedule Free Consultation
+                        </button>
+<button class="bg-white/10 backdrop-blur-md text-white border border-white/20 px-10 py-5 rounded-lg font-bold text-lg hover:bg-white/20 transition-all">
+                            Contact Our Team
+                        </button>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-on-background dark:bg-surface-container-lowest text-on-primary border-t border-outline-variant/20 w-full pt-section-padding pb-stack-lg">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-desktop max-w-container-max mx-auto">
+<div class="space-y-6">
+<span class="font-display-lg text-headline-sm font-bold text-surface">INNOVEITY</span>
+<p class="text-surface-variant/80 font-body-md">Bridging the gap between Education and Industry through innovative L&amp;D solutions across India.</p>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">public</span>
+</a>
+<a class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">group</span>
+</a>
+<a class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">mail</span>
+</a>
+</div>
+</div>
+<div class="space-y-6">
+<h4 class="font-bold text-lg text-white">Company</h4>
+<ul class="space-y-4">
+<li><a class="text-surface-variant/80 hover:text-white hover:translate-x-1 transition-all inline-block" href="#">About Us</a></li>
+<li><a class="text-surface-variant/80 hover:text-white hover:translate-x-1 transition-all inline-block" href="#">Services</a></li>
+<li><a class="text-surface-variant/80 hover:text-white hover:translate-x-1 transition-all inline-block" href="#">Case Studies</a></li>
+<li><a class="text-surface-variant/80 hover:text-white hover:translate-x-1 transition-all inline-block" href="#">Knowledge Hub</a></li>
+</ul>
+</div>
+<div class="space-y-6">
+<h4 class="font-bold text-lg text-white">Services</h4>
+<ul class="space-y-4">
+<li><a class="text-surface-variant/80 hover:text-white hover:translate-x-1 transition-all inline-block" href="#">Corporate Training</a></li>
+<li><a class="text-surface-variant/80 hover:text-white hover:translate-x-1 transition-all inline-block" href="#">Academic Partners</a></li>
+<li><a class="text-surface-variant/80 hover:text-white hover:translate-x-1 transition-all inline-block" href="#">ESG Consulting</a></li>
+<li><a class="text-surface-variant/80 hover:text-white hover:translate-x-1 transition-all inline-block" href="#">CSR Policy</a></li>
+</ul>
+</div>
+<div class="space-y-6">
+<h4 class="font-bold text-lg text-white">Contact</h4>
+<p class="text-surface-variant/80 font-body-md">No:11 Ritherdon Avenue, Ritherdon Road Vepery, Chennai 600007</p>
+<p class="text-surface-variant/80 font-body-md font-bold">+91 880 770 8818</p>
+<p class="text-surface-variant/80 font-body-md">admin@innoveity.com</p>
+</div>
+</div>
+<div class="max-w-container-max mx-auto px-margin-desktop mt-20 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="text-label-sm font-label-sm text-surface-variant/60">© 2024 Innoveity. Bridging the gap between Education and Industry.</p>
+<div class="flex gap-8">
+<a class="text-label-sm font-label-sm text-surface-variant/60 hover:text-white" href="#">Privacy Policy</a>
+<a class="text-label-sm font-label-sm text-surface-variant/60 hover:text-white" href="#">Terms of Service</a>
+<a class="text-label-sm font-label-sm text-surface-variant/60 hover:text-white" href="#">Sitemap</a>
+</div>
+</div>
+</footer>
+<script>
+        // Micro-interactions for bento cards
+        document.querySelectorAll('.bento-card').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                const img = card.querySelector('img');
+                if (img) img.style.transform = 'scale(1.05)';
+            });
+            card.addEventListener('mouseleave', () => {
+                const img = card.querySelector('img');
+                if (img) img.style.transform = 'scale(1)';
+            });
+        });
+    </script>
+</body></html>
