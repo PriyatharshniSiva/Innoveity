@@ -73,3 +73,33 @@ model AboutContent {
   contentJson String
   updatedAt   DateTime @updatedAt
 }
+
+model HomeContent {
+  id          Int      @id @default(1)
+  contentJson String
+  updatedAt   DateTime @updatedAt
+}
+
+model ServicesContent {
+  id          Int      @id @default(1)
+  contentJson String
+  updatedAt   DateTime @updatedAt
+}
+
+model CSRContent {
+  id          Int      @id @default(1)
+  contentJson String
+  updatedAt   DateTime @updatedAt
+}
+
+model ContactContent {
+  id          Int      @id @default(1)
+  contentJson String
+  updatedAt   DateTime @updatedAt
+}
+
+model ThemeSettings {
+  id          Int      @id @default(1)
+  contentJson String
+  updatedAt   DateTime @updatedAt
+}

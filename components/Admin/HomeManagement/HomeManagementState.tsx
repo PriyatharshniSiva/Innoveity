@@ -147,6 +147,9 @@ interface HomeManagementContextType {
   setEdukaOverview: React.Dispatch<React.SetStateAction<EdukaOverviewState>>;
   activeSection: string;
   setActiveSection: React.Dispatch<React.SetStateAction<string>>;
+  isSaving: boolean;
+  isLoading: boolean;
+  saveAllChanges: () => Promise<void>;
 }
 
 const initialState: HomeManagementContextType = {
@@ -404,10 +407,15 @@ const initialState: HomeManagementContextType = {
   },
   setEdukaOverview: () => {},
   activeSection: "hero",
-  setActiveSection: () => {}
+  setActiveSection: () => {},
+  isSaving: false,
+  isLoading: true,
+  saveAllChanges: async () => {},
 };
 
 const HomeManagementContext = createContext<HomeManagementContextType>(initialState);
+
+import { useToast } from "@/components/Admin/Toast";
 
 export function HomeManagementProvider({ children }: { children: React.ReactNode }) {
   const [hero, setHero] = useState<HeroState>(initialState.hero);
@@ -420,9 +428,57 @@ export function HomeManagementProvider({ children }: { children: React.ReactNode
   const [ourPresence, setOurPresence] = useState<OurPresenceState>(initialState.ourPresence);
   const [edukaOverview, setEdukaOverview] = useState<EdukaOverviewState>(initialState.edukaOverview);
   const [activeSection, setActiveSection] = useState<string>("hero");
+  const [isSaving, setIsSaving] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
+
+  const { success, error } = useToast();
+
+  React.useEffect(() => {
+    fetch('/api/home')
+      .then(res => res.json())
+      .then(data => {
+        if (!data.error) {
+          if (data.hero) setHero(data.hero);
+          if (data.stats) setStats(data.stats);
+          if (data.corporateHighlights) setCorporateHighlights(data.corporateHighlights);
+          if (data.featuredServices) setFeaturedServices(data.featuredServices);
+          if (data.faqs) setFaqs(data.faqs);
+          if (data.testimonials) setTestimonials(data.testimonials);
+          if (data.ourServices) setOurServices(data.ourServices);
+          if (data.ourPresence) setOurPresence(data.ourPresence);
+          if (data.edukaOverview) setEdukaOverview(data.edukaOverview);
+        }
+      })
+      .catch(err => console.error("Failed to load home content", err))
+      .finally(() => setIsLoading(false));
+  }, []);
+
+  const saveAllChanges = async () => {
+    setIsSaving(true);
+    try {
+      const payload = {
+        hero, stats, corporateHighlights, featuredServices, faqs, testimonials, ourServices, ourPresence, edukaOverview
+      };
+      const res = await fetch('/api/home', {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      });
+      if (res.ok) {
+        success("Changes saved successfully!");
+      } else {
+        error("Failed to save changes.");
+      }
+    } catch (err) {
+      console.error(err);
+      error("An error occurred while saving.");
+    } finally {
+      setIsSaving(false);
+    }
+  };
 
   return (
-    <HomeManagementContext.Provider value={{ hero, setHero, stats, setStats, corporateHighlights, setCorporateHighlights, featuredServices, setFeaturedServices, faqs, setFaqs, testimonials, setTestimonials, ourServices, setOurServices, ourPresence, setOurPresence, edukaOverview, setEdukaOverview, activeSection, setActiveSection }}>
+    <HomeManagementContext.Provider value={{ hero, setHero, stats, setStats, corporateHighlights, setCorporateHighlights, featuredServices, setFeaturedServices, faqs, setFaqs, testimonials, setTestimonials, ourServices, setOurServices, ourPresence, setOurPresence, edukaOverview, setEdukaOverview, activeSection, setActiveSection, isSaving, isLoading, saveAllChanges }}>
       {children}
     </HomeManagementContext.Provider>
   );

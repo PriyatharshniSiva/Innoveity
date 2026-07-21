@@ -1,6 +1,7 @@
 "use client";
 
 import React, { createContext, useContext, useState } from "react";
+import { useToast } from "@/components/Admin/Toast";
 
 export interface InitiativeItem {
   id: string;
@@ -52,6 +53,9 @@ interface CsrContextType {
   // Handlers
   openDrawer: (type: "initiative" | "sdg" | "chart" | "gallery", id?: string) => void;
   closeDrawer: () => void;
+  saveAllChanges: () => Promise<void>;
+  isSaving: boolean;
+  isLoading: boolean;
 }
 
 const CsrContext = createContext<CsrContextType | undefined>(undefined);
@@ -101,6 +105,49 @@ export function CsrProvider({ children }: { children: React.ReactNode }) {
     }, 300);
   };
 
+  const [isLoading, setIsLoading] = useState(true);
+  const [isSaving, setIsSaving] = useState(false);
+
+  React.useEffect(() => {
+    fetch('/api/csr')
+      .then(res => res.json())
+      .then(data => {
+        if (!data.error) {
+          if (data.initiatives) setInitiatives(data.initiatives);
+          if (data.sdgs) setSdgs(data.sdgs);
+          if (data.chartData) setChartData(data.chartData);
+        }
+      })
+      .catch(err => console.error("Failed to load csr content", err))
+      .finally(() => setIsLoading(false));
+  }, []);
+
+  const { success, error } = useToast();
+
+  const saveAllChanges = async () => {
+    setIsSaving(true);
+    try {
+      const payload = {
+        initiatives, sdgs, chartData
+      };
+      const res = await fetch('/api/csr', {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      });
+      if (res.ok) {
+        success("Changes saved successfully!");
+      } else {
+        error("Failed to save changes.");
+      }
+    } catch (err) {
+      console.error(err);
+      error("An error occurred while saving.");
+    } finally {
+      setIsSaving(false);
+    }
+  };
+
   return (
     <CsrContext.Provider value={{
       isDrawerOpen, setIsDrawerOpen,
@@ -109,7 +156,8 @@ export function CsrProvider({ children }: { children: React.ReactNode }) {
       initiatives, setInitiatives,
       sdgs, setSdgs,
       chartData, setChartData,
-      openDrawer, closeDrawer
+      openDrawer, closeDrawer,
+      saveAllChanges, isSaving, isLoading
     }}>
       {children}
     </CsrContext.Provider>

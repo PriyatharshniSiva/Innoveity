@@ -3,25 +3,24 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
-const faqs = [
-  {
-    question: "What makes INNOVEITY different from other training providers in Tamil Nadu?",
-    mainAnswer: "INNOVEITY delivers measurable results with an 85% average placement improvement rate across 50+ partner institutions. We combine AICTE-recognized programs, ISO-certified trainers, and flexible bilingual delivery (Tamil and English) with outcome-based pricing models that guarantee ROI.",
-    detailedExplanation: "Our comprehensive approach includes pre-training assessments, customized curriculum design, hands-on delivery, post-training support, and transparent ROI tracking using Kirkpatrick's evaluation model. We maintain local presence across Chennai, Coimbatore, and Madurai for rapid deployment within 48-72 hours."
-  },
-  {
-    question: "How does INNOVEITY improve college placement rates?",
-    mainAnswer: "We provide end-to-end placement enhancement including aptitude coaching, technical upskilling, soft skills development, mock interviews, resume building, and direct industry connections. Our programs have achieved 60-85% placement improvement across engineering colleges in Tamil Nadu.",
-    detailedExplanation: "Each program includes baseline assessment, gap analysis, customized training modules, regular progress tracking, industry exposure through guest lectures and company visits, and post-placement support. Our success rate is backed by verifiable data from 50+ partner institutions."
-  },
-  {
-    question: "What corporate training services does INNOVEITY offer in Chennai?",
-    mainAnswer: "INNOVEITY offers comprehensive L&D solutions including leadership development, behavioral training, technical skills enhancement, ESG consulting, digital transformation programs, and customized workshops. All programs include ROI measurement, post-training support, and flexible delivery options.",
-    detailedExplanation: "We serve manufacturing, IT, healthcare, BFSI, and other sectors across Tamil Nadu. Programs can be delivered on-site at your Chennai, Coimbatore, or Madurai offices, online via virtual sessions, or through hybrid formats. Enterprise discounts available for annual partnerships and bulk bookings."
-  }
-];
-
-export default function FAQAccordion() {
+export default function FAQAccordion({ data }: { data?: any }) {
+  const faqs = data?.faqs || [
+    {
+      question: "What makes INNOVEITY different from other training providers in Tamil Nadu?",
+      mainAnswer: "INNOVEITY delivers measurable results with an 85% average placement improvement rate across 50+ partner institutions. We combine AICTE-recognized programs, ISO-certified trainers, and flexible bilingual delivery (Tamil and English) with outcome-based pricing models that guarantee ROI.",
+      detailedExplanation: "Our comprehensive approach includes pre-training assessments, customized curriculum design, hands-on delivery, post-training support, and transparent ROI tracking using Kirkpatrick's evaluation model. We maintain local presence across Chennai, Coimbatore, and Madurai for rapid deployment within 48-72 hours."
+    },
+    {
+      question: "How does INNOVEITY improve college placement rates?",
+      mainAnswer: "We provide end-to-end placement enhancement including aptitude coaching, technical upskilling, soft skills development, mock interviews, resume building, and direct industry connections. Our programs have achieved 60-85% placement improvement across engineering colleges in Tamil Nadu.",
+      detailedExplanation: "Each program includes baseline assessment, gap analysis, customized training modules, regular progress tracking, industry exposure through guest lectures and company visits, and post-placement support. Our success rate is backed by verifiable data from 50+ partner institutions."
+    },
+    {
+      question: "What corporate training services does INNOVEITY offer in Chennai?",
+      mainAnswer: "INNOVEITY offers comprehensive L&D solutions including leadership development, behavioral training, technical skills enhancement, ESG consulting, digital transformation programs, and customized workshops. All programs include ROI measurement, post-training support, and flexible delivery options.",
+      detailedExplanation: "We serve manufacturing, IT, healthcare, BFSI, and other sectors across Tamil Nadu. Programs can be delivered on-site at your Chennai, Coimbatore, or Madurai offices, online via virtual sessions, or through hybrid formats. Enterprise discounts available for annual partnerships and bulk bookings."
+    }
+  ];
   const [openIndex, setOpenIndex] = useState<number | null>(null);
   const [readMoreIndex, setReadMoreIndex] = useState<number | null>(null);
 

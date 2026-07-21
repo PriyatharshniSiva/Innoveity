@@ -169,12 +169,10 @@ export default function AdminDashboard() {
           {/* Quick Actions Row */}
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.6 }}>
             <h2 className="text-lg font-black text-slate-800 dark:text-white mb-4 px-2 uppercase tracking-widest">Quick Actions</h2>
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
               <QuickAction title="New Service" icon={Briefcase} href="/admin/services" />
-              <QuickAction title="Upload Gallery" icon={ImageIcon} href="/admin/gallery" />
               <QuickAction title="Add Article" icon={BookOpen} href="/admin/knowledge-hub" />
               <QuickAction title="Update CSR" icon={Heart} href="/admin/csr" />
-              <QuickAction title="Reply Messages" icon={Mail} href="/admin/messages" />
             </div>
           </motion.div>
         </div>
@@ -229,9 +227,6 @@ export default function AdminDashboard() {
             <div className="absolute top-0 right-0 w-32 h-32 bg-[#F59E0B]/5 dark:bg-white/5 rounded-bl-[100px] -z-10 transition-colors duration-300" />
             <div className="flex justify-between items-center mb-8">
               <h2 className="text-xl font-black text-slate-800 dark:text-white">Recent Activity</h2>
-              <Link href="/admin/activity" className="text-sm font-bold text-[#185D46] dark:text-neutral-400 hover:text-[#0f3d2e] dark:hover:text-white flex items-center gap-1 group">
-                View All <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </Link>
             </div>
             
             <div className="space-y-6 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px before:h-full before:w-0.5 before:bg-slate-100 dark:before:bg-white/10">

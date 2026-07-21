@@ -3,8 +3,11 @@
 import React, { useRef } from "react";
 import { ImagePlus, Images } from "lucide-react";
 
+import { useToast } from "@/components/Admin/Toast";
+
 export default function CsrGalleryManager() {
   const fileInputRef = useRef<HTMLInputElement>(null);
+  const { toast } = useToast();
 
   const handleUploadClick = () => {
     fileInputRef.current?.click();
@@ -12,7 +15,7 @@ export default function CsrGalleryManager() {
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files && e.target.files.length > 0) {
-      alert(`Selected ${e.target.files.length} images for upload. (Backend integration required)`);
+      toast(`Selected ${e.target.files.length} images for upload. (Backend integration required)`);
     }
   };
 

@@ -3,14 +3,6 @@
 import React, { useState, useEffect, useCallback, useRef } from "react";
 import { motion, AnimatePresence, useMotionValue, useTransform } from "framer-motion";
 
-const IMAGES = [
-  "/inv2.jpg",
-  "/inv3.jpg",
-  "/inv5.jpg",
-  "/inv6.jpg",
-  "/inv1.jpg",
-];
-
 const AUTO_SLIDE_INTERVAL = 5000;
 
 /* ──────────────────────────────────────────────────────────
@@ -165,7 +157,15 @@ function FloatingBlob({
 /* ──────────────────────────────────────────────────────────
    Main Carousel Component
 ────────────────────────────────────────────────────────── */
-export default function EdukaHomeJourney() {
+export default function EdukaHomeJourney({ data }: { data?: any }) {
+  const images = data?.images || [
+    "/inv2.jpg",
+    "/inv3.jpg",
+    "/inv5.jpg",
+    "/inv6.jpg",
+    "/inv1.jpg",
+  ];
+
   const [activeIdx, setActiveIdx] = useState(0);
   const [direction, setDirection] = useState<"next" | "prev">("next");
   const [isHovered, setIsHovered] = useState(false);
@@ -176,13 +176,13 @@ export default function EdukaHomeJourney() {
   /* Navigation */
   const goNext = useCallback(() => {
     setDirection("next");
-    setActiveIdx((p) => (p + 1) % IMAGES.length);
-  }, []);
+    setActiveIdx((p) => (p + 1) % images.length);
+  }, [images.length]);
 
   const goPrev = useCallback(() => {
     setDirection("prev");
-    setActiveIdx((p) => (p - 1 + IMAGES.length) % IMAGES.length);
-  }, []);
+    setActiveIdx((p) => (p - 1 + images.length) % images.length);
+  }, [images.length]);
 
   const goTo = useCallback(
     (idx: number) => {
@@ -313,7 +313,7 @@ export default function EdukaHomeJourney() {
                   }}
                 >
                   <img
-                    src={IMAGES[activeIdx]}
+                    src={images[activeIdx]}
                     alt={`Gallery image ${activeIdx + 1}`}
                     className="w-full h-full object-cover"
                     draggable={false}
@@ -350,7 +350,7 @@ export default function EdukaHomeJourney() {
 
         {/* ── Pagination Dots ── */}
         <div className="flex justify-center items-center gap-2.5 mt-8">
-          {IMAGES.map((_, idx) => (
+          {images.map((_: any, idx: number) => (
             <ProgressDot
               key={idx}
               isActive={idx === activeIdx}

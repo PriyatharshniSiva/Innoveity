@@ -10,8 +10,8 @@ const fadeUp = (delay = 0) => ({
   transition: { duration: 0.72, ease: [0.16, 1, 0.3, 1], delay },
 });
 
-export default function EdukaOverview() {
-  const chooseItems = [
+export default function EdukaOverview({ data }: { data?: any }) {
+  const chooseItems = data?.whyChooseItems?.map((i: any) => i.text) || [
     "85%+ placement improvement rate for engineering colleges",
     "2,000+ students trained annually with industry-relevant skills",
     "50+ Tamil Nadu colleges and universities as active partners",
@@ -24,7 +24,7 @@ export default function EdukaOverview() {
     "Comprehensive post-training support and assessment",
   ];
 
-  const divisionCards = [
+  const divisionCards = data?.divisionCards || [
     {
       badge: "Institutions",
       title: "Comprehensive Training Solutions for Engineering Colleges & Universities",
@@ -54,7 +54,7 @@ export default function EdukaOverview() {
     },
   ];
 
-  const coreDetails = [
+  const coreDetails = data?.coreDetails || [
     {
       title: "Our Service Coverage Across Tamil Nadu",
       text: "INNOVEITY maintains a strong presence across major Tamil Nadu cities including Chennai, Coimbatore, Madurai, Trichy, Salem, Tiruchirappalli, and surrounding regions. Our regional expertise combined with local market knowledge enables us to deliver culturally relevant, context-appropriate training solutions that resonate with Tamil Nadu's unique educational and corporate landscape. Whether you're an engineering college in Chennai seeking to improve placement statistics, a manufacturing company in Coimbatore requiring safety training, or a corporate entity in Madurai looking for leadership development programs, INNOVEITY has the expertise and infrastructure to support your growth.",
@@ -105,16 +105,16 @@ export default function EdukaOverview() {
             {...fadeUp(0.08)}
             className="text-4xl sm:text-5xl lg:text-[3.5rem] font-black text-[#185D46] tracking-tight leading-[1.1]"
           >
-            Leading Corporate Training &{" "}
-            <span className="text-[#F59E0B]">College Development</span>{" "}
-            Partner in Tamil Nadu
+            {data?.heroTitle1 || "Leading Corporate Training &"} {" "}
+            <span className="text-[#F59E0B]">{data?.heroHighlight || "College Development"}</span>{" "}
+            {data?.heroTitle2 || "Partner in Tamil Nadu"}
           </motion.h2>
 
           <motion.p
             {...fadeUp(0.16)}
             className="text-slate-600 text-lg sm:text-xl leading-relaxed font-medium max-w-4xl mx-auto"
           >
-            INNOVEITY is Tamil Nadu's premier corporate training and college development organization, dedicated to bridging the critical gap between academic education and industry requirements. With a proven track record of training over 2,000 students annually across 50+ institutions in Chennai, Coimbatore, Madurai, and throughout Tamil Nadu, we deliver measurable results that transform educational outcomes and corporate performance.
+            {data?.heroDescription || "INNOVEITY is Tamil Nadu's premier corporate training and college development organization, dedicated to bridging the critical gap between academic education and industry requirements. With a proven track record of training over 2,000 students annually across 50+ institutions in Chennai, Coimbatore, Madurai, and throughout Tamil Nadu, we deliver measurable results that transform educational outcomes and corporate performance."}
           </motion.p>
         </div>
       </section>
@@ -200,10 +200,10 @@ export default function EdukaOverview() {
             {/* Header */}
             <div className="space-y-2">
               <h3 className="text-3xl sm:text-4xl font-extrabold text-[#185D46] tracking-tight">
-                Why Leading Institutions Choose INNOVEITY
+                {data?.whyChooseTitle || "Why Leading Institutions Choose INNOVEITY"}
               </h3>
               <p className="text-slate-500 text-base font-semibold">
-                Delivering excellence through recognized certifications and optimized training strategies.
+                {data?.whyChooseSubtitle || "Delivering excellence through recognized certifications and optimized training strategies."}
               </p>
             </div>
 
@@ -320,7 +320,7 @@ export default function EdukaOverview() {
               transition={{ duration: 0.6 }}
               className="relative z-10 text-3xl sm:text-4xl font-extrabold text-white tracking-tight"
             >
-              Contact INNOVEITY Today
+              {data?.contactTitle || "Contact INNOVEITY Today"}
             </motion.h3>
 
             <motion.p
@@ -329,16 +329,10 @@ export default function EdukaOverview() {
               viewport={{ once: false }}
               transition={{ duration: 0.6, delay: 0.1 }}
               className="relative z-10 text-emerald-100 max-w-3xl mx-auto text-base sm:text-lg leading-relaxed font-medium"
-            >
-              Ready to transform your institution or organization? Contact INNOVEITY at{" "}
-              <span className="text-[#F59E0B] font-black">+91 880 770 8818</span> or email{" "}
-              <span className="text-[#F59E0B] font-black">admin@innoveity.com</span> for a free consultation.
-              Our team of experts will assess your specific needs and design a customized training solution
-              that delivers measurable results. Join 50+ leading Tamil Nadu institutions and 100+ corporate
-              clients who trust INNOVEITY for their training and development requirements. Visit our office
-              at No:11 Ritherdon Avenue, Ritherdon Road Vepery, Chennai 600007, or schedule a virtual
-              consultation to discuss how we can help you achieve your educational and business objectives.
-            </motion.p>
+              dangerouslySetInnerHTML={{
+                __html: data?.contactDescription || `Ready to transform your institution or organization? Contact INNOVEITY at <span class="text-[#F59E0B] font-black">+91 880 770 8818</span> or email <span class="text-[#F59E0B] font-black">admin@innoveity.com</span> for a free consultation. Our team of experts will assess your specific needs and design a customized training solution that delivers measurable results. Join 50+ leading Tamil Nadu institutions and 100+ corporate clients who trust INNOVEITY for their training and development requirements. Visit our office at No:11 Ritherdon Avenue, Ritherdon Road Vepery, Chennai 600007, or schedule a virtual consultation to discuss how we can help you achieve your educational and business objectives.`
+              }}
+            />
           </motion.div>
         </div>
       </section>

@@ -4,71 +4,85 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { useInView } from "react-intersection-observer";
 
-const services = [
-  {
-    category: "Change Management Classes",
-    title: "Change Management Classes",
-    desc: "Empowering organizations to navigate transformation effectively",
-    badge: "Leadership",
-    image: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=800&q=80",
-    gradient: "from-emerald-500/20 via-teal-400/10 to-green-600/20",
-    glowColor: "rgba(16, 185, 129, 0.18)",
-    icon: (
-      <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" strokeWidth="2.2" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
-      </svg>
-    ),
-  },
-  {
-    category: "Faculty Development",
-    title: "Faculty Development",
-    desc: "Enhancing teaching capabilities with modern methodologies and industry insights",
-    badge: "Education",
-    image: "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=800&q=80",
-    gradient: "from-green-500/20 via-emerald-400/10 to-teal-500/20",
-    glowColor: "rgba(24, 93, 70, 0.18)",
-    icon: (
-      <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" strokeWidth="2.2" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
-      </svg>
-    ),
-  },
-  {
-    category: "Corporate Training",
-    title: "Corporate Training",
-    desc: "Comprehensive skill development programs for industry professionals",
-    badge: "Enterprise",
-    image: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=800&q=80",
-    gradient: "from-teal-500/20 via-green-400/10 to-emerald-600/20",
-    glowColor: "rgba(20, 184, 166, 0.18)",
-    icon: (
-      <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" strokeWidth="2.2" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2-2v2m8 0V6a2 2 0 012 2v6M8 6V4a2 2 0 012-2h4a2 2 0 012 2v2m-8 0V6a2 2 0 00-2 2v6"></path>
-      </svg>
-    ),
-  },
-];
+export default function PremiumServices({ data }: { data?: any }) {
+  const services = data?.services || [
+    {
+      category: "Change Management Classes",
+      title: "Change Management Classes",
+      desc: "Empowering organizations to navigate transformation effectively",
+      badge: "Leadership",
+      image: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=800&q=80",
+      gradient: "from-emerald-500/20 via-teal-400/10 to-green-600/20",
+      glowColor: "rgba(16, 185, 129, 0.18)",
+      iconName: "ChartBar",
+    },
+    {
+      category: "Faculty Development",
+      title: "Faculty Development",
+      desc: "Enhancing teaching capabilities with modern methodologies and industry insights",
+      badge: "Education",
+      image: "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=800&q=80",
+      gradient: "from-green-500/20 via-emerald-400/10 to-teal-500/20",
+      glowColor: "rgba(24, 93, 70, 0.18)",
+      iconName: "AcademicCap",
+    },
+    {
+      category: "Corporate Training",
+      title: "Corporate Training",
+      desc: "Comprehensive skill development programs for industry professionals",
+      badge: "Enterprise",
+      image: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=800&q=80",
+      gradient: "from-teal-500/20 via-green-400/10 to-emerald-600/20",
+      glowColor: "rgba(20, 184, 166, 0.18)",
+      iconName: "Briefcase",
+    },
+  ];
 
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: { staggerChildren: 0.18, delayChildren: 0.15 },
-  },
-};
+  const getIcon = (name: string) => {
+    switch (name) {
+      case 'ChartBar': return (
+        <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" strokeWidth="2.2" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+        </svg>
+      );
+      case 'AcademicCap': return (
+        <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" strokeWidth="2.2" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+        </svg>
+      );
+      case 'Briefcase': return (
+        <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" strokeWidth="2.2" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2-2v2m8 0V6a2 2 0 012 2v6M8 6V4a2 2 0 012-2h4a2 2 0 012 2v2m-8 0V6a2 2 0 00-2 2v6"></path>
+        </svg>
+      );
+      default: return null;
+    }
+  };
 
-const cardVariants = {
-  hidden: { opacity: 0, y: 48, scale: 0.95 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    scale: 1,
-    transition: { duration: 0.72, ease: [0.16, 1, 0.3, 1] },
-  },
-};
-
-export default function PremiumServices() {
   const { ref, inView } = useInView({ triggerOnce: false, threshold: 0.08 });
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.15,
+      },
+    },
+  };
+
+  const cardVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        type: "spring",
+        stiffness: 260,
+        damping: 20,
+      },
+    },
+  };
 
   return (
     <section className="relative py-28 px-4 sm:px-6 lg:px-8 bg-white overflow-hidden border-t border-slate-100">
@@ -116,10 +130,10 @@ export default function PremiumServices() {
           className="text-center max-w-3xl mx-auto"
         >
           <h2 className="text-4xl sm:text-5xl font-extrabold text-[#185D46] tracking-tight">
-            Our Impact in Action
+            {data?.title || "Our Impact in Action"}
           </h2>
           <p className="text-gray-500 text-lg mt-4 font-medium">
-            Witness the transformation we bring to educational institutions and industries
+            {data?.subtitle || "Witness the transformation we bring to educational institutions and industries"}
           </p>
         </motion.div>
 
@@ -131,7 +145,7 @@ export default function PremiumServices() {
           animate={inView ? "visible" : "hidden"}
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
         >
-          {services.map((srv, idx) => (
+          {services.map((srv: any, idx: number) => (
             <motion.div
               key={idx}
               variants={cardVariants}
@@ -174,7 +188,7 @@ export default function PremiumServices() {
                     boxShadow: `0 8px 32px -4px ${srv.glowColor}, inset 0 1px 0 rgba(255,255,255,0.2)`,
                   }}
                 >
-                  {srv.icon}
+                  {getIcon(srv.iconName)}
                   {/* Inner glow ring on hover */}
                   <div className="absolute inset-0 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"
                     style={{ boxShadow: `0 0 24px 6px ${srv.glowColor}` }} />

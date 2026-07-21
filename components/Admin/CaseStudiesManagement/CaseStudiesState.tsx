@@ -54,6 +54,8 @@ interface CaseStudiesContextType {
   setIsDrawerOpen: React.Dispatch<React.SetStateAction<boolean>>;
   editingCaseStudyId: string | null;
   setEditingCaseStudyId: React.Dispatch<React.SetStateAction<string | null>>;
+  partnerQuotes: any[];
+  setPartnerQuotes: React.Dispatch<React.SetStateAction<any[]>>;
 }
 
 const initialCaseStudies: CaseStudy[] = [
@@ -161,13 +163,57 @@ const initialCaseStudies: CaseStudy[] = [
 const CaseStudiesContext = createContext<CaseStudiesContextType | undefined>(undefined);
 
 export function CaseStudiesProvider({ children }: { children: React.ReactNode }) {
-  const [caseStudies, setCaseStudies] = useState<CaseStudy[]>(initialCaseStudies);
+  const [caseStudies, setCaseStudies] = useState<CaseStudy[]>([]);
   const [viewMode, setViewMode] = useState<"Grid" | "Table">("Grid");
   const [searchQuery, setSearchQuery] = useState("");
   const [categoryFilter, setCategoryFilter] = useState("All");
   const [statusFilter, setStatusFilter] = useState("All");
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   const [editingCaseStudyId, setEditingCaseStudyId] = useState<string | null>(null);
+  const [partnerQuotes, setPartnerQuotes] = useState<any[]>([]);
+
+  React.useEffect(() => {
+    fetch('/api/case-studies')
+      .then(res => res.json())
+      .then(data => {
+        if (data && data.caseStudies) {
+          const mappedData: CaseStudy[] = data.caseStudies.map((cs: any) => ({
+            id: cs.id.toString(),
+            categoryBadge: cs.type ? cs.type.toUpperCase() : "CASE STUDY",
+            title: cs.title,
+            challenge: cs.challenge,
+            solution: cs.solution,
+            thumbnail: cs.videoId ? `https://img.youtube.com/vi/${cs.videoId}/maxresdefault.jpg` : "",
+            video: "",
+            youtubeUrl: cs.videoId ? `https://www.youtube.com/watch?v=${cs.videoId}` : "",
+            keyResults: cs.results || [],
+            statistics: [],
+            clientLogo: "",
+            gallery: [],
+            testimonial: {
+              quote: cs.quote || "",
+              author: cs.quoteAuthor || "",
+              role: ""
+            },
+            tags: [],
+            seoTitle: cs.title,
+            seoDescription: cs.challenge,
+            status: "Published",
+            featured: true,
+            institutionType: "Corporate",
+            year: cs.createdAt ? new Date(cs.createdAt).getFullYear().toString() : "2024",
+            publishedDate: cs.createdAt || new Date().toISOString(),
+            views: Math.floor(Math.random() * 5000) + 1000,
+            category: cs.type || "General"
+          }));
+          setCaseStudies(mappedData);
+        }
+        if (data && data.partnerQuotes) {
+          setPartnerQuotes(data.partnerQuotes);
+        }
+      })
+      .catch(err => console.error("Failed to load case studies", err));
+  }, []);
 
   return (
     <CaseStudiesContext.Provider value={{
@@ -177,7 +223,8 @@ export function CaseStudiesProvider({ children }: { children: React.ReactNode })
       categoryFilter, setCategoryFilter,
       statusFilter, setStatusFilter,
       isDrawerOpen, setIsDrawerOpen,
-      editingCaseStudyId, setEditingCaseStudyId
+      editingCaseStudyId, setEditingCaseStudyId,
+      partnerQuotes, setPartnerQuotes
     }}>
       {children}
     </CaseStudiesContext.Provider>

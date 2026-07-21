@@ -1,6 +1,7 @@
 "use client";
 
 import React, { createContext, useContext, useState } from "react";
+import { useToast } from "@/components/Admin/Toast";
 
 export interface OfficeItem {
   id: string;
@@ -53,6 +54,9 @@ interface ContactContextType {
   
   openDrawer: (type: "office" | "enquiry" | "settings", id?: string) => void;
   closeDrawer: () => void;
+  saveAllChanges: () => Promise<void>;
+  isSaving: boolean;
+  isLoading: boolean;
 }
 
 const ContactContext = createContext<ContactContextType | undefined>(undefined);
@@ -98,6 +102,50 @@ export function ContactProvider({ children }: { children: React.ReactNode }) {
     }, 300);
   };
 
+  const [isLoading, setIsLoading] = useState(true);
+  const [isSaving, setIsSaving] = useState(false);
+
+  React.useEffect(() => {
+    fetch('/api/contact')
+      .then(res => res.json())
+      .then(data => {
+        if (!data.error) {
+          if (data.offices) setOffices(data.offices);
+          // Enquiries are usually not updated in bulk settings API, but we'll include it
+          if (data.enquiries) setEnquiries(data.enquiries);
+          if (data.settings) setSettings(data.settings);
+        }
+      })
+      .catch(err => console.error("Failed to load contact content", err))
+      .finally(() => setIsLoading(false));
+  }, []);
+
+  const { success, error } = useToast();
+
+  const saveAllChanges = async () => {
+    setIsSaving(true);
+    try {
+      const payload = {
+        offices, enquiries, settings
+      };
+      const res = await fetch('/api/contact', {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      });
+      if (res.ok) {
+        success("Changes saved successfully!");
+      } else {
+        error("Failed to save changes.");
+      }
+    } catch (err) {
+      console.error(err);
+      error("An error occurred while saving.");
+    } finally {
+      setIsSaving(false);
+    }
+  };
+
   return (
     <ContactContext.Provider value={{
       isDrawerOpen, setIsDrawerOpen,
@@ -106,7 +154,8 @@ export function ContactProvider({ children }: { children: React.ReactNode }) {
       offices, setOffices,
       enquiries, setEnquiries,
       settings, setSettings,
-      openDrawer, closeDrawer
+      openDrawer, closeDrawer,
+      saveAllChanges, isSaving, isLoading
     }}>
       {children}
     </ContactContext.Provider>

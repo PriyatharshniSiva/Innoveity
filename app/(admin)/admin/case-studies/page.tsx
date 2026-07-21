@@ -9,6 +9,7 @@ import CaseStudiesGrid from "@/components/Admin/CaseStudiesManagement/CaseStudie
 import CaseStudiesTable from "@/components/Admin/CaseStudiesManagement/CaseStudiesTable";
 import CaseStudiesDrawer from "@/components/Admin/CaseStudiesManagement/CaseStudiesDrawer";
 import CaseStudiesActivity from "@/components/Admin/CaseStudiesManagement/CaseStudiesActivity";
+import CaseStudiesTestimonials from "@/components/Admin/CaseStudiesManagement/CaseStudiesTestimonials";
 import Link from "next/link";
 import { AnimatePresence } from "framer-motion";
 
@@ -67,6 +68,9 @@ function CaseStudiesContent() {
           {viewMode === "Grid" ? <CaseStudiesGrid key="grid" /> : <CaseStudiesTable key="table" />}
         </AnimatePresence>
         
+        {/* Testimonials */}
+        <CaseStudiesTestimonials />
+
         {/* Activity Timeline */}
         <CaseStudiesActivity />
         

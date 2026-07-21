@@ -63,6 +63,9 @@ interface ServicesContextType {
   setFaqs: React.Dispatch<React.SetStateAction<FaqItem[]>>;
   cta: ServicesCTA;
   setCta: React.Dispatch<React.SetStateAction<ServicesCTA>>;
+  isSaving: boolean;
+  isLoading: boolean;
+  saveAllChanges: () => Promise<void>;
 }
 
 const initialCategories: CategoryItem[] = [
@@ -131,6 +134,8 @@ const initialCta: ServicesCTA = {
 
 const ServicesContext = createContext<ServicesContextType | undefined>(undefined);
 
+import { useToast } from "@/components/Admin/Toast";
+
 export function ServicesProvider({ children }: { children: React.ReactNode }) {
   const [categories, setCategories] = useState<CategoryItem[]>(initialCategories);
   const [services, setServices] = useState<ServiceItem[]>(initialServices);
@@ -142,6 +147,51 @@ export function ServicesProvider({ children }: { children: React.ReactNode }) {
   const [faqs, setFaqs] = useState<FaqItem[]>(initialFaqs);
   const [cta, setCta] = useState<ServicesCTA>(initialCta);
 
+  const [isLoading, setIsLoading] = useState(true);
+  const [isSaving, setIsSaving] = useState(false);
+  
+  const { success, error } = useToast();
+
+  React.useEffect(() => {
+    fetch('/api/services')
+      .then(res => res.json())
+      .then(data => {
+        if (!data.error) {
+          if (data.categories) setCategories(data.categories);
+          if (data.services) setServices(data.services);
+          if (data.overview) setOverview(data.overview);
+          if (data.faqs) setFaqs(data.faqs);
+          if (data.cta) setCta(data.cta);
+        }
+      })
+      .catch(err => console.error("Failed to load services content", err))
+      .finally(() => setIsLoading(false));
+  }, []);
+
+  const saveAllChanges = async () => {
+    setIsSaving(true);
+    try {
+      const payload = {
+        categories, services, overview, faqs, cta
+      };
+      const res = await fetch('/api/services', {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      });
+      if (res.ok) {
+        success("Changes saved successfully!");
+      } else {
+        error("Failed to save changes.");
+      }
+    } catch (err) {
+      console.error(err);
+      error("An error occurred while saving.");
+    } finally {
+      setIsSaving(false);
+    }
+  };
+
   return (
     <ServicesContext.Provider value={{ 
       categories, setCategories, 
@@ -152,7 +202,8 @@ export function ServicesProvider({ children }: { children: React.ReactNode }) {
       categoryFilter, setCategoryFilter,
       overview, setOverview,
       faqs, setFaqs,
-      cta, setCta
+      cta, setCta,
+      isSaving, isLoading, saveAllChanges
     }}>
       {children}
     </ServicesContext.Provider>

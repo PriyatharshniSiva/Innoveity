@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useKnowledgeHub, KnowledgeArticle } from "./KnowledgeHubState";
 import { X, Save, Eye, LayoutTemplate, Settings, Image as ImageIcon, Plus, Trash2, Globe, Clock, Tag } from "lucide-react";
+import { useToast } from "@/components/Admin/Toast";
 
 export default function KnowledgeHubDrawer() {
   const { isDrawerOpen, setIsDrawerOpen, editingArticleId, articles, setArticles } = useKnowledgeHub();
@@ -32,6 +33,8 @@ export default function KnowledgeHubDrawer() {
     }
   }, [isDrawerOpen, editingArticleId, articles]);
 
+  const { success } = useToast();
+
   const handleSave = (publish: boolean = false) => {
     const finalData = { ...localData, status: publish ? "Published" : localData.status } as KnowledgeArticle;
     
@@ -41,8 +44,7 @@ export default function KnowledgeHubDrawer() {
       setArticles([finalData, ...articles]);
     }
     
-    // Simulate Toast (In a real app, use react-hot-toast or similar)
-    alert(`Article ${publish ? 'Published' : 'Saved'} Successfully!`);
+    success(`Article ${publish ? 'Published' : 'Saved'} Successfully!`);
     setIsDrawerOpen(false);
   };
 

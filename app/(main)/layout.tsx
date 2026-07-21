@@ -4,6 +4,10 @@ import "../globals.css";
 import Navbar from "@/components/Navbar";
 import SmoothScroll from "@/components/SmoothScroll";
 import FloatingContactWidget from "@/components/FloatingContactWidget";
+import { PrismaClient } from "@prisma/client";
+
+const prisma = new PrismaClient();
+
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
@@ -22,11 +26,21 @@ export const metadata: Metadata = {
     "corporate training Chennai, faculty development Tamil Nadu, placement training Coimbatore, L&D solutions, ESG consulting, college training partner, skill development",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  let themeData = null;
+  try {
+    const data = await prisma.themeSettings.findUnique({ where: { id: 1 } });
+    if (data) {
+      themeData = JSON.parse(data.contentJson);
+    }
+  } catch (error) {
+    console.error("Failed to load theme settings:", error);
+  }
+
   return (
     <html lang="en" className="scroll-smooth">
       <body
@@ -35,7 +49,7 @@ export default function RootLayout({
         <Navbar />
         <SmoothScroll />
         <main className="relative">{children}</main>
-        <FloatingContactWidget />
+        <FloatingContactWidget initialOptions={themeData?.floatingContactWidget} />
       </body>
     </html>
   );

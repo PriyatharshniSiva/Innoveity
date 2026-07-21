@@ -32,35 +32,11 @@ export default function AdminSidebar() {
         { name: "Knowledge Hub", href: "/admin/knowledge-hub", icon: BookOpen },
         { name: "Our Courses", href: "/admin/courses", icon: GraduationCap },
         { name: "CSR", href: "/admin/csr", icon: Heart },
-        { name: "Contact", href: "/admin/contact", icon: Mail },
-      ]
-    },
-    {
-      title: "Content Management",
-      items: [
-        { name: "Gallery", href: "/admin/gallery", icon: ImageIcon },
         { name: "Testimonials", href: "/admin/testimonials", icon: MessageSquare },
-        { name: "FAQs", href: "/admin/faqs", icon: HelpCircle },
-        { name: "Statistics", href: "/admin/statistics", icon: BarChart2 },
+        { name: "Contact", href: "/admin/contact", icon: Mail },
+        { name: "Theme Settings", href: "/admin/theme-settings", icon: Settings },
       ]
     },
-    {
-      title: "Communication",
-      items: [
-        { name: "Contact Messages", href: "/admin/messages", icon: Send },
-        { name: "Newsletter", href: "/admin/newsletter", icon: Mail },
-      ]
-    },
-    {
-      title: "Administration",
-      items: [
-        { name: "Users", href: "/admin/users", icon: Users },
-        { name: "Roles & Perms", href: "/admin/roles", icon: Shield },
-        { name: "Media Library", href: "/admin/media", icon: HardDrive },
-        { name: "Activity Logs", href: "/admin/activity", icon: Activity },
-        { name: "Settings", href: "/admin/settings", icon: Settings },
-      ]
-    }
   ];
 
   return (
@@ -86,7 +62,7 @@ export default function AdminSidebar() {
       </div>
 
       {/* Navigation */}
-      <div className="flex-1 overflow-y-auto overflow-x-hidden custom-scrollbar py-6 space-y-8">
+      <div className="flex-1 overflow-y-auto overflow-x-hidden py-6 space-y-8 hide-scrollbar">
         {menuGroups.map((group, i) => (
           <div key={i} className="px-4">
             {!isCollapsed && (
