@@ -17,12 +17,12 @@ export default function ServicesToolbar() {
           placeholder="Search services by name..." 
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
-          className="w-full pl-11 pr-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm font-medium focus:outline-none focus:ring-2 focus:ring-[#185D46]/20 focus:border-[#185D46] transition-all"
+          className="w-full pl-11 pr-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm font-medium focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-[#185D46] transition-all"
         />
       </div>
 
       <div className="flex items-center space-x-3">
-        <div className="flex items-center bg-slate-50 border border-slate-200 rounded-xl px-3 py-1.5 focus-within:ring-2 focus-within:ring-[#185D46]/20 focus-within:border-[#185D46] transition-all">
+        <div className="flex items-center bg-slate-50 border border-slate-200 rounded-xl px-3 py-1.5 focus-within:ring-2 focus-within:ring-primary/20 focus-within:border-[#185D46] transition-all">
           <Filter className="w-4 h-4 text-slate-400 mr-2" />
           <select 
             value={categoryFilter}
@@ -36,7 +36,7 @@ export default function ServicesToolbar() {
           </select>
         </div>
 
-        <div className="flex items-center bg-slate-50 border border-slate-200 rounded-xl px-3 py-1.5 focus-within:ring-2 focus-within:ring-[#185D46]/20 focus-within:border-[#185D46] transition-all">
+        <div className="flex items-center bg-slate-50 border border-slate-200 rounded-xl px-3 py-1.5 focus-within:ring-2 focus-within:ring-primary/20 focus-within:border-[#185D46] transition-all">
           <SortDesc className="w-4 h-4 text-slate-400 mr-2" />
           <select 
             className="bg-transparent text-sm font-semibold text-slate-700 focus:outline-none cursor-pointer"

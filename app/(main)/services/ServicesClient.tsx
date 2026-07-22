@@ -76,7 +76,7 @@ export default function ServicesClient({ data }: { data: any }) {
     <div className="min-h-screen bg-white text-[#0F172A] selection:bg-[#185D46] selection:text-white">
       
       {/* 1. Hero Section with Mesh Gradient */}
-      <section className="relative py-24 px-4 sm:px-6 lg:px-8 pt-32 overflow-hidden">
+      <section className="relative pt-12 pb-24 px-4 sm:px-6 lg:px-8 overflow-hidden">
         <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#185D4620] rounded-full blur-[120px] opacity-60 -z-10 translate-x-1/3 -translate-y-1/3 animate-pulse" style={{ animationDuration: '8s' }} />
         <div className="absolute top-[20%] left-[10%] w-[400px] h-[400px] bg-[#185D46] rounded-full blur-[150px] opacity-10 -z-10 animate-pulse" style={{ animationDuration: '10s' }} />
         
@@ -110,8 +110,21 @@ export default function ServicesClient({ data }: { data: any }) {
         >
           <section className="bg-gradient-to-br from-[#185D4610]/30 to-[#f0f9ff]/20 backdrop-blur-xl rounded-[24px] p-8 md:p-12 border border-[#185D4630] border-l-[6px] border-l-[#185D46] shadow-[0_20px_50px_rgba(12,74,65,0.05)] relative overflow-hidden group">
             
-            <h2 className="text-3xl md:text-4xl font-extrabold text-[#185D46] mb-6 tracking-tight leading-tight">
-              {data?.overview?.mainTitle || "Comprehensive Training Solutions for Tamil Nadu"}
+            <h2 className="text-3xl md:text-4xl font-extrabold text-[var(--color-brand-primary, #0F172A)] mb-6 tracking-tight leading-tight">
+              {(() => {
+                const text = data?.overview?.mainTitle || "Comprehensive Training Solutions for Tamil Nadu";
+                if (typeof text === 'string' && text.includes("Comprehensive Training ")) {
+                  const parts = text.split("Comprehensive Training ");
+                  return (
+                    <>
+                      {parts[0]}
+                      <span style={{ color: "var(--color-brand-accent, #F59E0B)" }}>Comprehensive Training </span>
+                      {parts.slice(1).join("Comprehensive Training ")}
+                    </>
+                  );
+                }
+                return text;
+              })()}
             </h2>
             
             <p className="text-lg text-slate-600 mb-10 leading-relaxed font-medium">
@@ -142,7 +155,7 @@ export default function ServicesClient({ data }: { data: any }) {
       </div>
 
       {/* ── Premium FAQ Accordion ── */}
-      <section className="relative py-20 px-4 sm:px-6 lg:px-8 bg-[#185D4610] overflow-hidden border-t border-[#185D46]/20">
+      <section className="relative py-20 px-4 sm:px-6 lg:px-8 bg-[#185D4610] overflow-hidden border-t border-primary/20">
         {/* Dot grid */}
         <div
           className="absolute inset-0 pointer-events-none z-0"
@@ -167,7 +180,7 @@ export default function ServicesClient({ data }: { data: any }) {
             transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
             className="text-center space-y-4"
           >
-            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#185D46]/5 border border-[#185D46]/20 text-[#185D46] text-xs font-extrabold tracking-widest uppercase shadow-sm">
+            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/5 border border-primary/20 text-[#185D46] text-xs font-extrabold tracking-widest uppercase shadow-sm">
               <span className="w-1.5 h-1.5 rounded-full bg-[#185D46] inline-block" />
               FAQ
             </span>
@@ -193,7 +206,7 @@ export default function ServicesClient({ data }: { data: any }) {
                   className="rounded-[20px] border overflow-hidden transition-all duration-300"
                   style={{
                     background: "white",
-                    borderColor: isOpen ? "#185D46" : "#e2e8f0",
+                    borderColor: isOpen ? "var(--color-primary)" : "#e2e8f0",
                     boxShadow: isOpen
                       ? "0 0 0 3px rgba(22,163,74,0.10), 0 16px 40px -8px rgba(12,74,65,0.13)"
                       : "0 2px 12px rgba(0,0,0,0.04)",
@@ -207,7 +220,7 @@ export default function ServicesClient({ data }: { data: any }) {
                   >
                     <span
                       className="text-base sm:text-lg font-bold leading-snug transition-colors duration-200"
-                      style={{ color: isOpen ? "#185D46" : "#1e293b" }}
+                      style={{ color: isOpen ? "var(--color-primary)" : "#1e293b" }}
                     >
                       {item.question}
                     </span>
@@ -216,9 +229,9 @@ export default function ServicesClient({ data }: { data: any }) {
                       transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
                       className="flex-shrink-0 w-9 h-9 rounded-full flex items-center justify-center border transition-colors duration-200"
                       style={{
-                        background: isOpen ? "#185D46" : "#185D4610",
-                        borderColor: isOpen ? "#185D46" : "#bbf7d0",
-                        color: isOpen ? "#fff" : "#185D46",
+                        background: isOpen ? "var(--color-primary)" : "var(--color-primary)10",
+                        borderColor: isOpen ? "var(--color-primary)" : "#bbf7d0",
+                        color: isOpen ? "#fff" : "var(--color-primary)",
                       }}
                     >
                       <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
@@ -238,7 +251,7 @@ export default function ServicesClient({ data }: { data: any }) {
                         transition={{ duration: 0.38, ease: [0.16, 1, 0.3, 1] }}
                         className="overflow-hidden"
                       >
-                        <div className="px-6 pb-7 border-t border-[#185D46]/20/80">
+                        <div className="px-6 pb-7 border-t border-primary/20/80">
                           <div className="mt-5 bg-[#185D4610] border-l-[4px] border-[#185D46] rounded-r-xl px-5 py-4">
                             <p className="text-slate-800 font-semibold leading-relaxed text-sm sm:text-base">
                               {item.answer}
@@ -262,7 +275,7 @@ export default function ServicesClient({ data }: { data: any }) {
         const bg = idx % 2 === 0 ? "bg-slate-50/50" : "bg-white";
 
         return (
-          <section key={category.id} className={`py-24 px-4 sm:px-6 lg:px-8 ${bg} relative overflow-hidden`}>
+          <section key={category.id} className={`pt-8 pb-24 px-4 sm:px-6 lg:px-8 ${bg} relative overflow-hidden`}>
             {idx === 1 && (
               <div className="absolute top-1/2 left-1/2 w-[800px] h-[800px] bg-[#185D4620] rounded-full blur-[150px] opacity-30 -z-10 -translate-x-1/2 -translate-y-1/2 pointer-events-none" />
             )}
@@ -272,9 +285,22 @@ export default function ServicesClient({ data }: { data: any }) {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: false, margin: "-50px" }}
-                className="text-4xl md:text-5xl font-extrabold text-center text-[#0F172A] mb-16 tracking-tight"
+                className="text-4xl md:text-5xl font-extrabold text-center text-[var(--color-brand-primary, #0F172A)] mb-16 tracking-tight"
               >
-                {category.name}
+                {(() => {
+                  const text = category.name;
+                  if (typeof text === 'string' && text.includes("Educational ")) {
+                    const parts = text.split("Educational ");
+                    return (
+                      <>
+                        {parts[0]}
+                        <span style={{ color: "var(--color-brand-accent, #F59E0B)" }}>Educational </span>
+                        {parts.slice(1).join("Educational ")}
+                      </>
+                    );
+                  }
+                  return text;
+                })()}
               </motion.h2>
               
               <motion.div 
@@ -313,7 +339,7 @@ export default function ServicesClient({ data }: { data: any }) {
       })}
 
       {/* 7. CTA Section */}
-      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-white relative overflow-hidden">
+      <section className="pt-8 pb-24 px-4 sm:px-6 lg:px-8 bg-white relative overflow-hidden">
         <div className="absolute top-0 left-0 w-full h-[300px] bg-gradient-to-b from-slate-50 to-transparent pointer-events-none" />
         
         <div className="max-w-5xl mx-auto relative z-10">
@@ -334,7 +360,7 @@ export default function ServicesClient({ data }: { data: any }) {
               {data?.cta?.description || "Whether you're an academic institution looking to upgrade your relevance or a corporate entity seeking elite talent, the bridge starts here."}
             </p>
             <Link href={data?.cta?.buttonLink || "/contact"}>
-              <button className="relative z-10 group px-10 py-5 bg-[#F59E0B] text-[#0F172A] font-black text-lg rounded-xl shadow-lg shadow-[#F59E0B]/20 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-[#F59E0B]/40 overflow-hidden flex items-center justify-center mx-auto">
+              <button className="relative z-10 group px-10 py-5 bg-[#F59E0B] text-[#0F172A] font-black text-lg rounded-xl shadow-lg shadow-accent/20 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-accent/40 overflow-hidden flex items-center justify-center mx-auto">
                 <span className="relative z-20">{data?.cta?.buttonText || "Get Started Today"}</span>
                 <div className="absolute inset-0 bg-white/30 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out z-10" />
               </button>

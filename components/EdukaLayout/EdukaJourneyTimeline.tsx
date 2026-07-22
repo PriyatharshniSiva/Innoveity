@@ -76,8 +76,8 @@ export default function EdukaJourneyTimeline() {
     <section className="py-24 bg-white relative overflow-hidden" ref={containerRef}>
       
       {/* Soft Background Accents */}
-      <div className="absolute top-1/4 -right-64 w-[500px] h-[500px] bg-[#185D46]/5 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-1/4 -left-64 w-[500px] h-[500px] bg-[#F59E0B]/5 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-1/4 -right-64 w-[500px] h-[500px] bg-primary/5 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-1/4 -left-64 w-[500px] h-[500px] bg-accent/5 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         

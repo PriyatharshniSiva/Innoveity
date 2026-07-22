@@ -7,9 +7,9 @@ import { Edit3, ImagePlus, Trophy, Users, FileText, MonitorPlay } from "lucide-r
 import { useAboutManagement } from "./AboutManagementState";
 
 const actions = [
-  { id: 1, title: "Edit Company Story", icon: Edit3, color: "#185D46", action: "overview" },
+  { id: 1, title: "Edit Company Story", icon: Edit3, color: "var(--color-primary)", action: "overview" },
   { id: 2, title: "Upload Images", icon: ImagePlus, color: "#0ea5e9", action: "gallery" },
-  { id: 3, title: "Add Achievement", icon: Trophy, color: "#F59E0B", action: "journey" },
+  { id: 3, title: "Add Achievement", icon: Trophy, color: "var(--color-accent)", action: "journey" },
   { id: 4, title: "Manage Team", icon: Users, color: "#8b5cf6", action: "team" },
   { id: 5, title: "Our Foundation", icon: FileText, color: "#f43f5e", action: "mission" },
   { id: 6, title: "Preview About", icon: MonitorPlay, color: "#eab308", action: "preview" }

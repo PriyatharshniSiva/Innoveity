@@ -115,7 +115,7 @@ export default function LivePreview() {
                   ))}
                 </ul>
               </div>
-              <div className="inline-block cursor-pointer px-8 py-4 bg-[#185D46] hover:bg-[#185D46]/90 text-white font-bold text-lg rounded-xl shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-xl flex items-center justify-center">
+              <div className="inline-block cursor-pointer px-8 py-4 bg-[#185D46] hover:bg-primary/90 text-white font-bold text-lg rounded-xl shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-xl flex items-center justify-center">
                 Schedule Free Consultation
               </div>
             </section>
@@ -123,9 +123,9 @@ export default function LivePreview() {
 
           {/* FAQ Section */}
           <div 
-            className="w-full bg-[#f4faf6] border-y border-[#185D46]/20/50 relative py-12"
+            className="w-full bg-[#f4faf6] border-y border-primary/20/50 relative py-12"
             style={{
-              backgroundImage: 'radial-gradient(#185D4630 1.5px, transparent 1.5px)',
+              backgroundImage: 'radial-gradient(var(--color-primary)30 1.5px, transparent 1.5px)',
               backgroundSize: '32px 32px'
             }}
           >

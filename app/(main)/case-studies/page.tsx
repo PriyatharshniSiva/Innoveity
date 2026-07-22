@@ -9,10 +9,6 @@ export default async function CaseStudies() {
   const caseStudiesData = await prisma.caseStudy.findMany({
     orderBy: { id: "asc" }
   });
-  
-  const testimonialsData = await prisma.testimonial.findMany({
-    orderBy: { id: "asc" }
-  });
 
   const parsedCaseStudies = caseStudiesData.map(cs => {
     let results = [];
@@ -27,5 +23,9 @@ export default async function CaseStudies() {
     };
   });
 
-  return <CaseStudiesClient caseStudies={parsedCaseStudies} partnerQuotes={testimonialsData} />;
+  const testimonials = await prisma.testimonial.findMany({
+    orderBy: { id: "asc" }
+  });
+
+  return <CaseStudiesClient caseStudies={parsedCaseStudies} testimonials={testimonials} />;
 }

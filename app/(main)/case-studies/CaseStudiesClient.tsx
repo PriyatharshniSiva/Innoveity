@@ -2,6 +2,7 @@
 
 import React, { useState, useRef, useCallback, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import EdukaTestimonials from "@/components/EdukaLayout/EdukaTestimonials";
 
 const fadeUp = (delay = 0) => ({
   initial: { opacity: 0, y: 24 },
@@ -73,7 +74,7 @@ function VideoPlayer({ videoId, isPlaying, onPlay }: { videoId: string; isPlayin
     <div
       className="relative w-full aspect-video rounded-[24px] overflow-hidden shadow-[0_24px_60px_rgba(0,0,0,0.18)] cursor-pointer group border border-white/10"
       onClick={onPlay}
-      style={{ background: "linear-gradient(135deg, #185D46 0%, #0f2d28 100%)" }}
+      style={{ background: "linear-gradient(135deg, var(--color-primary) 0%, #0f2d28 100%)" }}
     >
       {isPlaying ? (
         <iframe
@@ -92,7 +93,7 @@ function VideoPlayer({ videoId, isPlaying, onPlay }: { videoId: string; isPlayin
             className="absolute inset-0 w-full h-full object-cover opacity-55 group-hover:opacity-70 transition-opacity duration-500"
           />
           {/* Overlay gradient */}
-          <div className="absolute inset-0 bg-gradient-to-t from-[#185D46]/70 via-transparent to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-primary/70 via-transparent to-transparent" />
 
           {/* Play button */}
           <div className="absolute inset-0 flex items-center justify-center z-10">
@@ -125,9 +126,9 @@ function VideoPlayer({ videoId, isPlaying, onPlay }: { videoId: string; isPlayin
 }
 
 /* ─────────────────────────────────────────────
-   Main Page
+   CaseStudiesClient component
 ───────────────────────────────────────────── */
-export default function CaseStudiesClient({ caseStudies, partnerQuotes }: { caseStudies: any[], partnerQuotes: any[] }) {
+export default function CaseStudiesClient({ caseStudies, testimonials }: { caseStudies: any[], testimonials: any[] }) {
   const [activeIdx, setActiveIdx] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
   const [direction, setDirection] = useState<"next" | "prev">("next");
@@ -169,7 +170,7 @@ export default function CaseStudiesClient({ caseStudies, partnerQuotes }: { case
     <div className="min-h-screen bg-white text-[#0F172A] selection:bg-[#185D46] selection:text-white">
 
       {/* ── 1. Hero ── */}
-      <section className="relative py-24 px-4 sm:px-6 lg:px-8 pt-32 overflow-hidden">
+      <section className="relative pt-12 pb-8 px-4 sm:px-6 lg:px-8 overflow-hidden">
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#185D4620] rounded-full blur-[120px] opacity-70 -z-10 translate-x-1/3 -translate-y-1/3 animate-pulse" style={{ animationDuration: "8s" }} />
         <div className="absolute top-[20%] left-[10%] w-[400px] h-[400px] bg-[#185D46] rounded-full blur-[150px] opacity-10 -z-10 animate-pulse" style={{ animationDuration: "10s" }} />
 
@@ -226,7 +227,7 @@ export default function CaseStudiesClient({ caseStudies, partnerQuotes }: { case
                   <div className="space-y-4">
                     <motion.span
                       {...fadeUp(0)}
-                      className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-extrabold tracking-widest uppercase bg-[#185D46]/5 text-[#185D46] border border-[#185D46]/20"
+                      className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-extrabold tracking-widest uppercase bg-primary/5 text-[#185D46] border border-primary/20"
                     >
                       <span className="w-1.5 h-1.5 rounded-full bg-[#185D46] inline-block" />
                       {cs.type}
@@ -263,7 +264,7 @@ export default function CaseStudiesClient({ caseStudies, partnerQuotes }: { case
                 </div>
 
                 {/* ── RIGHT: Results + video ── */}
-                <div className="lg:w-[48%] flex flex-col relative" style={{ background: "#185D46", minHeight: "420px" }}>
+                <div className="lg:w-[48%] flex flex-col relative" style={{ background: "var(--color-primary)", minHeight: "420px" }}>
                   {/* Glow blobs */}
                   <div className="absolute top-0 right-0 w-64 h-64 rounded-full pointer-events-none" style={{ background: "rgba(22,163,74,0.18)", filter: "blur(80px)" }} />
                   <div className="absolute bottom-0 left-0 w-48 h-48 rounded-full pointer-events-none" style={{ background: "rgba(245,158,11,0.12)", filter: "blur(60px)" }} />
@@ -282,7 +283,7 @@ export default function CaseStudiesClient({ caseStudies, partnerQuotes }: { case
                         >
                           <div
                             className="flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center"
-                            style={{ background: "#185D46", boxShadow: "0 0 16px rgba(22,163,74,0.5)" }}
+                            style={{ background: "var(--color-primary)", boxShadow: "0 0 16px rgba(22,163,74,0.5)" }}
                           >
                             <svg className="w-5 h-5" fill="none" stroke="white" strokeWidth="2.5" viewBox="0 0 24 24">
                               <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
@@ -321,7 +322,7 @@ export default function CaseStudiesClient({ caseStudies, partnerQuotes }: { case
                 style={{
                   width: i === activeIdx ? "32px" : "10px",
                   height: "10px",
-                  background: i === activeIdx ? "#185D46" : "#CBD5E1",
+                  background: i === activeIdx ? "var(--color-primary)" : "#CBD5E1",
                   opacity: i === activeIdx ? 1 : 0.6,
                 }}
               />
@@ -331,48 +332,34 @@ export default function CaseStudiesClient({ caseStudies, partnerQuotes }: { case
       </section>
 
       {/* ── 3. Testimonials ── */}
-      <section className="py-24 bg-slate-50/50 border-t border-slate-100">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center space-y-4 mb-16 max-w-2xl mx-auto">
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: false }}
-              className="text-4xl md:text-5xl font-extrabold text-[#0F172A] tracking-tight"
-            >
-              What Our Partners Say
-            </motion.h2>
-            <motion.p
-              initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: false }}
-              transition={{ delay: 0.1 }}
-              className="text-gray-500 text-lg font-medium"
-            >
-              Hear from the leaders and innovators we've had the privilege to work with
-            </motion.p>
+      <section className="pt-8 pb-20 px-4 sm:px-6 lg:px-8 bg-slate-50/30">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-[var(--color-brand-primary, #0F172A)] mb-6">
+              <span style={{ color: "var(--color-brand-accent, #F59E0B)" }}>What Our </span>Partners Say
+            </h2>
+            <p className="text-xl text-primary/80 max-w-3xl mx-auto">Hear from the leaders and innovators we've had the privilege to work with</p>
           </div>
-
-          <motion.div
-            variants={staggerContainer} initial="hidden" whileInView="show" viewport={{ once: false, margin: "-50px" }}
-            className="grid grid-cols-1 md:grid-cols-3 gap-8"
-          >
-            {partnerQuotes.map((q, idx) => (
-              <motion.div
-                key={idx}
-                variants={fadeUpChild}
-                className="bg-white rounded-[24px] p-8 md:p-10 shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-slate-100 flex flex-col justify-between hover:shadow-[0_20px_50px_rgb(22,163,74,0.1)] hover:-translate-y-2 transition-all duration-300 group relative overflow-hidden"
-              >
-                <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-[#185D46] to-[#185D4620] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                <div className="mb-6 opacity-20 text-[#185D46] group-hover:opacity-40 transition-opacity">
-                  <svg width="40" height="40" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M14.017 18L14.017 10.609C14.017 4.905 17.748 1.039 23 0L23.995 2.151C21.563 3.068 20 5.789 20 8H24V18H14.017ZM0 18V10.609C0 4.905 3.748 1.038 9 0L9.996 2.151C7.563 3.068 6 5.789 6 8H9.983L9.983 18L0 18Z" />
-                  </svg>
-                </div>
-                <blockquote className="text-[#0F172A] text-lg mb-8 leading-relaxed font-semibold relative z-10">
-                  &ldquo;{q.quote}&rdquo;
-                </blockquote>
-                </motion.div>
-            ))}
-          </motion.div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="bg-white rounded-xl shadow-lg border border-slate-100 p-8">
+              <p className="text-primary/90 italic text-lg leading-relaxed">
+                "INNOVEITY's comprehensive faculty development program revolutionized our teaching methodologies. Our students are now industry-ready from day one."
+              </p>
+            </div>
+            <div className="bg-white rounded-xl shadow-lg border border-slate-100 p-8">
+              <p className="text-primary/90 italic text-lg leading-relaxed">
+                "The ESG consulting provided by INNOVEITY helped us achieve carbon neutrality ahead of schedule while improving employee satisfaction scores."
+              </p>
+            </div>
+            <div className="bg-white rounded-xl shadow-lg border border-slate-100 p-8">
+              <p className="text-primary/90 italic text-lg leading-relaxed">
+                "This program transformed our team's capabilities and significantly improved our productivity and innovation metrics."
+              </p>
+            </div>
+          </div>
         </div>
       </section>
+
     </div>
   );
 }

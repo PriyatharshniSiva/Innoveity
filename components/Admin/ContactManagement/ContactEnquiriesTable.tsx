@@ -17,7 +17,7 @@ export default function ContactEnquiriesTable() {
           </button>
           <div className="relative">
             <Search className="w-4 h-4 absolute left-3 top-2.5 text-slate-400" />
-            <input type="text" placeholder="Search..." className="pl-9 pr-4 py-2 border border-slate-200 rounded-lg text-sm w-48 focus:outline-none focus:ring-2 focus:ring-[#185D46]/20 focus:border-[#185D46]" />
+            <input type="text" placeholder="Search..." className="pl-9 pr-4 py-2 border border-slate-200 rounded-lg text-sm w-48 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-[#185D46]" />
           </div>
         </div>
       </div>
@@ -56,7 +56,7 @@ export default function ContactEnquiriesTable() {
                   </span>
                 </td>
                 <td className="py-3 px-4 text-right">
-                  <button onClick={() => openDrawer("enquiry", enq.id)} className="p-1.5 text-slate-400 hover:text-[#185D46] hover:bg-[#185D46]/10 rounded-lg transition-colors inline-flex">
+                  <button onClick={() => openDrawer("enquiry", enq.id)} className="p-1.5 text-slate-400 hover:text-[#185D46] hover:bg-primary/10 rounded-lg transition-colors inline-flex">
                     <Eye className="w-4 h-4" />
                   </button>
                 </td>

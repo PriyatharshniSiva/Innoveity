@@ -7,8 +7,8 @@ import { Mail, PhoneCall, Send, MapPin, Zap, CheckCircle2 } from "lucide-react";
 
 export default function ContactQuickStats() {
   const stats = [
-    { title: "Total Enquiries", value: 0, icon: Send, color: "text-[#185D46]", bg: "bg-[#185D46]/10", border: "border-[#185D46]/20" },
-    { title: "Phone Calls", value: 0, icon: PhoneCall, color: "text-[#F59E0B]", bg: "bg-[#F59E0B]/10", border: "border-[#F59E0B]/20" },
+    { title: "Total Enquiries", value: 0, icon: Send, color: "text-[#185D46]", bg: "bg-primary/10", border: "border-primary/20" },
+    { title: "Phone Calls", value: 0, icon: PhoneCall, color: "text-[#F59E0B]", bg: "bg-accent/10", border: "border-accent/20" },
     { title: "Emails Received", value: 0, icon: Mail, color: "text-blue-600", bg: "bg-blue-50", border: "border-blue-100" },
     { title: "Office Locations", value: 0, icon: MapPin, color: "text-purple-600", bg: "bg-purple-50", border: "border-purple-100" },
     { title: "Response Rate", value: 0, suffix: "%", icon: Zap, color: "text-emerald-600", bg: "bg-emerald-50", border: "border-emerald-100" },

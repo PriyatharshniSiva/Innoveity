@@ -98,7 +98,7 @@ export default function AdminCourses() {
         </div>
         <button 
           onClick={openNewCourseModal}
-          className="flex items-center gap-2 bg-[#185D46] hover:bg-[#124634] text-white px-6 py-3 rounded-xl font-medium transition-colors shadow-lg shadow-[#185D46]/20"
+          className="flex items-center gap-2 bg-[#185D46] hover:bg-[#124634] text-white px-6 py-3 rounded-xl font-medium transition-colors shadow-lg shadow-primary/20"
         >
           <Plus className="w-5 h-5" />
           Add New Course
@@ -112,7 +112,7 @@ export default function AdminCourses() {
             <input 
               type="text" 
               placeholder="Search courses..." 
-              className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-[#185D46]/20 focus:border-[#185D46] transition-all"
+              className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-[#185D46] transition-all"
             />
           </div>
         </div>
@@ -158,7 +158,7 @@ export default function AdminCourses() {
                     <td className="px-6 py-4 text-sm text-slate-600">{course.instructor}</td>
                     <td className="px-6 py-4 text-right">
                       <div className="flex items-center justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
-                        <button onClick={() => handleEdit(course)} className="p-2 rounded-lg text-slate-400 hover:text-[#185D46] hover:bg-[#185D46]/10 transition-colors">
+                        <button onClick={() => handleEdit(course)} className="p-2 rounded-lg text-slate-400 hover:text-[#185D46] hover:bg-primary/10 transition-colors">
                           <Edit2 className="w-4 h-4" />
                         </button>
                         <button onClick={() => handleDelete(course.id)} className="p-2 rounded-lg text-slate-400 hover:text-rose-600 hover:bg-rose-50 transition-colors">
@@ -197,16 +197,16 @@ export default function AdminCourses() {
             <form onSubmit={handleAddSubmit} className="p-6 space-y-4">
               <div>
                 <label className="block text-sm font-semibold text-slate-700 mb-1">Title</label>
-                <input required value={formData.title} onChange={e => setFormData({...formData, title: e.target.value})} type="text" className="w-full border border-slate-200 rounded-xl px-4 py-2.5 outline-none focus:ring-2 focus:ring-[#185D46]/20 focus:border-[#185D46]" placeholder="Course Title" />
+                <input required value={formData.title} onChange={e => setFormData({...formData, title: e.target.value})} type="text" className="w-full border border-slate-200 rounded-xl px-4 py-2.5 outline-none focus:ring-2 focus:ring-primary/20 focus:border-[#185D46]" placeholder="Course Title" />
               </div>
               <div>
                 <label className="block text-sm font-semibold text-slate-700 mb-1">Description</label>
-                <textarea required value={formData.desc} onChange={e => setFormData({...formData, desc: e.target.value})} className="w-full border border-slate-200 rounded-xl px-4 py-2.5 outline-none focus:ring-2 focus:ring-[#185D46]/20 focus:border-[#185D46]" rows={3} placeholder="Course description" />
+                <textarea required value={formData.desc} onChange={e => setFormData({...formData, desc: e.target.value})} className="w-full border border-slate-200 rounded-xl px-4 py-2.5 outline-none focus:ring-2 focus:ring-primary/20 focus:border-[#185D46]" rows={3} placeholder="Course description" />
               </div>
               <div className="grid grid-cols-2 gap-4">
                 <div>
                   <label className="block text-sm font-semibold text-slate-700 mb-1">Level</label>
-                  <select required value={formData.level} onChange={e => setFormData({...formData, level: e.target.value})} className="w-full border border-slate-200 rounded-xl px-4 py-2.5 outline-none focus:ring-2 focus:ring-[#185D46]/20 focus:border-[#185D46] bg-white">
+                  <select required value={formData.level} onChange={e => setFormData({...formData, level: e.target.value})} className="w-full border border-slate-200 rounded-xl px-4 py-2.5 outline-none focus:ring-2 focus:ring-primary/20 focus:border-[#185D46] bg-white">
                     <option value="Beginner">Beginner</option>
                     <option value="Intermediate">Intermediate</option>
                     <option value="Advanced">Advanced</option>
@@ -214,17 +214,17 @@ export default function AdminCourses() {
                 </div>
                 <div>
                   <label className="block text-sm font-semibold text-slate-700 mb-1">Duration</label>
-                  <input required value={formData.duration} onChange={e => setFormData({...formData, duration: e.target.value})} type="text" className="w-full border border-slate-200 rounded-xl px-4 py-2.5 outline-none focus:ring-2 focus:ring-[#185D46]/20 focus:border-[#185D46]" placeholder="e.g. 4 Weeks" />
+                  <input required value={formData.duration} onChange={e => setFormData({...formData, duration: e.target.value})} type="text" className="w-full border border-slate-200 rounded-xl px-4 py-2.5 outline-none focus:ring-2 focus:ring-primary/20 focus:border-[#185D46]" placeholder="e.g. 4 Weeks" />
                 </div>
               </div>
               <div className="grid grid-cols-2 gap-4">
                 <div>
                   <label className="block text-sm font-semibold text-slate-700 mb-1">Mode</label>
-                  <input required value={formData.mode} onChange={e => setFormData({...formData, mode: e.target.value})} type="text" className="w-full border border-slate-200 rounded-xl px-4 py-2.5 outline-none focus:ring-2 focus:ring-[#185D46]/20 focus:border-[#185D46]" placeholder="e.g. Online" />
+                  <input required value={formData.mode} onChange={e => setFormData({...formData, mode: e.target.value})} type="text" className="w-full border border-slate-200 rounded-xl px-4 py-2.5 outline-none focus:ring-2 focus:ring-primary/20 focus:border-[#185D46]" placeholder="e.g. Online" />
                 </div>
                 <div>
                   <label className="block text-sm font-semibold text-slate-700 mb-1">Instructor</label>
-                  <input required value={formData.instructor} onChange={e => setFormData({...formData, instructor: e.target.value})} type="text" className="w-full border border-slate-200 rounded-xl px-4 py-2.5 outline-none focus:ring-2 focus:ring-[#185D46]/20 focus:border-[#185D46]" placeholder="Instructor Name" />
+                  <input required value={formData.instructor} onChange={e => setFormData({...formData, instructor: e.target.value})} type="text" className="w-full border border-slate-200 rounded-xl px-4 py-2.5 outline-none focus:ring-2 focus:ring-primary/20 focus:border-[#185D46]" placeholder="Instructor Name" />
                 </div>
               </div>
               <div className="pt-4 flex justify-end gap-3">

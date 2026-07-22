@@ -30,7 +30,7 @@ export default function CsrSdgGrid() {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.3, delay: idx * 0.05 }}
-            className="bg-white rounded-xl p-3 border border-slate-100 hover:border-[#185D46]/30 hover:shadow-md transition-all flex items-center group"
+            className="bg-white rounded-xl p-3 border border-slate-100 hover:border-primary/30 hover:shadow-md transition-all flex items-center group"
           >
             <div className="px-1 cursor-grab text-slate-300 hover:text-slate-500">
               <GripVertical className="w-5 h-5" />
@@ -49,7 +49,7 @@ export default function CsrSdgGrid() {
             </div>
 
             <div className="flex items-center space-x-1 ml-4">
-              <button onClick={() => openDrawer("sdg", sdg.id)} className="p-2 text-slate-400 hover:text-[#185D46] hover:bg-[#185D46]/10 rounded-lg transition-colors">
+              <button onClick={() => openDrawer("sdg", sdg.id)} className="p-2 text-slate-400 hover:text-[#185D46] hover:bg-primary/10 rounded-lg transition-colors">
                 <Edit2 className="w-4 h-4" />
               </button>
               <button onClick={() => handleDelete(sdg.id)} className="p-2 text-slate-400 hover:text-red-600 hover:bg-red-50 rounded-lg transition-colors">

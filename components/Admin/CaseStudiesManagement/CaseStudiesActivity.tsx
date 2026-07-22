@@ -12,7 +12,7 @@ export default function CaseStudiesActivity() {
       time: "2 hours ago",
       icon: CheckCircle2,
       color: "text-[#185D46]",
-      bg: "bg-[#185D46]/10"
+      bg: "bg-primary/10"
     },
     {
       id: 2,

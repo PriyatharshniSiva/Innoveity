@@ -36,7 +36,7 @@ export default function ManagementForms() {
           className="w-full flex items-center justify-between p-6 bg-white hover:bg-slate-50 transition-colors"
         >
           <div className="flex items-center space-x-3">
-            <div className="w-10 h-10 rounded-xl bg-[#185D46]/10 flex items-center justify-center text-[#185D46]">
+            <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center text-[#185D46]">
               <Type className="w-5 h-5" />
             </div>
             <h3 className="text-lg font-bold text-slate-800 font-sans">Hero Section</h3>
@@ -58,21 +58,21 @@ export default function ManagementForms() {
                     <label className="block text-sm font-semibold text-slate-700 mb-2">Hero Title (Line 1)</label>
                     <input 
                       type="text" name="titleLine1" value={hero.titleLine1} onChange={handleHeroChange}
-                      className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#185D46]/20 focus:border-[#185D46] transition-all bg-slate-50 focus:bg-white"
+                      className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-[#185D46] transition-all bg-slate-50 focus:bg-white"
                     />
                   </div>
                   <div>
                     <label className="block text-sm font-semibold text-slate-700 mb-2">Hero Title (Highlight)</label>
                     <input 
                       type="text" name="titleHighlight" value={hero.titleHighlight} onChange={handleHeroChange}
-                      className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#F59E0B]/20 focus:border-[#F59E0B] transition-all bg-slate-50 focus:bg-white"
+                      className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-accent/20 focus:border-[#F59E0B] transition-all bg-slate-50 focus:bg-white"
                     />
                   </div>
                   <div>
                     <label className="block text-sm font-semibold text-slate-700 mb-2">Description</label>
                     <textarea 
                       name="description" value={hero.description} onChange={handleHeroChange} rows={3}
-                      className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#185D46]/20 focus:border-[#185D46] transition-all bg-slate-50 focus:bg-white resize-none"
+                      className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-[#185D46] transition-all bg-slate-50 focus:bg-white resize-none"
                     />
                   </div>
                   
@@ -81,14 +81,14 @@ export default function ManagementForms() {
                       <label className="block text-sm font-semibold text-slate-700 mb-2">Primary Button</label>
                       <input 
                         type="text" name="primaryButtonText" value={hero.primaryButtonText} onChange={handleHeroChange}
-                        className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#185D46]/20 focus:border-[#185D46] transition-all bg-slate-50 focus:bg-white"
+                        className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-[#185D46] transition-all bg-slate-50 focus:bg-white"
                       />
                     </div>
                     <div>
                       <label className="block text-sm font-semibold text-slate-700 mb-2">Secondary Button</label>
                       <input 
                         type="text" name="secondaryButtonText" value={hero.secondaryButtonText} onChange={handleHeroChange}
-                        className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#185D46]/20 focus:border-[#185D46] transition-all bg-slate-50 focus:bg-white"
+                        className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-[#185D46] transition-all bg-slate-50 focus:bg-white"
                       />
                     </div>
                   </div>
@@ -124,7 +124,7 @@ export default function ManagementForms() {
           className="w-full flex items-center justify-between p-6 bg-white hover:bg-slate-50 transition-colors"
         >
           <div className="flex items-center space-x-3">
-            <div className="w-10 h-10 rounded-xl bg-[#F59E0B]/10 flex items-center justify-center text-[#F59E0B]">
+            <div className="w-10 h-10 rounded-xl bg-accent/10 flex items-center justify-center text-[#F59E0B]">
               <Type className="w-5 h-5" />
             </div>
             <h3 className="text-lg font-bold text-slate-800 font-sans">Our Impact in Action</h3>
@@ -149,12 +149,12 @@ export default function ManagementForms() {
                       <input 
                         type="text" value={stat.value} onChange={(e) => handleStatChange(stat.id, "value", e.target.value)}
                         placeholder="Value (e.g. 50,000+)"
-                        className="w-full px-3 py-2 rounded-lg border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#185D46]/20 focus:border-[#185D46] transition-all bg-white"
+                        className="w-full px-3 py-2 rounded-lg border border-slate-200 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-[#185D46] transition-all bg-white"
                       />
                       <input 
                         type="text" value={stat.label} onChange={(e) => handleStatChange(stat.id, "label", e.target.value)}
                         placeholder="Label (e.g. Minds Stimulated)"
-                        className="w-full px-3 py-2 rounded-lg border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#185D46]/20 focus:border-[#185D46] transition-all bg-white"
+                        className="w-full px-3 py-2 rounded-lg border border-slate-200 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-[#185D46] transition-all bg-white"
                       />
                     </div>
                     
@@ -163,7 +163,7 @@ export default function ManagementForms() {
                     </button>
                   </div>
                 ))}
-                <button className="w-full py-3 border-2 border-dashed border-slate-200 rounded-xl text-slate-500 font-semibold flex items-center justify-center hover:border-[#185D46] hover:text-[#185D46] transition-colors bg-slate-50 hover:bg-[#185D46]/5">
+                <button className="w-full py-3 border-2 border-dashed border-slate-200 rounded-xl text-slate-500 font-semibold flex items-center justify-center hover:border-[#185D46] hover:text-[#185D46] transition-colors bg-slate-50 hover:bg-primary/5">
                   <Plus className="w-5 h-5 mr-2" />
                   Add Statistic
                 </button>
@@ -180,7 +180,7 @@ export default function ManagementForms() {
           className="w-full flex items-center justify-between p-6 bg-white hover:bg-slate-50 transition-colors"
         >
           <div className="flex items-center space-x-3">
-            <div className="w-10 h-10 rounded-xl bg-[#185D46]/10 flex items-center justify-center text-[#185D46]">
+            <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center text-[#185D46]">
               <LinkIcon className="w-5 h-5" />
             </div>
             <h3 className="text-lg font-bold text-slate-800 font-sans">Corporate Highlights</h3>
@@ -219,7 +219,7 @@ export default function ManagementForms() {
                       </div>
                     ))}
                   </div>
-                  <button onClick={() => setCorporateHighlights({...corporateHighlights, highlightsList: [...corporateHighlights.highlightsList, { id: Date.now().toString(), text: "" }]})} className="w-full mt-4 py-3 border-2 border-dashed border-slate-200 rounded-xl text-slate-500 font-semibold flex items-center justify-center hover:border-[#185D46] hover:text-[#185D46] transition-colors bg-slate-50 hover:bg-[#185D46]/5">
+                  <button onClick={() => setCorporateHighlights({...corporateHighlights, highlightsList: [...corporateHighlights.highlightsList, { id: Date.now().toString(), text: "" }]})} className="w-full mt-4 py-3 border-2 border-dashed border-slate-200 rounded-xl text-slate-500 font-semibold flex items-center justify-center hover:border-[#185D46] hover:text-[#185D46] transition-colors bg-slate-50 hover:bg-primary/5">
                     <Plus className="w-5 h-5 mr-2" />
                     Add Highlight
                   </button>
@@ -237,7 +237,7 @@ export default function ManagementForms() {
           className="w-full flex items-center justify-between p-6 bg-white hover:bg-slate-50 transition-colors"
         >
           <div className="flex items-center space-x-3">
-            <div className="w-10 h-10 rounded-xl bg-[#F59E0B]/10 flex items-center justify-center text-[#F59E0B]">
+            <div className="w-10 h-10 rounded-xl bg-accent/10 flex items-center justify-center text-[#F59E0B]">
               <MessageSquare className="w-5 h-5" />
             </div>
             <h3 className="text-lg font-bold text-slate-800 font-sans">FAQ Management</h3>
@@ -292,7 +292,7 @@ export default function ManagementForms() {
                 
                 <button onClick={() => {
                   setFaqs([...faqs, { id: Date.now().toString(), question: "", mainAnswer: "", detailedExplanation: "" }]);
-                }} className="w-full py-3.5 border-2 border-dashed border-slate-200 rounded-2xl text-slate-500 font-semibold flex items-center justify-center hover:border-[#F59E0B] hover:text-[#F59E0B] transition-colors bg-white hover:bg-[#F59E0B]/5">
+                }} className="w-full py-3.5 border-2 border-dashed border-slate-200 rounded-2xl text-slate-500 font-semibold flex items-center justify-center hover:border-[#F59E0B] hover:text-[#F59E0B] transition-colors bg-white hover:bg-accent/5">
                   <Plus className="w-5 h-5 mr-2" />
                   Add FAQ Item
                 </button>
@@ -309,7 +309,7 @@ export default function ManagementForms() {
           className="w-full flex items-center justify-between p-6 bg-white hover:bg-slate-50 transition-colors"
         >
           <div className="flex items-center space-x-3">
-            <div className="w-10 h-10 rounded-xl bg-[#185D46]/10 flex items-center justify-center text-[#185D46]">
+            <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center text-[#185D46]">
               <ImageIcon className="w-5 h-5" />
             </div>
             <h3 className="text-lg font-bold text-slate-800 font-sans">Featured Services</h3>
@@ -394,7 +394,7 @@ export default function ManagementForms() {
                       ...featuredServices, 
                       servicesList: [...featuredServices.servicesList, { id: Date.now().toString(), category: "", title: "", desc: "", badge: "", image: "" }]
                     });
-                  }} className="w-full mt-4 py-3.5 border-2 border-dashed border-slate-200 rounded-2xl text-slate-500 font-semibold flex items-center justify-center hover:border-[#185D46] hover:text-[#185D46] transition-colors bg-white hover:bg-[#185D46]/5">
+                  }} className="w-full mt-4 py-3.5 border-2 border-dashed border-slate-200 rounded-2xl text-slate-500 font-semibold flex items-center justify-center hover:border-[#185D46] hover:text-[#185D46] transition-colors bg-white hover:bg-primary/5">
                     <Plus className="w-5 h-5 mr-2" />
                     Add Service Card
                   </button>
@@ -412,7 +412,7 @@ export default function ManagementForms() {
           className="w-full flex items-center justify-between p-6 bg-white hover:bg-slate-50 transition-colors"
         >
           <div className="flex items-center space-x-3">
-            <div className="w-10 h-10 rounded-xl bg-[#F59E0B]/10 flex items-center justify-center text-[#F59E0B]">
+            <div className="w-10 h-10 rounded-xl bg-accent/10 flex items-center justify-center text-[#F59E0B]">
               <Star className="w-5 h-5" />
             </div>
             <h3 className="text-lg font-bold text-slate-800 font-sans">Client Reviews</h3>
@@ -481,7 +481,7 @@ export default function ManagementForms() {
                       ...testimonials, 
                       list: [...testimonials.list, { id: Date.now().toString(), name: "", quote: "", date: "" }]
                     });
-                  }} className="w-full mt-4 py-3.5 border-2 border-dashed border-slate-200 rounded-2xl text-slate-500 font-semibold flex items-center justify-center hover:border-[#185D46] hover:text-[#185D46] transition-colors bg-white hover:bg-[#185D46]/5">
+                  }} className="w-full mt-4 py-3.5 border-2 border-dashed border-slate-200 rounded-2xl text-slate-500 font-semibold flex items-center justify-center hover:border-[#185D46] hover:text-[#185D46] transition-colors bg-white hover:bg-primary/5">
                     <Plus className="w-5 h-5 mr-2" />
                     Add Testimonial
                   </button>
@@ -499,7 +499,7 @@ export default function ManagementForms() {
           className="w-full flex items-center justify-between p-6 bg-white hover:bg-slate-50 transition-colors"
         >
           <div className="flex items-center space-x-3">
-            <div className="w-10 h-10 rounded-xl bg-[#185D46]/10 flex items-center justify-center text-[#185D46]">
+            <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center text-[#185D46]">
               <Briefcase className="w-5 h-5" />
             </div>
             <h3 className="text-lg font-bold text-slate-800 font-sans">Our Services</h3>
@@ -522,8 +522,8 @@ export default function ManagementForms() {
                   <div>
                     <label className="block text-sm font-semibold text-slate-700 mb-2">Background Color</label>
                     <div className="flex space-x-3">
-                      <input type="color" value={ourServices.backgroundColor || "#185D46"} onChange={(e) => setOurServices({...ourServices, backgroundColor: e.target.value})} className="h-12 w-12 rounded-xl cursor-pointer border-0 p-0" />
-                      <input type="text" value={ourServices.backgroundColor || "#185D46"} onChange={(e) => setOurServices({...ourServices, backgroundColor: e.target.value})} className="flex-1 px-4 py-3 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:outline-none focus:border-[#185D46] transition-colors font-mono" />
+                      <input type="color" value={ourServices.backgroundColor || "var(--color-primary)"} onChange={(e) => setOurServices({...ourServices, backgroundColor: e.target.value})} className="h-12 w-12 rounded-xl cursor-pointer border-0 p-0" />
+                      <input type="text" value={ourServices.backgroundColor || "var(--color-primary)"} onChange={(e) => setOurServices({...ourServices, backgroundColor: e.target.value})} className="flex-1 px-4 py-3 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:outline-none focus:border-[#185D46] transition-colors font-mono" />
                     </div>
                   </div>
                 </div>
@@ -575,7 +575,7 @@ export default function ManagementForms() {
                       ...ourServices, 
                       list: [...ourServices.list, { id: Date.now().toString(), title: "", description: "", iconName: "" }]
                     });
-                  }} className="w-full mt-4 py-3.5 border-2 border-dashed border-slate-200 rounded-2xl text-slate-500 font-semibold flex items-center justify-center hover:border-[#185D46] hover:text-[#185D46] transition-colors bg-white hover:bg-[#185D46]/5">
+                  }} className="w-full mt-4 py-3.5 border-2 border-dashed border-slate-200 rounded-2xl text-slate-500 font-semibold flex items-center justify-center hover:border-[#185D46] hover:text-[#185D46] transition-colors bg-white hover:bg-primary/5">
                     <Plus className="w-5 h-5 mr-2" />
                     Add Service Item
                   </button>
@@ -593,7 +593,7 @@ export default function ManagementForms() {
           className="w-full flex items-center justify-between p-6 bg-white hover:bg-slate-50 transition-colors"
         >
           <div className="flex items-center space-x-3">
-            <div className="w-10 h-10 rounded-xl bg-[#185D46]/10 flex items-center justify-center text-[#185D46]">
+            <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center text-[#185D46]">
               <MapPin className="w-5 h-5" />
             </div>
             <h3 className="text-lg font-bold text-slate-800 font-sans">Our Presence</h3>
@@ -671,7 +671,7 @@ export default function ManagementForms() {
                       ...ourPresence, 
                       list: [...ourPresence.list, { id: Date.now().toString(), title: "", description: "", iconName: "" }]
                     });
-                  }} className="w-full mt-4 py-3.5 border-2 border-dashed border-slate-200 rounded-2xl text-slate-500 font-semibold flex items-center justify-center hover:border-[#185D46] hover:text-[#185D46] transition-colors bg-white hover:bg-[#185D46]/5">
+                  }} className="w-full mt-4 py-3.5 border-2 border-dashed border-slate-200 rounded-2xl text-slate-500 font-semibold flex items-center justify-center hover:border-[#185D46] hover:text-[#185D46] transition-colors bg-white hover:bg-primary/5">
                     <Plus className="w-5 h-5 mr-2" />
                     Add Feature Item
                   </button>
@@ -689,7 +689,7 @@ export default function ManagementForms() {
           className="w-full flex items-center justify-between p-6 bg-white hover:bg-slate-50 transition-colors"
         >
           <div className="flex items-center space-x-3">
-            <div className="w-10 h-10 rounded-xl bg-[#185D46]/10 flex items-center justify-center text-[#185D46]">
+            <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center text-[#185D46]">
               <Layout className="w-5 h-5" />
             </div>
             <h3 className="text-lg font-bold text-slate-800 font-sans">SEO Overview Sections</h3>

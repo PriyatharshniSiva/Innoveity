@@ -42,7 +42,7 @@ export default function ServicesGrid() {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.3, delay: idx * 0.05 }}
-            className="bg-white rounded-2xl p-4 shadow-[0_4px_20px_rgb(0,0,0,0.03)] border border-slate-100 hover:shadow-[0_8px_30px_rgb(24,93,70,0.08)] hover:border-[#185D46]/20 transition-all duration-300 flex items-center group"
+            className="bg-white rounded-2xl p-4 shadow-[0_4px_20px_rgb(0,0,0,0.03)] border border-slate-100 hover:shadow-[0_8px_30px_rgb(24,93,70,0.08)] hover:border-primary/20 transition-all duration-300 flex items-center group"
           >
             {/* Drag Handle */}
             <div className="px-2 cursor-grab active:cursor-grabbing text-slate-300 hover:text-slate-500 transition-colors">
@@ -50,7 +50,7 @@ export default function ServicesGrid() {
             </div>
 
             {/* Icon / Image Thumbnail */}
-            <div className="w-16 h-16 rounded-xl bg-slate-50 border border-slate-100 flex items-center justify-center flex-shrink-0 ml-2 relative overflow-hidden group-hover:border-[#185D46]/30 transition-colors">
+            <div className="w-16 h-16 rounded-xl bg-slate-50 border border-slate-100 flex items-center justify-center flex-shrink-0 ml-2 relative overflow-hidden group-hover:border-primary/30 transition-colors">
               {service.image && service.image !== "/placeholder-service.jpg" ? (
                 <img src={service.image} alt={service.title} className="w-full h-full object-cover" />
               ) : (
@@ -82,7 +82,7 @@ export default function ServicesGrid() {
             <div className="flex items-center space-x-2 ml-4">
               <button 
                 onClick={() => handleToggleFeatured(service.id)}
-                className={`p-2 rounded-lg transition-colors ${service.featured ? 'text-[#F59E0B] bg-[#F59E0B]/10 hover:bg-[#F59E0B]/20' : 'text-slate-400 hover:text-[#F59E0B] hover:bg-slate-100'}`}
+                className={`p-2 rounded-lg transition-colors ${service.featured ? 'text-[#F59E0B] bg-accent/10 hover:bg-accent/20' : 'text-slate-400 hover:text-[#F59E0B] hover:bg-slate-100'}`}
                 title={service.featured ? "Remove from Featured" : "Mark as Featured"}
               >
                 {service.featured ? <Star className="w-4 h-4 fill-current" /> : <StarOff className="w-4 h-4" />}
@@ -96,7 +96,7 @@ export default function ServicesGrid() {
               <button className="p-2 text-slate-400 hover:text-slate-700 hover:bg-slate-100 rounded-lg transition-colors" title="Duplicate">
                 <Copy className="w-4 h-4" />
               </button>
-              <button onClick={() => handleEdit(service.id)} className="p-2 text-slate-400 hover:text-[#185D46] hover:bg-[#185D46]/10 rounded-lg transition-colors" title="Edit">
+              <button onClick={() => handleEdit(service.id)} className="p-2 text-slate-400 hover:text-[#185D46] hover:bg-primary/10 rounded-lg transition-colors" title="Edit">
                 <Edit2 className="w-4 h-4" />
               </button>
               <button onClick={() => handleDelete(service.id)} className="p-2 text-slate-400 hover:text-red-600 hover:bg-red-50 rounded-lg transition-colors" title="Delete">

@@ -59,7 +59,7 @@ export default function CaseStudiesGrid() {
               
               {/* Badges */}
               <div className="absolute top-4 left-4 flex gap-2">
-                <span className={`px-3 py-1 rounded-full text-xs font-bold backdrop-blur-md ${study.status === 'Published' ? 'bg-[#185D46]/90 text-white' : 'bg-amber-500/90 text-white'}`}>
+                <span className={`px-3 py-1 rounded-full text-xs font-bold backdrop-blur-md ${study.status === 'Published' ? 'bg-primary/90 text-white' : 'bg-amber-500/90 text-white'}`}>
                   {study.status}
                 </span>
                 {study.featured && (

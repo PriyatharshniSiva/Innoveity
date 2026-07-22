@@ -41,7 +41,7 @@ export default function EventsClient({ courses }: { courses: any[] }) {
   return (
     <div className="min-h-screen bg-slate-50 text-[#0F172A] selection:bg-[#185D46] selection:text-white pb-24">
       {/* Header */}
-      <section className="relative py-24 px-4 sm:px-6 lg:px-8 pt-32 overflow-hidden bg-white border-b border-slate-100">
+      <section className="relative pt-12 pb-24 px-4 sm:px-6 lg:px-8 overflow-hidden bg-white border-b border-slate-100">
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#185D4620] rounded-full blur-[120px] opacity-70 -z-10 translate-x-1/3 -translate-y-1/3 animate-pulse" style={{ animationDuration: '8s' }} />
         <div className="absolute top-[20%] left-[10%] w-[400px] h-[400px] bg-[#185D46] rounded-full blur-[150px] opacity-10 -z-10 animate-pulse" style={{ animationDuration: '10s' }} />
         
@@ -72,13 +72,13 @@ export default function EventsClient({ courses }: { courses: any[] }) {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.3 }}
-          className="bg-[#0F172A] rounded-[32px] p-8 md:p-12 flex flex-col md:flex-row md:items-center md:justify-between gap-8 shadow-[0_30px_60px_rgba(22,163,74,0.15)] border border-[#185D46]/20 hover:shadow-[0_40px_70px_rgba(22,163,74,0.25)] hover:border-[#185D46]/40 transition-all duration-500 overflow-hidden relative group"
+          className="bg-[#0F172A] rounded-[32px] p-8 md:p-12 flex flex-col md:flex-row md:items-center md:justify-between gap-8 shadow-[0_30px_60px_rgba(22,163,74,0.15)] border border-primary/20 hover:shadow-[0_40px_70px_rgba(22,163,74,0.25)] hover:border-primary/40 transition-all duration-500 overflow-hidden relative group"
         >
           {/* Background Glow inside banner */}
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-[#185D46] rounded-full blur-[150px] opacity-10 group-hover:opacity-30 transition-opacity duration-700 pointer-events-none" />
 
           <div className="space-y-4 max-w-3xl relative z-10">
-            <span className="text-[#F59E0B] text-xs font-bold uppercase tracking-widest bg-[#F59E0B]/10 px-3 py-1.5 rounded border border-[#F59E0B]/20">
+            <span className="text-[#F59E0B] text-xs font-bold uppercase tracking-widest bg-accent/10 px-3 py-1.5 rounded border border-accent/20">
               AICTE Affiliation
             </span>
             <h2 className="text-3xl sm:text-4xl font-extrabold !text-white tracking-tight">AICTE Affiliated Programs</h2>
@@ -102,7 +102,7 @@ export default function EventsClient({ courses }: { courses: any[] }) {
             className={`flex items-center px-6 py-3.5 rounded-2xl text-base font-bold transition-all duration-300 cursor-pointer ${
               activeCategory === "All" 
                 ? "bg-[#185D46] text-white shadow-[0_10px_25px_-5px_rgba(16,185,129,0.3)]" 
-                : "bg-transparent text-[#185D46]/80 hover:text-[#185D46] hover:bg-slate-50/50"
+                : "bg-transparent text-primary/80 hover:text-[#185D46] hover:bg-slate-50/50"
             }`}
           >
             {/* Book Icon */}
@@ -117,7 +117,7 @@ export default function EventsClient({ courses }: { courses: any[] }) {
             className={`flex items-center px-6 py-3.5 rounded-2xl text-base font-bold transition-all duration-300 cursor-pointer ${
               activeCategory === "ME" 
                 ? "bg-[#185D46] text-white shadow-[0_10px_25px_-5px_rgba(16,185,129,0.3)]" 
-                : "bg-transparent text-[#185D46]/80 hover:text-[#185D46] hover:bg-slate-100/50"
+                : "bg-transparent text-primary/80 hover:text-[#185D46] hover:bg-slate-100/50"
             }`}
           >
             {/* Graduation Cap Icon */}
@@ -133,7 +133,7 @@ export default function EventsClient({ courses }: { courses: any[] }) {
             className={`flex items-center px-6 py-3.5 rounded-2xl text-base font-bold transition-all duration-300 cursor-pointer ${
               activeCategory === "Other" 
                 ? "bg-[#185D46] text-white shadow-[0_10px_25px_-5px_rgba(16,185,129,0.3)]" 
-                : "bg-transparent text-[#185D46]/80 hover:text-[#185D46] hover:bg-slate-100/50"
+                : "bg-transparent text-primary/80 hover:text-[#185D46] hover:bg-slate-100/50"
             }`}
           >
             {/* Medal/Ribbon Icon */}

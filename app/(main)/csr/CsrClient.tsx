@@ -35,7 +35,7 @@ const AnimatedCounter = ({ value, label }: { value: string, label: string }) => 
       initial={{ opacity: 0, y: 20 }}
       animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
       transition={{ duration: 0.6 }}
-      className="bg-white border border-slate-100 p-8 rounded-[24px] shadow-[0_4px_24px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_50px_rgba(22,163,74,0.1)] hover:-translate-y-2 hover:border-[#185D46]/20 transition-all duration-300 relative overflow-hidden group"
+      className="bg-white border border-slate-100 p-8 rounded-[24px] shadow-[0_4px_24px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_50px_rgba(22,163,74,0.1)] hover:-translate-y-2 hover:border-primary/20 transition-all duration-300 relative overflow-hidden group"
     >
       <div className="absolute top-0 right-0 w-32 h-32 bg-[#185D4620] rounded-full blur-[40px] opacity-0 group-hover:opacity-50 transition-opacity duration-500 -translate-y-1/2 translate-x-1/2" />
       <motion.div className="text-4xl sm:text-5xl font-black text-[#F59E0B] mb-3 relative z-10">
@@ -129,7 +129,7 @@ export default function CsrClient({ data }: { data: any }) {
   return (
     <div className="min-h-screen bg-slate-50 overflow-hidden selection:bg-[#185D46] selection:text-white pb-24">
       {/* 1. Premium Header with Soft Backgrounds */}
-      <section className="relative py-32 px-4 sm:px-6 lg:px-8 overflow-hidden bg-white border-b border-slate-100">
+      <section className="relative pt-12 pb-24 px-4 sm:px-6 lg:px-8 overflow-hidden bg-white border-b border-slate-100">
         <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#185D4620] rounded-full blur-[150px] opacity-70 -z-10 translate-x-1/3 -translate-y-1/3 animate-pulse" style={{ animationDuration: '8s' }} />
         <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-[#185D46] rounded-full blur-[150px] opacity-10 -z-10 -translate-x-1/3 translate-y-1/3 animate-pulse" style={{ animationDuration: '10s' }} />
         
@@ -166,7 +166,7 @@ export default function CsrClient({ data }: { data: any }) {
       </section>
 
       {/* 3. Impact Over Time Dashboard (Premium Analytics) */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 my-20">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-20 mt-8 mb-20">
         <motion.div 
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -176,10 +176,12 @@ export default function CsrClient({ data }: { data: any }) {
         >
           {/* Subtle Background Elements */}
           <div className="absolute inset-0 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:24px_24px] opacity-30 mix-blend-multiply" />
-          <div className="absolute -top-32 -right-32 w-96 h-96 bg-[#185D46]/5 rounded-full blur-[100px] pointer-events-none" />
-          <div className="absolute -bottom-32 -left-32 w-96 h-96 bg-[#F59E0B]/5 rounded-full blur-[100px] pointer-events-none" />
+          <div className="absolute -top-32 -right-32 w-96 h-96 bg-primary/5 rounded-full blur-[100px] pointer-events-none" />
+          <div className="absolute -bottom-32 -left-32 w-96 h-96 bg-accent/5 rounded-full blur-[100px] pointer-events-none" />
 
-          <h2 className="text-3xl md:text-5xl font-black text-[#0F172A] tracking-tight mb-16 relative z-10">Impact Over Time</h2>
+          <h2 className="text-3xl md:text-5xl font-black text-[var(--color-brand-primary, #0F172A)] tracking-tight mb-16 relative z-10">
+            <span style={{ color: "var(--color-brand-accent, #F59E0B)" }}>Impact </span>Over Time
+          </h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24 relative z-10">
             
@@ -187,7 +189,7 @@ export default function CsrClient({ data }: { data: any }) {
             <div className="space-y-8 relative">
               <div className="flex items-center justify-between mb-8">
                 <h3 className="text-xl font-bold text-gray-900 tracking-tight">CO₂ Emissions Reduced (Tons)</h3>
-                <div className="px-3 py-1 bg-[#185D46]/10 text-[#185D46] rounded-full text-xs font-bold uppercase tracking-wider">
+                <div className="px-3 py-1 bg-primary/10 text-[#185D46] rounded-full text-xs font-bold uppercase tracking-wider">
                   +312% Growth
                 </div>
               </div>
@@ -202,12 +204,12 @@ export default function CsrClient({ data }: { data: any }) {
                   {/* Defs for gradients */}
                   <defs>
                     <linearGradient id="co2Gradient" x1="0" y1="0" x2="0" y2="1">
-                      <stop offset="0%" stopColor="#185D46" stopOpacity="0.2" />
-                      <stop offset="100%" stopColor="#185D46" stopOpacity="0" />
+                      <stop offset="0%" stopColor="var(--color-primary)" stopOpacity="0.2" />
+                      <stop offset="100%" stopColor="var(--color-primary)" stopOpacity="0" />
                     </linearGradient>
                     <linearGradient id="co2Line" x1="0" y1="0" x2="1" y2="0">
                       <stop offset="0%" stopColor="#4ADE80" />
-                      <stop offset="100%" stopColor="#185D46" />
+                      <stop offset="100%" stopColor="var(--color-primary)" />
                     </linearGradient>
                   </defs>
 
@@ -246,7 +248,7 @@ export default function CsrClient({ data }: { data: any }) {
                       key={i}
                       cx={pt.cx} cy={pt.cy} r={pt.latest ? "3" : "2"}
                       fill="#FFFFFF"
-                      stroke="#185D46"
+                      stroke="var(--color-primary)"
                       strokeWidth="1.5"
                       initial={{ scale: 0, opacity: 0 }}
                       whileInView={{ scale: 1, opacity: 1 }}
@@ -286,7 +288,7 @@ export default function CsrClient({ data }: { data: any }) {
             <div className="space-y-8 relative">
               <div className="flex items-center justify-between mb-8">
                 <h3 className="text-xl font-bold text-gray-900 tracking-tight">Green Jobs Enabled</h3>
-                <div className="px-3 py-1 bg-[#F59E0B]/10 text-[#F59E0B] rounded-full text-xs font-bold uppercase tracking-wider">
+                <div className="px-3 py-1 bg-accent/10 text-[#F59E0B] rounded-full text-xs font-bold uppercase tracking-wider">
                   +300% Growth
                 </div>
               </div>
@@ -301,12 +303,12 @@ export default function CsrClient({ data }: { data: any }) {
                   {/* Defs for gradients */}
                   <defs>
                     <linearGradient id="jobsGradient" x1="0" y1="0" x2="0" y2="1">
-                      <stop offset="0%" stopColor="#F59E0B" stopOpacity="0.2" />
-                      <stop offset="100%" stopColor="#F59E0B" stopOpacity="0" />
+                      <stop offset="0%" stopColor="var(--color-accent)" stopOpacity="0.2" />
+                      <stop offset="100%" stopColor="var(--color-accent)" stopOpacity="0" />
                     </linearGradient>
                     <linearGradient id="jobsLine" x1="0" y1="0" x2="1" y2="0">
                       <stop offset="0%" stopColor="#FCD34D" />
-                      <stop offset="100%" stopColor="#F59E0B" />
+                      <stop offset="100%" stopColor="var(--color-accent)" />
                     </linearGradient>
                   </defs>
 
@@ -345,7 +347,7 @@ export default function CsrClient({ data }: { data: any }) {
                       key={i}
                       cx={pt.cx} cy={pt.cy} r={pt.latest ? "3" : "2"}
                       fill="#FFFFFF"
-                      stroke="#F59E0B"
+                      stroke="var(--color-accent)"
                       strokeWidth="1.5"
                       initial={{ scale: 0, opacity: 0 }}
                       whileInView={{ scale: 1, opacity: 1 }}
@@ -387,15 +389,15 @@ export default function CsrClient({ data }: { data: any }) {
 
       
       {/* 4. The New Timeline UI for Initiatives */}
-      <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+      <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-20">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: false }}
           className="text-center mb-24 space-y-4"
         >
-          <h2 className="text-4xl md:text-5xl font-black text-[#0F172A] tracking-tight">
-            {data?.hero?.titleHighlight ? `Key Initiatives` : "Key Initiatives"}
+          <h2 className="text-4xl md:text-5xl font-black text-[var(--color-brand-primary, #0F172A)] tracking-tight">
+            <span style={{ color: "var(--color-brand-accent, #F59E0B)" }}>Key </span>Initiatives
           </h2>
           <p className="text-xl text-gray-500 font-medium">Driving change where it matters most.</p>
         </motion.div>
@@ -433,12 +435,12 @@ export default function CsrClient({ data }: { data: any }) {
                   {/* Card Content */}
                   <div className="w-full md:w-[45%]">
                     <div className="bg-white border border-slate-100 p-8 md:p-10 rounded-[32px] shadow-[0_8px_30px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_50px_rgba(22,163,74,0.1)] transition-all duration-300 hover:-translate-y-2 group relative overflow-hidden">
-                      <div className="absolute -right-10 -top-10 w-32 h-32 bg-[#F59E0B]/5 rounded-full blur-2xl group-hover:bg-[#F59E0B]/10 transition-colors" />
+                      <div className="absolute -right-10 -top-10 w-32 h-32 bg-accent/5 rounded-full blur-2xl group-hover:bg-accent/10 transition-colors" />
                       
                       <h3 className="text-2xl md:text-3xl font-extrabold text-[#0F172A] tracking-tight mb-4 group-hover:text-[#185D46] transition-colors">{ini.title}</h3>
                       <p className="text-gray-600 text-base md:text-lg leading-relaxed font-medium mb-8">{ini.desc}</p>
                       
-                      <div className="bg-[#185D46]/5 rounded-2xl p-5 border-l-4 border-[#185D46]">
+                      <div className="bg-primary/5 rounded-2xl p-5 border-l-4 border-[#185D46]">
                         <span className="text-[#185D46] block text-xs font-bold uppercase tracking-[0.15em] mb-2">Key Impact</span>
                         <div className="text-gray-900 font-bold text-sm md:text-base">{ini.impact}</div>
                       </div>
@@ -452,9 +454,11 @@ export default function CsrClient({ data }: { data: any }) {
       </section>
 
       {/* 6. UN SDGs Grid */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-20">
         <div className="text-center space-y-4 mb-16">
-          <h2 className="text-3xl md:text-4xl font-black text-[#0F172A] tracking-tight">UN SDG Alignment</h2>
+          <h2 className="text-3xl md:text-4xl font-black text-[var(--color-brand-primary, #0F172A)] tracking-tight">
+            <span style={{ color: "var(--color-brand-accent, #F59E0B)" }}>UN SDG </span>Alignment
+          </h2>
           <p className="text-xl text-gray-500 font-medium">Contributing directly to the United Nations Sustainable Development Goals.</p>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -465,7 +469,7 @@ export default function CsrClient({ data }: { data: any }) {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: false }}
               transition={{ duration: 0.5, delay: idx * 0.1 }}
-              className="bg-white border border-slate-100 rounded-[32px] p-8 shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-[0_20px_40px_rgba(22,163,74,0.08)] hover:-translate-y-2 hover:border-[#185D46]/20 transition-all duration-300 flex flex-col justify-between group"
+              className="bg-white border border-slate-100 rounded-[32px] p-8 shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-[0_20px_40px_rgba(22,163,74,0.08)] hover:-translate-y-2 hover:border-primary/20 transition-all duration-300 flex flex-col justify-between group"
             >
               <div>
                 <div className="w-16 h-16 rounded-2xl bg-[#185D4620] text-[#185D46] font-black text-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">

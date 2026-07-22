@@ -11,8 +11,8 @@ const data = [
 ];
 
 const stats = [
-  { id: 1, title: "Total Visitors", count: 0, trend: "0%", icon: Users, color: "#185D46" },
-  { id: 2, title: "Enquiries", count: 0, trend: "0%", icon: Mail, color: "#F59E0B" },
+  { id: 1, title: "Total Visitors", count: 0, trend: "0%", icon: Users, color: "var(--color-primary)" },
+  { id: 2, title: "Enquiries", count: 0, trend: "0%", icon: Mail, color: "var(--color-accent)" },
   { id: 3, title: "Courses", count: 0, trend: "0%", icon: GraduationCap, color: "#0ea5e9" },
   { id: 4, title: "Case Studies", count: 0, trend: "0%", icon: FolderOpen, color: "#8b5cf6" },
   { id: 5, title: "Blogs", count: 0, trend: "0%", icon: Newspaper, color: "#f43f5e" },

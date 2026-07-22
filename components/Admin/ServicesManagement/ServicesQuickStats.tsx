@@ -15,9 +15,9 @@ export default function ServicesQuickStats() {
   const { services, categories } = useServices();
 
   const stats = [
-    { id: 1, title: "Total Services", count: services.length, trend: "+2 this month", icon: LayoutGrid, color: "#185D46" },
+    { id: 1, title: "Total Services", count: services.length, trend: "+2 this month", icon: LayoutGrid, color: "var(--color-primary)" },
     { id: 2, title: "Active Services", count: services.filter(s => s.status === "Active").length, trend: "Stable", icon: CheckCircle2, color: "#0ea5e9" },
-    { id: 3, title: "Hidden Services", count: services.filter(s => s.status === "Hidden").length, trend: "-1 recently", icon: EyeOff, color: "#F59E0B" },
+    { id: 3, title: "Hidden Services", count: services.filter(s => s.status === "Hidden").length, trend: "-1 recently", icon: EyeOff, color: "var(--color-accent)" },
     { id: 4, title: "Categories", count: categories.length, trend: "Organized", icon: FolderOpen, color: "#8b5cf6" }
   ];
 

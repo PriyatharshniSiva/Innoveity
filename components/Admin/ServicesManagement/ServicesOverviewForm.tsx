@@ -16,7 +16,7 @@ export default function ServicesOverviewForm() {
         className="w-full flex items-center justify-between p-6 bg-white hover:bg-slate-50 transition-colors"
       >
         <div className="flex items-center space-x-3">
-          <div className="w-10 h-10 rounded-xl bg-[#185D46]/10 flex items-center justify-center text-[#185D46]">
+          <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center text-[#185D46]">
             <FileText className="w-5 h-5" />
           </div>
           <h3 className="text-lg font-bold text-slate-800 font-sans">Services Overview Section</h3>
@@ -31,12 +31,12 @@ export default function ServicesOverviewForm() {
               
               <div>
                 <label className="block text-sm font-semibold text-slate-700 mb-2">Main Title</label>
-                <input type="text" value={overview.mainTitle} onChange={e => setOverview({...overview, mainTitle: e.target.value})} className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#185D46]/20 focus:border-[#185D46] bg-slate-50 focus:bg-white transition-colors" />
+                <input type="text" value={overview.mainTitle} onChange={e => setOverview({...overview, mainTitle: e.target.value})} className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-[#185D46] bg-slate-50 focus:bg-white transition-colors" />
               </div>
 
               <div>
                 <label className="block text-sm font-semibold text-slate-700 mb-2">Description</label>
-                <textarea rows={4} value={overview.description} onChange={e => setOverview({...overview, description: e.target.value})} className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#185D46]/20 focus:border-[#185D46] bg-slate-50 focus:bg-white resize-none transition-colors" />
+                <textarea rows={4} value={overview.description} onChange={e => setOverview({...overview, description: e.target.value})} className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-[#185D46] bg-slate-50 focus:bg-white resize-none transition-colors" />
               </div>
 
               <div>
@@ -68,7 +68,7 @@ export default function ServicesOverviewForm() {
                 </div>
                 <button 
                   onClick={() => setOverview({...overview, highlights: [...overview.highlights, ""]})}
-                  className="w-full mt-4 py-3 border-2 border-dashed border-[#185D46]/20 text-[#185D46] rounded-xl font-semibold hover:bg-[#185D46]/5 transition-colors flex items-center justify-center"
+                  className="w-full mt-4 py-3 border-2 border-dashed border-primary/20 text-[#185D46] rounded-xl font-semibold hover:bg-primary/5 transition-colors flex items-center justify-center"
                 >
                   <Plus className="w-5 h-5 mr-2" />
                   Add Highlight

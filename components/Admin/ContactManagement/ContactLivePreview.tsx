@@ -60,7 +60,7 @@ export default function ContactLivePreview() {
           {/* Contact Info Cards */}
           <div className="lg:col-span-2 space-y-5">
             <div className="bg-white p-7 rounded-[24px] shadow-[0_4px_24px_rgba(0,0,0,0.02)] border border-slate-100 flex items-center gap-6">
-              <div className="bg-[#185D46]/10 p-4 rounded-[16px] text-[#185D46]">
+              <div className="bg-primary/10 p-4 rounded-[16px] text-[#185D46]">
                 <Phone className="w-7 h-7" />
               </div>
               <div>
@@ -81,7 +81,7 @@ export default function ContactLivePreview() {
             </div>
 
             <div className="bg-white p-7 rounded-[24px] shadow-[0_4px_24px_rgba(0,0,0,0.02)] border border-slate-100 flex items-center gap-6">
-              <div className="bg-[#185D46]/10 p-4 rounded-[16px] text-[#185D46]">
+              <div className="bg-primary/10 p-4 rounded-[16px] text-[#185D46]">
                 <Clock className="w-7 h-7" />
               </div>
               <div>

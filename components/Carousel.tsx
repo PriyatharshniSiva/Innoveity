@@ -52,7 +52,7 @@ export default function Carousel() {
             rotate: [0, 90, 0]
           }}
           transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
-          className="absolute -top-[20%] -left-[10%] w-[70%] h-[70%] bg-gradient-to-r from-[#185D46]/10 to-[#185D46]/10 rounded-full blur-[120px]"
+          className="absolute -top-[20%] -left-[10%] w-[70%] h-[70%] bg-gradient-to-r from-primary/10 to-primary/10 rounded-full blur-[120px]"
         />
         
         {/* Morphing gradient blob */}
@@ -63,14 +63,14 @@ export default function Carousel() {
             y: [0, 50, 0]
           }}
           transition={{ duration: 20, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute top-[20%] -right-[10%] w-[50%] h-[80%] bg-gradient-to-bl from-[#3b82f6]/10 to-[#185D46]/10 rounded-[40%_60%_70%_30%] blur-[100px]"
+          className="absolute top-[20%] -right-[10%] w-[50%] h-[80%] bg-gradient-to-bl from-[#3b82f6]/10 to-primary/10 rounded-[40%_60%_70%_30%] blur-[100px]"
         />
         
         {/* Subtle floating abstract circles */}
         <motion.div 
           animate={{ y: [0, -30, 0], opacity: [0.1, 0.3, 0.1] }}
           transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute top-1/4 left-1/4 w-32 h-32 border border-[#185D46]/20 rounded-full"
+          className="absolute top-1/4 left-1/4 w-32 h-32 border border-primary/20 rounded-full"
         />
         <motion.div 
           animate={{ y: [0, 40, 0], opacity: [0.1, 0.2, 0.1] }}
@@ -114,7 +114,7 @@ export default function Carousel() {
         <div className="relative group/carousel">
           
           {/* Soft radial glow behind the current image */}
-          <div className="absolute inset-0 bg-[#185D46]/10 blur-[120px] scale-90 z-0 opacity-0 group-hover/carousel:opacity-100 transition-opacity duration-700" />
+          <div className="absolute inset-0 bg-primary/10 blur-[120px] scale-90 z-0 opacity-0 group-hover/carousel:opacity-100 transition-opacity duration-700" />
           
           <Swiper
             modules={[Autoplay, EffectCreative, Navigation, Pagination]}
@@ -215,7 +215,7 @@ export default function Carousel() {
         .swiper-custom-bullet-active {
           width: 40px;
           border-radius: 6px;
-          background-color: #185D46;
+          background-color: var(--color-primary);
           opacity: 1;
           box-shadow: 0 0 15px rgba(22,163,74,0.4);
         }

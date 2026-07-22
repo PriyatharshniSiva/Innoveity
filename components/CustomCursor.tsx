@@ -84,7 +84,7 @@ export default function CustomCursor() {
           width: hovered ? 48 : 24,
           height: hovered ? 48 : 24,
           backgroundColor: hovered ? "rgba(24, 93, 70, 0.15)" : "rgba(24, 93, 70, 0)",
-          borderColor: hovered ? "#185D46" : "rgba(24, 93, 70, 0.6)",
+          borderColor: hovered ? "var(--color-primary)" : "rgba(24, 93, 70, 0.6)",
         }}
         animate={{
           scale: hovered ? 1.25 : 1,

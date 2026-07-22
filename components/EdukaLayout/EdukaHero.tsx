@@ -62,7 +62,7 @@ export default function EdukaHero({
   };
 
   return (
-    <section className="relative w-full min-h-screen flex items-center justify-center overflow-hidden bg-white text-[#0F172A] pt-24 pb-16">
+    <section className="relative w-full overflow-hidden bg-white text-[#0F172A] pt-[50px] pb-16 lg:pb-24">
       
       {/* Soft Animated Mesh Gradient Background */}
       <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
@@ -82,11 +82,11 @@ export default function EdukaHero({
         className="absolute bottom-[20%] left-[45%] z-0 pointer-events-none opacity-30"
       >
         <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect x="12" y="12" width="24" height="24" transform="rotate(45 24 24)" stroke="#F59E0B" strokeWidth="3" />
+          <rect x="12" y="12" width="24" height="24" transform="rotate(45 24 24)" stroke="var(--color-accent)" strokeWidth="3" />
         </svg>
       </motion.div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full pb-12 sm:pb-16 lg:pb-20">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8 items-center">
           
           {/* Left Column: Content */}
@@ -99,7 +99,7 @@ export default function EdukaHero({
             {subtitle && (
               <motion.span 
                 variants={itemVariants}
-                className="inline-block px-4 py-1.5 rounded-full bg-[#185D4620] text-[#185D46] font-extrabold text-xs tracking-[0.2em] uppercase border border-[#185D46]/20 shadow-sm"
+                className="inline-block px-4 py-1.5 rounded-full bg-[#185D4620] text-[#185D46] font-extrabold text-xs tracking-[0.2em] uppercase border border-primary/20 shadow-sm"
               >
                 {subtitle}
               </motion.span>
@@ -143,7 +143,7 @@ export default function EdukaHero({
                     <motion.button 
                       whileHover={{ y: -4, scale: 1.02, backgroundColor: "rgba(24, 93, 70, 0.08)", borderColor: "rgba(24, 93, 70, 0.8)" }}
                       whileTap={{ scale: 0.98 }}
-                      className="group w-full sm:w-auto px-8 py-4 bg-white text-[#185D46] border-2 border-[#185D46]/20 font-bold text-lg rounded-xl transition-all duration-300 flex items-center justify-center cursor-pointer"
+                      className="group w-full sm:w-auto px-8 py-4 bg-white text-[#185D46] border-2 border-primary/20 font-bold text-lg rounded-xl transition-all duration-300 flex items-center justify-center cursor-pointer"
                     >
                       {secondaryButtonText}
                     </motion.button>
@@ -158,10 +158,10 @@ export default function EdukaHero({
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1, ease: [0.16, 1, 0.3, 1], delay: 0.3 }}
-            className="relative lg:h-[600px] flex items-center justify-center w-full mt-10 lg:mt-0"
+            className="relative lg:h-[600px] flex items-center justify-center w-full"
           >
             {/* Glowing Backdrop for Illustration */}
-            <div className="absolute inset-0 bg-[#F59E0B]/10 blur-[80px] rounded-full pointer-events-none" />
+            <div className="absolute inset-0 bg-accent/10 blur-[80px] rounded-full pointer-events-none" />
             
             {/* Parallax Container */}
             <motion.div
@@ -184,7 +184,7 @@ export default function EdukaHero({
                     className="w-full h-full object-cover scale-105"
                   />
                   {/* Subtle Glassmorphic Overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0F172A]/40 via-transparent to-transparent opacity-60 mix-blend-multiply" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-secondary/40 via-transparent to-transparent opacity-60 mix-blend-multiply" />
                 </div>
                 
                 {/* Floating Stats Badge inside the glass container */}

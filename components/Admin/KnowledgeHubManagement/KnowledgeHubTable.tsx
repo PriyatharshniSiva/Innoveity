@@ -118,7 +118,7 @@ export default function KnowledgeHubTable() {
                     <div className="flex items-center justify-end space-x-2 opacity-0 group-hover:opacity-100 transition-opacity">
                       <button 
                         onClick={() => { setEditingArticleId(article.id); setIsDrawerOpen(true); }}
-                        className="p-2 text-slate-400 hover:text-[#185D46] hover:bg-[#185D46]/10 rounded-lg transition-colors"
+                        className="p-2 text-slate-400 hover:text-[#185D46] hover:bg-primary/10 rounded-lg transition-colors"
                         title="Edit Article"
                       >
                         <Edit2 className="w-4 h-4" />

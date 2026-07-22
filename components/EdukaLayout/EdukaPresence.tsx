@@ -44,7 +44,7 @@ export default function EdukaPresence({ data }: { data?: any }) {
   };
 
   return (
-    <section className="py-24 px-4 sm:px-6 lg:px-8 bg-white relative overflow-hidden text-slate-800 border-t border-slate-100">
+    <section className="pt-[50px] pb-24 px-4 sm:px-6 lg:px-8 bg-white relative overflow-hidden text-slate-800 border-t border-slate-100">
       {/* Background radial highlight */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-emerald-50/50 rounded-full blur-[150px] pointer-events-none" />
 
@@ -57,9 +57,22 @@ export default function EdukaPresence({ data }: { data?: any }) {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: false }}
               transition={{ duration: 0.6 }}
-              className="text-4xl sm:text-5xl font-black text-[#185D46] tracking-tight"
+              className="text-4xl sm:text-5xl font-black text-[var(--color-brand-primary, #0F172A)] tracking-tight"
             >
-              {data?.title || "Our Presence"}
+              {(() => {
+                const text = data?.title || "Our Presence";
+                if (typeof text === 'string' && text.includes("Our ")) {
+                  const parts = text.split("Our ");
+                  return (
+                    <>
+                      {parts[0]}
+                      <span style={{ color: "var(--color-brand-accent, #F59E0B)" }}>Our </span>
+                      {parts.slice(1).join("Our ")}
+                    </>
+                  );
+                }
+                return text;
+              })()}
             </motion.h2>
             <motion.p
               initial={{ opacity: 0, y: 20 }}

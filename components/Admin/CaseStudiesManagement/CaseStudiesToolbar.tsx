@@ -23,7 +23,7 @@ export default function CaseStudiesToolbar() {
           placeholder="Search case studies..."
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
-          className="w-full pl-11 pr-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#185D46]/20 focus:border-[#185D46] bg-slate-50 focus:bg-white transition-all text-sm font-medium"
+          className="w-full pl-11 pr-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-[#185D46] bg-slate-50 focus:bg-white transition-all text-sm font-medium"
         />
       </div>
 
@@ -35,7 +35,7 @@ export default function CaseStudiesToolbar() {
             <select 
               value={categoryFilter}
               onChange={(e) => setCategoryFilter(e.target.value)}
-              className="pl-9 pr-8 py-2.5 rounded-xl border border-slate-200 bg-white hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-[#185D46]/20 transition-colors text-sm font-semibold text-slate-700 appearance-none cursor-pointer"
+              className="pl-9 pr-8 py-2.5 rounded-xl border border-slate-200 bg-white hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-primary/20 transition-colors text-sm font-semibold text-slate-700 appearance-none cursor-pointer"
             >
               <option value="All">All Categories</option>
               <option value="Faculty Development">Faculty Development</option>
@@ -47,7 +47,7 @@ export default function CaseStudiesToolbar() {
           <select 
             value={statusFilter}
             onChange={(e) => setStatusFilter(e.target.value)}
-            className="px-4 py-2.5 rounded-xl border border-slate-200 bg-white hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-[#185D46]/20 transition-colors text-sm font-semibold text-slate-700 appearance-none cursor-pointer"
+            className="px-4 py-2.5 rounded-xl border border-slate-200 bg-white hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-primary/20 transition-colors text-sm font-semibold text-slate-700 appearance-none cursor-pointer"
           >
             <option value="All">All Status</option>
             <option value="Published">Published</option>

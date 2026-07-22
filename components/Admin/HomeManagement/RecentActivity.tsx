@@ -6,9 +6,9 @@ import { motion } from "framer-motion";
 import { Clock, Image as ImageIcon, GraduationCap, FileText, CheckCircle2, ChevronRight } from "lucide-react";
 
 const activities = [
-  { id: 1, title: "Home Page Hero updated", time: "2 hours ago", icon: CheckCircle2, color: "#185D46" },
+  { id: 1, title: "Home Page Hero updated", time: "2 hours ago", icon: CheckCircle2, color: "var(--color-primary)" },
   { id: 2, title: "Uploaded 3 Journey Images", time: "5 hours ago", icon: ImageIcon, color: "#0ea5e9" },
-  { id: 3, title: "Added new course: Problem Solving", time: "1 day ago", icon: GraduationCap, color: "#F59E0B" },
+  { id: 3, title: "Added new course: Problem Solving", time: "1 day ago", icon: GraduationCap, color: "var(--color-accent)" },
   { id: 4, title: "Published blog: Future of ESG", time: "2 days ago", icon: FileText, color: "#8b5cf6" },
 ];
 

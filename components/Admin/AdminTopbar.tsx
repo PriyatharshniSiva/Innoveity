@@ -37,7 +37,7 @@ export default function AdminTopbar() {
       </div>
       
       <div className="flex items-center gap-5">
-        <div className="hidden lg:flex items-center bg-slate-50 dark:bg-white/5 rounded-2xl px-4 py-2.5 w-80 border border-slate-100 dark:border-white/5 focus-within:border-[#185D46]/30 dark:focus-within:border-white/20 focus-within:bg-white dark:focus-within:bg-white/10 focus-within:ring-4 dark:focus-within:ring-0 focus-within:ring-[#185D46]/5 transition-all shadow-inner dark:shadow-[inset_0_2px_4px_rgba(0,0,0,0.01)]">
+        <div className="hidden lg:flex items-center bg-slate-50 dark:bg-white/5 rounded-2xl px-4 py-2.5 w-80 border border-slate-100 dark:border-white/5 focus-within:border-primary/30 dark:focus-within:border-white/20 focus-within:bg-white dark:focus-within:bg-white/10 focus-within:ring-4 dark:focus-within:ring-0 focus-within:ring-primary/5 transition-all shadow-inner dark:shadow-[inset_0_2px_4px_rgba(0,0,0,0.01)]">
           <Search className="w-4 h-4 text-slate-400 dark:text-neutral-400" />
           <input 
             type="text" 
@@ -59,19 +59,19 @@ export default function AdminTopbar() {
           {/* Theme Toggle Button */}
           <button 
             onClick={toggleTheme}
-            className="relative p-2.5 rounded-xl text-slate-400 dark:text-neutral-500 hover:text-[#185D46] dark:hover:text-white hover:bg-[#185D46]/10 dark:hover:bg-white/10 transition-colors"
+            className="relative p-2.5 rounded-xl text-slate-400 dark:text-neutral-500 hover:text-[#185D46] dark:hover:text-white hover:bg-primary/10 dark:hover:bg-white/10 transition-colors"
             title={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}
           >
             {theme === 'light' ? <Moon className="w-5 h-5" /> : <Sun className="w-5 h-5" />}
           </button>
 
           {/* Quick Actions */}
-          <button className="relative p-2.5 rounded-xl text-slate-400 dark:text-neutral-500 hover:text-[#F59E0B] dark:hover:text-white hover:bg-[#F59E0B]/10 dark:hover:bg-white/10 transition-colors">
+          <button className="relative p-2.5 rounded-xl text-slate-400 dark:text-neutral-500 hover:text-[#F59E0B] dark:hover:text-white hover:bg-accent/10 dark:hover:bg-white/10 transition-colors">
             <MessageSquare className="w-5 h-5" />
             <span className="absolute top-2 right-2 w-2 h-2 bg-[#F59E0B] dark:bg-white rounded-full"></span>
           </button>
           
-          <button className="relative p-2.5 rounded-xl text-slate-400 dark:text-neutral-500 hover:text-[#185D46] dark:hover:text-white hover:bg-[#185D46]/10 dark:hover:bg-white/10 transition-colors">
+          <button className="relative p-2.5 rounded-xl text-slate-400 dark:text-neutral-500 hover:text-[#185D46] dark:hover:text-white hover:bg-primary/10 dark:hover:bg-white/10 transition-colors">
             <Bell className="w-5 h-5" />
             <span className="absolute top-2 right-2 w-2.5 h-2.5 bg-[#185D46] dark:bg-white rounded-full border-2 border-white dark:border-[#0a0a0a]"></span>
           </button>
@@ -84,7 +84,7 @@ export default function AdminTopbar() {
               <p className="text-xs font-semibold text-slate-400 dark:text-neutral-500 mt-1">Superadmin</p>
             </div>
             <div className="flex items-center gap-2">
-              <div className="w-10 h-10 rounded-xl bg-[#185D46]/10 dark:bg-white/10 p-0.5 shadow-sm dark:shadow-none group-hover:shadow group-hover:bg-white/20 transition-all group-hover:scale-105">
+              <div className="w-10 h-10 rounded-xl bg-primary/10 dark:bg-white/10 p-0.5 shadow-sm dark:shadow-none group-hover:shadow group-hover:bg-white/20 transition-all group-hover:scale-105">
                 <div className="w-full h-full rounded-[10px] bg-white dark:bg-black overflow-hidden flex items-center justify-center">
                   <img src={theme === 'dark' ? "https://ui-avatars.com/api/?name=Admin&background=000&color=fff&bold=true" : "https://ui-avatars.com/api/?name=Admin&background=185D46&color=fff&bold=true"} alt="Avatar" className="w-full h-full object-cover" />
                 </div>

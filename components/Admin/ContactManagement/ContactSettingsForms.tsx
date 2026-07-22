@@ -17,7 +17,7 @@ export default function ContactSettingsForms() {
       </div>
       <div className="p-4 grid grid-cols-1 md:grid-cols-2 gap-4">
         
-        <div className="border border-slate-100 rounded-xl p-4 flex items-start gap-4 hover:border-[#185D46]/30 transition-colors cursor-pointer group" onClick={() => openDrawer("settings")}>
+        <div className="border border-slate-100 rounded-xl p-4 flex items-start gap-4 hover:border-primary/30 transition-colors cursor-pointer group" onClick={() => openDrawer("settings")}>
           <div className="bg-slate-50 p-3 rounded-lg text-slate-400 group-hover:text-[#185D46] transition-colors">
             <Phone className="w-5 h-5" />
           </div>
@@ -37,7 +37,7 @@ export default function ContactSettingsForms() {
           </div>
         </div>
 
-        <div className="border border-slate-100 rounded-xl p-4 flex items-start gap-4 hover:border-[#185D46]/30 transition-colors cursor-pointer group" onClick={() => openDrawer("settings")}>
+        <div className="border border-slate-100 rounded-xl p-4 flex items-start gap-4 hover:border-primary/30 transition-colors cursor-pointer group" onClick={() => openDrawer("settings")}>
           <div className="bg-slate-50 p-3 rounded-lg text-slate-400 group-hover:text-[#185D46] transition-colors">
             <Clock className="w-5 h-5" />
           </div>

@@ -42,16 +42,16 @@ export default function EdukaStrengths() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: false }}
-            className="text-4xl sm:text-5xl font-extrabold text-[#185D46] tracking-tight"
+            className="text-4xl sm:text-5xl font-extrabold text-[var(--color-brand-primary, #0F172A)] tracking-tight"
           >
-            Our Strengths
+            <span style={{ color: "var(--color-brand-accent, #F59E0B)" }}>Our </span>Strengths
           </motion.h2>
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: false }}
             transition={{ delay: 0.1 }}
-            className="text-[#185D46]/80 text-lg md:text-xl font-medium"
+            className="text-primary/80 text-lg md:text-xl font-medium"
           >
             What makes INNOVEITY the preferred partner for educational transformation
           </motion.p>
@@ -79,7 +79,7 @@ export default function EdukaStrengths() {
               </div>
 
               <div className="absolute bottom-0 left-0 right-0 p-8 pt-4 translate-y-[120%] opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 ease-out bg-white">
-                <p className="text-[#185D46]/70 leading-relaxed font-medium">
+                <p className="text-primary/70 leading-relaxed font-medium">
                   {item.description}
                 </p>
               </div>

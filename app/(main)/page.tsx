@@ -61,8 +61,8 @@ export default async function Home() {
       <EdukaHero 
         title={
           <>
-            {heroTitleLine1} <br />
-            <span className="text-[#F59E0B]">{heroTitleHighlight}</span>
+            <span style={{ color: "var(--color-brand-accent, #F59E0B)" }}>{heroTitleLine1}</span> <br />
+            <span style={{ color: "#0F172A" }}>{heroTitleHighlight}</span>
           </>
         }
         description={heroDesc}
@@ -76,10 +76,23 @@ export default async function Home() {
       <EdukaHomeJourney data={data?.homeJourney} />
 
       {/* Corporate Highlights Section */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-[50px] pb-16">
         <section className="bg-gradient-to-br from-[#185D4610]/30 to-[#f0f9ff]/20 backdrop-blur-xl rounded-[24px] p-8 md:p-12 border border-[#185D4630] border-l-[6px] border-l-[#185D46] shadow-[0_20px_50px_rgba(12,74,65,0.05)] relative overflow-hidden group">
           <h2 className="text-3xl md:text-4xl font-extrabold text-[#185D46] mb-6 tracking-tight leading-tight">
-            {data?.corporateHighlights?.title || "Leading Corporate Training & College Development Partner in Tamil Nadu"}
+            {(() => {
+              const text = data?.corporateHighlights?.title || "Leading Corporate Training & College Development Partner in Tamil Nadu";
+              if (typeof text === 'string' && text.includes("Leading Corporate Training & ")) {
+                const parts = text.split("Leading Corporate Training & ");
+                return (
+                  <>
+                    {parts[0]}
+                    <span style={{ color: "var(--color-brand-accent, #F59E0B)" }}>Leading Corporate Training & </span>
+                    {parts.slice(1).join("Leading Corporate Training & ")}
+                  </>
+                );
+              }
+              return text;
+            })()}
           </h2>
           <p className="text-lg text-slate-600 mb-10 leading-relaxed font-medium">
             {data?.corporateHighlights?.description || "INNOVEITY transforms institutions and organizations through proven training solutions."}
@@ -116,7 +129,7 @@ export default async function Home() {
 
       {/* FAQ Section */}
       <div 
-        className="w-full bg-[#f4faf6] border-y border-[#185D46]/20/50 relative py-12"
+        className="w-full bg-[#f4faf6] border-y border-[#185D46]/20/50 relative pt-[50px] pb-12"
         style={{
           backgroundImage: 'radial-gradient(#185D4630 1.5px, transparent 1.5px)',
           backgroundSize: '32px 32px'
@@ -145,6 +158,26 @@ export default async function Home() {
             quote: "Exceptional training programs! INNOVEITY transformed our organization with their innovative approach to skill development. Highly recommended for corporate training.",
             name: "Rajesh Kumar",
             date: "Verified August 15, 2024"
+          },
+          {
+            quote: "Outstanding ESG consulting services. Their tree plantation initiative helped us achieve our sustainability goals effectively. Professional and impactful work.",
+            name: "Priya Sharma",
+            date: "Verified July 20, 2024"
+          },
+          {
+            quote: "Excellent leadership development programs. The training methodology is innovative and results-oriented. Our team's performance improved significantly.",
+            name: "Dr. Amit Patel",
+            date: "Verified June 12, 2024"
+          },
+          {
+            quote: "INNOVEITY delivered beyond expectations. Their industrial safety training programs are comprehensive and well-structured. Great team to work with.",
+            name: "Sarah Johnson",
+            date: "Verified May 2024"
+          },
+          {
+            quote: "Impressed with their change management expertise. The consultants are knowledgeable and the implementation was smooth. Definitely recommend their services.",
+            name: "Vikram Singh",
+            date: "Verified Apr 2024"
           }
         ]}
       />

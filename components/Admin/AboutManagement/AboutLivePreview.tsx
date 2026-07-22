@@ -65,7 +65,7 @@ export default function AboutLivePreview() {
             </div>
 
             <div className="relative max-w-4xl mx-auto">
-              <div className="absolute left-1/2 top-0 bottom-0 w-1 bg-[#185D46]/20 -translate-x-1/2 rounded-full" />
+              <div className="absolute left-1/2 top-0 bottom-0 w-1 bg-primary/20 -translate-x-1/2 rounded-full" />
               <div className="space-y-16">
                 {journey.map((step, idx) => {
                   const isEven = idx % 2 === 0;
@@ -162,7 +162,7 @@ export default function AboutLivePreview() {
                     <div className="absolute top-0 left-0 w-full h-1 bg-[#185D46] scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left rounded-t-[20px]" />
                     
                     <div className="flex flex-col items-center h-full w-full justify-center transform transition-transform duration-500 group-hover:-translate-y-6">
-                      <div className="w-16 h-16 rounded-full bg-[#185D46]/5 flex items-center justify-center text-[#185D46] mb-6 group-hover:scale-110 transition-transform duration-500">
+                      <div className="w-16 h-16 rounded-full bg-primary/5 flex items-center justify-center text-[#185D46] mb-6 group-hover:scale-110 transition-transform duration-500">
                         {getIcon(item.iconName)}
                       </div>
                       <h3 className="text-xl font-bold text-[#185D46]">
@@ -171,7 +171,7 @@ export default function AboutLivePreview() {
                     </div>
 
                     <div className="absolute bottom-0 left-0 right-0 p-8 pt-4 translate-y-[120%] opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 ease-out bg-white">
-                      <p className="text-[#185D46]/70 leading-relaxed font-medium">
+                      <p className="text-primary/70 leading-relaxed font-medium">
                         {item.description}
                       </p>
                     </div>

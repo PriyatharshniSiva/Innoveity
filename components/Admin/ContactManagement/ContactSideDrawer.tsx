@@ -98,12 +98,12 @@ export default function ContactSideDrawer() {
                 <>
                   <div>
                     <label className="block text-sm font-semibold text-slate-700 mb-2">Office Name</label>
-                    <input type="text" name="name" value={officeData.name || ""} onChange={handleOfficeChange} className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#185D46]/20 focus:border-[#185D46] transition-all" />
+                    <input type="text" name="name" value={officeData.name || ""} onChange={handleOfficeChange} className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-[#185D46] transition-all" />
                   </div>
                   <div className="grid grid-cols-2 gap-4">
                     <div>
                       <label className="block text-sm font-semibold text-slate-700 mb-2">Branch Type</label>
-                      <select name="branchType" value={officeData.branchType || "Branch"} onChange={handleOfficeChange} className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#185D46]/20 focus:border-[#185D46] transition-all bg-white">
+                      <select name="branchType" value={officeData.branchType || "Branch"} onChange={handleOfficeChange} className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-[#185D46] transition-all bg-white">
                         <option value="Headquarters">Headquarters</option>
                         <option value="Branch">Branch</option>
                         <option value="Research">Research Center</option>
@@ -111,21 +111,21 @@ export default function ContactSideDrawer() {
                     </div>
                     <div>
                       <label className="block text-sm font-semibold text-slate-700 mb-2">Accent Color</label>
-                      <input type="color" name="color" value={officeData.color || "#185D46"} onChange={handleOfficeChange} className="w-full h-12 rounded-xl border border-slate-200 cursor-pointer p-1" />
+                      <input type="color" name="color" value={officeData.color || "var(--color-primary)"} onChange={handleOfficeChange} className="w-full h-12 rounded-xl border border-slate-200 cursor-pointer p-1" />
                     </div>
                   </div>
                   <div>
                     <label className="block text-sm font-semibold text-slate-700 mb-2">Full Address</label>
-                    <textarea name="address" value={officeData.address || ""} onChange={handleOfficeChange} rows={3} className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#185D46]/20 focus:border-[#185D46] transition-all resize-none" />
+                    <textarea name="address" value={officeData.address || ""} onChange={handleOfficeChange} rows={3} className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-[#185D46] transition-all resize-none" />
                   </div>
                   <div className="grid grid-cols-2 gap-4">
                     <div>
                       <label className="block text-sm font-semibold text-slate-700 mb-2">City</label>
-                      <input type="text" name="city" value={officeData.city || ""} onChange={handleOfficeChange} className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#185D46]/20 focus:border-[#185D46] transition-all" />
+                      <input type="text" name="city" value={officeData.city || ""} onChange={handleOfficeChange} className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-[#185D46] transition-all" />
                     </div>
                     <div>
                       <label className="block text-sm font-semibold text-slate-700 mb-2">Pincode</label>
-                      <input type="text" name="pincode" value={officeData.pincode || ""} onChange={handleOfficeChange} className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#185D46]/20 focus:border-[#185D46] transition-all" />
+                      <input type="text" name="pincode" value={officeData.pincode || ""} onChange={handleOfficeChange} className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-[#185D46] transition-all" />
                     </div>
                   </div>
                 </>
@@ -137,7 +137,7 @@ export default function ContactSideDrawer() {
                     <h3 className="font-bold text-slate-800 border-b border-slate-100 pb-2">Phone Numbers</h3>
                     <div>
                       <label className="block text-sm font-semibold text-slate-700 mb-2">Primary Phone (Displayed everywhere)</label>
-                      <input type="text" name="phonePrimary" value={settingsData.phonePrimary} onChange={handleSettingsChange} className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#185D46]/20 focus:border-[#185D46] transition-all" />
+                      <input type="text" name="phonePrimary" value={settingsData.phonePrimary} onChange={handleSettingsChange} className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-[#185D46] transition-all" />
                     </div>
                   </div>
 
@@ -145,11 +145,11 @@ export default function ContactSideDrawer() {
                     <h3 className="font-bold text-slate-800 border-b border-slate-100 pb-2">Email Addresses</h3>
                     <div>
                       <label className="block text-sm font-semibold text-slate-700 mb-2">Primary Email</label>
-                      <input type="email" name="emailPrimary" value={settingsData.emailPrimary} onChange={handleSettingsChange} className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#185D46]/20 focus:border-[#185D46] transition-all" />
+                      <input type="email" name="emailPrimary" value={settingsData.emailPrimary} onChange={handleSettingsChange} className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-[#185D46] transition-all" />
                     </div>
                     <div>
                       <label className="block text-sm font-semibold text-slate-700 mb-2">Secondary / Support Email</label>
-                      <input type="email" name="emailSecondary" value={settingsData.emailSecondary} onChange={handleSettingsChange} className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#185D46]/20 focus:border-[#185D46] transition-all" />
+                      <input type="email" name="emailSecondary" value={settingsData.emailSecondary} onChange={handleSettingsChange} className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-[#185D46] transition-all" />
                     </div>
                   </div>
 
@@ -157,11 +157,11 @@ export default function ContactSideDrawer() {
                     <h3 className="font-bold text-slate-800 border-b border-slate-100 pb-2">Business Hours</h3>
                     <div>
                       <label className="block text-sm font-semibold text-slate-700 mb-2">Weekday Hours</label>
-                      <input type="text" name="hoursWeekday" value={settingsData.hoursWeekday} onChange={handleSettingsChange} className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#185D46]/20 focus:border-[#185D46] transition-all" />
+                      <input type="text" name="hoursWeekday" value={settingsData.hoursWeekday} onChange={handleSettingsChange} className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-[#185D46] transition-all" />
                     </div>
                     <div>
                       <label className="block text-sm font-semibold text-slate-700 mb-2">Weekend Hours</label>
-                      <input type="text" name="hoursWeekend" value={settingsData.hoursWeekend} onChange={handleSettingsChange} className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#185D46]/20 focus:border-[#185D46] transition-all" />
+                      <input type="text" name="hoursWeekend" value={settingsData.hoursWeekend} onChange={handleSettingsChange} className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-[#185D46] transition-all" />
                     </div>
                   </div>
                 </>

@@ -44,13 +44,13 @@ export default function CsrInitiativesGrid() {
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.3, delay: idx * 0.05 }}
-              className="bg-white rounded-xl p-3 border border-slate-100 hover:border-[#185D46]/30 hover:shadow-md transition-all flex items-center group"
+              className="bg-white rounded-xl p-3 border border-slate-100 hover:border-primary/30 hover:shadow-md transition-all flex items-center group"
             >
               <div className="px-1 cursor-grab text-slate-300 hover:text-slate-500">
                 <GripVertical className="w-5 h-5" />
               </div>
 
-              <div className="w-12 h-12 rounded-lg bg-[#185D46]/10 text-[#185D46] flex items-center justify-center shrink-0 mx-3">
+              <div className="w-12 h-12 rounded-lg bg-primary/10 text-[#185D46] flex items-center justify-center shrink-0 mx-3">
                 <IconComp className="w-6 h-6" />
               </div>
 
@@ -66,11 +66,11 @@ export default function CsrInitiativesGrid() {
               <div className="flex items-center space-x-1 ml-4">
                 <button 
                   onClick={() => handleToggleFeatured(ini.id)}
-                  className={`p-2 rounded-lg transition-colors ${ini.featured ? 'text-[#F59E0B] bg-[#F59E0B]/10 hover:bg-[#F59E0B]/20' : 'text-slate-400 hover:text-[#F59E0B] hover:bg-slate-100'}`}
+                  className={`p-2 rounded-lg transition-colors ${ini.featured ? 'text-[#F59E0B] bg-accent/10 hover:bg-accent/20' : 'text-slate-400 hover:text-[#F59E0B] hover:bg-slate-100'}`}
                 >
                   {ini.featured ? <Star className="w-4 h-4 fill-current" /> : <StarOff className="w-4 h-4" />}
                 </button>
-                <button onClick={() => openDrawer("initiative", ini.id)} className="p-2 text-slate-400 hover:text-[#185D46] hover:bg-[#185D46]/10 rounded-lg transition-colors">
+                <button onClick={() => openDrawer("initiative", ini.id)} className="p-2 text-slate-400 hover:text-[#185D46] hover:bg-primary/10 rounded-lg transition-colors">
                   <Edit2 className="w-4 h-4" />
                 </button>
                 <button onClick={() => handleDelete(ini.id)} className="p-2 text-slate-400 hover:text-red-600 hover:bg-red-50 rounded-lg transition-colors">

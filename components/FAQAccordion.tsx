@@ -55,7 +55,7 @@ export default function FAQAccordion({ data }: { data?: any }) {
               key={index}
               className={`bg-white rounded-[20px] transition-all duration-300 overflow-hidden 
                 ${isOpen 
-                  ? 'border border-[#185D46]/30 shadow-[0_4px_25px_rgba(12,74,65,0.12)] -translate-y-1' 
+                  ? 'border border-primary/30 shadow-[0_4px_25px_rgba(12,74,65,0.12)] -translate-y-1' 
                   : 'border border-slate-200 shadow-sm hover:shadow-[0_4px_20px_rgba(0,0,0,0.06)] hover:-translate-y-0.5'
                 }`}
             >
@@ -106,7 +106,7 @@ export default function FAQAccordion({ data }: { data?: any }) {
                             transition={{ duration: 0.3, ease: "easeInOut" }}
                             className="mt-4"
                           >
-                            <p className="text-slate-600 leading-relaxed text-base border-l-2 border-[#185D46]/30 pl-4 ml-1">
+                            <p className="text-slate-600 leading-relaxed text-base border-l-2 border-primary/30 pl-4 ml-1">
                               {faq.detailedExplanation}
                             </p>
                           </motion.div>

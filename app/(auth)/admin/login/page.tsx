@@ -41,8 +41,8 @@ export default function LoginPage() {
   return (
     <div className="min-h-screen flex items-center justify-center relative overflow-hidden bg-[#F4F7F6]">
       {/* Background Accents */}
-      <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-[#185D46]/10 rounded-full blur-[100px]" />
-      <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-[#F59E0B]/10 rounded-full blur-[100px]" />
+      <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-primary/10 rounded-full blur-[100px]" />
+      <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-accent/10 rounded-full blur-[100px]" />
 
       <motion.div 
         initial={{ opacity: 0, y: 20 }}
@@ -80,7 +80,7 @@ export default function LoginPage() {
                 required
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="w-full pl-11 pr-4 py-3.5 bg-slate-50 border border-slate-200 rounded-xl outline-none focus:ring-4 focus:ring-[#185D46]/10 focus:border-[#185D46] focus:bg-white transition-all font-medium text-slate-700 placeholder-slate-400"
+                className="w-full pl-11 pr-4 py-3.5 bg-slate-50 border border-slate-200 rounded-xl outline-none focus:ring-4 focus:ring-primary/10 focus:border-[#185D46] focus:bg-white transition-all font-medium text-slate-700 placeholder-slate-400"
                 placeholder="admin@innoveity.com"
               />
             </div>
@@ -97,7 +97,7 @@ export default function LoginPage() {
                 required
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                className="w-full pl-11 pr-4 py-3.5 bg-slate-50 border border-slate-200 rounded-xl outline-none focus:ring-4 focus:ring-[#185D46]/10 focus:border-[#185D46] focus:bg-white transition-all font-medium text-slate-700 placeholder-slate-400"
+                className="w-full pl-11 pr-4 py-3.5 bg-slate-50 border border-slate-200 rounded-xl outline-none focus:ring-4 focus:ring-primary/10 focus:border-[#185D46] focus:bg-white transition-all font-medium text-slate-700 placeholder-slate-400"
                 placeholder="••••••••"
               />
             </div>
@@ -106,7 +106,7 @@ export default function LoginPage() {
           <button
             type="submit"
             disabled={isLoading}
-            className="w-full mt-8 py-3.5 bg-[#185D46] hover:bg-[#124634] text-white rounded-xl font-bold shadow-lg shadow-[#185D46]/20 transition-all flex items-center justify-center gap-2 group disabled:opacity-70"
+            className="w-full mt-8 py-3.5 bg-[#185D46] hover:bg-[#124634] text-white rounded-xl font-bold shadow-lg shadow-primary/20 transition-all flex items-center justify-center gap-2 group disabled:opacity-70"
           >
             {isLoading ? (
               <Loader2 className="w-5 h-5 animate-spin" />

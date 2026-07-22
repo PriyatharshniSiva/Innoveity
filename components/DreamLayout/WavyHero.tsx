@@ -15,7 +15,7 @@ export default function WavyHero({ badge, title, subtitle, description, bgStyle 
   return (
     <div 
       className="relative pt-32 pb-40 px-4 sm:px-6 lg:px-8 overflow-hidden text-center flex flex-col items-center"
-      style={bgStyle || { background: 'linear-gradient(135deg, #185D46, #14b8a6, #0d9488)' }}
+      style={bgStyle || { background: 'linear-gradient(135deg, var(--color-primary), #14b8a6, #0d9488)' }}
     >
       {/* Decorative floating elements */}
       <motion.div 
@@ -26,7 +26,7 @@ export default function WavyHero({ badge, title, subtitle, description, bgStyle 
       <motion.div 
         animate={{ y: [0, 20, 0] }}
         transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-        className="absolute top-40 right-[15%] w-32 h-32 rounded-full border-4 border-[#f59e0b]/30 bg-[#f59e0b]/20 hidden md:block"
+        className="absolute top-40 right-[15%] w-32 h-32 rounded-full border-4 border-accent/30 bg-accent/20 hidden md:block"
       />
       <motion.div 
         animate={{ scale: [1, 1.1, 1] }}

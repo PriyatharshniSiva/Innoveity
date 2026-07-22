@@ -9,6 +9,9 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@types/react-color": "^3.0.13",
+    "@uiw/react-color-shade-slider": "^2.10.3",
+    "@uiw/react-color-wheel": "^2.10.3",
     "bcryptjs": "^3.0.3",
     "framer-motion": "^12.42.2",
     "jose": "^6.2.3",
@@ -16,6 +19,7 @@
     "lucide-react": "^1.24.0",
     "next": "16.2.10",
     "react": "19.2.4",
+    "react-color": "^2.19.3",
     "react-countup": "^6.5.3",
     "react-dom": "19.2.4",
     "react-intersection-observer": "^10.0.3",

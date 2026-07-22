@@ -40,8 +40,8 @@ export default function EdukaMissionGrid() {
     <section className="py-24 bg-slate-50/50 relative overflow-hidden">
       {/* Premium background decorative shapes */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
-        <div className="absolute -top-40 -right-40 w-96 h-96 bg-[#185D46]/5 rounded-full blur-3xl" />
-        <div className="absolute top-40 -left-40 w-96 h-96 bg-[#F59E0B]/5 rounded-full blur-3xl" />
+        <div className="absolute -top-40 -right-40 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
+        <div className="absolute top-40 -left-40 w-96 h-96 bg-accent/5 rounded-full blur-3xl" />
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -51,9 +51,9 @@ export default function EdukaMissionGrid() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: false }}
-            className="text-4xl sm:text-5xl font-extrabold text-[#185D46] tracking-tight"
+            className="text-4xl sm:text-5xl font-extrabold text-[var(--color-brand-primary, #0F172A)] tracking-tight"
           >
-            Our Foundation
+            <span style={{ color: "var(--color-brand-accent, #F59E0B)" }}>Our </span>Foundation
           </motion.h2>
           <motion.p 
             initial={{ opacity: 0, y: 20 }}

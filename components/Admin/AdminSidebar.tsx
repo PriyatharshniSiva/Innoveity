@@ -80,7 +80,7 @@ export default function AdminSidebar() {
                     title={isCollapsed ? item.name : ""}
                     className={`flex items-center gap-3 px-3 py-2.5 rounded-xl transition-all group relative ${
                       isActive 
-                        ? 'bg-[#185D46]/5 dark:bg-white text-[#185D46] dark:text-black font-bold dark:shadow-[0_0_20px_rgba(255,255,255,0.1)]' 
+                        ? 'bg-primary/5 dark:bg-white text-[#185D46] dark:text-black font-bold dark:shadow-[0_0_20px_rgba(255,255,255,0.1)]' 
                         : 'hover:bg-slate-50 dark:hover:bg-white/5 hover:text-[#0F172A] dark:hover:text-white text-slate-500 dark:text-neutral-400 font-medium'
                     }`}
                   >
@@ -108,7 +108,7 @@ export default function AdminSidebar() {
           href="/admin/profile" 
           className={`flex items-center gap-3 px-3 py-3 rounded-xl hover:bg-white dark:hover:bg-white/5 hover:shadow-sm border border-transparent hover:border-slate-100 dark:hover:border-transparent transition-all ${isCollapsed ? 'justify-center' : ''}`}
         >
-          <div className="w-9 h-9 rounded-full bg-[#185D46]/10 dark:bg-white flex items-center justify-center shrink-0 transition-colors duration-300">
+          <div className="w-9 h-9 rounded-full bg-primary/10 dark:bg-white flex items-center justify-center shrink-0 transition-colors duration-300">
             <User className="w-4 h-4 text-[#185D46] dark:text-black transition-colors duration-300" />
           </div>
           {!isCollapsed && (

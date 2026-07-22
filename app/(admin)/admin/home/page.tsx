@@ -19,7 +19,7 @@ function HomeManagementContent() {
       <div className="bg-white/80 dark:bg-black/50 backdrop-blur-2xl border-b border-slate-200 dark:border-white/10 sticky top-0 z-50">
         <div className="max-w-[1600px] mx-auto px-6 lg:px-8 py-5 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
           <div className="flex items-center gap-4">
-            <div className="w-12 h-12 bg-gradient-to-br from-[#185D46] to-[#0f3a2c] rounded-2xl flex items-center justify-center shadow-lg shadow-[#185D46]/20">
+            <div className="w-12 h-12 bg-gradient-to-br from-[#185D46] to-[#0f3a2c] rounded-2xl flex items-center justify-center shadow-lg shadow-primary/20">
               <Sparkles className="w-6 h-6 text-white" />
             </div>
             <div>
@@ -34,16 +34,16 @@ function HomeManagementContent() {
               <input 
                 type="text" 
                 placeholder="Search sections..." 
-                className="pl-10 pr-4 py-2.5 bg-slate-100 dark:bg-white/5 border-none rounded-xl text-sm font-medium focus:outline-none focus:ring-2 focus:ring-[#185D46]/30 transition-all w-64 text-slate-700 dark:text-white placeholder-slate-400"
+                className="pl-10 pr-4 py-2.5 bg-slate-100 dark:bg-white/5 border-none rounded-xl text-sm font-medium focus:outline-none focus:ring-2 focus:ring-primary/30 transition-all w-64 text-slate-700 dark:text-white placeholder-slate-400"
               />
             </div>
-            <button className="p-3 text-slate-500 dark:text-neutral-400 hover:text-[#185D46] dark:hover:text-white bg-slate-100 dark:bg-white/5 hover:bg-[#185D46]/10 dark:hover:bg-white/10 rounded-xl transition-all">
+            <button className="p-3 text-slate-500 dark:text-neutral-400 hover:text-[#185D46] dark:hover:text-white bg-slate-100 dark:bg-white/5 hover:bg-primary/10 dark:hover:bg-white/10 rounded-xl transition-all">
               <RefreshCcw className="w-5 h-5" />
             </button>
             <button 
               onClick={saveAllChanges}
               disabled={isSaving}
-              className="px-6 py-2.5 bg-gradient-to-r from-[#185D46] to-[#114332] hover:from-[#134937] hover:to-[#0a2e22] text-white font-bold rounded-xl shadow-lg shadow-[#185D46]/25 hover:shadow-xl hover:shadow-[#185D46]/40 transition-all flex items-center transform hover:-translate-y-0.5 disabled:opacity-50 disabled:hover:translate-y-0"
+              className="px-6 py-2.5 bg-gradient-to-r from-[#185D46] to-[#114332] hover:from-[#134937] hover:to-[#0a2e22] text-white font-bold rounded-xl shadow-lg shadow-primary/25 hover:shadow-xl hover:shadow-primary/40 transition-all flex items-center transform hover:-translate-y-0.5 disabled:opacity-50 disabled:hover:translate-y-0"
             >
               {isSaving ? (
                 <>

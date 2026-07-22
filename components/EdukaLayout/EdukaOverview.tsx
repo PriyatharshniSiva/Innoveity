@@ -29,8 +29,8 @@ export default function EdukaOverview({ data }: { data?: any }) {
       badge: "Institutions",
       title: "Comprehensive Training Solutions for Engineering Colleges & Universities",
       text: "Our AICTE-recognized faculty development programs and student placement training modules have helped engineering colleges achieve 60-85% improvement in campus placement statistics. We specialize in aptitude training, technical certifications, soft skills development, mock interview preparation, and industry connect programs aligned with NEP 2020 guidelines. Partner with INNOVEITY to enhance your institution's reputation and student success rates through evidence-based training methodologies.",
-      accent: "#185D46",
-      badgeBg: "bg-[#185D46]/5",
+      accent: "var(--color-primary)",
+      badgeBg: "bg-primary/5",
       badgeText: "text-[#185D46]",
       iconPath: "M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253",
     },
@@ -38,7 +38,7 @@ export default function EdukaOverview({ data }: { data?: any }) {
       badge: "Corporates",
       title: "Corporate L&D Training & ESG Consulting Services",
       text: "Maximize your learning and development ROI with customized corporate training solutions delivering 200-300% returns through improved productivity, reduced employee attrition, and enhanced innovation capabilities. Our ISO-certified trainers bring 15+ years of industry experience across manufacturing, IT, healthcare, and BFSI sectors. We offer flexible delivery models including on-site training at your Chennai, Coimbatore, or Madurai offices, online virtual sessions, and hybrid learning formats tailored to your organizational needs.",
-      accent: "#F59E0B",
+      accent: "var(--color-accent)",
       badgeBg: "bg-amber-50",
       badgeText: "text-amber-700",
       iconPath: "M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2-2v2m8 0V6a2 2 0 012 2v6M8 6V4a2 2 0 012-2h4a2 2 0 012 2v2m-8 0V6a2 2 0 00-2 2v6",
@@ -47,8 +47,8 @@ export default function EdukaOverview({ data }: { data?: any }) {
       badge: "Sustainability",
       title: "ESG Implementation & Sustainability Consulting",
       text: "Navigate complex Environmental, Social, and Governance (ESG) requirements with INNOVEITY's comprehensive consulting services. We provide carbon footprint analysis, sustainability reporting, CSR-compliant training programs for MCA documentation, and complete ESG framework implementation across Tamil Nadu. Our CSR training initiatives qualify for company CSR spending under Schedule VII, helping you meet compliance requirements while creating meaningful social impact.",
-      accent: "#185D46",
-      badgeBg: "bg-[#185D46]/5",
+      accent: "var(--color-primary)",
+      badgeBg: "bg-primary/5",
       badgeText: "text-[#185D46]",
       iconPath: "M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064",
     },
@@ -59,22 +59,22 @@ export default function EdukaOverview({ data }: { data?: any }) {
       title: "Our Service Coverage Across Tamil Nadu",
       text: "INNOVEITY maintains a strong presence across major Tamil Nadu cities including Chennai, Coimbatore, Madurai, Trichy, Salem, Tiruchirappalli, and surrounding regions. Our regional expertise combined with local market knowledge enables us to deliver culturally relevant, context-appropriate training solutions that resonate with Tamil Nadu's unique educational and corporate landscape. Whether you're an engineering college in Chennai seeking to improve placement statistics, a manufacturing company in Coimbatore requiring safety training, or a corporate entity in Madurai looking for leadership development programs, INNOVEITY has the expertise and infrastructure to support your growth.",
       icon: "M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z M15 11a3 3 0 11-6 0 3 3 0 016 0z",
-      color: "#185D46",
-      bg: "bg-[#185D46]/5",
+      color: "var(--color-primary)",
+      bg: "bg-primary/5",
     },
     {
       title: "Industry-Recognized Certifications & Compliance",
       text: "All INNOVEITY programs are designed to meet the highest industry standards and regulatory requirements. Our courses are aligned with AICTE guidelines, NSDC (National Skill Development Corporation) frameworks, Tamil Nadu Skill Development Corporation standards, and NEP 2020 educational policies. We provide government-approved skill certifications that enhance student employability and corporate competitiveness. Our trainers hold prestigious certifications including PMP (Project Management Professional), Six Sigma Black Belt, SHRM (Society for Human Resource Management), and specialized credentials in behavioral psychology, adult learning theory, and instructional design.",
       icon: "M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z",
-      color: "#F59E0B",
+      color: "var(--color-accent)",
       bg: "bg-amber-50",
     },
     {
       title: "Measurable Results & ROI Tracking",
       text: "Unlike generic training providers, INNOVEITY emphasizes measurable outcomes and transparent ROI tracking. We employ Kirkpatrick's Four-Level Training Evaluation Model to assess Reaction (participant feedback), Learning (knowledge gained), Behavior (on-job application), and Results (business impact). Our clients receive comprehensive dashboards showing pre and post-training assessments, skill gap analysis, productivity improvements, and bottom-line business impact. This data-driven approach ensures your training investment delivers tangible returns and demonstrates clear value to stakeholders.",
       icon: "M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z",
-      color: "#185D46",
-      bg: "bg-[#185D46]/5",
+      color: "var(--color-primary)",
+      bg: "bg-primary/5",
     },
   ];
 
@@ -82,7 +82,7 @@ export default function EdukaOverview({ data }: { data?: any }) {
     <div className="bg-white">
 
       {/* ── SECTION 1: Hero Header ── */}
-      <section className="relative py-24 px-4 sm:px-6 lg:px-8 overflow-hidden bg-white border-t border-slate-100">
+      <section className="relative pt-[50px] pb-24 px-4 sm:px-6 lg:px-8 overflow-hidden bg-white border-t border-slate-100">
         {/* Soft dot grid */}
         <div
           className="absolute inset-0 pointer-events-none z-0"
@@ -103,10 +103,10 @@ export default function EdukaOverview({ data }: { data?: any }) {
 
           <motion.h2
             {...fadeUp(0.08)}
-            className="text-4xl sm:text-5xl lg:text-[3.5rem] font-black text-[#185D46] tracking-tight leading-[1.1]"
+            className="text-4xl sm:text-5xl lg:text-[3.5rem] font-black text-[var(--color-brand-primary, #0F172A)] tracking-tight leading-[1.1]"
           >
-            {data?.heroTitle1 || "Leading Corporate Training &"} {" "}
-            <span className="text-[#F59E0B]">{data?.heroHighlight || "College Development"}</span>{" "}
+            <span style={{ color: "var(--color-brand-accent, #F59E0B)" }}>{data?.heroTitle1 || "Leading Corporate Training &"}</span> {" "}
+            <span style={{ color: "var(--color-brand-primary, #0F172A)" }}>{data?.heroHighlight || "College Development"}</span>{" "}
             {data?.heroTitle2 || "Partner in Tamil Nadu"}
           </motion.h2>
 
@@ -120,7 +120,7 @@ export default function EdukaOverview({ data }: { data?: any }) {
       </section>
 
       {/* ── SECTION 2: Three Division Cards ── */}
-      <section className="relative py-20 px-4 sm:px-6 lg:px-8 bg-[#185D4610] overflow-hidden">
+      <section className="relative pt-[50px] pb-20 px-4 sm:px-6 lg:px-8 bg-[#185D4610] overflow-hidden">
         <div
           className="absolute inset-0 pointer-events-none z-0 opacity-50"
           style={{
@@ -130,14 +130,14 @@ export default function EdukaOverview({ data }: { data?: any }) {
         />
 
         <div className="max-w-7xl mx-auto relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
             {divisionCards.map((card, idx) => (
               <motion.div
                 key={idx}
                 {...fadeUp(idx * 0.12)}
                 whileHover={{ y: -8, boxShadow: "0 24px 48px -8px rgba(12,74,65,0.12)" }}
                 transition={{ type: "spring", stiffness: 260, damping: 22 }}
-                className="group bg-white rounded-[24px] border border-slate-100 p-8 flex flex-col gap-5 shadow-[0_4px_20px_rgba(0,0,0,0.05)] cursor-pointer"
+                className="group bg-white rounded-[24px] border border-slate-100 p-8 flex flex-col gap-5 shadow-[0_4px_20px_rgba(0,0,0,0.05)] cursor-pointer h-full"
               >
                 {/* Top row: badge + icon */}
                 <div className="flex items-center justify-between">
@@ -156,7 +156,7 @@ export default function EdukaOverview({ data }: { data?: any }) {
 
                 {/* Title */}
                 <h3
-                  className="text-lg sm:text-xl font-extrabold leading-snug tracking-tight"
+                  className="text-lg sm:text-xl font-extrabold leading-snug tracking-tight min-h-[3.5rem]"
                   style={{ color: card.accent }}
                 >
                   {card.title}
@@ -166,7 +166,7 @@ export default function EdukaOverview({ data }: { data?: any }) {
                 <div className="h-px bg-slate-100" />
 
                 {/* Body */}
-                <p className="text-slate-600 text-sm sm:text-base leading-relaxed font-medium flex-grow">
+                <p className="text-slate-600 text-sm sm:text-base leading-relaxed font-medium flex-1 text-justify">
                   {card.text}
                 </p>
 
@@ -182,7 +182,7 @@ export default function EdukaOverview({ data }: { data?: any }) {
       </section>
 
       {/* ── SECTION 3: Why Choose INNOVEITY ── */}
-      <section className="relative py-20 px-4 sm:px-6 lg:px-8 bg-white overflow-hidden">
+      <section className="relative pt-[50px] pb-20 px-4 sm:px-6 lg:px-8 bg-white overflow-hidden">
         {/* Subtle radial glow */}
         <div
           className="absolute inset-0 pointer-events-none z-0"
@@ -195,12 +195,25 @@ export default function EdukaOverview({ data }: { data?: any }) {
           {/* Card wrapper */}
           <motion.div
             {...fadeUp(0)}
-            className="bg-[#185D4610] rounded-[32px] border border-[#185D46]/20 p-8 sm:p-12 space-y-10 shadow-[0_8px_40px_rgba(12,74,65,0.06)]"
+            className="bg-[#185D4610] rounded-[32px] border border-primary/20 p-8 sm:p-12 space-y-10 shadow-[0_8px_40px_rgba(12,74,65,0.06)]"
           >
             {/* Header */}
             <div className="space-y-2">
-              <h3 className="text-3xl sm:text-4xl font-extrabold text-[#185D46] tracking-tight">
-                {data?.whyChooseTitle || "Why Leading Institutions Choose INNOVEITY"}
+              <h3 className="text-3xl sm:text-4xl font-extrabold text-[var(--color-brand-primary, #0F172A)] tracking-tight">
+                {(() => {
+                  const text = data?.whyChooseTitle || "Why Leading Institutions Choose INNOVEITY";
+                  if (typeof text === 'string' && text.includes("Why Leading Institutions ")) {
+                    const parts = text.split("Why Leading Institutions ");
+                    return (
+                      <>
+                        {parts[0]}
+                        <span style={{ color: "var(--color-brand-accent, #F59E0B)" }}>Why Leading Institutions </span>
+                        {parts.slice(1).join("Why Leading Institutions ")}
+                      </>
+                    );
+                  }
+                  return text;
+                })()}
               </h3>
               <p className="text-slate-500 text-base font-semibold">
                 {data?.whyChooseSubtitle || "Delivering excellence through recognized certifications and optimized training strategies."}
@@ -232,7 +245,7 @@ export default function EdukaOverview({ data }: { data?: any }) {
       </section>
 
       {/* ── SECTION 4: Core Details Grid ── */}
-      <section className="relative py-20 px-4 sm:px-6 lg:px-8 bg-[#185D4610] overflow-hidden">
+      <section className="relative pt-[50px] pb-20 px-4 sm:px-6 lg:px-8 bg-[#185D4610] overflow-hidden">
         <div
           className="absolute inset-0 pointer-events-none z-0 opacity-60"
           style={{
@@ -242,14 +255,14 @@ export default function EdukaOverview({ data }: { data?: any }) {
         />
 
         <div className="max-w-7xl mx-auto relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
             {coreDetails.map((col, idx) => (
               <motion.div
                 key={idx}
                 {...fadeUp(idx * 0.12)}
                 whileHover={{ y: -6, boxShadow: "0 20px 40px -8px rgba(12,74,65,0.1)" }}
                 transition={{ type: "spring", stiffness: 260, damping: 22 }}
-                className="group bg-white rounded-[24px] border border-slate-100 p-8 flex flex-col gap-5 shadow-[0_4px_20px_rgba(0,0,0,0.04)] cursor-pointer"
+                className="group bg-white rounded-[24px] border border-slate-100 p-8 flex flex-col gap-5 shadow-[0_4px_20px_rgba(0,0,0,0.04)] cursor-pointer h-full"
               >
                 {/* Icon */}
                 <div
@@ -262,7 +275,7 @@ export default function EdukaOverview({ data }: { data?: any }) {
 
                 {/* Title */}
                 <h4
-                  className="text-lg sm:text-xl font-extrabold leading-snug tracking-tight"
+                  className="text-lg sm:text-xl font-extrabold leading-snug tracking-tight min-h-[3.5rem]"
                   style={{ color: col.color }}
                 >
                   {col.title}
@@ -275,7 +288,7 @@ export default function EdukaOverview({ data }: { data?: any }) {
                 />
 
                 {/* Body */}
-                <p className="text-slate-600 text-sm sm:text-base leading-relaxed font-medium">
+                <p className="text-slate-600 text-sm sm:text-base leading-relaxed font-medium flex-1 text-justify">
                   {col.text}
                 </p>
               </motion.div>
@@ -285,7 +298,7 @@ export default function EdukaOverview({ data }: { data?: any }) {
       </section>
 
       {/* ── SECTION 5: Contact CTA ── */}
-      <section className="relative py-20 px-4 sm:px-6 lg:px-8 bg-white overflow-hidden">
+      <section className="relative pt-[50px] pb-20 px-4 sm:px-6 lg:px-8 bg-white overflow-hidden">
         <div className="max-w-5xl mx-auto relative z-10">
           <motion.div
             {...fadeUp(0)}
@@ -318,7 +331,7 @@ export default function EdukaOverview({ data }: { data?: any }) {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: false }}
               transition={{ duration: 0.6 }}
-              className="relative z-10 text-3xl sm:text-4xl font-extrabold text-white tracking-tight"
+              className="relative z-10 text-3xl sm:text-4xl font-extrabold !text-white tracking-tight"
             >
               {data?.contactTitle || "Contact INNOVEITY Today"}
             </motion.h3>
@@ -328,7 +341,7 @@ export default function EdukaOverview({ data }: { data?: any }) {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: false }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="relative z-10 text-emerald-100 max-w-3xl mx-auto text-base sm:text-lg leading-relaxed font-medium"
+              className="relative z-10 text-emerald-100 max-w-3xl mx-auto text-base sm:text-lg leading-relaxed font-medium text-justify"
               dangerouslySetInnerHTML={{
                 __html: data?.contactDescription || `Ready to transform your institution or organization? Contact INNOVEITY at <span class="text-[#F59E0B] font-black">+91 880 770 8818</span> or email <span class="text-[#F59E0B] font-black">admin@innoveity.com</span> for a free consultation. Our team of experts will assess your specific needs and design a customized training solution that delivers measurable results. Join 50+ leading Tamil Nadu institutions and 100+ corporate clients who trust INNOVEITY for their training and development requirements. Visit our office at No:11 Ritherdon Avenue, Ritherdon Road Vepery, Chennai 600007, or schedule a virtual consultation to discuss how we can help you achieve your educational and business objectives.`
               }}

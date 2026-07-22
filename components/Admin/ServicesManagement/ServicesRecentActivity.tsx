@@ -6,9 +6,9 @@ import { motion } from "framer-motion";
 import { Clock, Plus, Edit2, Trash2, Image as ImageIcon, FolderKanban } from "lucide-react";
 
 const activities = [
-  { id: 1, title: "Added 'Cloud Infrastructure' Service", time: "1 hour ago", icon: Plus, color: "#185D46" },
+  { id: 1, title: "Added 'Cloud Infrastructure' Service", time: "1 hour ago", icon: Plus, color: "var(--color-primary)" },
   { id: 2, title: "Updated 'Faculty Development'", time: "3 hours ago", icon: Edit2, color: "#0ea5e9" },
-  { id: 3, title: "Changed Image for 'ESG Consulting'", time: "Yesterday", icon: ImageIcon, color: "#F59E0B" },
+  { id: 3, title: "Changed Image for 'ESG Consulting'", time: "Yesterday", icon: ImageIcon, color: "var(--color-accent)" },
   { id: 4, title: "Deleted 'Legacy Systems'", time: "2 days ago", icon: Trash2, color: "#ef4444" },
   { id: 5, title: "Reordered Categories", time: "3 days ago", icon: FolderKanban, color: "#8b5cf6" },
 ];

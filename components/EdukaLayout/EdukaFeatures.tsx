@@ -25,7 +25,7 @@ export default function EdukaFeatures({ features }: EdukaFeaturesProps) {
             viewport={{ once: false, margin: "-50px" }}
             transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1], delay: idx * 0.08 }}
             whileHover={{ y: -8, scale: 1.02, boxShadow: "0 25px 50px -12px rgba(24, 93, 70, 0.12)" }}
-            className="eduka-card p-8 text-center group cursor-pointer relative overflow-hidden border border-slate-100 hover:border-[#185D46]/30 transition-all duration-300 rounded-2xl bg-white"
+            className="eduka-card p-8 text-center group cursor-pointer relative overflow-hidden border border-slate-100 hover:border-primary/30 transition-all duration-300 rounded-2xl bg-white"
           >
             {/* Top accent bar */}
             <div className="absolute top-0 left-0 w-full h-1 bg-[#185D46] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />

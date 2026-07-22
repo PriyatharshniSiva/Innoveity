@@ -101,7 +101,7 @@ export default function TestimonialsDrawer() {
                     required
                     rows={5}
                     placeholder="Enter the testimonial quote here..."
-                    className="w-full px-4 py-3 bg-white border border-slate-200 rounded-xl focus:ring-2 focus:ring-[#185D46]/20 focus:border-[#185D46] outline-none transition-all resize-none text-slate-700"
+                    className="w-full px-4 py-3 bg-white border border-slate-200 rounded-xl focus:ring-2 focus:ring-primary/20 focus:border-[#185D46] outline-none transition-all resize-none text-slate-700"
                     value={quote}
                     onChange={e => setQuote(e.target.value)}
                   />
@@ -116,7 +116,7 @@ export default function TestimonialsDrawer() {
                     type="text"
                     required
                     placeholder="e.g. John Doe, CEO at TechCorp"
-                    className="w-full px-4 py-3 bg-white border border-slate-200 rounded-xl focus:ring-2 focus:ring-[#185D46]/20 focus:border-[#185D46] outline-none transition-all text-slate-700"
+                    className="w-full px-4 py-3 bg-white border border-slate-200 rounded-xl focus:ring-2 focus:ring-primary/20 focus:border-[#185D46] outline-none transition-all text-slate-700"
                     value={author}
                     onChange={e => setAuthor(e.target.value)}
                   />

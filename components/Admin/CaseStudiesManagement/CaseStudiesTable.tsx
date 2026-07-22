@@ -87,7 +87,7 @@ export default function CaseStudiesTable() {
                   </div>
                 </td>
                 <td className="px-6 py-4">
-                  <span className={`inline-flex items-center px-2.5 py-1 rounded-full text-xs font-bold ${study.status === 'Published' ? 'bg-[#185D46]/10 text-[#185D46] border border-[#185D46]/20' : 'bg-amber-100 text-amber-700 border border-amber-200'}`}>
+                  <span className={`inline-flex items-center px-2.5 py-1 rounded-full text-xs font-bold ${study.status === 'Published' ? 'bg-primary/10 text-[#185D46] border border-primary/20' : 'bg-amber-100 text-amber-700 border border-amber-200'}`}>
                     {study.status === 'Published' ? (
                       <><span className="w-1.5 h-1.5 rounded-full bg-[#185D46] mr-1.5" /> Published</>
                     ) : (
@@ -97,7 +97,7 @@ export default function CaseStudiesTable() {
                 </td>
                 <td className="px-6 py-4 text-right">
                   <div className="flex items-center justify-end space-x-2 opacity-0 group-hover:opacity-100 transition-opacity">
-                    <button onClick={() => { setEditingCaseStudyId(study.id); setIsDrawerOpen(true); }} className="p-2 text-slate-400 hover:text-[#185D46] hover:bg-[#185D46]/10 rounded-lg transition-colors">
+                    <button onClick={() => { setEditingCaseStudyId(study.id); setIsDrawerOpen(true); }} className="p-2 text-slate-400 hover:text-[#185D46] hover:bg-primary/10 rounded-lg transition-colors">
                       <Edit2 className="w-4 h-4" />
                     </button>
                     <button className="p-2 text-slate-400 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors">

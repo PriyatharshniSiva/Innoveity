@@ -21,7 +21,7 @@ function KnowledgeHubContent() {
         </div>
         <button 
           onClick={() => { setEditingArticleId(null); setIsDrawerOpen(true); }}
-          className="flex items-center gap-2 bg-[#185D46] hover:bg-[#124634] text-white px-6 py-3.5 rounded-xl font-bold transition-all shadow-lg shadow-[#185D46]/20 hover:-translate-y-0.5 active:translate-y-0"
+          className="flex items-center gap-2 bg-[#185D46] hover:bg-[#124634] text-white px-6 py-3.5 rounded-xl font-bold transition-all shadow-lg shadow-primary/20 hover:-translate-y-0.5 active:translate-y-0"
         >
           <Plus className="w-5 h-5 stroke-[2.5]" />
           Add New Article

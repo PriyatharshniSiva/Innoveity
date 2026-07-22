@@ -12,6 +12,7 @@ import CaseStudiesActivity from "@/components/Admin/CaseStudiesManagement/CaseSt
 import CaseStudiesTestimonials from "@/components/Admin/CaseStudiesManagement/CaseStudiesTestimonials";
 import Link from "next/link";
 import { AnimatePresence } from "framer-motion";
+import { TestimonialsProvider } from "@/components/Admin/TestimonialsManagement/TestimonialsState";
 
 function CaseStudiesContent() {
   const { viewMode, setIsDrawerOpen, setEditingCaseStudyId } = useCaseStudies();
@@ -85,8 +86,10 @@ function CaseStudiesContent() {
 
 export default function AdminCaseStudies() {
   return (
-    <CaseStudiesProvider>
-      <CaseStudiesContent />
-    </CaseStudiesProvider>
+    <TestimonialsProvider>
+      <CaseStudiesProvider>
+        <CaseStudiesContent />
+      </CaseStudiesProvider>
+    </TestimonialsProvider>
   );
 }

@@ -87,7 +87,7 @@ function ProgressDot({
       animate={{
         width: isActive ? 36 : 10,
         height: 10,
-        backgroundColor: isActive ? "#185D46" : "#CBD5E1",
+        backgroundColor: isActive ? "var(--color-primary)" : "#CBD5E1",
       }}
       transition={{ type: "spring", stiffness: 300, damping: 28 }}
       className="rounded-full relative overflow-hidden focus:outline-none flex-shrink-0"
@@ -240,7 +240,7 @@ export default function EdukaHomeJourney({ data }: { data?: any }) {
   };
 
   return (
-    <section className="py-20 sm:py-28 bg-white relative overflow-hidden">
+    <section className="pt-[50px] pb-20 sm:pb-28 bg-white relative overflow-hidden">
       {/* ── Dotted Grid Background ── */}
       <div
         className="absolute inset-0 pointer-events-none z-0"
@@ -256,6 +256,13 @@ export default function EdukaHomeJourney({ data }: { data?: any }) {
       <FloatingBlob color="rgba(12,74,65,0.04)" size={500} x="20%" y="70%" delay={6} />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        
+        <div className="text-center mb-12">
+          <h2 className="text-4xl md:text-5xl font-extrabold text-[var(--color-brand-primary, #0F172A)] tracking-tight">
+            <span style={{ color: "var(--color-brand-accent, #F59E0B)" }}>Our</span> Journey
+          </h2>
+        </div>
+
         <div
           className="relative max-w-5xl mx-auto"
           onMouseEnter={() => setIsHovered(true)}
@@ -280,7 +287,7 @@ export default function EdukaHomeJourney({ data }: { data?: any }) {
                 ? "0 40px 100px rgba(12,74,65,0.18), 0 0 0 2px rgba(22,163,74,0.25)"
                 : "0 24px 70px rgba(12,74,65,0.12)",
               transition: "box-shadow 0.5s ease",
-              background: "#185D4610",
+              background: "var(--color-primary)10",
             }}
             onMouseEnter={() => setImageHovered(true)}
             onMouseLeave={() => setImageHovered(false)}

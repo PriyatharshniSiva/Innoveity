@@ -60,7 +60,7 @@ export default function EdukaFAQList() {
           transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
           className="text-center space-y-4"
         >
-          <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#185D46]/5 border border-[#185D46]/20 text-[#185D46] text-xs font-extrabold tracking-widest uppercase shadow-sm">
+          <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/5 border border-primary/20 text-[#185D46] text-xs font-extrabold tracking-widest uppercase shadow-sm">
             <span className="w-1.5 h-1.5 rounded-full bg-[#185D46] inline-block" />
             FAQ
           </span>
@@ -91,7 +91,7 @@ export default function EdukaFAQList() {
                 className="rounded-[20px] border transition-all duration-300 overflow-hidden"
                 style={{
                   background: "white",
-                  borderColor: isOpen ? "#185D46" : "#e2e8f0",
+                  borderColor: isOpen ? "var(--color-primary)" : "#e2e8f0",
                   boxShadow: isOpen
                     ? "0 0 0 3px rgba(22,163,74,0.10), 0 16px 40px -8px rgba(12,74,65,0.13)"
                     : "0 2px 12px rgba(0,0,0,0.04)",
@@ -105,7 +105,7 @@ export default function EdukaFAQList() {
                 >
                   <span
                     className="text-base sm:text-lg font-bold leading-snug transition-colors duration-200"
-                    style={{ color: isOpen ? "#185D46" : "#1e293b" }}
+                    style={{ color: isOpen ? "var(--color-primary)" : "#1e293b" }}
                   >
                     {item.question}
                   </span>
@@ -116,9 +116,9 @@ export default function EdukaFAQList() {
                     transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
                     className="flex-shrink-0 w-9 h-9 rounded-full flex items-center justify-center border transition-colors duration-200"
                     style={{
-                      background: isOpen ? "#185D46" : "#185D4610",
-                      borderColor: isOpen ? "#185D46" : "#bbf7d0",
-                      color: isOpen ? "#fff" : "#185D46",
+                      background: isOpen ? "var(--color-primary)" : "var(--color-primary)10",
+                      borderColor: isOpen ? "var(--color-primary)" : "#bbf7d0",
+                      color: isOpen ? "#fff" : "var(--color-primary)",
                     }}
                   >
                     <svg
@@ -148,7 +148,7 @@ export default function EdukaFAQList() {
                       transition={{ duration: 0.38, ease: [0.16, 1, 0.3, 1] }}
                       className="overflow-hidden"
                     >
-                      <div className="px-6 pb-7 space-y-4 border-t border-[#185D46]/20/80">
+                      <div className="px-6 pb-7 space-y-4 border-t border-primary/20/80">
                         {/* Highlight block */}
                         <div className="mt-5 bg-[#185D4610] border-l-[4px] border-[#185D46] rounded-r-xl px-5 py-4">
                           <p className="text-slate-800 font-semibold leading-relaxed text-sm sm:text-base">

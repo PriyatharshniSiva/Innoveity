@@ -14,9 +14,9 @@ export default function ServicesQuickActions() {
   };
 
   const actions = [
-    { id: 1, title: "Add Service", icon: Plus, color: "#185D46", onClick: handleAddService },
+    { id: 1, title: "Add Service", icon: Plus, color: "var(--color-primary)", onClick: handleAddService },
     { id: 2, title: "Upload Image", icon: ImagePlus, color: "#0ea5e9", onClick: () => {} },
-    { id: 3, title: "Manage Categories", icon: FolderKanban, color: "#F59E0B", onClick: () => {} },
+    { id: 3, title: "Manage Categories", icon: FolderKanban, color: "var(--color-accent)", onClick: () => {} },
     { id: 4, title: "Featured Services", icon: Star, color: "#eab308", onClick: () => {} },
     { id: 5, title: "Service Analytics", icon: BarChart3, color: "#8b5cf6", onClick: () => {} }
   ];

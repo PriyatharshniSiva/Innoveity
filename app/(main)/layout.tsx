@@ -43,8 +43,29 @@ export default async function RootLayout({
 
   return (
     <html lang="en" className="scroll-smooth">
+      <head>
+        {themeData?.colors && (
+          <style dangerouslySetInnerHTML={{
+            __html: `
+              :root {
+                --color-brand-primary: ${themeData.colors.primary};
+                --color-brand-secondary: ${themeData.colors.secondary};
+                --color-brand-accent: ${themeData.colors.accent};
+                --color-success: ${themeData.colors.success};
+                --color-warning: ${themeData.colors.warning};
+                --background: ${themeData.colors.background};
+                --foreground: ${themeData.colors.foreground};
+              }
+            `
+          }} />
+        )}
+      </head>
       <body
-        className={`${inter.variable} ${playfair.variable} font-sans min-h-screen bg-white pt-[120px] antialiased overflow-x-hidden`}
+        className={`${inter.variable} ${playfair.variable} font-sans min-h-screen pt-16 antialiased overflow-x-hidden`}
+        style={{
+          backgroundColor: 'var(--background)',
+          color: 'var(--foreground)'
+        }}
       >
         <Navbar />
         <SmoothScroll />

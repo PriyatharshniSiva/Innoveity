@@ -11,9 +11,9 @@ const data = [
 ];
 
 const stats = [
-  { id: 1, title: "About Sections", count: 0, trend: "-", icon: LayoutTemplate, color: "#185D46" },
+  { id: 1, title: "About Sections", count: 0, trend: "-", icon: LayoutTemplate, color: "var(--color-primary)" },
   { id: 2, title: "Gallery Images", count: 0, trend: "-", icon: ImageIcon, color: "#0ea5e9" },
-  { id: 3, title: "Achievements", count: 0, trend: "-", icon: Trophy, color: "#F59E0B" },
+  { id: 3, title: "Achievements", count: 0, trend: "-", icon: Trophy, color: "var(--color-accent)" },
   { id: 4, title: "Team Members", count: 0, trend: "-", icon: Users, color: "#8b5cf6" }
 ];
 

@@ -145,7 +145,7 @@ export default function EdukaAboutSplit({
                   <motion.button 
                     whileHover={{ y: -4, scale: 1.02, boxShadow: "0 20px 25px -5px rgba(24, 93, 70, 0.3), 0 10px 10px -5px rgba(24, 93, 70, 0.2)" }}
                     whileTap={{ scale: 0.98 }}
-                    className="eduka-btn-primary shadow-lg shadow-[#185D46]/20 cursor-pointer"
+                    className="eduka-btn-primary shadow-lg shadow-primary/20 cursor-pointer"
                   >
                     {buttonText}
                   </motion.button>

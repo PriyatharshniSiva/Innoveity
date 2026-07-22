@@ -54,11 +54,11 @@ export default function CsrLivePreview() {
 
                     <div className="w-full md:w-[45%]">
                       <div className="bg-white border border-slate-100 p-6 rounded-[24px] shadow-[0_8px_30px_rgba(0,0,0,0.04)] relative overflow-hidden group">
-                        <div className="absolute -right-8 -top-8 w-24 h-24 bg-[#F59E0B]/5 rounded-full blur-xl group-hover:bg-[#F59E0B]/10 transition-colors" />
+                        <div className="absolute -right-8 -top-8 w-24 h-24 bg-accent/5 rounded-full blur-xl group-hover:bg-accent/10 transition-colors" />
                         <h3 className="text-xl font-extrabold text-[#0F172A] tracking-tight mb-2">{ini.title}</h3>
                         <p className="text-gray-600 text-sm leading-relaxed font-medium mb-4">{ini.description}</p>
                         
-                        <div className="bg-[#185D46]/5 rounded-xl p-4 border-l-4 border-[#185D46]">
+                        <div className="bg-primary/5 rounded-xl p-4 border-l-4 border-[#185D46]">
                           <span className="text-[#185D46] block text-[10px] font-bold uppercase tracking-[0.15em] mb-1">Key Impact</span>
                           <div className="text-gray-900 font-bold text-sm">{ini.impact}</div>
                         </div>

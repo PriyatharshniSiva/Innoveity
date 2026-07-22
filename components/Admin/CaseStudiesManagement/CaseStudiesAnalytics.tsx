@@ -34,9 +34,9 @@ export default function CaseStudiesAnalytics() {
       change: "+3 new this week",
       trend: "up",
       icon: CheckCircle2,
-      color: "from-[#185D46]/20 to-[#185D46]/5",
+      color: "from-primary/20 to-primary/5",
       textColor: "text-[#185D46]",
-      iconBg: "bg-[#185D46]/10"
+      iconBg: "bg-primary/10"
     },
     {
       title: "Total Video Views",

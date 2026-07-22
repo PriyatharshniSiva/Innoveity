@@ -64,7 +64,7 @@ export default function TestimonialsList() {
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.95 }}
             transition={{ duration: 0.2 }}
-            className="bg-white rounded-3xl p-8 border border-slate-100 shadow-[0_8px_30px_rgb(0,0,0,0.04)] flex flex-col justify-between group hover:border-[#185D46]/30 transition-all duration-300"
+            className="bg-white rounded-3xl p-8 border border-slate-100 shadow-[0_8px_30px_rgb(0,0,0,0.04)] flex flex-col justify-between group hover:border-primary/30 transition-all duration-300"
           >
             <div>
               <div className="mb-6 opacity-20 text-[#185D46] group-hover:opacity-40 transition-opacity">
@@ -83,7 +83,7 @@ export default function TestimonialsList() {
               <div className="flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
                 <button
                   onClick={() => { setEditingId(t.id); setIsDrawerOpen(true); }}
-                  className="p-2 text-slate-400 hover:text-[#185D46] hover:bg-[#185D46]/10 rounded-lg transition-colors"
+                  className="p-2 text-slate-400 hover:text-[#185D46] hover:bg-primary/10 rounded-lg transition-colors"
                   title="Edit"
                 >
                   <Edit2 className="w-4 h-4" />

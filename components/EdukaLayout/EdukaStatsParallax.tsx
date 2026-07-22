@@ -54,7 +54,7 @@ function AnimatedCounter({ value }: { value: string }) {
 
 export default function EdukaStatsParallax({ stats, backgroundImage }: EdukaStatsParallaxProps) {
   return (
-    <section className="relative py-24 overflow-hidden flex items-center justify-center min-h-[400px]">
+    <section className="relative pt-[50px] pb-24 overflow-hidden flex items-center justify-center min-h-[400px]">
       {/* Background Image with Parallax */}
       <div 
         className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat bg-fixed"

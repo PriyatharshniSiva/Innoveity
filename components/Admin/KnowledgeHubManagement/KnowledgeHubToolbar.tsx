@@ -25,7 +25,7 @@ export default function KnowledgeHubToolbar() {
           placeholder="Search articles by title or author..." 
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
-          className="w-full pl-12 pr-4 py-2.5 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#185D46]/20 focus:border-[#185D46] transition-all bg-slate-50 focus:bg-white text-sm font-medium text-slate-700"
+          className="w-full pl-12 pr-4 py-2.5 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-[#185D46] transition-all bg-slate-50 focus:bg-white text-sm font-medium text-slate-700"
         />
       </div>
 
@@ -38,7 +38,7 @@ export default function KnowledgeHubToolbar() {
           <select 
             value={categoryFilter}
             onChange={(e) => setCategoryFilter(e.target.value)}
-            className="w-full sm:w-44 pl-9 pr-8 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white text-sm font-medium text-slate-700 appearance-none focus:outline-none focus:ring-2 focus:ring-[#185D46]/20 cursor-pointer"
+            className="w-full sm:w-44 pl-9 pr-8 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white text-sm font-medium text-slate-700 appearance-none focus:outline-none focus:ring-2 focus:ring-primary/20 cursor-pointer"
           >
             {uniqueCategories.map(cat => (
               <option key={cat} value={cat}>{cat}</option>
@@ -52,7 +52,7 @@ export default function KnowledgeHubToolbar() {
           <select 
             value={statusFilter}
             onChange={(e) => setStatusFilter(e.target.value)}
-            className="w-full sm:w-40 pl-9 pr-8 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white text-sm font-medium text-slate-700 appearance-none focus:outline-none focus:ring-2 focus:ring-[#185D46]/20 cursor-pointer"
+            className="w-full sm:w-40 pl-9 pr-8 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white text-sm font-medium text-slate-700 appearance-none focus:outline-none focus:ring-2 focus:ring-primary/20 cursor-pointer"
           >
             <option value="All Statuses">All Statuses</option>
             <option value="Published">Published</option>
@@ -66,7 +66,7 @@ export default function KnowledgeHubToolbar() {
           <select 
             value={sortOrder}
             onChange={(e) => setSortOrder(e.target.value as any)}
-            className="w-full sm:w-40 pl-9 pr-8 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white text-sm font-medium text-slate-700 appearance-none focus:outline-none focus:ring-2 focus:ring-[#185D46]/20 cursor-pointer"
+            className="w-full sm:w-40 pl-9 pr-8 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white text-sm font-medium text-slate-700 appearance-none focus:outline-none focus:ring-2 focus:ring-primary/20 cursor-pointer"
           >
             <option value="Newest">Newest First</option>
             <option value="Oldest">Oldest First</option>

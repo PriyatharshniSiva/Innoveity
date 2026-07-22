@@ -50,7 +50,7 @@ export default function EdukaCourseGrid({ badge, title, description, items }: Ed
               viewport={{ once: false, margin: "-50px" }}
               transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1], delay: idx * 0.1 }}
               whileHover={{ y: -8, scale: 1.01, boxShadow: "0 25px 50px -12px rgba(24, 93, 70, 0.12)" }}
-              className="eduka-card group flex flex-col overflow-hidden bg-white border border-slate-100 hover:border-[#185D46]/30 transition-all duration-300 rounded-2xl"
+              className="eduka-card group flex flex-col overflow-hidden bg-white border border-slate-100 hover:border-primary/30 transition-all duration-300 rounded-2xl"
             >
               {/* Image Header */}
               <div className="relative h-60 overflow-hidden">

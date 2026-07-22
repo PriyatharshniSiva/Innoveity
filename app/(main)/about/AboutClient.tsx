@@ -55,7 +55,7 @@ export default function AboutClient({ initialData, testimonials }: { initialData
     <div className="bg-white min-h-screen text-[#0F172A] selection:bg-[#185D46] selection:text-white">
       
       {/* 1. Hero / About Split */}
-      <section className="relative pt-32 pb-24 overflow-hidden">
+      <section className="relative pt-12 pb-24 overflow-hidden">
         {/* Soft Background Accents */}
         <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#185D4620] rounded-full blur-[120px] opacity-50 -z-10 translate-x-1/3 -translate-y-1/3" />
         <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-[#185D4620] rounded-full blur-[100px] opacity-40 -z-10 -translate-x-1/2 translate-y-1/2" />
@@ -88,7 +88,7 @@ export default function AboutClient({ initialData, testimonials }: { initialData
               transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
               className="relative rounded-[20px] overflow-hidden shadow-[0_20px_50px_rgb(22,163,74,0.15)] aspect-[4/3] group"
             >
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0F172A]/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10" />
+              <div className="absolute inset-0 bg-gradient-to-t from-secondary/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10" />
               {overview?.featuredImage && <img src={overview.featuredImage} alt="About" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" />}
             </motion.div>
 
@@ -97,7 +97,7 @@ export default function AboutClient({ initialData, testimonials }: { initialData
       </section>
 
       {/* 2. Mission Grid */}
-      <section className="py-24 relative overflow-hidden bg-slate-50/50">
+      <section className="pt-8 pb-24 relative overflow-hidden bg-slate-50/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           
           <div className="text-center mb-16 space-y-4">
@@ -105,9 +105,9 @@ export default function AboutClient({ initialData, testimonials }: { initialData
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: false }}
-              className="text-4xl sm:text-5xl font-extrabold text-[#0F172A] tracking-tight"
+              className="text-4xl sm:text-5xl font-extrabold text-[var(--color-brand-primary, #0F172A)] tracking-tight"
             >
-              Our Foundation
+              <span style={{ color: "var(--color-brand-accent, #F59E0B)" }}>Our </span>Foundation
             </motion.h2>
             <motion.p 
               initial={{ opacity: 0, y: 20 }}
@@ -151,7 +151,7 @@ export default function AboutClient({ initialData, testimonials }: { initialData
       </section>
 
       {/* 3. Journey Timeline */}
-      <section className="py-24 bg-white relative overflow-hidden" ref={containerRef}>
+      <section className="pt-8 pb-24 bg-white relative overflow-hidden" ref={containerRef}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           
           <div className="text-center mb-24 space-y-4">
@@ -161,7 +161,7 @@ export default function AboutClient({ initialData, testimonials }: { initialData
               viewport={{ once: false }}
               className="text-4xl sm:text-5xl font-extrabold text-[#0F172A] tracking-tight"
             >
-              Our Journey
+              <span style={{ color: "var(--color-brand-accent, #F59E0B)" }}>Our</span> Journey
             </motion.h2>
             <motion.p 
               initial={{ opacity: 0, y: 20 }}
@@ -237,7 +237,7 @@ export default function AboutClient({ initialData, testimonials }: { initialData
       />
 
       {/* 5. Our Strengths */}
-      <section className="py-24 bg-white relative overflow-hidden">
+      <section className="pt-8 pb-24 bg-white relative overflow-hidden">
         {/* Soft Background Accents */}
         <div className="absolute top-1/2 left-1/2 w-[800px] h-[800px] bg-[#185D4620] rounded-full blur-[150px] opacity-30 -z-10 -translate-x-1/2 -translate-y-1/2 pointer-events-none" />
 
@@ -247,9 +247,9 @@ export default function AboutClient({ initialData, testimonials }: { initialData
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: false }}
-              className="text-4xl sm:text-5xl font-extrabold text-[#0F172A] tracking-tight"
+              className="text-4xl sm:text-5xl font-extrabold text-[var(--color-brand-primary, #0F172A)] tracking-tight"
             >
-              Our Strengths
+              <span style={{ color: "var(--color-brand-accent, #F59E0B)" }}>Our </span>Strengths
             </motion.h2>
             <motion.p 
               initial={{ opacity: 0, y: 20 }}
@@ -284,7 +284,7 @@ export default function AboutClient({ initialData, testimonials }: { initialData
                 </div>
 
                 <div className="absolute bottom-0 left-0 right-0 p-8 pt-4 translate-y-[120%] opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 ease-out bg-white">
-                  <p className="text-[#185D46]/70 leading-relaxed font-medium">
+                  <p className="text-primary/70 leading-relaxed font-medium">
                     {item.description}
                   </p>
                 </div>

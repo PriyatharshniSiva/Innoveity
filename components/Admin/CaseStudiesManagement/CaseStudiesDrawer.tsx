@@ -98,7 +98,7 @@ export default function CaseStudiesDrawer() {
                   <button onClick={() => setLocalData({...localData, status: "Draft"})} className={`px-4 py-1.5 rounded-lg text-sm font-semibold transition-all ${localData.status === 'Draft' ? 'bg-white shadow-sm text-amber-600' : 'text-slate-500 hover:text-slate-700'}`}>Draft</button>
                   <button onClick={() => setLocalData({...localData, status: "Published"})} className={`px-4 py-1.5 rounded-lg text-sm font-semibold transition-all ${localData.status === 'Published' ? 'bg-[#185D46] shadow-sm text-white' : 'text-slate-500 hover:text-slate-700'}`}>Published</button>
                 </div>
-                <button onClick={handleSave} className="px-6 py-2.5 bg-[#185D46] hover:bg-[#124836] text-white font-bold rounded-xl shadow-lg shadow-[#185D46]/20 transition-all flex items-center">
+                <button onClick={handleSave} className="px-6 py-2.5 bg-[#185D46] hover:bg-[#124836] text-white font-bold rounded-xl shadow-lg shadow-primary/20 transition-all flex items-center">
                   <Save className="w-4 h-4 mr-2" />
                   Save Changes
                 </button>
@@ -138,28 +138,28 @@ export default function CaseStudiesDrawer() {
                     <div className="space-y-6 animate-in fade-in duration-300">
                       <div>
                         <label className="block text-sm font-semibold text-slate-700 mb-2">Category Badge</label>
-                        <input type="text" value={localData.categoryBadge} onChange={e => setLocalData({...localData, categoryBadge: e.target.value})} className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#185D46]/20 focus:border-[#185D46] bg-slate-50 focus:bg-white transition-all text-sm font-medium uppercase" placeholder="e.g. EDUCATIONAL INSTITUTION" />
+                        <input type="text" value={localData.categoryBadge} onChange={e => setLocalData({...localData, categoryBadge: e.target.value})} className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-[#185D46] bg-slate-50 focus:bg-white transition-all text-sm font-medium uppercase" placeholder="e.g. EDUCATIONAL INSTITUTION" />
                       </div>
                       <div>
                         <label className="block text-sm font-semibold text-slate-700 mb-2">Title</label>
-                        <input type="text" value={localData.title} onChange={e => setLocalData({...localData, title: e.target.value})} className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#185D46]/20 focus:border-[#185D46] bg-slate-50 focus:bg-white transition-all text-sm font-medium" placeholder="e.g. Transforming Engineering Education..." />
+                        <input type="text" value={localData.title} onChange={e => setLocalData({...localData, title: e.target.value})} className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-[#185D46] bg-slate-50 focus:bg-white transition-all text-sm font-medium" placeholder="e.g. Transforming Engineering Education..." />
                       </div>
                       <div>
                         <label className="block text-sm font-semibold text-slate-700 mb-2">The Challenge</label>
-                        <textarea rows={4} value={localData.challenge} onChange={e => setLocalData({...localData, challenge: e.target.value})} className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#185D46]/20 focus:border-[#185D46] bg-slate-50 focus:bg-white transition-all text-sm font-medium resize-none" placeholder="Describe the challenge..." />
+                        <textarea rows={4} value={localData.challenge} onChange={e => setLocalData({...localData, challenge: e.target.value})} className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-[#185D46] bg-slate-50 focus:bg-white transition-all text-sm font-medium resize-none" placeholder="Describe the challenge..." />
                       </div>
                       <div>
                         <label className="block text-sm font-semibold text-slate-700 mb-2">Our Solution</label>
-                        <textarea rows={4} value={localData.solution} onChange={e => setLocalData({...localData, solution: e.target.value})} className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#185D46]/20 focus:border-[#185D46] bg-slate-50 focus:bg-white transition-all text-sm font-medium resize-none" placeholder="Describe the solution..." />
+                        <textarea rows={4} value={localData.solution} onChange={e => setLocalData({...localData, solution: e.target.value})} className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-[#185D46] bg-slate-50 focus:bg-white transition-all text-sm font-medium resize-none" placeholder="Describe the solution..." />
                       </div>
                       <div>
                         <label className="block text-sm font-semibold text-slate-700 mb-2">Testimonial Quote</label>
-                        <textarea rows={3} value={localData.testimonial.quote} onChange={e => setLocalData({...localData, testimonial: {...localData.testimonial, quote: e.target.value}})} className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#185D46]/20 focus:border-[#185D46] bg-slate-50 focus:bg-white transition-all text-sm font-medium resize-none italic" placeholder='"Quote..."' />
+                        <textarea rows={3} value={localData.testimonial.quote} onChange={e => setLocalData({...localData, testimonial: {...localData.testimonial, quote: e.target.value}})} className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-[#185D46] bg-slate-50 focus:bg-white transition-all text-sm font-medium resize-none italic" placeholder='"Quote..."' />
                       </div>
                       <div className="grid grid-cols-2 gap-4">
                         <div>
                           <label className="block text-sm font-semibold text-slate-700 mb-2">Category (Filter)</label>
-                          <select value={localData.category} onChange={e => setLocalData({...localData, category: e.target.value})} className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#185D46]/20 focus:border-[#185D46] bg-slate-50 focus:bg-white transition-all text-sm font-medium">
+                          <select value={localData.category} onChange={e => setLocalData({...localData, category: e.target.value})} className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-[#185D46] bg-slate-50 focus:bg-white transition-all text-sm font-medium">
                             <option value="Faculty Development">Faculty Development</option>
                             <option value="Corporate Training">Corporate Training</option>
                             <option value="ESG Consulting">ESG Consulting</option>
@@ -167,7 +167,7 @@ export default function CaseStudiesDrawer() {
                         </div>
                         <div>
                           <label className="block text-sm font-semibold text-slate-700 mb-2">Institution Type</label>
-                          <select value={localData.institutionType} onChange={e => setLocalData({...localData, institutionType: e.target.value as "Academic" | "Corporate"})} className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#185D46]/20 focus:border-[#185D46] bg-slate-50 focus:bg-white transition-all text-sm font-medium">
+                          <select value={localData.institutionType} onChange={e => setLocalData({...localData, institutionType: e.target.value as "Academic" | "Corporate"})} className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-[#185D46] bg-slate-50 focus:bg-white transition-all text-sm font-medium">
                             <option value="Academic">Academic</option>
                             <option value="Corporate">Corporate</option>
                           </select>
@@ -182,7 +182,7 @@ export default function CaseStudiesDrawer() {
                       <div>
                         <label className="block text-sm font-semibold text-slate-700 mb-2">Thumbnail URL</label>
                         <div className="flex space-x-2">
-                          <input type="text" value={localData.thumbnail} onChange={e => setLocalData({...localData, thumbnail: e.target.value})} className="flex-grow px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#185D46]/20 focus:border-[#185D46] bg-slate-50 focus:bg-white transition-all text-sm" />
+                          <input type="text" value={localData.thumbnail} onChange={e => setLocalData({...localData, thumbnail: e.target.value})} className="flex-grow px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-[#185D46] bg-slate-50 focus:bg-white transition-all text-sm" />
                           <div className="w-12 h-12 bg-slate-100 rounded-xl flex items-center justify-center overflow-hidden border border-slate-200 flex-shrink-0">
                             {localData.thumbnail ? <img src={localData.thumbnail} alt="" className="w-full h-full object-cover" /> : <ImageIcon className="w-5 h-5 text-slate-400" />}
                           </div>
@@ -190,7 +190,7 @@ export default function CaseStudiesDrawer() {
                       </div>
                       <div>
                         <label className="block text-sm font-semibold text-slate-700 mb-2">YouTube Video URL</label>
-                        <input type="text" value={localData.youtubeUrl} onChange={e => setLocalData({...localData, youtubeUrl: e.target.value})} className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#185D46]/20 focus:border-[#185D46] bg-slate-50 focus:bg-white transition-all text-sm" placeholder="https://youtube.com/watch?..." />
+                        <input type="text" value={localData.youtubeUrl} onChange={e => setLocalData({...localData, youtubeUrl: e.target.value})} className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-[#185D46] bg-slate-50 focus:bg-white transition-all text-sm" placeholder="https://youtube.com/watch?..." />
                       </div>
                     </div>
                   )}
@@ -229,7 +229,7 @@ export default function CaseStudiesDrawer() {
                               }} className="w-full px-3 py-2 rounded-lg border border-slate-200 focus:outline-none focus:border-[#185D46] text-sm text-slate-600" placeholder="Label (e.g. increase in placement rates)" />
                             </div>
                           ))}
-                          <button onClick={() => setLocalData({...localData, keyResults: [...localData.keyResults, { label: "", value: "" }]})} className="w-full py-3 border-2 border-dashed border-[#185D46]/20 text-[#185D46] rounded-xl font-semibold hover:bg-[#185D46]/5 transition-colors flex items-center justify-center text-sm">
+                          <button onClick={() => setLocalData({...localData, keyResults: [...localData.keyResults, { label: "", value: "" }]})} className="w-full py-3 border-2 border-dashed border-primary/20 text-[#185D46] rounded-xl font-semibold hover:bg-primary/5 transition-colors flex items-center justify-center text-sm">
                             <Plus className="w-4 h-4 mr-2" /> Add Key Result
                           </button>
                         </div>
@@ -240,7 +240,7 @@ export default function CaseStudiesDrawer() {
                   {/* SEO Tab */}
                   {activeTab === "seo" && (
                     <div className="space-y-6 animate-in fade-in duration-300">
-                      <div className="p-4 bg-[#185D46]/5 border border-[#185D46]/10 rounded-xl flex items-center justify-between">
+                      <div className="p-4 bg-primary/5 border border-primary/10 rounded-xl flex items-center justify-between">
                         <div>
                           <p className="font-bold text-slate-800 text-sm">Featured Case Study</p>
                           <p className="text-xs text-slate-500 mt-0.5">Show this on the homepage</p>
@@ -257,12 +257,12 @@ export default function CaseStudiesDrawer() {
                       
                       <div>
                         <label className="block text-sm font-semibold text-slate-700 mb-2">SEO Title</label>
-                        <input type="text" value={localData.seoTitle} onChange={e => setLocalData({...localData, seoTitle: e.target.value})} className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#185D46]/20 focus:border-[#185D46] bg-slate-50 focus:bg-white transition-all text-sm font-medium" />
+                        <input type="text" value={localData.seoTitle} onChange={e => setLocalData({...localData, seoTitle: e.target.value})} className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-[#185D46] bg-slate-50 focus:bg-white transition-all text-sm font-medium" />
                         <p className="text-xs text-slate-400 mt-1">Recommended length: 50-60 characters</p>
                       </div>
                       <div>
                         <label className="block text-sm font-semibold text-slate-700 mb-2">SEO Description</label>
-                        <textarea rows={3} value={localData.seoDescription} onChange={e => setLocalData({...localData, seoDescription: e.target.value})} className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#185D46]/20 focus:border-[#185D46] bg-slate-50 focus:bg-white transition-all text-sm font-medium resize-none" />
+                        <textarea rows={3} value={localData.seoDescription} onChange={e => setLocalData({...localData, seoDescription: e.target.value})} className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-[#185D46] bg-slate-50 focus:bg-white transition-all text-sm font-medium resize-none" />
                       </div>
                     </div>
                   )}
@@ -358,7 +358,7 @@ export default function CaseStudiesDrawer() {
 
                 {/* Status Badge floating */}
                 <div className="absolute bottom-6 right-6">
-                  <div className={`px-4 py-2 rounded-full shadow-lg text-xs font-bold flex items-center backdrop-blur-md ${localData.status === 'Published' ? 'bg-[#185D46]/90 text-white' : 'bg-amber-500/90 text-white'}`}>
+                  <div className={`px-4 py-2 rounded-full shadow-lg text-xs font-bold flex items-center backdrop-blur-md ${localData.status === 'Published' ? 'bg-primary/90 text-white' : 'bg-amber-500/90 text-white'}`}>
                     <span className="w-2 h-2 rounded-full bg-white mr-2 animate-pulse" />
                     Preview: {localData.status}
                   </div>

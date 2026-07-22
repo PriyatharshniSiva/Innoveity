@@ -6,7 +6,7 @@ import { Construction } from "lucide-react";
 export default function ProfileManagement() {
   return (
     <div className="flex flex-col items-center justify-center h-[60vh] text-center animate-in fade-in zoom-in duration-500">
-      <div className="w-20 h-20 bg-[#185D46]/10 rounded-full flex items-center justify-center mb-6 shadow-inner">
+      <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mb-6 shadow-inner">
         <Construction className="w-10 h-10 text-[#185D46]" />
       </div>
       <h1 className="text-3xl font-black text-slate-800 tracking-tight">Profile Management</h1>

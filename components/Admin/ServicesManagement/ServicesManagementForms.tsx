@@ -30,7 +30,7 @@ export default function ServicesManagementForms() {
           className="w-full flex items-center justify-between p-6 bg-white hover:bg-slate-50 transition-colors"
         >
           <div className="flex items-center space-x-3">
-            <div className="w-10 h-10 rounded-xl bg-[#185D46]/10 flex items-center justify-center text-[#185D46]">
+            <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center text-[#185D46]">
               <AlignLeft className="w-5 h-5" />
             </div>
             <h3 className="text-lg font-bold text-slate-800 font-sans">Services Overview</h3>
@@ -44,11 +44,11 @@ export default function ServicesManagementForms() {
               <div className="p-6 space-y-6">
                 <div>
                   <label className="block text-sm font-semibold text-slate-700 mb-2">Main Title</label>
-                  <input type="text" value={overview.mainTitle} onChange={e => setOverview({...overview, mainTitle: e.target.value})} className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#185D46]/20 focus:border-[#185D46] bg-slate-50 focus:bg-white transition-colors" />
+                  <input type="text" value={overview.mainTitle} onChange={e => setOverview({...overview, mainTitle: e.target.value})} className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-[#185D46] bg-slate-50 focus:bg-white transition-colors" />
                 </div>
                 <div>
                   <label className="block text-sm font-semibold text-slate-700 mb-2">Description</label>
-                  <textarea rows={4} value={overview.description} onChange={e => setOverview({...overview, description: e.target.value})} className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#185D46]/20 focus:border-[#185D46] bg-slate-50 focus:bg-white resize-none transition-colors" />
+                  <textarea rows={4} value={overview.description} onChange={e => setOverview({...overview, description: e.target.value})} className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-[#185D46] bg-slate-50 focus:bg-white resize-none transition-colors" />
                 </div>
                 <div>
                   <label className="block text-sm font-semibold text-slate-700 mb-4">Key Highlights</label>
@@ -80,7 +80,7 @@ export default function ServicesManagementForms() {
                   </div>
                   <button 
                     onClick={() => setOverview({...overview, highlights: [...overview.highlights, ""]})}
-                    className="w-full mt-4 py-3 border-2 border-dashed border-[#185D46]/20 text-[#185D46] rounded-xl font-semibold hover:bg-[#185D46]/5 transition-colors flex items-center justify-center"
+                    className="w-full mt-4 py-3 border-2 border-dashed border-primary/20 text-[#185D46] rounded-xl font-semibold hover:bg-primary/5 transition-colors flex items-center justify-center"
                   >
                     <Plus className="w-5 h-5 mr-2" />
                     Add Highlight
@@ -99,7 +99,7 @@ export default function ServicesManagementForms() {
           className="w-full flex items-center justify-between p-6 bg-white hover:bg-slate-50 transition-colors"
         >
           <div className="flex items-center space-x-3">
-            <div className="w-10 h-10 rounded-xl bg-[#185D46]/10 flex items-center justify-center text-[#185D46]">
+            <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center text-[#185D46]">
               <FolderKanban className="w-5 h-5" />
             </div>
             <h3 className="text-lg font-bold text-slate-800 font-sans">Category Management</h3>
@@ -136,7 +136,7 @@ export default function ServicesManagementForms() {
 
                 <button 
                   onClick={() => setCategories([...categories, { id: Date.now().toString(), name: "New Category", order: categories.length + 1 }])}
-                  className="w-full py-3 border-2 border-dashed border-[#185D46]/20 text-[#185D46] rounded-xl font-semibold hover:bg-[#185D46]/5 transition-colors flex items-center justify-center"
+                  className="w-full py-3 border-2 border-dashed border-primary/20 text-[#185D46] rounded-xl font-semibold hover:bg-primary/5 transition-colors flex items-center justify-center"
                 >
                   <Plus className="w-5 h-5 mr-2" />
                   Add Category
@@ -154,7 +154,7 @@ export default function ServicesManagementForms() {
           className="w-full flex items-center justify-between p-6 bg-white hover:bg-slate-50 transition-colors"
         >
           <div className="flex items-center space-x-3">
-            <div className="w-10 h-10 rounded-xl bg-[#185D46]/10 flex items-center justify-center text-[#185D46]">
+            <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center text-[#185D46]">
               <Briefcase className="w-5 h-5" />
             </div>
             <h3 className="text-lg font-bold text-slate-800 font-sans">Service List</h3>
@@ -176,7 +176,7 @@ export default function ServicesManagementForms() {
                           newSvcs[idx].status = svc.status === "Active" ? "Hidden" : "Active";
                           setServices(newSvcs);
                         }}
-                        className={`p-2 rounded-lg flex items-center text-sm font-medium transition-colors ${svc.status === 'Active' ? 'text-[#185D46] hover:bg-[#185D46]/10' : 'text-slate-400 hover:bg-white'}`}
+                        className={`p-2 rounded-lg flex items-center text-sm font-medium transition-colors ${svc.status === 'Active' ? 'text-[#185D46] hover:bg-primary/10' : 'text-slate-400 hover:bg-white'}`}
                       >
                         {svc.status === 'Active' ? <ToggleRight className="w-5 h-5 mr-1" /> : <ToggleLeft className="w-5 h-5 mr-1" />}
                         {svc.status}
@@ -274,7 +274,7 @@ export default function ServicesManagementForms() {
 
                 <button 
                   onClick={() => setServices([...services, { id: Date.now().toString(), title: "New Service", description: "", categoryId: categories[0]?.id || "edu", iconName: "Star", image: "", status: "Active", featured: false, order: services.length + 1, buttonText: "Learn More", buttonLink: "/services" }])}
-                  className="w-full py-3 border-2 border-dashed border-[#185D46]/20 text-[#185D46] rounded-xl font-semibold hover:bg-[#185D46]/5 transition-colors flex items-center justify-center"
+                  className="w-full py-3 border-2 border-dashed border-primary/20 text-[#185D46] rounded-xl font-semibold hover:bg-primary/5 transition-colors flex items-center justify-center"
                 >
                   <Plus className="w-5 h-5 mr-2" />
                   Add Service
@@ -292,7 +292,7 @@ export default function ServicesManagementForms() {
           className="w-full flex items-center justify-between p-6 bg-white hover:bg-slate-50 transition-colors"
         >
           <div className="flex items-center space-x-3">
-            <div className="w-10 h-10 rounded-xl bg-[#185D46]/10 flex items-center justify-center text-[#185D46]">
+            <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center text-[#185D46]">
               <MessageSquare className="w-5 h-5" />
             </div>
             <h3 className="text-lg font-bold text-slate-800 font-sans">FAQ Management</h3>
@@ -342,7 +342,7 @@ export default function ServicesManagementForms() {
 
                 <button 
                   onClick={() => setFaqs([...faqs, { id: Date.now().toString(), question: "New Question?", answer: "New Answer", order: faqs.length + 1 }])}
-                  className="w-full py-3 border-2 border-dashed border-[#185D46]/20 text-[#185D46] rounded-xl font-semibold hover:bg-[#185D46]/5 transition-colors flex items-center justify-center"
+                  className="w-full py-3 border-2 border-dashed border-primary/20 text-[#185D46] rounded-xl font-semibold hover:bg-primary/5 transition-colors flex items-center justify-center"
                 >
                   <Plus className="w-5 h-5 mr-2" />
                   Add FAQ
@@ -360,7 +360,7 @@ export default function ServicesManagementForms() {
           className="w-full flex items-center justify-between p-6 bg-white hover:bg-slate-50 transition-colors"
         >
           <div className="flex items-center space-x-3">
-            <div className="w-10 h-10 rounded-xl bg-[#185D46]/10 flex items-center justify-center text-[#185D46]">
+            <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center text-[#185D46]">
               <Flag className="w-5 h-5" />
             </div>
             <h3 className="text-lg font-bold text-slate-800 font-sans">Call to Action (CTA)</h3>
@@ -374,20 +374,20 @@ export default function ServicesManagementForms() {
               <div className="p-6 space-y-6">
                 <div>
                   <label className="block text-sm font-semibold text-slate-700 mb-2">CTA Title</label>
-                  <input type="text" value={cta.title} onChange={e => setCta({...cta, title: e.target.value})} className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#185D46]/20 focus:border-[#185D46] bg-slate-50 focus:bg-white transition-colors" />
+                  <input type="text" value={cta.title} onChange={e => setCta({...cta, title: e.target.value})} className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-[#185D46] bg-slate-50 focus:bg-white transition-colors" />
                 </div>
                 <div>
                   <label className="block text-sm font-semibold text-slate-700 mb-2">Description</label>
-                  <textarea rows={3} value={cta.description} onChange={e => setCta({...cta, description: e.target.value})} className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#185D46]/20 focus:border-[#185D46] bg-slate-50 focus:bg-white resize-none transition-colors" />
+                  <textarea rows={3} value={cta.description} onChange={e => setCta({...cta, description: e.target.value})} className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-[#185D46] bg-slate-50 focus:bg-white resize-none transition-colors" />
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
                     <label className="block text-sm font-semibold text-slate-700 mb-2">Button Text</label>
-                    <input type="text" value={cta.buttonText} onChange={e => setCta({...cta, buttonText: e.target.value})} className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#185D46]/20 focus:border-[#185D46] bg-slate-50 focus:bg-white transition-colors" />
+                    <input type="text" value={cta.buttonText} onChange={e => setCta({...cta, buttonText: e.target.value})} className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-[#185D46] bg-slate-50 focus:bg-white transition-colors" />
                   </div>
                   <div>
                     <label className="block text-sm font-semibold text-slate-700 mb-2">Button Link</label>
-                    <input type="text" value={cta.buttonLink} onChange={e => setCta({...cta, buttonLink: e.target.value})} className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#185D46]/20 focus:border-[#185D46] bg-slate-50 focus:bg-white transition-colors" />
+                    <input type="text" value={cta.buttonLink} onChange={e => setCta({...cta, buttonLink: e.target.value})} className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-[#185D46] bg-slate-50 focus:bg-white transition-colors" />
                   </div>
                 </div>
               </div>

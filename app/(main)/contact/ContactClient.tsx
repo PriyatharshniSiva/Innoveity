@@ -47,7 +47,7 @@ const FloatingInput = ({ label, type, required = false, icon }: { label: string,
           setHasValue(e.target.value.length > 0);
         }}
         onChange={(e) => setHasValue(e.target.value.length > 0)}
-        className={`w-full bg-slate-50 border-2 border-transparent focus:bg-white focus:border-[#185D46]/30 focus:shadow-[0_0_15px_rgba(22,163,74,0.08)] rounded-[16px] text-[#0F172A] font-semibold transition-all pt-7 pb-3 peer relative z-10 ${icon ? 'pl-12 pr-4' : 'px-5'}`}
+        className={`w-full bg-slate-50 border-2 border-transparent focus:bg-white focus:border-primary/30 focus:shadow-[0_0_15px_rgba(22,163,74,0.08)] rounded-[16px] text-[#0F172A] font-semibold transition-all pt-7 pb-3 peer relative z-10 ${icon ? 'pl-12 pr-4' : 'px-5'}`}
       />
       <label
         className={`absolute transition-all duration-300 pointer-events-none z-20 ${
@@ -77,7 +77,7 @@ const FloatingSelect = ({ label, required = false }: { label: string, required?:
         }}
         onChange={(e) => setHasValue(e.target.value !== "")}
         defaultValue=""
-        className={`w-full bg-slate-50 border-2 border-transparent focus:bg-white focus:border-[#185D46]/30 focus:shadow-[0_0_15px_rgba(22,163,74,0.08)] rounded-[16px] text-[#0F172A] font-semibold transition-all pt-7 pb-3 px-5 appearance-none peer relative z-10 ${hasValue ? '' : 'text-transparent'}`}
+        className={`w-full bg-slate-50 border-2 border-transparent focus:bg-white focus:border-primary/30 focus:shadow-[0_0_15px_rgba(22,163,74,0.08)] rounded-[16px] text-[#0F172A] font-semibold transition-all pt-7 pb-3 px-5 appearance-none peer relative z-10 ${hasValue ? '' : 'text-transparent'}`}
       >
         <option value="" disabled hidden>Select type</option>
         <option value="course_enrollment" className="text-[#0F172A]">Course Enrollment</option>
@@ -113,7 +113,7 @@ const FloatingTextarea = ({ label, required = false }: { label: string, required
         onFocus={() => setFocused(true)}
         onBlur={() => setFocused(false)}
         onChange={(e) => setValue(e.target.value)}
-        className="w-full bg-slate-50 border-2 border-transparent focus:bg-white focus:border-[#185D46]/30 focus:shadow-[0_0_15px_rgba(22,163,74,0.08)] rounded-[20px] text-[#0F172A] font-semibold transition-all pt-7 pb-3 px-5 resize-none peer relative z-10"
+        className="w-full bg-slate-50 border-2 border-transparent focus:bg-white focus:border-primary/30 focus:shadow-[0_0_15px_rgba(22,163,74,0.08)] rounded-[20px] text-[#0F172A] font-semibold transition-all pt-7 pb-3 px-5 resize-none peer relative z-10"
       ></textarea>
       <label
         className={`absolute transition-all duration-300 pointer-events-none z-20 ${
@@ -163,7 +163,7 @@ export default function ContactClient({ data }: { data: any }) {
       name: "Main Office",
       type: "Headquarters",
       address: ["No:11 Ritherdon Avenue, Ritherdon Road", "Vepery, Chennai - 600007", "Tamil Nadu, India"],
-      color: "#185D46"
+      color: "var(--color-primary)"
     },
     {
       name: "Branch Offices",
@@ -184,7 +184,7 @@ export default function ContactClient({ data }: { data: any }) {
       
       {/* Background Ambience */}
       <div className="fixed top-0 left-0 w-full h-full overflow-hidden pointer-events-none z-0">
-        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#185D46]/5 rounded-full blur-[120px] opacity-70"></div>
+        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-primary/5 rounded-full blur-[120px] opacity-70"></div>
         <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-[#f97316]/5 rounded-full blur-[120px] opacity-70"></div>
       </div>
 
@@ -229,7 +229,7 @@ export default function ContactClient({ data }: { data: any }) {
                   whileHover={{ y: -5 }}
                   className="bg-white p-8 rounded-[24px] shadow-[0_4px_24px_rgba(0,0,0,0.02)] hover:shadow-[0_20px_40px_rgba(22,163,74,0.08)] transition-all duration-300 flex flex-col items-center justify-center border border-slate-100 group"
                 >
-                  <div className="text-[#185D46] mb-5 bg-[#185D46]/10 p-4 rounded-[16px] group-hover:scale-110 transition-transform duration-300 group-hover:bg-[#185D46] group-hover:text-white">
+                  <div className="text-[#185D46] mb-5 bg-primary/10 p-4 rounded-[16px] group-hover:scale-110 transition-transform duration-300 group-hover:bg-[#185D46] group-hover:text-white">
                     <IconComponent className="w-6 h-6" />
                   </div>
                   <h3 className="text-3xl font-black text-[#0F172A] mb-1">{stat.value}</h3>
@@ -322,13 +322,13 @@ export default function ContactClient({ data }: { data: any }) {
                     initial={{ scale: 0 }}
                     animate={{ scale: 1 }}
                     transition={{ type: "spring", bounce: 0.5, delay: 0.2 }}
-                    className="w-24 h-24 bg-[#185D46]/10 rounded-full flex items-center justify-center mb-6"
+                    className="w-24 h-24 bg-primary/10 rounded-full flex items-center justify-center mb-6"
                   >
                     <motion.svg 
                       initial={{ pathLength: 0 }}
                       animate={{ pathLength: 1 }}
                       transition={{ duration: 0.6, delay: 0.4 }}
-                      xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#185D46" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"
+                      xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"
                     >
                       <polyline points="20 6 9 17 4 12"></polyline>
                     </motion.svg>
@@ -353,7 +353,7 @@ export default function ContactClient({ data }: { data: any }) {
               whileHover={{ y: -5, scale: 1.02 }}
               className="bg-white p-7 rounded-[24px] shadow-[0_4px_24px_rgba(0,0,0,0.02)] hover:shadow-[0_20px_40px_rgba(22,163,74,0.08)] border border-slate-100 flex items-center gap-6 transition-all duration-300 group cursor-pointer"
             >
-              <div className="bg-[#185D46]/10 p-4 rounded-[16px] text-[#185D46] group-hover:bg-[#185D46] group-hover:text-white transition-colors duration-300 shrink-0">
+              <div className="bg-primary/10 p-4 rounded-[16px] text-[#185D46] group-hover:bg-[#185D46] group-hover:text-white transition-colors duration-300 shrink-0">
                 <Phone className="w-7 h-7" />
               </div>
               <div>
@@ -385,7 +385,7 @@ export default function ContactClient({ data }: { data: any }) {
               whileHover={{ y: -5, scale: 1.02 }}
               className="bg-white p-7 rounded-[24px] shadow-[0_4px_24px_rgba(0,0,0,0.02)] hover:shadow-[0_20px_40px_rgba(12,74,65,0.08)] border border-slate-100 flex items-center gap-6 transition-all duration-300 group cursor-pointer"
             >
-              <div className="bg-[#185D46]/10 p-4 rounded-[16px] text-[#185D46] group-hover:bg-[#185D46] group-hover:text-white transition-colors duration-300 shrink-0">
+              <div className="bg-primary/10 p-4 rounded-[16px] text-[#185D46] group-hover:bg-[#185D46] group-hover:text-white transition-colors duration-300 shrink-0">
                 <Clock className="w-7 h-7" />
               </div>
               <div>

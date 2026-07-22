@@ -62,7 +62,7 @@ interface ContactContextType {
 const ContactContext = createContext<ContactContextType | undefined>(undefined);
 
 const initialOffices: OfficeItem[] = [
-  { id: "1", name: "Main Office", address: "No:11 Ritherdon Avenue, Ritherdon Road", city: "Vepery, Chennai", pincode: "600007", branchType: "Headquarters", color: "#185D46", order: 1 },
+  { id: "1", name: "Main Office", address: "No:11 Ritherdon Avenue, Ritherdon Road", city: "Vepery, Chennai", pincode: "600007", branchType: "Headquarters", color: "var(--color-primary)", order: 1 },
   { id: "2", name: "Branch Offices", address: "Trichy, Salem, Tirunelveli, Bangalore", city: "Multiple Cities", pincode: "", branchType: "Branches", color: "#3b82f6", order: 2 },
   { id: "3", name: "Research Center", address: "Anna University Atal Innovation Center", city: "Chennai", pincode: "600025", branchType: "Industry 4.0 & AI/ML", color: "#a855f7", order: 3 }
 ];

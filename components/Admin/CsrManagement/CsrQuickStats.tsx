@@ -7,8 +7,8 @@ import { Leaf, Users, ShieldCheck, Factory, FileText, CheckCircle2 } from "lucid
 
 export default function CsrQuickStats() {
   const stats = [
-    { title: "Total CSR Projects", value: 0, icon: ShieldCheck, color: "text-[#185D46]", bg: "bg-[#185D46]/10", border: "border-[#185D46]/20" },
-    { title: "Communities Reached", value: 0, icon: Users, color: "text-[#F59E0B]", bg: "bg-[#F59E0B]/10", border: "border-[#F59E0B]/20" },
+    { title: "Total CSR Projects", value: 0, icon: ShieldCheck, color: "text-[#185D46]", bg: "bg-primary/10", border: "border-primary/20" },
+    { title: "Communities Reached", value: 0, icon: Users, color: "text-[#F59E0B]", bg: "bg-accent/10", border: "border-accent/20" },
     { title: "CO₂ Reduced (Tons)", value: 0, icon: Factory, color: "text-blue-600", bg: "bg-blue-50", border: "border-blue-100" },
     { title: "Green Jobs", value: 0, icon: Leaf, color: "text-emerald-600", bg: "bg-emerald-50", border: "border-emerald-100" },
     { title: "Active Initiatives", value: 0, icon: CheckCircle2, color: "text-purple-600", bg: "bg-purple-50", border: "border-purple-100" },

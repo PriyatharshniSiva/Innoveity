@@ -39,7 +39,7 @@ export default function KnowledgeHubClient({ articles }: { articles: any[] }) {
     <div className="min-h-screen bg-slate-50/50 text-[#0F172A] selection:bg-[#185D46] selection:text-white pb-24">
       
       {/* 1. Premium Hero Section */}
-      <section className="relative py-20 px-4 sm:px-6 lg:px-8 pt-32 overflow-hidden bg-white">
+      <section className="relative pt-12 pb-20 px-4 sm:px-6 lg:px-8 overflow-hidden bg-white">
         {/* Soft Glows */}
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#185D4620] rounded-full blur-[120px] opacity-70 -z-10 translate-x-1/3 -translate-y-1/3 animate-pulse" style={{ animationDuration: '8s' }} />
         <div className="absolute top-[20%] left-[10%] w-[400px] h-[400px] bg-[#185D46] rounded-full blur-[150px] opacity-10 -z-10 animate-pulse" style={{ animationDuration: '10s' }} />
@@ -130,7 +130,7 @@ export default function KnowledgeHubClient({ articles }: { articles: any[] }) {
                   <motion.article
                     key={idx}
                     variants={fadeUp}
-                    className="bg-white border border-[#185D46]/20 rounded-[20px] sm:rounded-[24px] overflow-hidden shadow-lg hover:shadow-[0_20px_40px_rgba(22,163,74,0.1)] hover:-translate-y-2 transition-all duration-300 flex flex-col group cursor-pointer"
+                    className="bg-white border border-primary/20 rounded-[20px] sm:rounded-[24px] overflow-hidden shadow-lg hover:shadow-[0_20px_40px_rgba(22,163,74,0.1)] hover:-translate-y-2 transition-all duration-300 flex flex-col group cursor-pointer"
                   >
                     <Link href="/events" className="block h-52 sm:h-56 overflow-hidden relative">
                       {course.image && (
@@ -140,7 +140,7 @@ export default function KnowledgeHubClient({ articles }: { articles: any[] }) {
                           className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out"
                         />
                       )}
-                      <div className="absolute inset-0 bg-[#185D46]/10 group-hover:bg-transparent transition-colors duration-500" />
+                      <div className="absolute inset-0 bg-primary/10 group-hover:bg-transparent transition-colors duration-500" />
                       {/* Animated Reading Progress Bar */}
                       <div className="absolute bottom-0 left-0 h-1 bg-[#185D46] w-0 group-hover:w-full transition-all duration-1000 ease-out" />
                     </Link>

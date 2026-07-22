@@ -65,7 +65,7 @@ const StatCard = ({ title, value, increase, icon: Icon, delay, isPrimary }: any)
         <h3 className={`text-3xl font-sans font-black mt-2 tracking-tight ${isPrimary ? 'text-white dark:text-black' : 'text-slate-800 dark:text-white'}`}>{value}</h3>
       </div>
       <div className={`w-12 h-12 rounded-2xl flex items-center justify-center transition-all group-hover:scale-110 ${
-        isPrimary ? 'bg-white/10 dark:bg-black/5 text-white dark:text-black' : 'bg-slate-50 dark:bg-white/5 text-slate-400 dark:text-white group-hover:bg-[#185D46]/10 dark:group-hover:bg-white group-hover:text-[#185D46] dark:group-hover:text-black'
+        isPrimary ? 'bg-white/10 dark:bg-black/5 text-white dark:text-black' : 'bg-slate-50 dark:bg-white/5 text-slate-400 dark:text-white group-hover:bg-primary/10 dark:group-hover:bg-white group-hover:text-[#185D46] dark:group-hover:text-black'
       }`}>
         <Icon className="w-6 h-6" />
       </div>
@@ -83,9 +83,9 @@ const StatCard = ({ title, value, increase, icon: Icon, delay, isPrimary }: any)
 
 const QuickAction = ({ title, icon: Icon, href }: any) => (
   <Link href={href} className="group block">
-    <div className="bg-white dark:bg-[#0a0a0a] rounded-[24px] p-5 shadow-[0_4px_20px_rgba(0,0,0,0.02)] dark:shadow-[0_4px_20px_rgba(0,0,0,0.5)] border border-slate-100 dark:border-white/5 hover:shadow-[0_15px_30px_rgba(0,0,0,0.06)] hover:border-[#185D46]/20 dark:hover:border-white/30 transition-all flex flex-col items-center justify-center text-center gap-3 h-[140px] relative overflow-hidden">
+    <div className="bg-white dark:bg-[#0a0a0a] rounded-[24px] p-5 shadow-[0_4px_20px_rgba(0,0,0,0.02)] dark:shadow-[0_4px_20px_rgba(0,0,0,0.5)] border border-slate-100 dark:border-white/5 hover:shadow-[0_15px_30px_rgba(0,0,0,0.06)] hover:border-primary/20 dark:hover:border-white/30 transition-all flex flex-col items-center justify-center text-center gap-3 h-[140px] relative overflow-hidden">
       <div className="absolute top-0 right-0 w-16 h-16 bg-slate-50 dark:bg-white/5 rounded-bl-[100px] group-hover:scale-150 transition-transform duration-500 -z-0" />
-      <div className={`w-12 h-12 rounded-[16px] flex items-center justify-center transition-colors relative z-10 bg-slate-50 text-slate-400 group-hover:bg-[#185D46]/10 group-hover:text-[#185D46] dark:bg-white/5 dark:text-neutral-300 dark:group-hover:bg-white dark:group-hover:text-black`}>
+      <div className={`w-12 h-12 rounded-[16px] flex items-center justify-center transition-colors relative z-10 bg-slate-50 text-slate-400 group-hover:bg-primary/10 group-hover:text-[#185D46] dark:bg-white/5 dark:text-neutral-300 dark:group-hover:bg-white dark:group-hover:text-black`}>
         <Icon className="w-6 h-6" />
       </div>
       <span className="text-sm font-extrabold text-slate-700 dark:text-neutral-400 group-hover:text-[#185D46] dark:group-hover:text-white transition-colors relative z-10">{title}</span>
@@ -97,11 +97,11 @@ export default function AdminDashboard() {
   const { theme } = useAdminTheme();
   
   const isDark = theme === 'dark';
-  const color1 = isDark ? '#ffffff' : '#185D46';
-  const color2 = isDark ? '#a3a3a3' : '#F59E0B';
+  const color1 = isDark ? '#ffffff' : 'var(--color-primary)';
+  const color2 = isDark ? '#a3a3a3' : 'var(--color-accent)';
   const PIE_COLORS = isDark 
     ? ['#ffffff', '#a3a3a3', '#525252', '#262626']
-    : ['#185D46', '#F59E0B', '#3b82f6', '#10b981'];
+    : ['var(--color-primary)', 'var(--color-accent)', '#3b82f6', 'var(--color-success)'];
 
   return (
     <div className="space-y-8">
@@ -127,7 +127,7 @@ export default function AdminDashboard() {
                 <h2 className="text-xl font-black text-slate-800 dark:text-white">Traffic & Enquiries</h2>
                 <p className="text-sm font-semibold text-slate-400 dark:text-neutral-500 mt-1 tracking-wide">Monthly unique visitors and submissions.</p>
               </div>
-              <select className="bg-slate-50 dark:bg-white/5 border border-slate-100 dark:border-white/10 text-sm font-bold text-slate-600 dark:text-white rounded-xl px-4 py-2 outline-none focus:ring-2 focus:ring-[#185D46]/20 dark:focus:ring-white/20 cursor-pointer shadow-sm transition-colors duration-300">
+              <select className="bg-slate-50 dark:bg-white/5 border border-slate-100 dark:border-white/10 text-sm font-bold text-slate-600 dark:text-white rounded-xl px-4 py-2 outline-none focus:ring-2 focus:ring-primary/20 dark:focus:ring-white/20 cursor-pointer shadow-sm transition-colors duration-300">
                 <option className="dark:bg-[#0a0a0a] dark:text-white">Last 7 Months</option>
                 <option className="dark:bg-[#0a0a0a] dark:text-white">This Year</option>
               </select>
@@ -155,7 +155,7 @@ export default function AdminDashboard() {
                       borderRadius: '16px', 
                       boxShadow: isDark ? '0 20px 40px -10px rgba(0, 0, 0, 0.5)' : '0 20px 40px -10px rgba(0, 0, 0, 0.15)', 
                       fontWeight: 'bold', 
-                      color: isDark ? '#fff' : '#0f172a' 
+                      color: isDark ? '#fff' : 'var(--color-secondary)' 
                     }}
                     itemStyle={{ fontWeight: 700 }}
                   />
@@ -205,7 +205,7 @@ export default function AdminDashboard() {
                       <Cell key={`cell-${index}`} fill={PIE_COLORS[index % PIE_COLORS.length]} />
                     ))}
                   </Pie>
-                  <Tooltip contentStyle={{ backgroundColor: isDark ? '#0a0a0a' : '#fff', borderColor: isDark ? '#262626' : '#f1f5f9', borderRadius: '12px', boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.5)', fontWeight: 'bold', color: isDark ? '#fff' : '#0f172a' }} />
+                  <Tooltip contentStyle={{ backgroundColor: isDark ? '#0a0a0a' : '#fff', borderColor: isDark ? '#262626' : '#f1f5f9', borderRadius: '12px', boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.5)', fontWeight: 'bold', color: isDark ? '#fff' : 'var(--color-secondary)' }} />
                 </PieChart>
               </ResponsiveContainer>
             </div>
@@ -224,7 +224,7 @@ export default function AdminDashboard() {
             initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.8 }}
             className="bg-white dark:bg-[#0a0a0a] rounded-[32px] p-8 shadow-[0_8px_30px_rgba(0,0,0,0.03)] dark:shadow-[0_8px_30px_rgba(0,0,0,0.5)] border border-slate-100 dark:border-white/5 relative overflow-hidden transition-colors duration-300"
           >
-            <div className="absolute top-0 right-0 w-32 h-32 bg-[#F59E0B]/5 dark:bg-white/5 rounded-bl-[100px] -z-10 transition-colors duration-300" />
+            <div className="absolute top-0 right-0 w-32 h-32 bg-accent/5 dark:bg-white/5 rounded-bl-[100px] -z-10 transition-colors duration-300" />
             <div className="flex justify-between items-center mb-8">
               <h2 className="text-xl font-black text-slate-800 dark:text-white">Recent Activity</h2>
             </div>
@@ -235,7 +235,7 @@ export default function AdminDashboard() {
                   <div className={`flex items-center justify-center w-10 h-10 rounded-xl border-[3px] border-white dark:border-[#0a0a0a] bg-slate-50 dark:bg-white/5 text-slate-400 dark:text-neutral-300 shadow-sm shrink-0 z-10 transition-colors group-hover:bg-[#185D46] group-hover:text-white dark:group-hover:bg-white dark:group-hover:text-black group-hover:scale-110`}>
                     <activity.icon className="w-4 h-4" />
                   </div>
-                  <div className="flex-1 bg-slate-50/50 dark:bg-white/5 p-4 rounded-[20px] border border-slate-100 dark:border-white/5 group-hover:border-[#185D46]/20 dark:group-hover:border-white/20 transition-colors">
+                  <div className="flex-1 bg-slate-50/50 dark:bg-white/5 p-4 rounded-[20px] border border-slate-100 dark:border-white/5 group-hover:border-primary/20 dark:group-hover:border-white/20 transition-colors">
                     <h3 className="font-bold text-slate-800 dark:text-neutral-200 text-sm mb-1">{activity.title}</h3>
                     <div className="flex items-center gap-1 text-xs font-semibold text-slate-400 dark:text-neutral-500">
                       <Activity className="w-3 h-3" />

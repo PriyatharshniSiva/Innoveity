@@ -85,7 +85,7 @@ export default function PremiumServices({ data }: { data?: any }) {
   };
 
   return (
-    <section className="relative py-28 px-4 sm:px-6 lg:px-8 bg-white overflow-hidden border-t border-slate-100">
+    <section className="relative pt-[50px] pb-0 px-4 sm:px-6 lg:px-8 bg-white overflow-hidden">
 
       {/* Dotted grid */}
       <div
@@ -129,8 +129,21 @@ export default function PremiumServices({ data }: { data?: any }) {
           transition={{ duration: 0.8 }}
           className="text-center max-w-3xl mx-auto"
         >
-          <h2 className="text-4xl sm:text-5xl font-extrabold text-[#185D46] tracking-tight">
-            {data?.title || "Our Impact in Action"}
+          <h2 className="text-4xl sm:text-5xl font-extrabold text-[var(--color-brand-primary, #185D46)] tracking-tight">
+            {(() => {
+              const text = data?.title || "Our Impact in Action";
+              if (text.includes("Our Impact")) {
+                const parts = text.split("Our Impact");
+                return (
+                  <>
+                    {parts[0]}
+                    <span style={{ color: "var(--color-brand-accent, #F59E0B)" }}>Our Impact</span>
+                    {parts.slice(1).join("Our Impact")}
+                  </>
+                );
+              }
+              return text;
+            })()}
           </h2>
           <p className="text-gray-500 text-lg mt-4 font-medium">
             {data?.subtitle || "Witness the transformation we bring to educational institutions and industries"}

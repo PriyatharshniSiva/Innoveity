@@ -19,14 +19,32 @@ interface EdukaTestimonialsProps {
 
 export default function EdukaTestimonials({ badge, title, subtitle, testimonials }: EdukaTestimonialsProps) {
   return (
-    <section className="py-24 bg-[#FAFAFA]">
+    <section className="pt-[50px] pb-24 bg-[#FAFAFA]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-8 mb-16">
           <div className="max-w-2xl space-y-4">
-            <h2 className="text-4xl sm:text-5xl font-extrabold leading-tight text-[#0F172A] tracking-tight">
-              {title}
+            <h2 className="text-4xl sm:text-5xl font-extrabold leading-tight text-[var(--color-brand-primary, #0F172A)] tracking-tight">
+              {(() => {
+                if (typeof title === 'string') {
+                  let highlightStr = "";
+                  if (title.includes('What Our')) highlightStr = 'What Our';
+                  else if (title.includes('Client ')) highlightStr = 'Client ';
+                  
+                  if (highlightStr) {
+                    const parts = title.split(highlightStr);
+                    return (
+                      <>
+                        {parts[0]}
+                        <span style={{ color: "var(--color-brand-accent, #F59E0B)" }}>{highlightStr}</span>
+                        {parts.slice(1).join(highlightStr)}
+                      </>
+                    );
+                  }
+                }
+                return title;
+              })()}
             </h2>
             <p className="text-slate-500 text-lg">
               {subtitle || "Real reviews from our valued partners and clients who have experienced the INNOVEITY difference."}
@@ -52,7 +70,7 @@ export default function EdukaTestimonials({ badge, title, subtitle, testimonials
               viewport={{ once: false, margin: "-50px" }}
               transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1], delay: idx * 0.08 }}
               whileHover={{ y: -8, scale: 1.01, boxShadow: "0 25px 50px -12px rgba(24, 93, 70, 0.12)" }}
-              className="bg-white border border-slate-100 hover:border-[#185D46]/20 rounded-2xl p-8 flex flex-col items-center text-center shadow-[0_8px_30px_rgb(0,0,0,0.03)] transition-all duration-300 h-full"
+              className="bg-white border border-slate-100 hover:border-primary/20 rounded-2xl p-8 flex flex-col items-center text-center shadow-[0_8px_30px_rgb(0,0,0,0.03)] transition-all duration-300 h-full"
             >
               <div className="flex space-x-1 mb-6">
                 {[...Array(5)].map((_, i) => (

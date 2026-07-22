@@ -55,7 +55,7 @@ export default function NumberedSteps({ title, description, steps, images }: Num
                 className="flex items-start gap-6 group"
               >
                 <motion.div 
-                  whileHover={{ scale: 1.1, borderColor: "#185D46", backgroundColor: "#185D4610" }}
+                  whileHover={{ scale: 1.1, borderColor: "var(--color-primary)", backgroundColor: "var(--color-primary)10" }}
                   className="flex-shrink-0 w-12 h-12 bg-white rounded-full border-2 border-gray-200 flex items-center justify-center shadow-sm transition-all duration-300 relative z-10"
                 >
                   <span className="text-xl font-bold text-gray-900 group-hover:text-[#185D46] transition-colors">
@@ -85,7 +85,7 @@ export default function NumberedSteps({ title, description, steps, images }: Num
                 alt="Collage 1" 
                 className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
               />
-              <div className="absolute inset-0 bg-[#185D46]/10 group-hover:bg-transparent transition-colors duration-500" />
+              <div className="absolute inset-0 bg-primary/10 group-hover:bg-transparent transition-colors duration-500" />
             </div>
             
             {/* Image 2: Top Right */}
@@ -95,7 +95,7 @@ export default function NumberedSteps({ title, description, steps, images }: Num
                 alt="Collage 2" 
                 className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
               />
-              <div className="absolute inset-0 bg-[#185D46]/10 group-hover:bg-transparent transition-colors duration-500" />
+              <div className="absolute inset-0 bg-primary/10 group-hover:bg-transparent transition-colors duration-500" />
             </div>
 
             {/* Image 3: Bottom Right */}
@@ -105,7 +105,7 @@ export default function NumberedSteps({ title, description, steps, images }: Num
                 alt="Collage 3" 
                 className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
               />
-              <div className="absolute inset-0 bg-[#185D46]/10 group-hover:bg-transparent transition-colors duration-500" />
+              <div className="absolute inset-0 bg-primary/10 group-hover:bg-transparent transition-colors duration-500" />
             </div>
           </div>
         </div>

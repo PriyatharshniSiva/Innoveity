@@ -7,12 +7,12 @@ import { ImagePlus, MessageSquarePlus, Target, Video, BarChart2, MessageCircleQu
 import { useHomeManagement } from "./HomeManagementState";
 
 const actions = [
-  { id: 1, title: "Add Hero Banner", icon: ImagePlus, color: "#185D46", action: "hero" },
+  { id: 1, title: "Add Hero Banner", icon: ImagePlus, color: "var(--color-primary)", action: "hero" },
   { id: 2, title: "Upload Journey Image", icon: Video, color: "#0ea5e9", action: "hero" },
   { id: 3, title: "Add Impact Card", icon: Target, color: "#8b5cf6", action: "stats" },
   { id: 4, title: "Add Testimonial", icon: MessageSquarePlus, color: "#f43f5e", action: "testimonials" },
   { id: 5, title: "Add FAQ", icon: MessageCircleQuestion, color: "#eab308", action: "faq" },
-  { id: 6, title: "View Analytics", icon: BarChart2, color: "#F59E0B", action: "analytics" }
+  { id: 6, title: "View Analytics", icon: BarChart2, color: "var(--color-accent)", action: "analytics" }
 ];
 
 export default function QuickActions() {
@@ -31,7 +31,7 @@ export default function QuickActions() {
             whileHover={{ y: -5, scale: 1.02 }}
             whileTap={{ scale: 0.95 }}
             onClick={() => setActiveSection(action.action)}
-            className="bg-white dark:bg-[#111] rounded-[20px] p-5 flex flex-col items-center justify-center text-center cursor-pointer border border-slate-100 dark:border-white/5 shadow-lg shadow-slate-200/40 dark:shadow-black/40 hover:shadow-xl hover:shadow-[#185D46]/10 dark:hover:shadow-black/60 transition-all duration-300 group overflow-hidden relative"
+            className="bg-white dark:bg-[#111] rounded-[20px] p-5 flex flex-col items-center justify-center text-center cursor-pointer border border-slate-100 dark:border-white/5 shadow-lg shadow-slate-200/40 dark:shadow-black/40 hover:shadow-xl hover:shadow-primary/10 dark:hover:shadow-black/60 transition-all duration-300 group overflow-hidden relative"
           >
             <div className="absolute inset-0 bg-gradient-to-br from-white/50 to-transparent dark:from-white/5 pointer-events-none" />
             <div className="absolute -top-10 -right-10 w-24 h-24 bg-gradient-to-br opacity-0 group-hover:opacity-10 transition-opacity duration-500 rounded-full blur-2xl" style={{ from: action.color, to: 'transparent' }} />

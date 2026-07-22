@@ -25,7 +25,7 @@ export default function CsrSideDrawer() {
         setSdgData(sdgs.find(s => s.id === editingId) || {});
       } else {
         setSdgData({
-          number: 1, title: "", description: "", color: "#185D46", status: "Active"
+          number: 1, title: "", description: "", color: "var(--color-primary)", status: "Active"
         });
       }
     }
@@ -106,20 +106,20 @@ export default function CsrSideDrawer() {
                 <>
                   <div>
                     <label className="block text-sm font-semibold text-slate-700 mb-2">Title</label>
-                    <input type="text" name="title" value={initiativeData.title || ""} onChange={handleInitiativeChange} className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#185D46]/20 focus:border-[#185D46] transition-all" />
+                    <input type="text" name="title" value={initiativeData.title || ""} onChange={handleInitiativeChange} className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-[#185D46] transition-all" />
                   </div>
                   <div>
                     <label className="block text-sm font-semibold text-slate-700 mb-2">Description</label>
-                    <textarea name="description" value={initiativeData.description || ""} onChange={handleInitiativeChange} rows={3} className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#185D46]/20 focus:border-[#185D46] transition-all resize-none" />
+                    <textarea name="description" value={initiativeData.description || ""} onChange={handleInitiativeChange} rows={3} className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-[#185D46] transition-all resize-none" />
                   </div>
                   <div>
                     <label className="block text-sm font-semibold text-slate-700 mb-2">Key Impact</label>
-                    <input type="text" name="impact" value={initiativeData.impact || ""} onChange={handleInitiativeChange} className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#185D46]/20 focus:border-[#185D46] transition-all" />
+                    <input type="text" name="impact" value={initiativeData.impact || ""} onChange={handleInitiativeChange} className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-[#185D46] transition-all" />
                   </div>
                   <div className="grid grid-cols-2 gap-4">
                     <div>
                       <label className="block text-sm font-semibold text-slate-700 mb-2">Status</label>
-                      <select name="status" value={initiativeData.status || "Active"} onChange={handleInitiativeChange} className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#185D46]/20 focus:border-[#185D46] transition-all bg-white">
+                      <select name="status" value={initiativeData.status || "Active"} onChange={handleInitiativeChange} className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-[#185D46] transition-all bg-white">
                         <option value="Active">Active</option>
                         <option value="Hidden">Hidden</option>
                       </select>
@@ -137,20 +137,20 @@ export default function CsrSideDrawer() {
                   <div className="grid grid-cols-2 gap-4">
                     <div>
                       <label className="block text-sm font-semibold text-slate-700 mb-2">SDG Number</label>
-                      <input type="number" name="number" value={sdgData.number || 1} onChange={handleSdgChange} className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#185D46]/20 focus:border-[#185D46] transition-all" />
+                      <input type="number" name="number" value={sdgData.number || 1} onChange={handleSdgChange} className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-[#185D46] transition-all" />
                     </div>
                     <div>
                       <label className="block text-sm font-semibold text-slate-700 mb-2">Color</label>
-                      <input type="color" name="color" value={sdgData.color || "#185D46"} onChange={handleSdgChange} className="w-full h-12 rounded-xl border border-slate-200 cursor-pointer p-1" />
+                      <input type="color" name="color" value={sdgData.color || "var(--color-primary)"} onChange={handleSdgChange} className="w-full h-12 rounded-xl border border-slate-200 cursor-pointer p-1" />
                     </div>
                   </div>
                   <div>
                     <label className="block text-sm font-semibold text-slate-700 mb-2">Goal Title</label>
-                    <input type="text" name="title" value={sdgData.title || ""} onChange={handleSdgChange} className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#185D46]/20 focus:border-[#185D46] transition-all" />
+                    <input type="text" name="title" value={sdgData.title || ""} onChange={handleSdgChange} className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-[#185D46] transition-all" />
                   </div>
                   <div>
                     <label className="block text-sm font-semibold text-slate-700 mb-2">Description</label>
-                    <textarea name="description" value={sdgData.description || ""} onChange={handleSdgChange} rows={4} className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#185D46]/20 focus:border-[#185D46] transition-all resize-none" />
+                    <textarea name="description" value={sdgData.description || ""} onChange={handleSdgChange} rows={4} className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-[#185D46] transition-all resize-none" />
                   </div>
                 </>
               )}

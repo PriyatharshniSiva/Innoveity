@@ -6,9 +6,9 @@ import { motion } from "framer-motion";
 import { Clock, Edit3, Image as ImageIcon, Trophy, Target } from "lucide-react";
 
 const activities = [
-  { id: 1, title: "Updated Company Story", time: "1 hour ago", icon: Edit3, color: "#185D46" },
+  { id: 1, title: "Updated Company Story", time: "1 hour ago", icon: Edit3, color: "var(--color-primary)" },
   { id: 2, title: "Uploaded 2 Gallery Images", time: "3 hours ago", icon: ImageIcon, color: "#0ea5e9" },
-  { id: 3, title: "Added New Achievement", time: "Yesterday", icon: Trophy, color: "#F59E0B" },
+  { id: 3, title: "Added New Achievement", time: "Yesterday", icon: Trophy, color: "var(--color-accent)" },
   { id: 4, title: "Modified Mission Statement", time: "2 days ago", icon: Target, color: "#8b5cf6" },
 ];
 
