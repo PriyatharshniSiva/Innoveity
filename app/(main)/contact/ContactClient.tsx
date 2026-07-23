@@ -27,7 +27,7 @@ const Building = ({ className }: { className?: string }) => (
 );
 
 // Form Components
-const FloatingInput = ({ label, type, required = false, icon }: { label: string, type: string, required?: boolean, icon?: React.ReactNode }) => {
+const FloatingInput = ({ label, type, name, required = false, icon }: { label: string, type: string, name?: string, required?: boolean, icon?: React.ReactNode }) => {
   const [focused, setFocused] = useState(false);
   const [hasValue, setHasValue] = useState(false);
 
@@ -40,6 +40,7 @@ const FloatingInput = ({ label, type, required = false, icon }: { label: string,
       )}
       <input
         type={type}
+        name={name}
         required={required}
         onFocus={() => setFocused(true)}
         onBlur={(e) => {
@@ -62,13 +63,14 @@ const FloatingInput = ({ label, type, required = false, icon }: { label: string,
   );
 };
 
-const FloatingSelect = ({ label, required = false }: { label: string, required?: boolean }) => {
+const FloatingSelect = ({ label, name, required = false }: { label: string, name?: string, required?: boolean }) => {
   const [focused, setFocused] = useState(false);
   const [hasValue, setHasValue] = useState(false);
 
   return (
     <div className="relative group">
       <select
+        name={name}
         required={required}
         onFocus={() => setFocused(true)}
         onBlur={(e) => {
@@ -101,13 +103,14 @@ const FloatingSelect = ({ label, required = false }: { label: string, required?:
   );
 };
 
-const FloatingTextarea = ({ label, required = false }: { label: string, required?: boolean }) => {
+const FloatingTextarea = ({ label, name, required = false }: { label: string, name?: string, required?: boolean }) => {
   const [focused, setFocused] = useState(false);
   const [value, setValue] = useState("");
 
   return (
     <div className="relative group">
       <textarea
+        name={name}
         rows={4}
         required={required}
         onFocus={() => setFocused(true)}
@@ -135,14 +138,32 @@ export default function ContactClient({ data }: { data: any }) {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
-    setTimeout(() => {
+    
+    const formData = new FormData(e.currentTarget);
+    const formDataObj = Object.fromEntries(formData.entries());
+
+    try {
+      const response = await fetch('/api/contact-submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formDataObj),
+      });
+
+      if (response.ok) {
+        setIsSubmitted(true);
+        setTimeout(() => setIsSubmitted(false), 5000);
+      } else {
+        alert("Failed to send message. Please try again.");
+      }
+    } catch (error) {
+      console.error(error);
+      alert("Failed to send message. Please try again.");
+    } finally {
       setIsSubmitting(false);
-      setIsSubmitted(true);
-      setTimeout(() => setIsSubmitted(false), 5000);
-    }, 1500);
+    }
   };
 
   const containerVariants = {
@@ -158,7 +179,12 @@ export default function ContactClient({ data }: { data: any }) {
     show: { opacity: 1, y: 0, transition: { type: "spring" as const, stiffness: 100, damping: 15 } }
   };
 
-  const offices = data?.offices?.filter((o: any) => o.status === 'Active') || [
+  const offices = data?.offices ? data.offices.map((o: any) => ({
+    name: o.name,
+    type: o.branchType || o.type,
+    address: typeof o.address === 'string' ? [o.address, o.city, o.pincode].filter(Boolean) : o.address,
+    color: o.color
+  })) : [
     {
       name: "Main Office",
       type: "Headquarters",
@@ -262,14 +288,14 @@ export default function ContactClient({ data }: { data: any }) {
                   
                   <form className="space-y-5" onSubmit={handleSubmit}>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-                      <FloatingInput label="Full Name" type="text" icon={<UserIcon className="w-5 h-5" />} required />
-                      <FloatingInput label="Email" type="email" icon={<Mail className="w-5 h-5" />} required />
-                      <FloatingInput label="Phone" type="tel" icon={<Phone className="w-5 h-5" />} />
-                      <FloatingInput label="Organization" type="text" icon={<Building className="w-5 h-5" />} />
+                      <FloatingInput label="Full Name" type="text" name="name" icon={<UserIcon className="w-5 h-5" />} required />
+                      <FloatingInput label="Email" type="email" name="email" icon={<Mail className="w-5 h-5" />} required />
+                      <FloatingInput label="Phone" type="tel" name="phone" icon={<Phone className="w-5 h-5" />} />
+                      <FloatingInput label="Organization" type="text" name="organization" icon={<Building className="w-5 h-5" />} />
                     </div>
 
-                    <FloatingSelect label="Inquiry Type" required />
-                    <FloatingTextarea label="Message" required />
+                    <FloatingSelect label="Inquiry Type" name="type" required />
+                    <FloatingTextarea label="Message" name="message" required />
 
                     <div className="pt-4">
                       <motion.button 
@@ -358,7 +384,7 @@ export default function ContactClient({ data }: { data: any }) {
               </div>
               <div>
                 <h3 className="text-sm font-bold text-gray-400 uppercase tracking-wider mb-1">Call Us</h3>
-                <p className="text-xl font-black text-[#0F172A]">{data?.contactInfo?.phone || "+91 880 770 8818"}</p>
+                <p className="text-xl font-black text-[#0F172A]">{data?.settings?.phonePrimary || data?.contactInfo?.phone || "+91 880 770 8818"}</p>
               </div>
             </motion.div>
 
@@ -373,7 +399,9 @@ export default function ContactClient({ data }: { data: any }) {
               </div>
               <div>
                 <h3 className="text-sm font-bold text-gray-400 uppercase tracking-wider mb-1">Email Us</h3>
-                {(data?.contactInfo?.emails || ["info@innoveity.com", "admin@innoveity.com"]).map((email: string, i: number) => (
+                {((data?.settings?.emailPrimary || data?.settings?.emailSecondary) 
+                  ? [data.settings.emailPrimary, data.settings.emailSecondary].filter(Boolean) 
+                  : (data?.contactInfo?.emails || ["info@innoveity.com", "admin@innoveity.com"])).map((email: string, i: number) => (
                   <p key={i} className="text-[17px] font-bold text-[#0F172A] mb-0.5">{email}</p>
                 ))}
               </div>
@@ -390,7 +418,9 @@ export default function ContactClient({ data }: { data: any }) {
               </div>
               <div>
                 <h3 className="text-sm font-bold text-gray-400 uppercase tracking-wider mb-1">Working Hours</h3>
-                {(data?.contactInfo?.hours || ["Mon - Fri: 9 AM - 6 PM", "Saturday: 10 AM - 4 PM"]).map((hour: string, i: number) => (
+                {((data?.settings?.hoursWeekday || data?.settings?.hoursWeekend)
+                  ? [data.settings.hoursWeekday, data.settings.hoursWeekend].filter(Boolean)
+                  : (data?.contactInfo?.hours || ["Mon - Fri: 9 AM - 6 PM", "Saturday: 10 AM - 4 PM"])).map((hour: string, i: number) => (
                   <p key={i} className="text-[16px] font-bold text-[#0F172A] mb-0.5">{hour}</p>
                 ))}
               </div>
@@ -406,7 +436,7 @@ export default function ContactClient({ data }: { data: any }) {
           <div className="bg-white p-3 sm:p-4 rounded-[32px] sm:rounded-[40px] shadow-[0_8px_40px_rgba(0,0,0,0.06)] border border-slate-100 relative group overflow-hidden h-[450px]">
             <div className="w-full h-full rounded-[24px] sm:rounded-[32px] overflow-hidden relative">
               <iframe
-                src={data?.map?.url || "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3886.417387438497!2d80.2582846153664!3d13.08272919078347!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5265e3170425a7%3A0xc008f10ea82b4a!2sChennai!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"}
+                src={data?.settings?.mapLat ? `https://maps.google.com/maps?q=${data.settings.mapLat},${data.settings.mapLng}&hl=en&z=15&output=embed` : (data?.map?.url || "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3886.417387438497!2d80.2582846153664!3d13.08272919078347!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5265e3170425a7%3A0xc008f10ea82b4a!2sChennai!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin")}
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
@@ -418,7 +448,7 @@ export default function ContactClient({ data }: { data: any }) {
               
               {/* Floating CTA on Map */}
               <a 
-                href={data?.map?.link || "https://maps.google.com/?q=Chennai"}
+                href={data?.settings?.mapLat ? `https://maps.google.com/?q=${data.settings.mapLat},${data.settings.mapLng}` : (data?.map?.link || "https://maps.google.com/?q=Chennai")}
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="absolute bottom-6 right-6 bg-white hover:bg-slate-50 text-[#0F172A] font-bold text-sm px-6 py-4 rounded-2xl shadow-[0_10px_30px_rgba(0,0,0,0.15)] flex items-center gap-3 transition-transform hover:-translate-y-1 z-10"
