@@ -57,7 +57,7 @@ export default function EdukaPresence({ data }: { data?: any }) {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: false }}
               transition={{ duration: 0.6 }}
-              className="text-4xl sm:text-5xl font-black text-[var(--color-brand-primary, #0F172A)] tracking-tight"
+              className="text-4xl sm:text-5xl font-black text-[var(--color-brand-primary, var(--color-brand-secondary, #0F172A))] tracking-tight"
             >
               {(() => {
                 const text = data?.title || "Our Presence";
@@ -66,7 +66,7 @@ export default function EdukaPresence({ data }: { data?: any }) {
                   return (
                     <>
                       {parts[0]}
-                      <span style={{ color: "var(--color-brand-accent, #F59E0B)" }}>Our </span>
+                      <span style={{ color: "var(--color-brand-accent, var(--color-brand-accent, #F59E0B))" }}>Our </span>
                       {parts.slice(1).join("Our ")}
                     </>
                   );

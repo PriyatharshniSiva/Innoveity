@@ -2,13 +2,15 @@ import { NextResponse } from "next/server";
 
 export async function POST() {
   try {
-    // In a real application, you would clear the user's session cookie here
-    console.log("Mock Logout");
-    
-    return NextResponse.json(
+    const response = NextResponse.json(
       { message: "Logged out successfully" },
       { status: 200 }
     );
+
+    // Clear the auth cookie
+    response.cookies.delete("admin_token");
+
+    return response;
   } catch (error) {
     console.error("Logout error:", error);
     return NextResponse.json(

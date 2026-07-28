@@ -86,7 +86,7 @@ export default function LivePreview() {
 
           {/* Corporate Highlights Section */}
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-            <section className="bg-gradient-to-br from-[#185D4610]/30 to-[#f0f9ff]/20 backdrop-blur-xl rounded-[24px] p-8 md:p-12 border border-[#185D4630] border-l-[6px] border-l-primary shadow-[0_20px_50px_rgba(12,74,65,0.05)] relative overflow-hidden group">
+            <section className="bg-gradient-to-br from-primary/10/30 to-[#f0f9ff]/20 backdrop-blur-xl rounded-[24px] p-8 md:p-12 border border-primary/20 border-l-[6px] border-l-primary shadow-[0_20px_50px_rgba(12,74,65,0.05)] relative overflow-hidden group">
               <h2 className="text-3xl md:text-4xl font-extrabold text-primary mb-6 tracking-tight leading-tight">
                 Leading Corporate Training & College Development Partner in Tamil Nadu
               </h2>

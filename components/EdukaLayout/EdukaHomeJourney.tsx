@@ -258,8 +258,8 @@ export default function EdukaHomeJourney({ data }: { data?: any }) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-extrabold text-[var(--color-brand-primary, #0F172A)] tracking-tight">
-            <span style={{ color: "var(--color-brand-accent, #F59E0B)" }}>Our</span> Journey
+          <h2 className="text-4xl md:text-5xl font-extrabold text-[var(--color-brand-primary, var(--color-brand-secondary, #0F172A))] tracking-tight">
+            <span style={{ color: "var(--color-brand-accent, var(--color-brand-accent, #F59E0B))" }}>Our</span> Journey
           </h2>
         </div>
 

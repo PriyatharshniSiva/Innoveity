@@ -251,17 +251,25 @@ async function main() {
   // 4. Seed Testimonials (Partner Quotes)
   const testimonials = [
     {
-      quote: "INNOVEITY's comprehensive faculty development program revolutionized our teaching methodologies. Our students are now industry-ready from day one.",
-      author: "Director, Partner Institution",
+      quote: "Exceptional training programs! INNOVEITY transformed our organization with their innovative approach to skill development. Highly recommended for corporate training.",
+      author: "Rajesh Kumar",
     },
     {
-      quote: "The ESG consulting provided by INNOVEITY helped us achieve carbon neutrality ahead of schedule while improving employee satisfaction scores.",
-      author: "VP of Sustainability, Manufacturing Partner",
+      quote: "Outstanding ESG consulting services. Their tree plantation initiative helped us achieve our sustainability goals effectively. Professional and impactful work.",
+      author: "Priya Sharma",
     },
     {
-      quote: "This program transformed our team's capabilities and significantly improved our productivity and innovation metrics.",
-      author: "L&D Head, BFSI Client",
+      quote: "Excellent leadership development programs. The training methodology is innovative and results-oriented. Our team's performance improved significantly.",
+      author: "Dr. Amit Patel",
     },
+    {
+      quote: "INNOVEITY delivered beyond expectations. Their industrial safety training programs are comprehensive and well-structured. Great team to work with.",
+      author: "Sarah Johnson",
+    },
+    {
+      quote: "Impressed with their change management expertise. The consultants are knowledgeable and the implementation was smooth. Definitely recommend their services.",
+      author: "Vikram Singh",
+    }
   ];
 
   for (const testimonial of testimonials) {

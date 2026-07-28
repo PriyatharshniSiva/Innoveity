@@ -171,7 +171,7 @@ export default function CaseStudiesClient({ caseStudies, testimonials }: { caseS
 
       {/* ── 1. Hero ── */}
       <section className="relative pt-12 pb-8 px-4 sm:px-6 lg:px-8 overflow-hidden">
-        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#185D4620] rounded-full blur-[120px] opacity-70 -z-10 translate-x-1/3 -translate-y-1/3 animate-pulse" style={{ animationDuration: "8s" }} />
+        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/20 rounded-full blur-[120px] opacity-70 -z-10 translate-x-1/3 -translate-y-1/3 animate-pulse" style={{ animationDuration: "8s" }} />
         <div className="absolute top-[20%] left-[10%] w-[400px] h-[400px] bg-primary rounded-full blur-[150px] opacity-10 -z-10 animate-pulse" style={{ animationDuration: "10s" }} />
 
         <div className="max-w-4xl mx-auto text-center relative z-10 space-y-6">
@@ -335,8 +335,8 @@ export default function CaseStudiesClient({ caseStudies, testimonials }: { caseS
       <section className="pt-8 pb-20 px-4 sm:px-6 lg:px-8 bg-slate-50/30">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-[var(--color-brand-primary, #0F172A)] mb-6">
-              <span style={{ color: "var(--color-brand-accent, #F59E0B)" }}>What Our </span>Partners Say
+            <h2 className="text-4xl md:text-5xl font-bold text-[var(--color-brand-primary, var(--color-brand-secondary, #0F172A))] mb-6">
+              <span style={{ color: "var(--color-brand-accent, var(--color-brand-accent, #F59E0B))" }}>What Our </span>Partners Say
             </h2>
             <p className="text-xl text-primary/80 max-w-3xl mx-auto">Hear from the leaders and innovators we've had the privilege to work with</p>
           </div>

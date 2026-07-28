@@ -21,6 +21,7 @@ export interface EnquiryItem {
   phone: string;
   organization: string;
   type: string;
+  message: string;
   date: string;
   status: "Unread" | "Read" | "Replied";
 }

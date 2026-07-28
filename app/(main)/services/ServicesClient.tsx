@@ -77,7 +77,7 @@ export default function ServicesClient({ data }: { data: any }) {
       
       {/* 1. Hero Section with Mesh Gradient */}
       <section className="relative pt-12 pb-24 px-4 sm:px-6 lg:px-8 overflow-hidden">
-        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#185D4620] rounded-full blur-[120px] opacity-60 -z-10 translate-x-1/3 -translate-y-1/3 animate-pulse" style={{ animationDuration: '8s' }} />
+        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-primary/20 rounded-full blur-[120px] opacity-60 -z-10 translate-x-1/3 -translate-y-1/3 animate-pulse" style={{ animationDuration: '8s' }} />
         <div className="absolute top-[20%] left-[10%] w-[400px] h-[400px] bg-primary rounded-full blur-[150px] opacity-10 -z-10 animate-pulse" style={{ animationDuration: '10s' }} />
         
         <div className="max-w-7xl mx-auto text-center relative z-10">
@@ -108,9 +108,9 @@ export default function ServicesClient({ data }: { data: any }) {
           transition={{ duration: 0.8, delay: 0.4 }}
           className="max-w-6xl w-full"
         >
-          <section className="bg-gradient-to-br from-[#185D4610]/30 to-[#f0f9ff]/20 backdrop-blur-xl rounded-[24px] p-8 md:p-12 border border-[#185D4630] border-l-[6px] border-l-primary shadow-[0_20px_50px_rgba(12,74,65,0.05)] relative overflow-hidden group">
+          <section className="bg-gradient-to-br from-primary/10/30 to-[#f0f9ff]/20 backdrop-blur-xl rounded-[24px] p-8 md:p-12 border border-primary/20 border-l-[6px] border-l-primary shadow-[0_20px_50px_rgba(12,74,65,0.05)] relative overflow-hidden group">
             
-            <h2 className="text-3xl md:text-4xl font-extrabold text-[var(--color-brand-primary, #0F172A)] mb-6 tracking-tight leading-tight">
+            <h2 className="text-3xl md:text-4xl font-extrabold text-[var(--color-brand-primary, var(--color-brand-secondary, #0F172A))] mb-6 tracking-tight leading-tight">
               {(() => {
                 const text = data?.overview?.mainTitle || "Comprehensive Training Solutions for Tamil Nadu";
                 if (typeof text === 'string' && text.includes("Comprehensive Training ")) {
@@ -118,7 +118,7 @@ export default function ServicesClient({ data }: { data: any }) {
                   return (
                     <>
                       {parts[0]}
-                      <span style={{ color: "var(--color-brand-accent, #F59E0B)" }}>Comprehensive Training </span>
+                      <span style={{ color: "var(--color-brand-accent, var(--color-brand-accent, #F59E0B))" }}>Comprehensive Training </span>
                       {parts.slice(1).join("Comprehensive Training ")}
                     </>
                   );
@@ -155,7 +155,7 @@ export default function ServicesClient({ data }: { data: any }) {
       </div>
 
       {/* ── Premium FAQ Accordion ── */}
-      <section className="relative py-20 px-4 sm:px-6 lg:px-8 bg-[#185D4610] overflow-hidden border-t border-primary/20">
+      <section className="relative py-20 px-4 sm:px-6 lg:px-8 bg-primary/10 overflow-hidden border-t border-primary/20">
         {/* Dot grid */}
         <div
           className="absolute inset-0 pointer-events-none z-0"
@@ -252,7 +252,7 @@ export default function ServicesClient({ data }: { data: any }) {
                         className="overflow-hidden"
                       >
                         <div className="px-6 pb-7 border-t border-primary/20/80">
-                          <div className="mt-5 bg-[#185D4610] border-l-[4px] border-primary rounded-r-xl px-5 py-4">
+                          <div className="mt-5 bg-primary/10 border-l-[4px] border-primary rounded-r-xl px-5 py-4">
                             <p className="text-slate-800 font-semibold leading-relaxed text-sm sm:text-base">
                               {item.answer}
                             </p>
@@ -277,7 +277,7 @@ export default function ServicesClient({ data }: { data: any }) {
         return (
           <section key={category.id} className={`pt-8 pb-24 px-4 sm:px-6 lg:px-8 ${bg} relative overflow-hidden`}>
             {idx === 1 && (
-              <div className="absolute top-1/2 left-1/2 w-[800px] h-[800px] bg-[#185D4620] rounded-full blur-[150px] opacity-30 -z-10 -translate-x-1/2 -translate-y-1/2 pointer-events-none" />
+              <div className="absolute top-1/2 left-1/2 w-[800px] h-[800px] bg-primary/20 rounded-full blur-[150px] opacity-30 -z-10 -translate-x-1/2 -translate-y-1/2 pointer-events-none" />
             )}
             
             <div className="max-w-7xl mx-auto">
@@ -285,7 +285,7 @@ export default function ServicesClient({ data }: { data: any }) {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: false, margin: "-50px" }}
-                className="text-4xl md:text-5xl font-extrabold text-center text-[var(--color-brand-primary, #0F172A)] mb-16 tracking-tight"
+                className="text-4xl md:text-5xl font-extrabold text-center text-[var(--color-brand-primary, var(--color-brand-secondary, #0F172A))] mb-16 tracking-tight"
               >
                 {(() => {
                   const text = category.name;
@@ -294,7 +294,7 @@ export default function ServicesClient({ data }: { data: any }) {
                     return (
                       <>
                         {parts[0]}
-                        <span style={{ color: "var(--color-brand-accent, #F59E0B)" }}>Educational </span>
+                        <span style={{ color: "var(--color-brand-accent, var(--color-brand-accent, #F59E0B))" }}>Educational </span>
                         {parts.slice(1).join("Educational ")}
                       </>
                     );
@@ -319,7 +319,7 @@ export default function ServicesClient({ data }: { data: any }) {
                     <div className="absolute top-0 left-0 w-full h-1 bg-primary scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left rounded-t-[20px]" />
                     
                     <div className="flex flex-col items-center w-full justify-center transform transition-transform duration-500 group-hover:-translate-y-10 mt-4 mb-6">
-                      <div className="w-20 h-20 rounded-full bg-[#185D4620] text-primary flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-3 transition-transform duration-500 shadow-sm shrink-0">
+                      <div className="w-20 h-20 rounded-full bg-primary/20 text-primary flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-3 transition-transform duration-500 shadow-sm shrink-0">
                         <DynamicIcon name={card.iconName} />
                       </div>
                       <h3 className="text-xl font-bold text-secondary group-hover:text-primary transition-colors">{card.title}</h3>

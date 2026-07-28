@@ -103,10 +103,10 @@ export default function EdukaOverview({ data }: { data?: any }) {
 
           <motion.h2
             {...fadeUp(0.08)}
-            className="text-4xl sm:text-5xl lg:text-[3.5rem] font-black text-[var(--color-brand-primary, #0F172A)] tracking-tight leading-[1.1]"
+            className="text-4xl sm:text-5xl lg:text-[3.5rem] font-black text-[var(--color-brand-primary, var(--color-brand-secondary, #0F172A))] tracking-tight leading-[1.1]"
           >
-            <span style={{ color: "var(--color-brand-accent, #F59E0B)" }}>{data?.heroTitle1 || "Leading Corporate Training &"}</span> {" "}
-            <span style={{ color: "var(--color-brand-primary, #0F172A)" }}>{data?.heroHighlight || "College Development"}</span>{" "}
+            <span style={{ color: "var(--color-brand-accent, var(--color-brand-accent, #F59E0B))" }}>{data?.heroTitle1 || "Leading Corporate Training &"}</span> {" "}
+            <span style={{ color: "var(--color-brand-primary, var(--color-brand-secondary, #0F172A))" }}>{data?.heroHighlight || "College Development"}</span>{" "}
             {data?.heroTitle2 || "Partner in Tamil Nadu"}
           </motion.h2>
 
@@ -120,7 +120,7 @@ export default function EdukaOverview({ data }: { data?: any }) {
       </section>
 
       {/* ── SECTION 2: Three Division Cards ── */}
-      <section className="relative pt-[50px] pb-20 px-4 sm:px-6 lg:px-8 bg-[#185D4610] overflow-hidden">
+      <section className="relative pt-[50px] pb-20 px-4 sm:px-6 lg:px-8 bg-primary/10 overflow-hidden">
         <div
           className="absolute inset-0 pointer-events-none z-0 opacity-50"
           style={{
@@ -195,11 +195,11 @@ export default function EdukaOverview({ data }: { data?: any }) {
           {/* Card wrapper */}
           <motion.div
             {...fadeUp(0)}
-            className="bg-[#185D4610] rounded-[32px] border border-primary/20 p-8 sm:p-12 space-y-10 shadow-[0_8px_40px_rgba(12,74,65,0.06)]"
+            className="bg-primary/10 rounded-[32px] border border-primary/20 p-8 sm:p-12 space-y-10 shadow-[0_8px_40px_rgba(12,74,65,0.06)]"
           >
             {/* Header */}
             <div className="space-y-2">
-              <h3 className="text-3xl sm:text-4xl font-extrabold text-[var(--color-brand-primary, #0F172A)] tracking-tight">
+              <h3 className="text-3xl sm:text-4xl font-extrabold text-[var(--color-brand-primary, var(--color-brand-secondary, #0F172A))] tracking-tight">
                 {(() => {
                   const text = data?.whyChooseTitle || "Why Leading Institutions Choose INNOVEITY";
                   if (typeof text === 'string' && text.includes("Why Leading Institutions ")) {
@@ -207,7 +207,7 @@ export default function EdukaOverview({ data }: { data?: any }) {
                     return (
                       <>
                         {parts[0]}
-                        <span style={{ color: "var(--color-brand-accent, #F59E0B)" }}>Why Leading Institutions </span>
+                        <span style={{ color: "var(--color-brand-accent, var(--color-brand-accent, #F59E0B))" }}>Why Leading Institutions </span>
                         {parts.slice(1).join("Why Leading Institutions ")}
                       </>
                     );
@@ -245,7 +245,7 @@ export default function EdukaOverview({ data }: { data?: any }) {
       </section>
 
       {/* ── SECTION 4: Core Details Grid ── */}
-      <section className="relative pt-[50px] pb-20 px-4 sm:px-6 lg:px-8 bg-[#185D4610] overflow-hidden">
+      <section className="relative pt-[50px] pb-20 px-4 sm:px-6 lg:px-8 bg-primary/10 overflow-hidden">
         <div
           className="absolute inset-0 pointer-events-none z-0 opacity-60"
           style={{

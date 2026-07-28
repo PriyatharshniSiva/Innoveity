@@ -26,12 +26,7 @@ export default function AdminSidebar() {
   }, []);
 
   const menuGroups = [
-    {
-      title: "Main",
-      items: [
-        { name: "Dashboard", href: "/admin", icon: LayoutDashboard }
-      ]
-    },
+
     {
       title: "Website Management",
       items: [

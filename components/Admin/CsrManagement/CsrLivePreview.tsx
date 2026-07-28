@@ -18,7 +18,7 @@ export default function CsrLivePreview() {
         
         {/* Header Preview */}
         <section className="relative py-20 px-4 overflow-hidden bg-white border-b border-slate-100">
-          <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-[#185D4620] rounded-full blur-[100px] opacity-70 -z-10 translate-x-1/3 -translate-y-1/3" />
+          <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-primary/20 rounded-full blur-[100px] opacity-70 -z-10 translate-x-1/3 -translate-y-1/3" />
           <div className="absolute bottom-0 left-0 w-[300px] h-[300px] bg-primary rounded-full blur-[100px] opacity-10 -z-10 -translate-x-1/3 translate-y-1/3" />
           
           <div className="text-center space-y-4 max-w-4xl mx-auto relative z-10">
@@ -39,7 +39,7 @@ export default function CsrLivePreview() {
           </div>
 
           <div className="relative">
-            <div className="absolute left-1/2 top-0 w-1 h-full bg-gradient-to-b from-primary to-[#185D4620] -translate-x-1/2 rounded-full hidden md:block" />
+            <div className="absolute left-1/2 top-0 w-1 h-full bg-gradient-to-b from-primary to-primary/20 -translate-x-1/2 rounded-full hidden md:block" />
 
             <div className="space-y-12">
               {activeInitiatives.map((ini, idx) => {
@@ -49,7 +49,7 @@ export default function CsrLivePreview() {
                     <div className="hidden md:block w-[45%]" />
                     
                     <div className="hidden md:flex w-10 h-10 absolute left-1/2 -translate-x-1/2 items-center justify-center">
-                      <div className="w-5 h-5 rounded-full bg-primary ring-4 ring-[#185D4620] shadow-lg z-10" />
+                      <div className="w-5 h-5 rounded-full bg-primary ring-4 ring-primary/20 shadow-lg z-10" />
                     </div>
 
                     <div className="w-full md:w-[45%]">

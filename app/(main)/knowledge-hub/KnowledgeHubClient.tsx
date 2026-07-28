@@ -41,7 +41,7 @@ export default function KnowledgeHubClient({ articles }: { articles: any[] }) {
       {/* 1. Premium Hero Section */}
       <section className="relative pt-12 pb-20 px-4 sm:px-6 lg:px-8 overflow-hidden bg-white">
         {/* Soft Glows */}
-        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#185D4620] rounded-full blur-[120px] opacity-70 -z-10 translate-x-1/3 -translate-y-1/3 animate-pulse" style={{ animationDuration: '8s' }} />
+        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/20 rounded-full blur-[120px] opacity-70 -z-10 translate-x-1/3 -translate-y-1/3 animate-pulse" style={{ animationDuration: '8s' }} />
         <div className="absolute top-[20%] left-[10%] w-[400px] h-[400px] bg-primary rounded-full blur-[150px] opacity-10 -z-10 animate-pulse" style={{ animationDuration: '10s' }} />
         
         <div className="max-w-4xl mx-auto text-center relative z-10 space-y-6">
@@ -85,7 +85,7 @@ export default function KnowledgeHubClient({ articles }: { articles: any[] }) {
               placeholder="Search articles, topics..." 
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full pl-14 pr-6 py-4 bg-slate-50 border border-slate-200 rounded-[16px] text-secondary placeholder-gray-400 focus:outline-none focus:border-primary focus:ring-4 focus:ring-[#185D4620] text-base font-semibold transition-all shadow-inner"
+              className="w-full pl-14 pr-6 py-4 bg-slate-50 border border-slate-200 rounded-[16px] text-secondary placeholder-gray-400 focus:outline-none focus:border-primary focus:ring-4 focus:ring-primary/20 text-base font-semibold transition-all shadow-inner"
             />
           </div>
 

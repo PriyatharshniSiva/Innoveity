@@ -57,8 +57,8 @@ export default function AboutClient({ initialData, testimonials }: { initialData
       {/* 1. Hero / About Split */}
       <section className="relative pt-12 pb-24 overflow-hidden">
         {/* Soft Background Accents */}
-        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#185D4620] rounded-full blur-[120px] opacity-50 -z-10 translate-x-1/3 -translate-y-1/3" />
-        <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-[#185D4620] rounded-full blur-[100px] opacity-40 -z-10 -translate-x-1/2 translate-y-1/2" />
+        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-primary/20 rounded-full blur-[120px] opacity-50 -z-10 translate-x-1/3 -translate-y-1/3" />
+        <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-primary/20 rounded-full blur-[100px] opacity-40 -z-10 -translate-x-1/2 translate-y-1/2" />
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
@@ -105,9 +105,9 @@ export default function AboutClient({ initialData, testimonials }: { initialData
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: false }}
-              className="text-4xl sm:text-5xl font-extrabold text-[var(--color-brand-primary, #0F172A)] tracking-tight"
+              className="text-4xl sm:text-5xl font-extrabold text-[var(--color-brand-primary, var(--color-brand-secondary, #0F172A))] tracking-tight"
             >
-              <span style={{ color: "var(--color-brand-accent, #F59E0B)" }}>Our </span>Foundation
+              <span style={{ color: "var(--color-brand-accent, var(--color-brand-accent, #F59E0B))" }}>Our </span>Foundation
             </motion.h2>
             <motion.p 
               initial={{ opacity: 0, y: 20 }}
@@ -161,7 +161,7 @@ export default function AboutClient({ initialData, testimonials }: { initialData
               viewport={{ once: false }}
               className="text-4xl sm:text-5xl font-extrabold text-secondary tracking-tight"
             >
-              <span style={{ color: "var(--color-brand-accent, #F59E0B)" }}>Our</span> Journey
+              <span style={{ color: "var(--color-brand-accent, var(--color-brand-accent, #F59E0B))" }}>Our</span> Journey
             </motion.h2>
             <motion.p 
               initial={{ opacity: 0, y: 20 }}
@@ -212,7 +212,7 @@ export default function AboutClient({ initialData, testimonials }: { initialData
                         <div className={`absolute top-0 w-full h-1 bg-primary scale-x-0 group-hover:scale-x-100 transition-transform duration-500 ${isEven ? 'left-0 origin-left' : 'right-0 origin-right'} rounded-t-[20px]`} />
 
                         <div className="flex items-center space-x-4 mb-6">
-                          <div className="w-14 h-14 rounded-[16px] bg-[#185D4620] text-primary flex items-center justify-center group-hover:scale-110 transition-transform duration-500">
+                          <div className="w-14 h-14 rounded-[16px] bg-primary/20 text-primary flex items-center justify-center group-hover:scale-110 transition-transform duration-500">
                             {getIconSvg(step.iconName, "w-8 h-8")}
                           </div>
                           <h4 className="text-3xl font-black text-primary">{step.year}</h4>
@@ -239,7 +239,7 @@ export default function AboutClient({ initialData, testimonials }: { initialData
       {/* 5. Our Strengths */}
       <section className="pt-8 pb-24 bg-white relative overflow-hidden">
         {/* Soft Background Accents */}
-        <div className="absolute top-1/2 left-1/2 w-[800px] h-[800px] bg-[#185D4620] rounded-full blur-[150px] opacity-30 -z-10 -translate-x-1/2 -translate-y-1/2 pointer-events-none" />
+        <div className="absolute top-1/2 left-1/2 w-[800px] h-[800px] bg-primary/20 rounded-full blur-[150px] opacity-30 -z-10 -translate-x-1/2 -translate-y-1/2 pointer-events-none" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
@@ -247,9 +247,9 @@ export default function AboutClient({ initialData, testimonials }: { initialData
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: false }}
-              className="text-4xl sm:text-5xl font-extrabold text-[var(--color-brand-primary, #0F172A)] tracking-tight"
+              className="text-4xl sm:text-5xl font-extrabold text-[var(--color-brand-primary, var(--color-brand-secondary, #0F172A))] tracking-tight"
             >
-              <span style={{ color: "var(--color-brand-accent, #F59E0B)" }}>Our </span>Strengths
+              <span style={{ color: "var(--color-brand-accent, var(--color-brand-accent, #F59E0B))" }}>Our </span>Strengths
             </motion.h2>
             <motion.p 
               initial={{ opacity: 0, y: 20 }}

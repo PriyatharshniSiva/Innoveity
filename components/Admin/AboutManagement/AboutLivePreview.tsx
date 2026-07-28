@@ -35,7 +35,7 @@ export default function AboutLivePreview() {
           
           {/* About Hero Simulation */}
           <section className="relative pt-32 pb-24 overflow-hidden px-8">
-            <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#185D4620] rounded-full blur-[120px] opacity-50 -z-10 translate-x-1/3 -translate-y-1/3" />
+            <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-primary/20 rounded-full blur-[120px] opacity-50 -z-10 translate-x-1/3 -translate-y-1/3" />
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
               <div className="space-y-6">
                 <h1 className="text-5xl font-black text-secondary tracking-tight leading-[1.1]">
@@ -76,7 +76,7 @@ export default function AboutLivePreview() {
                       <div className={`w-1/2 px-12 ${isEven ? 'text-left' : 'text-right'}`}>
                         <div className={`bg-white rounded-[20px] p-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-slate-100 flex flex-col ${isEven ? 'items-start' : 'items-end'}`}>
                           <div className="flex items-center space-x-4 mb-6">
-                            <div className="w-14 h-14 rounded-[16px] bg-[#185D4620] text-primary flex items-center justify-center">
+                            <div className="w-14 h-14 rounded-[16px] bg-primary/20 text-primary flex items-center justify-center">
                               {getIcon(step.iconName)}
                             </div>
                             <h4 className="text-3xl font-black text-primary">{step.year}</h4>

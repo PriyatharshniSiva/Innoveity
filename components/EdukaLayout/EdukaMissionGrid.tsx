@@ -51,9 +51,9 @@ export default function EdukaMissionGrid() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: false }}
-            className="text-4xl sm:text-5xl font-extrabold text-[var(--color-brand-primary, #0F172A)] tracking-tight"
+            className="text-4xl sm:text-5xl font-extrabold text-[var(--color-brand-primary, var(--color-brand-secondary, #0F172A))] tracking-tight"
           >
-            <span style={{ color: "var(--color-brand-accent, #F59E0B)" }}>Our </span>Foundation
+            <span style={{ color: "var(--color-brand-accent, var(--color-brand-accent, #F59E0B))" }}>Our </span>Foundation
           </motion.h2>
           <motion.p 
             initial={{ opacity: 0, y: 20 }}

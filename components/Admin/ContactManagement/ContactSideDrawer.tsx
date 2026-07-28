@@ -202,8 +202,8 @@ export default function ContactSideDrawer() {
 
                   <div>
                     <h3 className="font-bold text-slate-800 mb-2">Message Content</h3>
-                    <div className="bg-white border border-slate-200 p-4 rounded-xl text-slate-600 leading-relaxed text-sm">
-                      We are interested in partnering with INNOVEITY for our upcoming faculty development program. Please provide more details about your corporate training modules.
+                    <div className="bg-white border border-slate-200 p-4 rounded-xl text-slate-600 leading-relaxed text-sm whitespace-pre-wrap">
+                      {enquiryData.message || <span className="italic text-slate-400">No message provided</span>}
                     </div>
                   </div>
                 </div>

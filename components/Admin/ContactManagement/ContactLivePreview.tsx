@@ -15,7 +15,7 @@ export default function ContactLivePreview() {
         
         {/* Header Preview */}
         <section className="relative py-20 px-4 overflow-hidden bg-white border-b border-slate-100 text-center">
-          <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-[#185D4620] rounded-full blur-[100px] opacity-70 -z-10 translate-x-1/3 -translate-y-1/3" />
+          <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-primary/20 rounded-full blur-[100px] opacity-70 -z-10 translate-x-1/3 -translate-y-1/3" />
           <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-[#f9731620] rounded-full blur-[100px] opacity-70 -z-10 -translate-x-1/3 translate-y-1/3" />
           
           <h1 className="text-4xl sm:text-[56px] font-black text-secondary tracking-tight mb-6 leading-[1.1]">

@@ -25,7 +25,7 @@ export default function EdukaTestimonials({ badge, title, subtitle, testimonials
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-8 mb-16">
           <div className="max-w-2xl space-y-4">
-            <h2 className="text-4xl sm:text-5xl font-extrabold leading-tight text-[var(--color-brand-primary, #0F172A)] tracking-tight">
+            <h2 className="text-4xl sm:text-5xl font-extrabold leading-tight text-[var(--color-brand-primary, var(--color-brand-secondary, #0F172A))] tracking-tight">
               {(() => {
                 if (typeof title === 'string') {
                   let highlightStr = "";
@@ -37,7 +37,7 @@ export default function EdukaTestimonials({ badge, title, subtitle, testimonials
                     return (
                       <>
                         {parts[0]}
-                        <span style={{ color: "var(--color-brand-accent, #F59E0B)" }}>{highlightStr}</span>
+                        <span style={{ color: "var(--color-brand-accent, var(--color-brand-accent, #F59E0B))" }}>{highlightStr}</span>
                         {parts.slice(1).join(highlightStr)}
                       </>
                     );

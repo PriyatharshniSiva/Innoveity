@@ -37,7 +37,7 @@ const AnimatedCounter = ({ value, label }: { value: string, label: string }) => 
       transition={{ duration: 0.6 }}
       className="bg-white border border-slate-100 p-8 rounded-[24px] shadow-[0_4px_24px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_50px_rgba(22,163,74,0.1)] hover:-translate-y-2 hover:border-primary/20 transition-all duration-300 relative overflow-hidden group"
     >
-      <div className="absolute top-0 right-0 w-32 h-32 bg-[#185D4620] rounded-full blur-[40px] opacity-0 group-hover:opacity-50 transition-opacity duration-500 -translate-y-1/2 translate-x-1/2" />
+      <div className="absolute top-0 right-0 w-32 h-32 bg-primary/20 rounded-full blur-[40px] opacity-0 group-hover:opacity-50 transition-opacity duration-500 -translate-y-1/2 translate-x-1/2" />
       <motion.div className="text-4xl sm:text-5xl font-black text-accent mb-3 relative z-10">
         {!isNaN(numValue) ? <motion.span>{rounded}</motion.span> : value}
       </motion.div>
@@ -130,7 +130,7 @@ export default function CsrClient({ data }: { data: any }) {
     <div className="min-h-screen bg-slate-50 overflow-hidden selection:bg-primary selection:text-white pb-24">
       {/* 1. Premium Header with Soft Backgrounds */}
       <section className="relative pt-12 pb-24 px-4 sm:px-6 lg:px-8 overflow-hidden bg-white border-b border-slate-100">
-        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#185D4620] rounded-full blur-[150px] opacity-70 -z-10 translate-x-1/3 -translate-y-1/3 animate-pulse" style={{ animationDuration: '8s' }} />
+        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-primary/20 rounded-full blur-[150px] opacity-70 -z-10 translate-x-1/3 -translate-y-1/3 animate-pulse" style={{ animationDuration: '8s' }} />
         <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-primary rounded-full blur-[150px] opacity-10 -z-10 -translate-x-1/3 translate-y-1/3 animate-pulse" style={{ animationDuration: '10s' }} />
         
         <div className="text-center space-y-6 max-w-4xl mx-auto relative z-10">
@@ -179,8 +179,8 @@ export default function CsrClient({ data }: { data: any }) {
           <div className="absolute -top-32 -right-32 w-96 h-96 bg-primary/5 rounded-full blur-[100px] pointer-events-none" />
           <div className="absolute -bottom-32 -left-32 w-96 h-96 bg-accent/5 rounded-full blur-[100px] pointer-events-none" />
 
-          <h2 className="text-3xl md:text-5xl font-black text-[var(--color-brand-primary, #0F172A)] tracking-tight mb-16 relative z-10">
-            <span style={{ color: "var(--color-brand-accent, #F59E0B)" }}>Impact </span>Over Time
+          <h2 className="text-3xl md:text-5xl font-black text-[var(--color-brand-primary, var(--color-brand-secondary, #0F172A))] tracking-tight mb-16 relative z-10">
+            <span style={{ color: "var(--color-brand-accent, var(--color-brand-accent, #F59E0B))" }}>Impact </span>Over Time
           </h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24 relative z-10">
@@ -396,8 +396,8 @@ export default function CsrClient({ data }: { data: any }) {
           viewport={{ once: false }}
           className="text-center mb-24 space-y-4"
         >
-          <h2 className="text-4xl md:text-5xl font-black text-[var(--color-brand-primary, #0F172A)] tracking-tight">
-            <span style={{ color: "var(--color-brand-accent, #F59E0B)" }}>Key </span>Initiatives
+          <h2 className="text-4xl md:text-5xl font-black text-[var(--color-brand-primary, var(--color-brand-secondary, #0F172A))] tracking-tight">
+            <span style={{ color: "var(--color-brand-accent, var(--color-brand-accent, #F59E0B))" }}>Key </span>Initiatives
           </h2>
           <p className="text-xl text-gray-500 font-medium">Driving change where it matters most.</p>
         </motion.div>
@@ -409,7 +409,7 @@ export default function CsrClient({ data }: { data: any }) {
             whileInView={{ height: '100%' }}
             viewport={{ once: false, margin: "-100px" }}
             transition={{ duration: 1.5, ease: "easeOut" }}
-            className="absolute left-4 md:left-1/2 top-0 w-1 bg-gradient-to-b from-primary to-[#185D4620] -translate-x-1/2 rounded-full hidden md:block" 
+            className="absolute left-4 md:left-1/2 top-0 w-1 bg-gradient-to-b from-primary to-primary/20 -translate-x-1/2 rounded-full hidden md:block" 
           />
 
           <div className="space-y-16">
@@ -429,7 +429,7 @@ export default function CsrClient({ data }: { data: any }) {
                   
                   {/* Timeline Dot */}
                   <div className="hidden md:flex w-10 h-10 absolute left-1/2 -translate-x-1/2 items-center justify-center">
-                    <div className="w-5 h-5 rounded-full bg-primary ring-4 ring-[#185D4620] shadow-lg z-10" />
+                    <div className="w-5 h-5 rounded-full bg-primary ring-4 ring-primary/20 shadow-lg z-10" />
                   </div>
 
                   {/* Card Content */}
@@ -456,8 +456,8 @@ export default function CsrClient({ data }: { data: any }) {
       {/* 6. UN SDGs Grid */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-20">
         <div className="text-center space-y-4 mb-16">
-          <h2 className="text-3xl md:text-4xl font-black text-[var(--color-brand-primary, #0F172A)] tracking-tight">
-            <span style={{ color: "var(--color-brand-accent, #F59E0B)" }}>UN SDG </span>Alignment
+          <h2 className="text-3xl md:text-4xl font-black text-[var(--color-brand-primary, var(--color-brand-secondary, #0F172A))] tracking-tight">
+            <span style={{ color: "var(--color-brand-accent, var(--color-brand-accent, #F59E0B))" }}>UN SDG </span>Alignment
           </h2>
           <p className="text-xl text-gray-500 font-medium">Contributing directly to the United Nations Sustainable Development Goals.</p>
         </div>
@@ -472,7 +472,7 @@ export default function CsrClient({ data }: { data: any }) {
               className="bg-white border border-slate-100 rounded-[32px] p-8 shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-[0_20px_40px_rgba(22,163,74,0.08)] hover:-translate-y-2 hover:border-primary/20 transition-all duration-300 flex flex-col justify-between group"
             >
               <div>
-                <div className="w-16 h-16 rounded-2xl bg-[#185D4620] text-primary font-black text-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                <div className="w-16 h-16 rounded-2xl bg-primary/20 text-primary font-black text-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                   0{idx + 4}
                 </div>
                 <h3 className="text-xl font-extrabold text-secondary mb-4 tracking-tight group-hover:text-primary transition-colors">{sdg.goal}</h3>

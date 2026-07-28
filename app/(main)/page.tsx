@@ -61,8 +61,8 @@ export default async function Home() {
       <EdukaHero 
         title={
           <>
-            <span style={{ color: "var(--color-brand-accent, #F59E0B)" }}>{heroTitleLine1}</span> <br />
-            <span style={{ color: "#0F172A" }}>{heroTitleHighlight}</span>
+            <span style={{ color: "var(--color-brand-accent, var(--color-brand-accent, #F59E0B))" }}>{heroTitleLine1}</span> <br />
+            <span style={{ color: "var(--color-brand-secondary, #0F172A)" }}>{heroTitleHighlight}</span>
           </>
         }
         description={heroDesc}
@@ -77,7 +77,7 @@ export default async function Home() {
 
       {/* Corporate Highlights Section */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-[50px] pb-16">
-        <section className="bg-gradient-to-br from-[#185D4610]/30 to-[#f0f9ff]/20 backdrop-blur-xl rounded-[24px] p-8 md:p-12 border border-[#185D4630] border-l-[6px] border-l-primary shadow-[0_20px_50px_rgba(12,74,65,0.05)] relative overflow-hidden group">
+        <section className="bg-gradient-to-br from-primary/10 to-[#f0f9ff]/20 backdrop-blur-xl rounded-[24px] p-8 md:p-12 border border-primary/20 border-l-[6px] border-l-primary shadow-[0_20px_50px_rgba(12,74,65,0.05)] relative overflow-hidden group">
           <h2 className="text-3xl md:text-4xl font-extrabold text-primary mb-6 tracking-tight leading-tight">
             {(() => {
               const text = data?.corporateHighlights?.title || "Leading Corporate Training & College Development Partner in Tamil Nadu";
@@ -86,7 +86,7 @@ export default async function Home() {
                 return (
                   <>
                     {parts[0]}
-                    <span style={{ color: "var(--color-brand-accent, #F59E0B)" }}>Leading Corporate Training & </span>
+                    <span style={{ color: "var(--color-brand-accent, var(--color-brand-accent, #F59E0B))" }}>Leading Corporate Training & </span>
                     {parts.slice(1).join("Leading Corporate Training & ")}
                   </>
                 );
@@ -131,7 +131,7 @@ export default async function Home() {
       <div 
         className="w-full bg-[#f4faf6] border-y border-primary/20/50 relative pt-[50px] pb-12"
         style={{
-          backgroundImage: 'radial-gradient(#185D4630 1.5px, transparent 1.5px)',
+          backgroundImage: 'radial-gradient(color-mix(in srgb, var(--color-brand-primary, #185D46) 20%, transparent) 1.5px, transparent 1.5px)',
           backgroundSize: '32px 32px'
         }}
       >

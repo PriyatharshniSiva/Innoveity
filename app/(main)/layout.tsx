@@ -7,6 +7,7 @@ import FloatingContactWidget from "@/components/FloatingContactWidget";
 import { PrismaClient } from "@prisma/client";
 
 const prisma = new PrismaClient();
+export const revalidate = 0; // Ensure live data fetching for theme settings
 
 const inter = Inter({
   variable: "--font-inter",

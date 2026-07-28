@@ -67,7 +67,7 @@ export default function EdukaHero({
       {/* Soft Animated Mesh Gradient Background */}
       <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
         {/* Base light green glow */}
-        <div className="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-[#185D4620] rounded-full blur-[120px] opacity-70 animate-pulse" style={{ animationDuration: '8s' }} />
+        <div className="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-primary/20 rounded-full blur-[120px] opacity-70 animate-pulse" style={{ animationDuration: '8s' }} />
         {/* Soft sunrise orange accent */}
         <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-accent rounded-full blur-[150px] opacity-20" />
         {/* Subtle primary green glow in center */}
@@ -99,7 +99,7 @@ export default function EdukaHero({
             {subtitle && (
               <motion.span 
                 variants={itemVariants}
-                className="inline-block px-4 py-1.5 rounded-full bg-[#185D4620] text-primary font-extrabold text-xs tracking-[0.2em] uppercase border border-primary/20 shadow-sm"
+                className="inline-block px-4 py-1.5 rounded-full bg-primary/20 text-primary font-extrabold text-xs tracking-[0.2em] uppercase border border-primary/20 shadow-sm"
               >
                 {subtitle}
               </motion.span>
@@ -194,7 +194,7 @@ export default function EdukaHero({
                   transition={{ delay: 1, duration: 0.5, type: "spring" }}
                   className="absolute bottom-4 -left-6 bg-white/90 backdrop-blur-xl border border-white p-4 rounded-2xl shadow-xl flex items-center gap-4"
                 >
-                  <div className="w-12 h-12 rounded-full bg-[#185D4620] flex items-center justify-center text-primary">
+                  <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center text-primary">
                     <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
                   </div>
                   <div>

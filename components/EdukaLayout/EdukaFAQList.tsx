@@ -150,7 +150,7 @@ export default function EdukaFAQList() {
                     >
                       <div className="px-6 pb-7 space-y-4 border-t border-primary/20/80">
                         {/* Highlight block */}
-                        <div className="mt-5 bg-[#185D4610] border-l-[4px] border-primary rounded-r-xl px-5 py-4">
+                        <div className="mt-5 bg-primary/10 border-l-[4px] border-primary rounded-r-xl px-5 py-4">
                           <p className="text-slate-800 font-semibold leading-relaxed text-sm sm:text-base">
                             {item.highlight}
                           </p>

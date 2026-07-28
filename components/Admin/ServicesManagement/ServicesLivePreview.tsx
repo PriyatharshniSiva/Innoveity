@@ -47,7 +47,7 @@ export default function ServicesLivePreview() {
                           <div className="absolute top-0 left-0 w-full h-1 bg-primary rounded-t-[20px]" />
                           
                           <div className="flex flex-col items-center w-full justify-start mt-2 mb-6">
-                            <div className="w-20 h-20 rounded-full bg-[#185D4620] text-primary flex items-center justify-center mb-5 shadow-sm shrink-0">
+                            <div className="w-20 h-20 rounded-full bg-primary/20 text-primary flex items-center justify-center mb-5 shadow-sm shrink-0">
                               <IconComponent className="w-10 h-10" />
                             </div>
                             <h3 className="text-xl font-bold text-secondary min-h-[56px] flex items-center justify-center">{card.title}</h3>

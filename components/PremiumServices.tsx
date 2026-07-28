@@ -129,7 +129,7 @@ export default function PremiumServices({ data }: { data?: any }) {
           transition={{ duration: 0.8 }}
           className="text-center max-w-3xl mx-auto"
         >
-          <h2 className="text-4xl sm:text-5xl font-extrabold text-[var(--color-brand-primary, #185D46)] tracking-tight">
+          <h2 className="text-4xl sm:text-5xl font-extrabold text-[var(--color-brand-primary, var(--color-brand-primary, #185D46))] tracking-tight">
             {(() => {
               const text = data?.title || "Our Impact in Action";
               if (text.includes("Our Impact")) {
@@ -137,7 +137,7 @@ export default function PremiumServices({ data }: { data?: any }) {
                 return (
                   <>
                     {parts[0]}
-                    <span style={{ color: "var(--color-brand-accent, #F59E0B)" }}>Our Impact</span>
+                    <span style={{ color: "var(--color-brand-accent, var(--color-brand-accent, #F59E0B))" }}>Our Impact</span>
                     {parts.slice(1).join("Our Impact")}
                   </>
                 );

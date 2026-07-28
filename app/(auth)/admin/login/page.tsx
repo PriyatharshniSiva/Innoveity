@@ -32,7 +32,7 @@ export default function LoginPage() {
           localStorage.setItem('adminName', 'Admin User');
         }
         localStorage.setItem('adminEmail', email);
-        router.push("/admin");
+        router.push("/admin/home");
       } else {
         setError(data.error || "Failed to login");
       }

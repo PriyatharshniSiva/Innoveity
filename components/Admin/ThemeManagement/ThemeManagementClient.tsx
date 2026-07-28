@@ -68,16 +68,7 @@ export default function ThemeManagementClient({ initialData }: { initialData: an
     setContactOptions(newOptions);
   };
 
-  // Apply colors live to the document root
-  useEffect(() => {
-    document.documentElement.style.setProperty("--color-brand-primary", colors.primary);
-    document.documentElement.style.setProperty("--color-brand-secondary", colors.secondary);
-    document.documentElement.style.setProperty("--color-brand-accent", colors.accent);
-    document.documentElement.style.setProperty("--color-success", colors.success);
-    document.documentElement.style.setProperty("--color-warning", colors.warning);
-    document.documentElement.style.setProperty("--background", colors.background);
-    document.documentElement.style.setProperty("--foreground", colors.foreground);
-  }, [colors]);
+  // Removed live apply to document root to prevent admin UI from changing
 
   const handleSave = async () => {
     setIsSaving(true);

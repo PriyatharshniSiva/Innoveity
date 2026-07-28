@@ -4,10 +4,12 @@ import React from "react";
 import { Search, Bell, Clock, MessageSquare, ChevronDown, Sun, Moon } from "lucide-react";
 import { usePathname } from "next/navigation";
 import { useAdminTheme } from "./AdminThemeProvider";
+import { useToast } from "@/components/Admin/Toast";
 
 export default function AdminTopbar() {
   const pathname = usePathname();
   const { theme, toggleTheme } = useAdminTheme();
+  const { toast } = useToast();
 
   const [adminName, setAdminName] = React.useState("Admin User");
   
@@ -65,27 +67,19 @@ export default function AdminTopbar() {
         </div>
         
         <div className="flex items-center gap-2">
-          {/* Theme Toggle Button */}
-          <button 
-            onClick={toggleTheme}
-            className="relative p-2.5 rounded-xl text-slate-400 dark:text-neutral-500 hover:text-primary dark:hover:text-white hover:bg-primary/10 dark:hover:bg-white/10 transition-colors"
-            title={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}
-          >
-            {theme === 'light' ? <Moon className="w-5 h-5" /> : <Sun className="w-5 h-5" />}
-          </button>
+
 
           {/* Quick Actions */}
-          <button className="relative p-2.5 rounded-xl text-slate-400 dark:text-neutral-500 hover:text-accent dark:hover:text-white hover:bg-accent/10 dark:hover:bg-white/10 transition-colors">
+          <button onClick={() => toast("No new messages at this time.", "info")} className="relative p-2.5 rounded-xl text-slate-400 dark:text-neutral-500 hover:text-accent dark:hover:text-white hover:bg-accent/10 dark:hover:bg-white/10 transition-colors">
             <MessageSquare className="w-5 h-5" />
             <span className="absolute top-2 right-2 w-2 h-2 bg-accent dark:bg-white rounded-full"></span>
           </button>
           
-          <button className="relative p-2.5 rounded-xl text-slate-400 dark:text-neutral-500 hover:text-primary dark:hover:text-white hover:bg-primary/10 dark:hover:bg-white/10 transition-colors">
+          <button onClick={() => toast("You're all caught up! No new notifications.", "info")} className="relative p-2.5 rounded-xl text-slate-400 dark:text-neutral-500 hover:text-primary dark:hover:text-white hover:bg-primary/10 dark:hover:bg-white/10 transition-colors">
             <Bell className="w-5 h-5" />
             <span className="absolute top-2 right-2 w-2.5 h-2.5 bg-primary dark:bg-white rounded-full border-2 border-white dark:border-[#0a0a0a]"></span>
           </button>
-          
-          <div className="w-px h-8 bg-slate-100 dark:bg-white/10 mx-2 transition-colors duration-300"></div>
+
           
           <div className="flex items-center gap-3 pl-2 cursor-pointer group hover:bg-slate-50 dark:hover:bg-white/5 p-1.5 rounded-2xl transition-colors border border-transparent hover:border-slate-100 dark:hover:border-white/5">
             <div className="text-right hidden sm:block">
