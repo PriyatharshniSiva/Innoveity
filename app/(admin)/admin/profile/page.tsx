@@ -77,17 +77,17 @@ export default function ProfileManagement() {
             
             <div className="w-full pt-6 border-t border-slate-100 dark:border-white/10 relative z-10 flex justify-between text-sm">
               <span className="font-bold text-slate-400 dark:text-neutral-500">Status</span>
-              <span className="font-bold text-emerald-600 dark:text-emerald-400 flex items-center gap-1">
-                <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" /> Active
+              <span className="font-bold text-primary dark:text-primary/90 flex items-center gap-1">
+                <span className="w-2 h-2 rounded-full bg-primary/100 animate-pulse" /> Active
               </span>
             </div>
           </motion.div>
 
           <div className="bg-gradient-to-br from-primary to-[#0f3d2e] rounded-3xl p-6 text-white shadow-lg relative overflow-hidden group cursor-pointer">
             <div className="absolute -right-6 -top-6 w-24 h-24 bg-white/10 rounded-full blur-2xl group-hover:bg-white/20 transition-all" />
-            <Shield className="w-8 h-8 mb-4 text-emerald-200" />
+            <Shield className="w-8 h-8 mb-4 text-primary/80" />
             <h3 className="font-bold text-lg mb-1">Two-Factor Auth</h3>
-            <p className="text-emerald-100/80 text-sm font-medium mb-4">Enhance your account security by enabling 2FA.</p>
+            <p className="text-primary/80 text-sm font-medium mb-4">Enhance your account security by enabling 2FA.</p>
             <button className="bg-white/10 hover:bg-white/20 text-white font-bold py-2 px-4 rounded-xl text-sm transition-colors w-full border border-white/20">
               Enable Now
             </button>
@@ -182,7 +182,7 @@ export default function ProfileManagement() {
                     initial={{ opacity: 0, x: 20 }}
                     animate={{ opacity: 1, x: 0 }}
                     exit={{ opacity: 0, scale: 0.9 }}
-                    className="flex items-center gap-2 text-emerald-600 font-bold text-sm bg-emerald-50 px-4 py-2 rounded-xl"
+                    className="flex items-center gap-2 text-primary font-bold text-sm bg-primary/10 px-4 py-2 rounded-xl"
                   >
                     <CheckCircle2 className="w-4 h-4" />
                     Profile Updated!

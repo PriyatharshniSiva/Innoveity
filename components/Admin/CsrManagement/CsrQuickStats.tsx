@@ -10,7 +10,7 @@ export default function CsrQuickStats() {
     { title: "Total CSR Projects", value: 0, icon: ShieldCheck, color: "text-primary", bg: "bg-primary/10", border: "border-primary/20" },
     { title: "Communities Reached", value: 0, icon: Users, color: "text-accent", bg: "bg-accent/10", border: "border-accent/20" },
     { title: "CO₂ Reduced (Tons)", value: 0, icon: Factory, color: "text-blue-600", bg: "bg-blue-50", border: "border-blue-100" },
-    { title: "Green Jobs", value: 0, icon: Leaf, color: "text-emerald-600", bg: "bg-emerald-50", border: "border-emerald-100" },
+    { title: "Green Jobs", value: 0, icon: Leaf, color: "text-primary", bg: "bg-primary/10", border: "border-primary/20" },
     { title: "Active Initiatives", value: 0, icon: CheckCircle2, color: "text-purple-600", bg: "bg-purple-50", border: "border-purple-100" },
     { title: "Published Reports", value: 0, icon: FileText, color: "text-pink-600", bg: "bg-pink-50", border: "border-pink-100" },
   ];

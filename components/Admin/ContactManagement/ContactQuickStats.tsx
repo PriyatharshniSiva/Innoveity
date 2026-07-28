@@ -11,7 +11,7 @@ export default function ContactQuickStats() {
     { title: "Phone Calls", value: 0, icon: PhoneCall, color: "text-accent", bg: "bg-accent/10", border: "border-accent/20" },
     { title: "Emails Received", value: 0, icon: Mail, color: "text-blue-600", bg: "bg-blue-50", border: "border-blue-100" },
     { title: "Office Locations", value: 0, icon: MapPin, color: "text-purple-600", bg: "bg-purple-50", border: "border-purple-100" },
-    { title: "Response Rate", value: 0, suffix: "%", icon: Zap, color: "text-emerald-600", bg: "bg-emerald-50", border: "border-emerald-100" },
+    { title: "Response Rate", value: 0, suffix: "%", icon: Zap, color: "text-primary", bg: "bg-primary/10", border: "border-primary/20" },
     { title: "Active Contacts", value: 0, icon: CheckCircle2, color: "text-pink-600", bg: "bg-pink-50", border: "border-pink-100" },
   ];
 

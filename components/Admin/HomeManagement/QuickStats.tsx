@@ -44,7 +44,7 @@ export default function QuickStats() {
             >
               <stat.icon className="w-7 h-7" style={{ color: stat.color }} />
             </div>
-            <div className="flex items-center text-xs font-bold text-emerald-700 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-400/10 px-3 py-1.5 rounded-full">
+            <div className="flex items-center text-xs font-bold text-primary dark:text-primary/90 bg-primary/10 dark:bg-primary/10 px-3 py-1.5 rounded-full">
               <TrendingUp className="w-3.5 h-3.5 mr-1.5" />
               {stat.trend}
             </div>

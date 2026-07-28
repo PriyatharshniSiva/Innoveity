@@ -50,7 +50,7 @@ export default function ContactEnquiriesTable() {
                   <span className={`px-2 py-1 rounded text-xs font-bold ${
                     enq.status === 'Unread' ? 'bg-red-100 text-red-600' :
                     enq.status === 'Read' ? 'bg-blue-100 text-blue-600' :
-                    'bg-emerald-100 text-emerald-600'
+                    'bg-primary/20 text-primary'
                   }`}>
                     {enq.status}
                   </span>

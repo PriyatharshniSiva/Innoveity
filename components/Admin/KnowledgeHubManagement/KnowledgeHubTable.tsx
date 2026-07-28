@@ -105,9 +105,9 @@ export default function KnowledgeHubTable() {
                   </td>
                   <td className="px-6 py-4">
                     <span className={`inline-flex items-center px-2.5 py-1 rounded-full text-xs font-bold ${
-                      article.status === 'Published' ? 'bg-emerald-50 text-emerald-600 border border-emerald-200/50' : 'bg-amber-50 text-amber-600 border border-amber-200/50'
+                      article.status === 'Published' ? 'bg-primary/10 text-primary border border-primary/30' : 'bg-amber-50 text-amber-600 border border-amber-200/50'
                     }`}>
-                      <span className={`w-1.5 h-1.5 rounded-full mr-1.5 ${article.status === 'Published' ? 'bg-emerald-500' : 'bg-amber-500'}`}></span>
+                      <span className={`w-1.5 h-1.5 rounded-full mr-1.5 ${article.status === 'Published' ? 'bg-primary/100' : 'bg-warning'}`}></span>
                       {article.status}
                     </span>
                   </td>

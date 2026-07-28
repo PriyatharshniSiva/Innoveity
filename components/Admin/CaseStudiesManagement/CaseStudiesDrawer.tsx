@@ -279,7 +279,7 @@ export default function CaseStudiesDrawer() {
                     <div className="flex space-x-1.5">
                       <div className="w-3 h-3 rounded-full bg-rose-400" />
                       <div className="w-3 h-3 rounded-full bg-amber-400" />
-                      <div className="w-3 h-3 rounded-full bg-emerald-400" />
+                      <div className="w-3 h-3 rounded-full bg-primary/60" />
                     </div>
                     <div className="flex-grow bg-white mx-4 rounded-md py-1 px-3 text-xs text-slate-400 text-center font-medium shadow-sm border border-slate-200/60 truncate">
                       innoveity.com/case-studies/{localData.title.toLowerCase().replace(/[^a-z0-9]+/g, '-')}
@@ -323,19 +323,19 @@ export default function CaseStudiesDrawer() {
 
                     {/* Right Side: Results & Video */}
                     <div className="md:w-1/2 bg-primary rounded-xl p-6 sm:p-8 flex flex-col text-white">
-                      <h4 className="text-[10px] font-black text-emerald-300 tracking-widest uppercase mb-6">KEY RESULTS</h4>
+                      <h4 className="text-[10px] font-black text-primary/70 tracking-widest uppercase mb-6">KEY RESULTS</h4>
                       
                       <div className="space-y-4 mb-8">
                         {localData.keyResults.map((kr, i) => (
                           <div key={i} className="flex items-center space-x-4 bg-white/10 rounded-xl p-4 border border-white/5">
-                            <div className="w-6 h-6 rounded-full bg-emerald-500/30 flex items-center justify-center flex-shrink-0">
+                            <div className="w-6 h-6 rounded-full bg-primary/100/30 flex items-center justify-center flex-shrink-0">
                               <svg className="w-3.5 h-3.5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
                                 <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                               </svg>
                             </div>
                             <div>
                               <p className="text-xl font-black leading-none mb-1">{kr.value}{kr.suffix}</p>
-                              <p className="text-[11px] font-medium text-emerald-100/90 leading-tight">{kr.label}</p>
+                              <p className="text-[11px] font-medium text-primary/20 leading-tight">{kr.label}</p>
                             </div>
                           </div>
                         ))}
@@ -358,7 +358,7 @@ export default function CaseStudiesDrawer() {
 
                 {/* Status Badge floating */}
                 <div className="absolute bottom-6 right-6">
-                  <div className={`px-4 py-2 rounded-full shadow-lg text-xs font-bold flex items-center backdrop-blur-md ${localData.status === 'Published' ? 'bg-primary/90 text-white' : 'bg-amber-500/90 text-white'}`}>
+                  <div className={`px-4 py-2 rounded-full shadow-lg text-xs font-bold flex items-center backdrop-blur-md ${localData.status === 'Published' ? 'bg-primary/90 text-white' : 'bg-warning/90 text-white'}`}>
                     <span className="w-2 h-2 rounded-full bg-white mr-2 animate-pulse" />
                     Preview: {localData.status}
                   </div>

@@ -48,7 +48,7 @@ export default function KnowledgeHubToolbar() {
 
         {/* Status Filter */}
         <div className="relative flex-1 sm:flex-none">
-          <div className="w-2 h-2 rounded-full absolute left-4 top-1/2 -translate-y-1/2 bg-amber-500 pointer-events-none" />
+          <div className="w-2 h-2 rounded-full absolute left-4 top-1/2 -translate-y-1/2 bg-warning pointer-events-none" />
           <select 
             value={statusFilter}
             onChange={(e) => setStatusFilter(e.target.value)}

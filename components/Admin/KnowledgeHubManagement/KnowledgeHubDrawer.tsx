@@ -113,11 +113,11 @@ export default function KnowledgeHubDrawer() {
                 {/* Status Toggle */}
                 <button
                   onClick={() => setLocalData({ ...localData, status: localData.status === "Published" ? "Draft" : "Published" })}
-                  className={`relative inline-flex h-7 w-12 items-center rounded-full transition-colors focus:outline-none ${localData.status === "Published" ? "bg-emerald-500" : "bg-slate-200"}`}
+                  className={`relative inline-flex h-7 w-12 items-center rounded-full transition-colors focus:outline-none ${localData.status === "Published" ? "bg-primary/100" : "bg-slate-200"}`}
                 >
                   <span className={`inline-block h-5 w-5 transform rounded-full bg-white transition-transform shadow-sm ${localData.status === "Published" ? "translate-x-6" : "translate-x-1"}`} />
                 </button>
-                <span className={`text-sm font-bold ${localData.status === "Published" ? "text-emerald-600" : "text-slate-500"}`}>
+                <span className={`text-sm font-bold ${localData.status === "Published" ? "text-primary" : "text-slate-500"}`}>
                   {localData.status}
                 </span>
 

@@ -39,7 +39,7 @@ export default function ServicesQuickStats() {
             >
               <stat.icon className="w-6 h-6" style={{ color: stat.color }} />
             </div>
-            <div className="flex items-center text-xs font-bold text-emerald-600 bg-emerald-50 px-2.5 py-1 rounded-full whitespace-nowrap">
+            <div className="flex items-center text-xs font-bold text-primary bg-primary/10 px-2.5 py-1 rounded-full whitespace-nowrap">
               <TrendingUp className="w-3 h-3 mr-1" />
               {stat.trend}
             </div>

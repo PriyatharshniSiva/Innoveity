@@ -13,13 +13,45 @@ export const metadata: Metadata = {
   description: "Enterprise Admin Dashboard",
 };
 
-export default function AdminLayout({
+import { PrismaClient } from "@prisma/client";
+
+const prisma = new PrismaClient();
+export const revalidate = 0;
+
+export default async function AdminLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  let themeData = null;
+  try {
+    const data = await prisma.themeSettings.findUnique({ where: { id: 1 } });
+    if (data) {
+      themeData = JSON.parse(data.contentJson);
+    }
+  } catch (error) {
+    console.error("Failed to load theme settings:", error);
+  }
+
   return (
     <html lang="en">
+      <head>
+        {themeData?.colors && (
+          <style dangerouslySetInnerHTML={{
+            __html: `
+              :root {
+                --color-brand-primary: ${themeData.colors.primary};
+                --color-brand-secondary: ${themeData.colors.secondary};
+                --color-brand-accent: ${themeData.colors.accent};
+                --color-success: ${themeData.colors.success};
+                --color-warning: ${themeData.colors.warning};
+                --background: ${themeData.colors.background};
+                --foreground: ${themeData.colors.foreground};
+              }
+            `
+          }} />
+        )}
+      </head>
       <body className={`${inter.className} bg-[#F4F7F6] dark:bg-[#0a0a0a] text-slate-800 dark:text-neutral-200 min-h-screen flex selection:bg-primary selection:text-white dark:selection:bg-white dark:selection:text-black overflow-hidden transition-colors duration-300`}>
         <AdminThemeProvider>
           <ToastProvider>

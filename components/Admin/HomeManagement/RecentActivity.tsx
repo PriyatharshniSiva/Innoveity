@@ -20,10 +20,10 @@ export default function RecentActivity() {
       
       <div className="flex items-center justify-between mb-8 relative z-10">
         <h2 className="text-xl font-bold text-slate-900 dark:text-white flex items-center font-sans tracking-tight">
-          <Clock className="w-5 h-5 mr-2.5 text-primary dark:text-emerald-400" />
+          <Clock className="w-5 h-5 mr-2.5 text-primary dark:text-primary/90" />
           Recent Activity
         </h2>
-        <Link href="/admin/activity" className="text-sm font-bold text-primary dark:text-emerald-400 hover:text-[#114332] dark:hover:text-emerald-300 transition-colors flex items-center group">
+        <Link href="/admin/activity" className="text-sm font-bold text-primary dark:text-primary/90 hover:text-[#114332] dark:hover:text-primary/70 transition-colors flex items-center group">
           View All <ChevronRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
         </Link>
       </div>

@@ -14,6 +14,8 @@ nextjs-portal, #nextjs-dev-indicator, #next-route-announcer {
   --color-accent: var(--color-brand-accent, #F59E0B);
   --color-success: var(--color-success, #10B981);
   --color-warning: var(--color-warning, #F59E0B);
+  --color-background: var(--background, #FFFFFF);
+  --color-foreground: var(--foreground, #334155);
   
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, -apple-system, sans-serif;
   --font-serif: "Playfair Display", ui-serif, Georgia, serif;

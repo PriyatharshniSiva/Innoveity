@@ -91,7 +91,7 @@ export default function CaseStudiesTable() {
                     {study.status === 'Published' ? (
                       <><span className="w-1.5 h-1.5 rounded-full bg-primary mr-1.5" /> Published</>
                     ) : (
-                      <><span className="w-1.5 h-1.5 rounded-full bg-amber-500 mr-1.5" /> Draft</>
+                      <><span className="w-1.5 h-1.5 rounded-full bg-warning mr-1.5" /> Draft</>
                     )}
                   </span>
                 </td>

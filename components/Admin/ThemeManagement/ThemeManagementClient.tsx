@@ -6,6 +6,7 @@ import { Save, CheckCircle, Smartphone, Mail, MapPin, Palette, RefreshCcw, X, Pl
 import Wheel from '@uiw/react-color-wheel';
 import ShadeSlider from '@uiw/react-color-shade-slider';
 import { hsvaToHex, hexToHsva } from '@uiw/color-convert';
+import { getColorName } from '@/lib/colorName';
 
 import { useToast } from "@/components/Admin/Toast";
 
@@ -178,7 +179,10 @@ export default function ThemeManagementClient({ initialData }: { initialData: an
                   />
                   <div>
                     <p className="text-sm font-bold text-slate-800 capitalize">{key}</p>
-                    <p className="text-xs text-slate-500 font-mono uppercase mt-0.5">{val}</p>
+                    <div className="flex items-center gap-1.5 mt-0.5">
+                      <p className="text-xs text-slate-500 font-mono uppercase">{val}</p>
+                      <span className="text-[10px] bg-slate-100 text-slate-500 px-1.5 py-0.5 rounded-full font-medium">{getColorName(val)}</span>
+                    </div>
                   </div>
                 </div>
               ))}
@@ -291,7 +295,10 @@ export default function ThemeManagementClient({ initialData }: { initialData: an
               <div className="flex items-center justify-between mb-8">
                 <div>
                   <h3 className="text-xl font-black text-slate-800 capitalize tracking-tight">{activeColorKey} Color</h3>
-                  <p className="text-sm text-slate-500 font-mono mt-1 font-semibold">{colors[activeColorKey]}</p>
+                  <div className="flex items-center gap-2 mt-1">
+                    <p className="text-sm text-slate-500 font-mono font-semibold">{colors[activeColorKey]}</p>
+                    <span className="text-xs bg-slate-100 text-slate-500 px-2 py-0.5 rounded-full font-bold">{getColorName(colors[activeColorKey] || "")}</span>
+                  </div>
                 </div>
                 <button onClick={closePicker} className="p-2.5 bg-slate-100 hover:bg-slate-200 rounded-full transition-colors">
                   <X className="w-5 h-5 text-slate-600" />

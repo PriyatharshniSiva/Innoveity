@@ -127,7 +127,7 @@ export default function AboutLivePreview() {
                 {statistics.map((stat) => (
                   <div key={stat.id}>
                     <div className="text-5xl font-black mb-2">{stat.value}</div>
-                    <div className="text-lg text-emerald-100 font-medium">{stat.label}</div>
+                    <div className="text-lg text-primary font-medium">{stat.label}</div>
                   </div>
                 ))}
               </div>

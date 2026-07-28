@@ -48,13 +48,13 @@ export function ToastProvider({ children }: { children: ReactNode }) {
               exit={{ opacity: 0, y: -20, scale: 0.9, transition: { duration: 0.2 } }}
               className={`pointer-events-auto flex items-center gap-3 px-5 py-3.5 rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.12)] border backdrop-blur-md min-w-[300px] max-w-md ${
                 t.type === "success"
-                  ? "bg-emerald-50/90 dark:bg-emerald-950/90 border-emerald-100 dark:border-emerald-800 text-emerald-800 dark:text-emerald-100"
+                  ? "bg-primary/10 dark:bg-secondary/90 border-primary/20 dark:border-primary/80 text-primary dark:text-primary"
                   : t.type === "error"
                   ? "bg-red-50/90 dark:bg-red-950/90 border-red-100 dark:border-red-800 text-red-800 dark:text-red-100"
                   : "bg-white/90 dark:bg-neutral-900/90 border-slate-100 dark:border-neutral-800 text-slate-800 dark:text-neutral-100"
               }`}
             >
-              {t.type === "success" && <CheckCircle className="w-5 h-5 text-emerald-500 shrink-0" />}
+              {t.type === "success" && <CheckCircle className="w-5 h-5 text-primary shrink-0" />}
               {t.type === "error" && <AlertCircle className="w-5 h-5 text-red-500 shrink-0" />}
               {t.type === "info" && <AlertCircle className="w-5 h-5 text-blue-500 shrink-0" />}
               

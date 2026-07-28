@@ -46,7 +46,7 @@ export default function EdukaServicesRow({ data }: { data?: any }) {
   };
 
   return (
-    <section className="pt-[50px] pb-24 px-4 sm:px-6 lg:px-8 bg-primary border-t border-emerald-950 relative overflow-hidden" style={{ backgroundColor: (data?.backgroundColor === 'var(--color-primary)' ? 'var(--color-brand-primary)' : data?.backgroundColor) || "var(--color-brand-primary)" }}>
+    <section className="pt-[50px] pb-24 px-4 sm:px-6 lg:px-8 bg-primary border-t border-secondary relative overflow-hidden" style={{ backgroundColor: (data?.backgroundColor === 'var(--color-primary)' ? 'var(--color-brand-primary)' : data?.backgroundColor) || "var(--color-brand-primary)" }}>
       {/* Glow Effects */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/25 rounded-full blur-[150px] pointer-events-none" />
 
@@ -75,7 +75,7 @@ export default function EdukaServicesRow({ data }: { data?: any }) {
           </h2>
           <p className={`text-lg font-medium ${
             (!data?.backgroundColor || data.backgroundColor === 'var(--color-primary)' || data.backgroundColor === 'var(--color-brand-primary)' || data.backgroundColor.toLowerCase() === '#185d46')
-              ? '!text-emerald-100'
+              ? '!text-primary'
               : '!text-gray-600'
           }`}>
             {data?.subtitle || "Comprehensive solutions bridging the gap between education and industry"}
