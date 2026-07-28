@@ -28,13 +28,13 @@ export default function EdukaFeatures({ features }: EdukaFeaturesProps) {
             className="eduka-card p-8 text-center group cursor-pointer relative overflow-hidden border border-slate-100 hover:border-primary/30 transition-all duration-300 rounded-2xl bg-white"
           >
             {/* Top accent bar */}
-            <div className="absolute top-0 left-0 w-full h-1 bg-[#185D46] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
+            <div className="absolute top-0 left-0 w-full h-1 bg-primary scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
             
-            <div className="w-16 h-16 mx-auto bg-slate-50 text-[#185D46] rounded-full flex items-center justify-center mb-6 group-hover:bg-[#185D46] group-hover:text-white transition-all duration-300 shadow-sm group-hover:shadow-md transform group-hover:scale-110">
+            <div className="w-16 h-16 mx-auto bg-slate-50 text-primary rounded-full flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-white transition-all duration-300 shadow-sm group-hover:shadow-md transform group-hover:scale-110">
                {feature.icon}
             </div>
             
-            <h3 className="text-xl font-bold text-[#0F172A] mb-3 group-hover:text-[#185D46] transition-colors duration-300">
+            <h3 className="text-xl font-bold text-secondary mb-3 group-hover:text-primary transition-colors duration-300">
               {feature.title}
             </h3>
             

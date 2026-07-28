@@ -30,7 +30,7 @@ export default function CsrInitiativesGrid() {
     <div className="bg-white rounded-2xl border border-slate-100 shadow-sm overflow-hidden mb-8">
       <div className="p-4 border-b border-slate-100 flex items-center justify-between bg-slate-50/50">
         <h3 className="font-bold text-slate-800">CSR Initiatives</h3>
-        <button onClick={() => openDrawer("initiative")} className="text-sm font-bold text-[#185D46] hover:text-[#124634] flex items-center">
+        <button onClick={() => openDrawer("initiative")} className="text-sm font-bold text-primary hover:text-[#124634] flex items-center">
           <Plus className="w-4 h-4 mr-1" /> Add New
         </button>
       </div>
@@ -50,7 +50,7 @@ export default function CsrInitiativesGrid() {
                 <GripVertical className="w-5 h-5" />
               </div>
 
-              <div className="w-12 h-12 rounded-lg bg-primary/10 text-[#185D46] flex items-center justify-center shrink-0 mx-3">
+              <div className="w-12 h-12 rounded-lg bg-primary/10 text-primary flex items-center justify-center shrink-0 mx-3">
                 <IconComp className="w-6 h-6" />
               </div>
 
@@ -66,11 +66,11 @@ export default function CsrInitiativesGrid() {
               <div className="flex items-center space-x-1 ml-4">
                 <button 
                   onClick={() => handleToggleFeatured(ini.id)}
-                  className={`p-2 rounded-lg transition-colors ${ini.featured ? 'text-[#F59E0B] bg-accent/10 hover:bg-accent/20' : 'text-slate-400 hover:text-[#F59E0B] hover:bg-slate-100'}`}
+                  className={`p-2 rounded-lg transition-colors ${ini.featured ? 'text-accent bg-accent/10 hover:bg-accent/20' : 'text-slate-400 hover:text-accent hover:bg-slate-100'}`}
                 >
                   {ini.featured ? <Star className="w-4 h-4 fill-current" /> : <StarOff className="w-4 h-4" />}
                 </button>
-                <button onClick={() => openDrawer("initiative", ini.id)} className="p-2 text-slate-400 hover:text-[#185D46] hover:bg-primary/10 rounded-lg transition-colors">
+                <button onClick={() => openDrawer("initiative", ini.id)} className="p-2 text-slate-400 hover:text-primary hover:bg-primary/10 rounded-lg transition-colors">
                   <Edit2 className="w-4 h-4" />
                 </button>
                 <button onClick={() => handleDelete(ini.id)} className="p-2 text-slate-400 hover:text-red-600 hover:bg-red-50 rounded-lg transition-colors">

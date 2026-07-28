@@ -33,6 +33,7 @@ export async function POST(request: Request) {
         duration: body.duration || "4 Weeks",
         mode: body.mode || "Online",
         instructor: body.instructor || "Guest Instructor",
+        videoUrl: body.videoUrl || "",
         features: JSON.stringify(["Certificate of Completion", "24/7 Support"])
       }
     });

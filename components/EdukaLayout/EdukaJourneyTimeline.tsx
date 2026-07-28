@@ -87,7 +87,7 @@ export default function EdukaJourneyTimeline() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: false }}
-            className="text-4xl sm:text-5xl font-extrabold text-[#185D46] tracking-tight"
+            className="text-4xl sm:text-5xl font-extrabold text-primary tracking-tight"
           >
             Our Journey
           </motion.h2>
@@ -110,7 +110,7 @@ export default function EdukaJourneyTimeline() {
           
           {/* Animated Central Line */}
           <motion.div 
-            className="absolute left-4 md:left-1/2 top-0 w-1 bg-gradient-to-b from-[#185D46] to-[#F59E0B] -translate-x-1/2 rounded-full hidden sm:block origin-top"
+            className="absolute left-4 md:left-1/2 top-0 w-1 bg-gradient-to-b from-primary to-accent -translate-x-1/2 rounded-full hidden sm:block origin-top"
             style={{ height: lineHeight }}
           />
 
@@ -126,7 +126,7 @@ export default function EdukaJourneyTimeline() {
                     whileInView={{ scale: 1 }}
                     viewport={{ once: false, margin: "-100px" }}
                     transition={{ type: "spring", stiffness: 100, delay: 0.2 }}
-                    className="absolute left-4 md:left-1/2 w-8 h-8 rounded-full bg-white border-4 border-[#185D46] -translate-x-1/2 z-20 shadow-lg hidden sm:block"
+                    className="absolute left-4 md:left-1/2 w-8 h-8 rounded-full bg-white border-4 border-primary -translate-x-1/2 z-20 shadow-lg hidden sm:block"
                   />
 
                   {/* Empty space for alternating layout */}
@@ -143,18 +143,18 @@ export default function EdukaJourneyTimeline() {
                     <div className={`bg-white rounded-2xl p-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_50px_rgb(20,121,107,0.12)] border border-slate-100/50 transition-all duration-500 hover:-translate-y-2 relative group flex flex-col ${isEven ? 'items-start sm:items-start' : 'items-start sm:items-end'}`}>
                       
                       {/* Decorative Line on Hover */}
-                      <div className={`absolute top-0 w-full h-1 bg-gradient-to-r from-[#185D46] to-[#F59E0B] scale-x-0 group-hover:scale-x-100 transition-transform duration-500 ${isEven ? 'left-0 origin-left' : 'right-0 origin-right'}`} />
+                      <div className={`absolute top-0 w-full h-1 bg-gradient-to-r from-primary to-accent scale-x-0 group-hover:scale-x-100 transition-transform duration-500 ${isEven ? 'left-0 origin-left' : 'right-0 origin-right'}`} />
 
                       <div className="flex items-center space-x-4 mb-6">
-                        <div className="w-16 h-16 rounded-full bg-slate-50 text-[#185D46] flex items-center justify-center group-hover:bg-[#185D46] group-hover:text-white transition-colors duration-500 shadow-sm group-hover:scale-110 group-hover:-rotate-6">
+                        <div className="w-16 h-16 rounded-full bg-slate-50 text-primary flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-colors duration-500 shadow-sm group-hover:scale-110 group-hover:-rotate-6">
                           {step.icon}
                         </div>
-                        <span className="text-4xl font-black text-[#185D46] group-hover:text-[#F59E0B] transition-colors duration-300">
+                        <span className="text-4xl font-black text-primary group-hover:text-accent transition-colors duration-300">
                           {step.year}
                         </span>
                       </div>
                       
-                      <h3 className="text-2xl font-bold text-[#0F172A] mb-3 group-hover:text-[#185D46] transition-colors duration-300">
+                      <h3 className="text-2xl font-bold text-secondary mb-3 group-hover:text-primary transition-colors duration-300">
                         {step.title}
                       </h3>
                       

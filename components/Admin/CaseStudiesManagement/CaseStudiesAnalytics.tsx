@@ -35,7 +35,7 @@ export default function CaseStudiesAnalytics() {
       trend: "up",
       icon: CheckCircle2,
       color: "from-primary/20 to-primary/5",
-      textColor: "text-[#185D46]",
+      textColor: "text-primary",
       iconBg: "bg-primary/10"
     },
     {

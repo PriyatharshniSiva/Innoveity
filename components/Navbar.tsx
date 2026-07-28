@@ -71,11 +71,11 @@ export default function Navbar() {
                     key={link.href}
                     href={link.href}
                     className={`font-semibold text-base transition-colors flex items-center relative py-1.5 group ${
-                      isActive ? "text-[#f59e0b]" : "text-gray-700 hover:text-[#f59e0b]"
+                      isActive ? "text-accent" : "text-gray-700 hover:text-accent"
                     }`}
                   >
                     <span>{link.name}</span>
-                    <span className={`absolute bottom-0 left-0 w-full h-[2px] bg-[#f59e0b] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left ${isActive ? 'scale-x-100' : ''}`} />
+                    <span className={`absolute bottom-0 left-0 w-full h-[2px] bg-accent scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left ${isActive ? 'scale-x-100' : ''}`} />
                   </Link>
                 );
               })}
@@ -85,7 +85,7 @@ export default function Navbar() {
             <div className="lg:hidden">
               <button
                 onClick={() => setIsOpen(!isOpen)}
-                className="text-gray-600 hover:text-[#185D46] p-2"
+                className="text-gray-600 hover:text-primary p-2"
                 aria-label="Toggle menu"
               >
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d={isOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"}></path></svg>
@@ -103,7 +103,7 @@ export default function Navbar() {
                   key={link.href}
                   href={link.href}
                   onClick={() => setIsOpen(false)}
-                  className="py-2 text-gray-700 font-bold hover:text-[#f59e0b] border-b border-gray-50"
+                  className="py-2 text-gray-700 font-bold hover:text-accent border-b border-gray-50"
                 >
                   {link.name}
                 </Link>
@@ -113,7 +113,7 @@ export default function Navbar() {
         )}
       </nav>
       {/* Scroll indicator bar */}
-      <motion.div style={{ scaleX: scrollYProgress }} className="absolute bottom-0 left-0 right-0 h-[3px] bg-[#185D46] origin-left z-50" />
+      <motion.div style={{ scaleX: scrollYProgress }} className="absolute bottom-0 left-0 right-0 h-[3px] bg-primary origin-left z-50" />
     </motion.div>
   );
 }

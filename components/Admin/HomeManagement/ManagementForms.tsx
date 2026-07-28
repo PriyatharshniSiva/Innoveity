@@ -36,7 +36,7 @@ export default function ManagementForms() {
           className="w-full flex items-center justify-between p-6 bg-white hover:bg-slate-50 transition-colors"
         >
           <div className="flex items-center space-x-3">
-            <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center text-[#185D46]">
+            <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center text-primary">
               <Type className="w-5 h-5" />
             </div>
             <h3 className="text-lg font-bold text-slate-800 font-sans">Hero Section</h3>
@@ -58,21 +58,21 @@ export default function ManagementForms() {
                     <label className="block text-sm font-semibold text-slate-700 mb-2">Hero Title (Line 1)</label>
                     <input 
                       type="text" name="titleLine1" value={hero.titleLine1} onChange={handleHeroChange}
-                      className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-[#185D46] transition-all bg-slate-50 focus:bg-white"
+                      className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all bg-slate-50 focus:bg-white"
                     />
                   </div>
                   <div>
                     <label className="block text-sm font-semibold text-slate-700 mb-2">Hero Title (Highlight)</label>
                     <input 
                       type="text" name="titleHighlight" value={hero.titleHighlight} onChange={handleHeroChange}
-                      className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-accent/20 focus:border-[#F59E0B] transition-all bg-slate-50 focus:bg-white"
+                      className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-accent/20 focus:border-accent transition-all bg-slate-50 focus:bg-white"
                     />
                   </div>
                   <div>
                     <label className="block text-sm font-semibold text-slate-700 mb-2">Description</label>
                     <textarea 
                       name="description" value={hero.description} onChange={handleHeroChange} rows={3}
-                      className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-[#185D46] transition-all bg-slate-50 focus:bg-white resize-none"
+                      className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all bg-slate-50 focus:bg-white resize-none"
                     />
                   </div>
                   
@@ -81,14 +81,14 @@ export default function ManagementForms() {
                       <label className="block text-sm font-semibold text-slate-700 mb-2">Primary Button</label>
                       <input 
                         type="text" name="primaryButtonText" value={hero.primaryButtonText} onChange={handleHeroChange}
-                        className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-[#185D46] transition-all bg-slate-50 focus:bg-white"
+                        className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all bg-slate-50 focus:bg-white"
                       />
                     </div>
                     <div>
                       <label className="block text-sm font-semibold text-slate-700 mb-2">Secondary Button</label>
                       <input 
                         type="text" name="secondaryButtonText" value={hero.secondaryButtonText} onChange={handleHeroChange}
-                        className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-[#185D46] transition-all bg-slate-50 focus:bg-white"
+                        className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all bg-slate-50 focus:bg-white"
                       />
                     </div>
                   </div>
@@ -124,7 +124,7 @@ export default function ManagementForms() {
           className="w-full flex items-center justify-between p-6 bg-white hover:bg-slate-50 transition-colors"
         >
           <div className="flex items-center space-x-3">
-            <div className="w-10 h-10 rounded-xl bg-accent/10 flex items-center justify-center text-[#F59E0B]">
+            <div className="w-10 h-10 rounded-xl bg-accent/10 flex items-center justify-center text-accent">
               <Type className="w-5 h-5" />
             </div>
             <h3 className="text-lg font-bold text-slate-800 font-sans">Our Impact in Action</h3>
@@ -149,12 +149,12 @@ export default function ManagementForms() {
                       <input 
                         type="text" value={stat.value} onChange={(e) => handleStatChange(stat.id, "value", e.target.value)}
                         placeholder="Value (e.g. 50,000+)"
-                        className="w-full px-3 py-2 rounded-lg border border-slate-200 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-[#185D46] transition-all bg-white"
+                        className="w-full px-3 py-2 rounded-lg border border-slate-200 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all bg-white"
                       />
                       <input 
                         type="text" value={stat.label} onChange={(e) => handleStatChange(stat.id, "label", e.target.value)}
                         placeholder="Label (e.g. Minds Stimulated)"
-                        className="w-full px-3 py-2 rounded-lg border border-slate-200 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-[#185D46] transition-all bg-white"
+                        className="w-full px-3 py-2 rounded-lg border border-slate-200 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all bg-white"
                       />
                     </div>
                     
@@ -163,7 +163,7 @@ export default function ManagementForms() {
                     </button>
                   </div>
                 ))}
-                <button className="w-full py-3 border-2 border-dashed border-slate-200 rounded-xl text-slate-500 font-semibold flex items-center justify-center hover:border-[#185D46] hover:text-[#185D46] transition-colors bg-slate-50 hover:bg-primary/5">
+                <button className="w-full py-3 border-2 border-dashed border-slate-200 rounded-xl text-slate-500 font-semibold flex items-center justify-center hover:border-primary hover:text-primary transition-colors bg-slate-50 hover:bg-primary/5">
                   <Plus className="w-5 h-5 mr-2" />
                   Add Statistic
                 </button>
@@ -180,7 +180,7 @@ export default function ManagementForms() {
           className="w-full flex items-center justify-between p-6 bg-white hover:bg-slate-50 transition-colors"
         >
           <div className="flex items-center space-x-3">
-            <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center text-[#185D46]">
+            <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center text-primary">
               <LinkIcon className="w-5 h-5" />
             </div>
             <h3 className="text-lg font-bold text-slate-800 font-sans">Corporate Highlights</h3>
@@ -193,11 +193,11 @@ export default function ManagementForms() {
               <div className="p-6 space-y-4">
                 <div>
                   <label className="block text-sm font-semibold text-slate-700 mb-2">Section Title</label>
-                  <input type="text" value={corporateHighlights.title} onChange={(e) => setCorporateHighlights({...corporateHighlights, title: e.target.value})} className="w-full px-4 py-3 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:outline-none focus:border-[#185D46] transition-colors" />
+                  <input type="text" value={corporateHighlights.title} onChange={(e) => setCorporateHighlights({...corporateHighlights, title: e.target.value})} className="w-full px-4 py-3 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:outline-none focus:border-primary transition-colors" />
                 </div>
                 <div>
                   <label className="block text-sm font-semibold text-slate-700 mb-2">Description</label>
-                  <textarea rows={4} value={corporateHighlights.description} onChange={(e) => setCorporateHighlights({...corporateHighlights, description: e.target.value})} className="w-full px-4 py-3 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:outline-none focus:border-[#185D46] transition-colors resize-none" />
+                  <textarea rows={4} value={corporateHighlights.description} onChange={(e) => setCorporateHighlights({...corporateHighlights, description: e.target.value})} className="w-full px-4 py-3 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:outline-none focus:border-primary transition-colors resize-none" />
                 </div>
                 <div>
                   <label className="block text-sm font-semibold text-slate-700 mb-2 mt-4">Key Highlights (Bullet Points)</label>
@@ -209,7 +209,7 @@ export default function ManagementForms() {
                           const newList = [...corporateHighlights.highlightsList];
                           newList[idx].text = e.target.value;
                           setCorporateHighlights({...corporateHighlights, highlightsList: newList});
-                        }} className="flex-1 px-3 py-2 rounded-lg border border-slate-200 focus:outline-none focus:border-[#185D46] bg-white text-sm" />
+                        }} className="flex-1 px-3 py-2 rounded-lg border border-slate-200 focus:outline-none focus:border-primary bg-white text-sm" />
                         <button onClick={() => {
                           const newList = corporateHighlights.highlightsList.filter(h => h.id !== highlight.id);
                           setCorporateHighlights({...corporateHighlights, highlightsList: newList});
@@ -219,7 +219,7 @@ export default function ManagementForms() {
                       </div>
                     ))}
                   </div>
-                  <button onClick={() => setCorporateHighlights({...corporateHighlights, highlightsList: [...corporateHighlights.highlightsList, { id: Date.now().toString(), text: "" }]})} className="w-full mt-4 py-3 border-2 border-dashed border-slate-200 rounded-xl text-slate-500 font-semibold flex items-center justify-center hover:border-[#185D46] hover:text-[#185D46] transition-colors bg-slate-50 hover:bg-primary/5">
+                  <button onClick={() => setCorporateHighlights({...corporateHighlights, highlightsList: [...corporateHighlights.highlightsList, { id: Date.now().toString(), text: "" }]})} className="w-full mt-4 py-3 border-2 border-dashed border-slate-200 rounded-xl text-slate-500 font-semibold flex items-center justify-center hover:border-primary hover:text-primary transition-colors bg-slate-50 hover:bg-primary/5">
                     <Plus className="w-5 h-5 mr-2" />
                     Add Highlight
                   </button>
@@ -237,7 +237,7 @@ export default function ManagementForms() {
           className="w-full flex items-center justify-between p-6 bg-white hover:bg-slate-50 transition-colors"
         >
           <div className="flex items-center space-x-3">
-            <div className="w-10 h-10 rounded-xl bg-accent/10 flex items-center justify-center text-[#F59E0B]">
+            <div className="w-10 h-10 rounded-xl bg-accent/10 flex items-center justify-center text-accent">
               <MessageSquare className="w-5 h-5" />
             </div>
             <h3 className="text-lg font-bold text-slate-800 font-sans">FAQ Management</h3>
@@ -265,7 +265,7 @@ export default function ManagementForms() {
                             const newFaqs = [...faqs];
                             newFaqs[idx].question = e.target.value;
                             setFaqs(newFaqs);
-                          }} className="w-full px-4 py-2.5 rounded-xl border border-slate-200 focus:bg-white focus:outline-none focus:border-[#185D46] transition-colors font-medium text-slate-800" />
+                          }} className="w-full px-4 py-2.5 rounded-xl border border-slate-200 focus:bg-white focus:outline-none focus:border-primary transition-colors font-medium text-slate-800" />
                         </div>
                         
                         <div>
@@ -274,7 +274,7 @@ export default function ManagementForms() {
                             const newFaqs = [...faqs];
                             newFaqs[idx].mainAnswer = e.target.value;
                             setFaqs(newFaqs);
-                          }} className="w-full px-4 py-2.5 rounded-xl border border-slate-200 focus:bg-white focus:outline-none focus:border-[#185D46] transition-colors resize-none text-slate-600 text-sm" />
+                          }} className="w-full px-4 py-2.5 rounded-xl border border-slate-200 focus:bg-white focus:outline-none focus:border-primary transition-colors resize-none text-slate-600 text-sm" />
                         </div>
 
                         <div>
@@ -283,7 +283,7 @@ export default function ManagementForms() {
                             const newFaqs = [...faqs];
                             newFaqs[idx].detailedExplanation = e.target.value;
                             setFaqs(newFaqs);
-                          }} className="w-full px-4 py-2.5 rounded-xl border border-slate-200 focus:bg-white focus:outline-none focus:border-[#185D46] transition-colors resize-none text-slate-600 text-sm" />
+                          }} className="w-full px-4 py-2.5 rounded-xl border border-slate-200 focus:bg-white focus:outline-none focus:border-primary transition-colors resize-none text-slate-600 text-sm" />
                         </div>
                       </div>
                     </div>
@@ -292,7 +292,7 @@ export default function ManagementForms() {
                 
                 <button onClick={() => {
                   setFaqs([...faqs, { id: Date.now().toString(), question: "", mainAnswer: "", detailedExplanation: "" }]);
-                }} className="w-full py-3.5 border-2 border-dashed border-slate-200 rounded-2xl text-slate-500 font-semibold flex items-center justify-center hover:border-[#F59E0B] hover:text-[#F59E0B] transition-colors bg-white hover:bg-accent/5">
+                }} className="w-full py-3.5 border-2 border-dashed border-slate-200 rounded-2xl text-slate-500 font-semibold flex items-center justify-center hover:border-accent hover:text-accent transition-colors bg-white hover:bg-accent/5">
                   <Plus className="w-5 h-5 mr-2" />
                   Add FAQ Item
                 </button>
@@ -309,7 +309,7 @@ export default function ManagementForms() {
           className="w-full flex items-center justify-between p-6 bg-white hover:bg-slate-50 transition-colors"
         >
           <div className="flex items-center space-x-3">
-            <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center text-[#185D46]">
+            <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center text-primary">
               <ImageIcon className="w-5 h-5" />
             </div>
             <h3 className="text-lg font-bold text-slate-800 font-sans">Featured Services</h3>
@@ -323,11 +323,11 @@ export default function ManagementForms() {
                 <div className="space-y-4">
                   <div>
                     <label className="block text-sm font-semibold text-slate-700 mb-2">Section Title</label>
-                    <input type="text" value={featuredServices.title} onChange={(e) => setFeaturedServices({...featuredServices, title: e.target.value})} className="w-full px-4 py-3 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:outline-none focus:border-[#185D46] transition-colors" />
+                    <input type="text" value={featuredServices.title} onChange={(e) => setFeaturedServices({...featuredServices, title: e.target.value})} className="w-full px-4 py-3 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:outline-none focus:border-primary transition-colors" />
                   </div>
                   <div>
                     <label className="block text-sm font-semibold text-slate-700 mb-2">Subtitle</label>
-                    <input type="text" value={featuredServices.subtitle} onChange={(e) => setFeaturedServices({...featuredServices, subtitle: e.target.value})} className="w-full px-4 py-3 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:outline-none focus:border-[#185D46] transition-colors" />
+                    <input type="text" value={featuredServices.subtitle} onChange={(e) => setFeaturedServices({...featuredServices, subtitle: e.target.value})} className="w-full px-4 py-3 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:outline-none focus:border-primary transition-colors" />
                   </div>
                 </div>
 
@@ -350,7 +350,7 @@ export default function ManagementForms() {
                               const newList = [...featuredServices.servicesList];
                               newList[idx].title = e.target.value;
                               setFeaturedServices({...featuredServices, servicesList: newList});
-                            }} className="w-full px-3 py-2 rounded-xl border border-slate-200 focus:bg-white focus:outline-none focus:border-[#185D46] transition-colors text-sm" />
+                            }} className="w-full px-3 py-2 rounded-xl border border-slate-200 focus:bg-white focus:outline-none focus:border-primary transition-colors text-sm" />
                           </div>
                           <div>
                             <label className="block text-xs font-semibold text-slate-500 mb-1">Category</label>
@@ -358,7 +358,7 @@ export default function ManagementForms() {
                               const newList = [...featuredServices.servicesList];
                               newList[idx].category = e.target.value;
                               setFeaturedServices({...featuredServices, servicesList: newList});
-                            }} className="w-full px-3 py-2 rounded-xl border border-slate-200 focus:bg-white focus:outline-none focus:border-[#185D46] transition-colors text-sm" />
+                            }} className="w-full px-3 py-2 rounded-xl border border-slate-200 focus:bg-white focus:outline-none focus:border-primary transition-colors text-sm" />
                           </div>
                           <div>
                             <label className="block text-xs font-semibold text-slate-500 mb-1">Badge</label>
@@ -366,7 +366,7 @@ export default function ManagementForms() {
                               const newList = [...featuredServices.servicesList];
                               newList[idx].badge = e.target.value;
                               setFeaturedServices({...featuredServices, servicesList: newList});
-                            }} className="w-full px-3 py-2 rounded-xl border border-slate-200 focus:bg-white focus:outline-none focus:border-[#185D46] transition-colors text-sm" />
+                            }} className="w-full px-3 py-2 rounded-xl border border-slate-200 focus:bg-white focus:outline-none focus:border-primary transition-colors text-sm" />
                           </div>
                           <div>
                             <label className="block text-xs font-semibold text-slate-500 mb-1">Image URL</label>
@@ -374,7 +374,7 @@ export default function ManagementForms() {
                               const newList = [...featuredServices.servicesList];
                               newList[idx].image = e.target.value;
                               setFeaturedServices({...featuredServices, servicesList: newList});
-                            }} className="w-full px-3 py-2 rounded-xl border border-slate-200 focus:bg-white focus:outline-none focus:border-[#185D46] transition-colors text-sm" />
+                            }} className="w-full px-3 py-2 rounded-xl border border-slate-200 focus:bg-white focus:outline-none focus:border-primary transition-colors text-sm" />
                           </div>
                           <div className="md:col-span-2">
                             <label className="block text-xs font-semibold text-slate-500 mb-1">Description</label>
@@ -382,7 +382,7 @@ export default function ManagementForms() {
                               const newList = [...featuredServices.servicesList];
                               newList[idx].desc = e.target.value;
                               setFeaturedServices({...featuredServices, servicesList: newList});
-                            }} className="w-full px-3 py-2 rounded-xl border border-slate-200 focus:bg-white focus:outline-none focus:border-[#185D46] transition-colors resize-none text-sm" />
+                            }} className="w-full px-3 py-2 rounded-xl border border-slate-200 focus:bg-white focus:outline-none focus:border-primary transition-colors resize-none text-sm" />
                           </div>
                         </div>
                       </div>
@@ -394,7 +394,7 @@ export default function ManagementForms() {
                       ...featuredServices, 
                       servicesList: [...featuredServices.servicesList, { id: Date.now().toString(), category: "", title: "", desc: "", badge: "", image: "" }]
                     });
-                  }} className="w-full mt-4 py-3.5 border-2 border-dashed border-slate-200 rounded-2xl text-slate-500 font-semibold flex items-center justify-center hover:border-[#185D46] hover:text-[#185D46] transition-colors bg-white hover:bg-primary/5">
+                  }} className="w-full mt-4 py-3.5 border-2 border-dashed border-slate-200 rounded-2xl text-slate-500 font-semibold flex items-center justify-center hover:border-primary hover:text-primary transition-colors bg-white hover:bg-primary/5">
                     <Plus className="w-5 h-5 mr-2" />
                     Add Service Card
                   </button>
@@ -412,7 +412,7 @@ export default function ManagementForms() {
           className="w-full flex items-center justify-between p-6 bg-white hover:bg-slate-50 transition-colors"
         >
           <div className="flex items-center space-x-3">
-            <div className="w-10 h-10 rounded-xl bg-accent/10 flex items-center justify-center text-[#F59E0B]">
+            <div className="w-10 h-10 rounded-xl bg-accent/10 flex items-center justify-center text-accent">
               <Star className="w-5 h-5" />
             </div>
             <h3 className="text-lg font-bold text-slate-800 font-sans">Client Reviews</h3>
@@ -426,11 +426,11 @@ export default function ManagementForms() {
                 <div className="space-y-4">
                   <div>
                     <label className="block text-sm font-semibold text-slate-700 mb-2">Section Title</label>
-                    <input type="text" value={testimonials.title} onChange={(e) => setTestimonials({...testimonials, title: e.target.value})} className="w-full px-4 py-3 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:outline-none focus:border-[#185D46] transition-colors" />
+                    <input type="text" value={testimonials.title} onChange={(e) => setTestimonials({...testimonials, title: e.target.value})} className="w-full px-4 py-3 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:outline-none focus:border-primary transition-colors" />
                   </div>
                   <div>
                     <label className="block text-sm font-semibold text-slate-700 mb-2">Subtitle</label>
-                    <input type="text" value={testimonials.subtitle} onChange={(e) => setTestimonials({...testimonials, subtitle: e.target.value})} className="w-full px-4 py-3 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:outline-none focus:border-[#185D46] transition-colors" />
+                    <input type="text" value={testimonials.subtitle} onChange={(e) => setTestimonials({...testimonials, subtitle: e.target.value})} className="w-full px-4 py-3 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:outline-none focus:border-primary transition-colors" />
                   </div>
                 </div>
 
@@ -453,7 +453,7 @@ export default function ManagementForms() {
                               const newList = [...testimonials.list];
                               newList[idx].name = e.target.value;
                               setTestimonials({...testimonials, list: newList});
-                            }} className="w-full px-3 py-2 rounded-xl border border-slate-200 focus:bg-white focus:outline-none focus:border-[#185D46] transition-colors text-sm" />
+                            }} className="w-full px-3 py-2 rounded-xl border border-slate-200 focus:bg-white focus:outline-none focus:border-primary transition-colors text-sm" />
                           </div>
                           <div>
                             <label className="block text-xs font-semibold text-slate-500 mb-1">Date String (e.g. Verified Aug 2024)</label>
@@ -461,7 +461,7 @@ export default function ManagementForms() {
                               const newList = [...testimonials.list];
                               newList[idx].date = e.target.value;
                               setTestimonials({...testimonials, list: newList});
-                            }} className="w-full px-3 py-2 rounded-xl border border-slate-200 focus:bg-white focus:outline-none focus:border-[#185D46] transition-colors text-sm" />
+                            }} className="w-full px-3 py-2 rounded-xl border border-slate-200 focus:bg-white focus:outline-none focus:border-primary transition-colors text-sm" />
                           </div>
                           <div className="md:col-span-2">
                             <label className="block text-xs font-semibold text-slate-500 mb-1">Quote</label>
@@ -469,7 +469,7 @@ export default function ManagementForms() {
                               const newList = [...testimonials.list];
                               newList[idx].quote = e.target.value;
                               setTestimonials({...testimonials, list: newList});
-                            }} className="w-full px-3 py-2 rounded-xl border border-slate-200 focus:bg-white focus:outline-none focus:border-[#185D46] transition-colors resize-none text-sm text-slate-600" />
+                            }} className="w-full px-3 py-2 rounded-xl border border-slate-200 focus:bg-white focus:outline-none focus:border-primary transition-colors resize-none text-sm text-slate-600" />
                           </div>
                         </div>
                       </div>
@@ -481,7 +481,7 @@ export default function ManagementForms() {
                       ...testimonials, 
                       list: [...testimonials.list, { id: Date.now().toString(), name: "", quote: "", date: "" }]
                     });
-                  }} className="w-full mt-4 py-3.5 border-2 border-dashed border-slate-200 rounded-2xl text-slate-500 font-semibold flex items-center justify-center hover:border-[#185D46] hover:text-[#185D46] transition-colors bg-white hover:bg-primary/5">
+                  }} className="w-full mt-4 py-3.5 border-2 border-dashed border-slate-200 rounded-2xl text-slate-500 font-semibold flex items-center justify-center hover:border-primary hover:text-primary transition-colors bg-white hover:bg-primary/5">
                     <Plus className="w-5 h-5 mr-2" />
                     Add Testimonial
                   </button>
@@ -499,7 +499,7 @@ export default function ManagementForms() {
           className="w-full flex items-center justify-between p-6 bg-white hover:bg-slate-50 transition-colors"
         >
           <div className="flex items-center space-x-3">
-            <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center text-[#185D46]">
+            <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center text-primary">
               <Briefcase className="w-5 h-5" />
             </div>
             <h3 className="text-lg font-bold text-slate-800 font-sans">Our Services</h3>
@@ -513,17 +513,17 @@ export default function ManagementForms() {
                 <div className="space-y-4">
                   <div>
                     <label className="block text-sm font-semibold text-slate-700 mb-2">Section Title</label>
-                    <input type="text" value={ourServices.title} onChange={(e) => setOurServices({...ourServices, title: e.target.value})} className="w-full px-4 py-3 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:outline-none focus:border-[#185D46] transition-colors" />
+                    <input type="text" value={ourServices.title} onChange={(e) => setOurServices({...ourServices, title: e.target.value})} className="w-full px-4 py-3 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:outline-none focus:border-primary transition-colors" />
                   </div>
                   <div>
                     <label className="block text-sm font-semibold text-slate-700 mb-2">Subtitle</label>
-                    <input type="text" value={ourServices.subtitle} onChange={(e) => setOurServices({...ourServices, subtitle: e.target.value})} className="w-full px-4 py-3 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:outline-none focus:border-[#185D46] transition-colors" />
+                    <input type="text" value={ourServices.subtitle} onChange={(e) => setOurServices({...ourServices, subtitle: e.target.value})} className="w-full px-4 py-3 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:outline-none focus:border-primary transition-colors" />
                   </div>
                   <div>
                     <label className="block text-sm font-semibold text-slate-700 mb-2">Background Color</label>
                     <div className="flex space-x-3">
-                      <input type="color" value={ourServices.backgroundColor || "var(--color-primary)"} onChange={(e) => setOurServices({...ourServices, backgroundColor: e.target.value})} className="h-12 w-12 rounded-xl cursor-pointer border-0 p-0" />
-                      <input type="text" value={ourServices.backgroundColor || "var(--color-primary)"} onChange={(e) => setOurServices({...ourServices, backgroundColor: e.target.value})} className="flex-1 px-4 py-3 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:outline-none focus:border-[#185D46] transition-colors font-mono" />
+                      <input type="color" value={ourServices.backgroundColor || "var(--color-brand-primary)"} onChange={(e) => setOurServices({...ourServices, backgroundColor: e.target.value})} className="h-12 w-12 rounded-xl cursor-pointer border-0 p-0" />
+                      <input type="text" value={ourServices.backgroundColor || "var(--color-brand-primary)"} onChange={(e) => setOurServices({...ourServices, backgroundColor: e.target.value})} className="flex-1 px-4 py-3 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:outline-none focus:border-primary transition-colors font-mono" />
                     </div>
                   </div>
                 </div>
@@ -547,7 +547,7 @@ export default function ManagementForms() {
                               const newList = [...ourServices.list];
                               newList[idx].title = e.target.value;
                               setOurServices({...ourServices, list: newList});
-                            }} className="w-full px-3 py-2 rounded-xl border border-slate-200 focus:bg-white focus:outline-none focus:border-[#185D46] transition-colors text-sm" />
+                            }} className="w-full px-3 py-2 rounded-xl border border-slate-200 focus:bg-white focus:outline-none focus:border-primary transition-colors text-sm" />
                           </div>
                           <div>
                             <label className="block text-xs font-semibold text-slate-500 mb-1">Description</label>
@@ -555,7 +555,7 @@ export default function ManagementForms() {
                               const newList = [...ourServices.list];
                               newList[idx].description = e.target.value;
                               setOurServices({...ourServices, list: newList});
-                            }} className="w-full px-3 py-2 rounded-xl border border-slate-200 focus:bg-white focus:outline-none focus:border-[#185D46] transition-colors text-sm" />
+                            }} className="w-full px-3 py-2 rounded-xl border border-slate-200 focus:bg-white focus:outline-none focus:border-primary transition-colors text-sm" />
                           </div>
                           <div>
                             <label className="block text-xs font-semibold text-slate-500 mb-1">Icon Name (lucide-react)</label>
@@ -563,7 +563,7 @@ export default function ManagementForms() {
                               const newList = [...ourServices.list];
                               newList[idx].iconName = e.target.value;
                               setOurServices({...ourServices, list: newList});
-                            }} className="w-full px-3 py-2 rounded-xl border border-slate-200 focus:bg-white focus:outline-none focus:border-[#185D46] transition-colors text-sm text-slate-600" />
+                            }} className="w-full px-3 py-2 rounded-xl border border-slate-200 focus:bg-white focus:outline-none focus:border-primary transition-colors text-sm text-slate-600" />
                           </div>
                         </div>
                       </div>
@@ -575,7 +575,7 @@ export default function ManagementForms() {
                       ...ourServices, 
                       list: [...ourServices.list, { id: Date.now().toString(), title: "", description: "", iconName: "" }]
                     });
-                  }} className="w-full mt-4 py-3.5 border-2 border-dashed border-slate-200 rounded-2xl text-slate-500 font-semibold flex items-center justify-center hover:border-[#185D46] hover:text-[#185D46] transition-colors bg-white hover:bg-primary/5">
+                  }} className="w-full mt-4 py-3.5 border-2 border-dashed border-slate-200 rounded-2xl text-slate-500 font-semibold flex items-center justify-center hover:border-primary hover:text-primary transition-colors bg-white hover:bg-primary/5">
                     <Plus className="w-5 h-5 mr-2" />
                     Add Service Item
                   </button>
@@ -593,7 +593,7 @@ export default function ManagementForms() {
           className="w-full flex items-center justify-between p-6 bg-white hover:bg-slate-50 transition-colors"
         >
           <div className="flex items-center space-x-3">
-            <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center text-[#185D46]">
+            <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center text-primary">
               <MapPin className="w-5 h-5" />
             </div>
             <h3 className="text-lg font-bold text-slate-800 font-sans">Our Presence</h3>
@@ -607,11 +607,11 @@ export default function ManagementForms() {
                 <div className="space-y-4">
                   <div>
                     <label className="block text-sm font-semibold text-slate-700 mb-2">Section Title</label>
-                    <input type="text" value={ourPresence.title} onChange={(e) => setOurPresence({...ourPresence, title: e.target.value})} className="w-full px-4 py-3 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:outline-none focus:border-[#185D46] transition-colors" />
+                    <input type="text" value={ourPresence.title} onChange={(e) => setOurPresence({...ourPresence, title: e.target.value})} className="w-full px-4 py-3 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:outline-none focus:border-primary transition-colors" />
                   </div>
                   <div>
                     <label className="block text-sm font-semibold text-slate-700 mb-2">Subtitle</label>
-                    <input type="text" value={ourPresence.subtitle} onChange={(e) => setOurPresence({...ourPresence, subtitle: e.target.value})} className="w-full px-4 py-3 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:outline-none focus:border-[#185D46] transition-colors" />
+                    <input type="text" value={ourPresence.subtitle} onChange={(e) => setOurPresence({...ourPresence, subtitle: e.target.value})} className="w-full px-4 py-3 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:outline-none focus:border-primary transition-colors" />
                   </div>
                   <div>
                     <label className="block text-sm font-semibold text-slate-700 mb-2">Map Image URL</label>
@@ -619,7 +619,7 @@ export default function ManagementForms() {
                       <div className="w-12 h-12 bg-slate-100 rounded-xl flex items-center justify-center border border-slate-200 flex-shrink-0">
                         <ImageIcon className="w-5 h-5 text-slate-400" />
                       </div>
-                      <input type="text" value={ourPresence.mapImage} onChange={(e) => setOurPresence({...ourPresence, mapImage: e.target.value})} className="flex-1 px-4 py-3 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:outline-none focus:border-[#185D46] transition-colors" />
+                      <input type="text" value={ourPresence.mapImage} onChange={(e) => setOurPresence({...ourPresence, mapImage: e.target.value})} className="flex-1 px-4 py-3 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:outline-none focus:border-primary transition-colors" />
                     </div>
                   </div>
                 </div>
@@ -643,7 +643,7 @@ export default function ManagementForms() {
                               const newList = [...ourPresence.list];
                               newList[idx].title = e.target.value;
                               setOurPresence({...ourPresence, list: newList});
-                            }} className="w-full px-3 py-2 rounded-xl border border-slate-200 focus:bg-white focus:outline-none focus:border-[#185D46] transition-colors text-sm" />
+                            }} className="w-full px-3 py-2 rounded-xl border border-slate-200 focus:bg-white focus:outline-none focus:border-primary transition-colors text-sm" />
                           </div>
                           <div>
                             <label className="block text-xs font-semibold text-slate-500 mb-1">Description</label>
@@ -651,7 +651,7 @@ export default function ManagementForms() {
                               const newList = [...ourPresence.list];
                               newList[idx].description = e.target.value;
                               setOurPresence({...ourPresence, list: newList});
-                            }} className="w-full px-3 py-2 rounded-xl border border-slate-200 focus:bg-white focus:outline-none focus:border-[#185D46] transition-colors text-sm" />
+                            }} className="w-full px-3 py-2 rounded-xl border border-slate-200 focus:bg-white focus:outline-none focus:border-primary transition-colors text-sm" />
                           </div>
                           <div>
                             <label className="block text-xs font-semibold text-slate-500 mb-1">Icon Name (lucide-react)</label>
@@ -659,7 +659,7 @@ export default function ManagementForms() {
                               const newList = [...ourPresence.list];
                               newList[idx].iconName = e.target.value;
                               setOurPresence({...ourPresence, list: newList});
-                            }} className="w-full px-3 py-2 rounded-xl border border-slate-200 focus:bg-white focus:outline-none focus:border-[#185D46] transition-colors text-sm text-slate-600" />
+                            }} className="w-full px-3 py-2 rounded-xl border border-slate-200 focus:bg-white focus:outline-none focus:border-primary transition-colors text-sm text-slate-600" />
                           </div>
                         </div>
                       </div>
@@ -671,7 +671,7 @@ export default function ManagementForms() {
                       ...ourPresence, 
                       list: [...ourPresence.list, { id: Date.now().toString(), title: "", description: "", iconName: "" }]
                     });
-                  }} className="w-full mt-4 py-3.5 border-2 border-dashed border-slate-200 rounded-2xl text-slate-500 font-semibold flex items-center justify-center hover:border-[#185D46] hover:text-[#185D46] transition-colors bg-white hover:bg-primary/5">
+                  }} className="w-full mt-4 py-3.5 border-2 border-dashed border-slate-200 rounded-2xl text-slate-500 font-semibold flex items-center justify-center hover:border-primary hover:text-primary transition-colors bg-white hover:bg-primary/5">
                     <Plus className="w-5 h-5 mr-2" />
                     Add Feature Item
                   </button>
@@ -689,7 +689,7 @@ export default function ManagementForms() {
           className="w-full flex items-center justify-between p-6 bg-white hover:bg-slate-50 transition-colors"
         >
           <div className="flex items-center space-x-3">
-            <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center text-[#185D46]">
+            <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center text-primary">
               <Layout className="w-5 h-5" />
             </div>
             <h3 className="text-lg font-bold text-slate-800 font-sans">SEO Overview Sections</h3>
@@ -703,28 +703,28 @@ export default function ManagementForms() {
                 
                 {/* 1. Hero */}
                 <div className="space-y-4">
-                  <h4 className="font-bold text-[#185D46] border-b pb-2">1. Intro Hero Section</h4>
+                  <h4 className="font-bold text-primary border-b pb-2">1. Intro Hero Section</h4>
                   <div>
                     <label className="block text-xs font-semibold text-slate-500 mb-1">Title Line 1</label>
-                    <input type="text" value={edukaOverview.heroTitle1} onChange={(e) => setEdukaOverview({...edukaOverview, heroTitle1: e.target.value})} className="w-full px-3 py-2 rounded-xl border border-slate-200 focus:bg-white focus:outline-none focus:border-[#185D46] transition-colors text-sm" />
+                    <input type="text" value={edukaOverview.heroTitle1} onChange={(e) => setEdukaOverview({...edukaOverview, heroTitle1: e.target.value})} className="w-full px-3 py-2 rounded-xl border border-slate-200 focus:bg-white focus:outline-none focus:border-primary transition-colors text-sm" />
                   </div>
                   <div>
                     <label className="block text-xs font-semibold text-slate-500 mb-1">Title Highlight (Orange)</label>
-                    <input type="text" value={edukaOverview.heroHighlight} onChange={(e) => setEdukaOverview({...edukaOverview, heroHighlight: e.target.value})} className="w-full px-3 py-2 rounded-xl border border-slate-200 focus:bg-white focus:outline-none focus:border-[#185D46] transition-colors text-sm" />
+                    <input type="text" value={edukaOverview.heroHighlight} onChange={(e) => setEdukaOverview({...edukaOverview, heroHighlight: e.target.value})} className="w-full px-3 py-2 rounded-xl border border-slate-200 focus:bg-white focus:outline-none focus:border-primary transition-colors text-sm" />
                   </div>
                   <div>
                     <label className="block text-xs font-semibold text-slate-500 mb-1">Title Line 2</label>
-                    <input type="text" value={edukaOverview.heroTitle2} onChange={(e) => setEdukaOverview({...edukaOverview, heroTitle2: e.target.value})} className="w-full px-3 py-2 rounded-xl border border-slate-200 focus:bg-white focus:outline-none focus:border-[#185D46] transition-colors text-sm" />
+                    <input type="text" value={edukaOverview.heroTitle2} onChange={(e) => setEdukaOverview({...edukaOverview, heroTitle2: e.target.value})} className="w-full px-3 py-2 rounded-xl border border-slate-200 focus:bg-white focus:outline-none focus:border-primary transition-colors text-sm" />
                   </div>
                   <div>
                     <label className="block text-xs font-semibold text-slate-500 mb-1">Description Paragraph</label>
-                    <textarea rows={3} value={edukaOverview.heroDescription} onChange={(e) => setEdukaOverview({...edukaOverview, heroDescription: e.target.value})} className="w-full px-3 py-2 rounded-xl border border-slate-200 focus:bg-white focus:outline-none focus:border-[#185D46] transition-colors text-sm" />
+                    <textarea rows={3} value={edukaOverview.heroDescription} onChange={(e) => setEdukaOverview({...edukaOverview, heroDescription: e.target.value})} className="w-full px-3 py-2 rounded-xl border border-slate-200 focus:bg-white focus:outline-none focus:border-primary transition-colors text-sm" />
                   </div>
                 </div>
 
                 {/* 2. Division Cards */}
                 <div className="space-y-4">
-                  <h4 className="font-bold text-[#185D46] border-b pb-2">2. Division Cards</h4>
+                  <h4 className="font-bold text-primary border-b pb-2">2. Division Cards</h4>
                   {edukaOverview.divisionCards.map((card, idx) => (
                     <div key={card.id} className="p-4 bg-slate-50 rounded-xl border border-slate-200 relative group space-y-3">
                       <div className="grid grid-cols-2 gap-3">
@@ -767,7 +767,7 @@ export default function ManagementForms() {
 
                 {/* 3. Why Choose */}
                 <div className="space-y-4">
-                  <h4 className="font-bold text-[#185D46] border-b pb-2">3. Why Choose Innoveity</h4>
+                  <h4 className="font-bold text-primary border-b pb-2">3. Why Choose Innoveity</h4>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                     <div>
                       <label className="block text-xs font-semibold text-slate-500 mb-1">Title</label>
@@ -792,7 +792,7 @@ export default function ManagementForms() {
 
                 {/* 4. Core Details Grid */}
                 <div className="space-y-4">
-                  <h4 className="font-bold text-[#185D46] border-b pb-2">4. Core Details (3 Columns)</h4>
+                  <h4 className="font-bold text-primary border-b pb-2">4. Core Details (3 Columns)</h4>
                   {edukaOverview.coreDetails.map((detail, idx) => (
                     <div key={detail.id} className="p-4 bg-slate-50 rounded-xl border border-slate-200 space-y-3">
                       <div>
@@ -817,14 +817,14 @@ export default function ManagementForms() {
 
                 {/* 5. Contact CTA */}
                 <div className="space-y-4">
-                  <h4 className="font-bold text-[#185D46] border-b pb-2">5. Contact CTA</h4>
+                  <h4 className="font-bold text-primary border-b pb-2">5. Contact CTA</h4>
                   <div>
                     <label className="block text-xs font-semibold text-slate-500 mb-1">CTA Title</label>
-                    <input type="text" value={edukaOverview.contactTitle} onChange={(e) => setEdukaOverview({...edukaOverview, contactTitle: e.target.value})} className="w-full px-3 py-2 rounded-xl border border-slate-200 focus:bg-white focus:outline-none focus:border-[#185D46] transition-colors text-sm" />
+                    <input type="text" value={edukaOverview.contactTitle} onChange={(e) => setEdukaOverview({...edukaOverview, contactTitle: e.target.value})} className="w-full px-3 py-2 rounded-xl border border-slate-200 focus:bg-white focus:outline-none focus:border-primary transition-colors text-sm" />
                   </div>
                   <div>
                     <label className="block text-xs font-semibold text-slate-500 mb-1">CTA Paragraph (Supports HTML)</label>
-                    <textarea rows={5} value={edukaOverview.contactDescription} onChange={(e) => setEdukaOverview({...edukaOverview, contactDescription: e.target.value})} className="w-full px-3 py-2 rounded-xl border border-slate-200 focus:bg-white focus:outline-none focus:border-[#185D46] transition-colors text-sm font-mono text-slate-600" />
+                    <textarea rows={5} value={edukaOverview.contactDescription} onChange={(e) => setEdukaOverview({...edukaOverview, contactDescription: e.target.value})} className="w-full px-3 py-2 rounded-xl border border-slate-200 focus:bg-white focus:outline-none focus:border-primary transition-colors text-sm font-mono text-slate-600" />
                   </div>
                 </div>
 
@@ -854,8 +854,8 @@ export default function ManagementForms() {
                     Configure the settings for {title} below.
                   </div>
                   <div className="grid grid-cols-1 gap-4">
-                    <input type="text" placeholder="Section Title" className="w-full px-4 py-3 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:outline-none focus:border-[#185D46] transition-colors" />
-                    <textarea placeholder="Section Description" rows={3} className="w-full px-4 py-3 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:outline-none focus:border-[#185D46] transition-colors" />
+                    <input type="text" placeholder="Section Title" className="w-full px-4 py-3 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:outline-none focus:border-primary transition-colors" />
+                    <textarea placeholder="Section Description" rows={3} className="w-full px-4 py-3 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:outline-none focus:border-primary transition-colors" />
                     <button className="px-6 py-2 bg-slate-100 text-slate-600 rounded-xl font-bold hover:bg-slate-200 transition-colors w-max">Save Changes</button>
                   </div>
                 </div>

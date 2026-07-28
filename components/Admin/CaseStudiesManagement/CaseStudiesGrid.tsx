@@ -63,7 +63,7 @@ export default function CaseStudiesGrid() {
                   {study.status}
                 </span>
                 {study.featured && (
-                  <span className="px-3 py-1 rounded-full text-xs font-bold bg-white/90 text-[#185D46] backdrop-blur-md">
+                  <span className="px-3 py-1 rounded-full text-xs font-bold bg-white/90 text-primary backdrop-blur-md">
                     Featured
                   </span>
                 )}
@@ -81,7 +81,7 @@ export default function CaseStudiesGrid() {
               {/* Quick Actions Dropdown (Simulated via hover for simplicity, or just simple buttons on hover) */}
               <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 <div className="bg-white/90 backdrop-blur-md rounded-xl p-1 flex items-center space-x-1 shadow-lg border border-white/50">
-                  <button onClick={() => { setEditingCaseStudyId(study.id); setIsDrawerOpen(true); }} className="p-2 text-slate-600 hover:text-[#185D46] hover:bg-white rounded-lg transition-colors" title="Edit">
+                  <button onClick={() => { setEditingCaseStudyId(study.id); setIsDrawerOpen(true); }} className="p-2 text-slate-600 hover:text-primary hover:bg-white rounded-lg transition-colors" title="Edit">
                     <Edit2 className="w-4 h-4" />
                   </button>
                   <button className="p-2 text-slate-600 hover:text-blue-600 hover:bg-white rounded-lg transition-colors" title="Preview">
@@ -96,7 +96,7 @@ export default function CaseStudiesGrid() {
 
             {/* Content */}
             <div className="p-6 flex flex-col flex-grow">
-              <h3 className="text-xl font-bold text-slate-800 leading-snug mb-2 mt-4 line-clamp-2 group-hover:text-[#185D46] transition-colors">{study.title}</h3>
+              <h3 className="text-xl font-bold text-slate-800 leading-snug mb-2 mt-4 line-clamp-2 group-hover:text-primary transition-colors">{study.title}</h3>
               <p className="text-sm text-slate-500 mb-6 line-clamp-2">{study.challenge}</p>
               
               {/* Key Results */}
@@ -114,7 +114,7 @@ export default function CaseStudiesGrid() {
                     <Clock className="w-3.5 h-3.5 mr-1.5" />
                     {new Date(study.publishedDate).toLocaleDateString()}
                   </div>
-                  <div className="flex items-center text-xs font-bold text-[#185D46]">
+                  <div className="flex items-center text-xs font-bold text-primary">
                     <Globe className="w-3.5 h-3.5 mr-1.5" />
                     {study.views.toLocaleString()} views
                   </div>

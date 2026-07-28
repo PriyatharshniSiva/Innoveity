@@ -19,13 +19,13 @@ export default function KnowledgeHubToolbar() {
       
       {/* Search */}
       <div className="relative w-full xl:w-96 flex-shrink-0 group">
-        <Search className="w-5 h-5 text-slate-400 absolute left-4 top-1/2 -translate-y-1/2 group-focus-within:text-[#185D46] transition-colors" />
+        <Search className="w-5 h-5 text-slate-400 absolute left-4 top-1/2 -translate-y-1/2 group-focus-within:text-primary transition-colors" />
         <input 
           type="text" 
           placeholder="Search articles by title or author..." 
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
-          className="w-full pl-12 pr-4 py-2.5 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-[#185D46] transition-all bg-slate-50 focus:bg-white text-sm font-medium text-slate-700"
+          className="w-full pl-12 pr-4 py-2.5 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all bg-slate-50 focus:bg-white text-sm font-medium text-slate-700"
         />
       </div>
 

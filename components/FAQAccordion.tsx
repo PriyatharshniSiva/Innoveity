@@ -63,13 +63,13 @@ export default function FAQAccordion({ data }: { data?: any }) {
                 onClick={() => toggleFAQ(index)}
                 className="w-full text-left flex items-center justify-between p-6 sm:p-8 cursor-pointer focus:outline-none group"
               >
-                <h3 className={`text-lg md:text-xl font-bold pr-8 transition-colors duration-300 ${isOpen ? 'text-[#185D46]' : 'text-slate-800 group-hover:text-[#185D46]'}`}>
+                <h3 className={`text-lg md:text-xl font-bold pr-8 transition-colors duration-300 ${isOpen ? 'text-primary' : 'text-slate-800 group-hover:text-primary'}`}>
                   {faq.question}
                 </h3>
                 
                 <div 
                   className={`flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center transition-all duration-300 ${
-                    isOpen ? 'bg-[#185D46] text-white rotate-180' : 'bg-slate-100 text-slate-500 group-hover:bg-[#e6f4ea] group-hover:text-[#185D46]'
+                    isOpen ? 'bg-primary text-white rotate-180' : 'bg-slate-100 text-slate-500 group-hover:bg-[#e6f4ea] group-hover:text-primary'
                   }`}
                 >
                   {isOpen ? (
@@ -115,7 +115,7 @@ export default function FAQAccordion({ data }: { data?: any }) {
 
                       <button 
                         onClick={(e) => toggleReadMore(index, e)}
-                        className="mt-4 text-[#185D46] font-semibold text-sm flex items-center group cursor-pointer"
+                        className="mt-4 text-primary font-semibold text-sm flex items-center group cursor-pointer"
                       >
                         {isReadMore ? "Read Less" : "Read More"}
                         <svg 

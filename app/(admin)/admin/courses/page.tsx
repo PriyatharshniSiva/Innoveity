@@ -8,9 +8,10 @@ export default function AdminCourses() {
   const [loading, setLoading] = useState(true);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isUploading, setIsUploading] = useState(false);
   
   const [formData, setFormData] = useState({
-    title: "", desc: "", image: "", level: "Beginner", duration: "4 Weeks", mode: "Online", instructor: ""
+    title: "", desc: "", image: "", level: "Beginner", duration: "4 Weeks", mode: "Online", instructor: "", videoUrl: ""
   });
 
   const [editingCourseId, setEditingCourseId] = useState<string | null>(null);
@@ -33,6 +34,33 @@ export default function AdminCourses() {
     fetchData();
   }, []);
 
+  const handleFileUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (!e.target.files || e.target.files.length === 0) return;
+    const file = e.target.files[0];
+    
+    const formData = new FormData();
+    formData.append('file', file);
+    
+    setIsUploading(true);
+    try {
+      const res = await fetch('/api/upload', {
+        method: 'POST',
+        body: formData,
+      });
+      if (res.ok) {
+        const data = await res.json();
+        setFormData(prev => ({ ...prev, videoUrl: data.url }));
+      } else {
+        alert("Upload failed.");
+      }
+    } catch (err) {
+      console.error(err);
+      alert("Upload failed.");
+    } finally {
+      setIsUploading(false);
+    }
+  };
+
   const handleAddSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
@@ -47,7 +75,7 @@ export default function AdminCourses() {
       if (res.ok) {
         setIsModalOpen(false);
         setEditingCourseId(null);
-        setFormData({ title: "", desc: "", image: "", level: "Beginner", duration: "4 Weeks", mode: "Online", instructor: "" });
+        setFormData({ title: "", desc: "", image: "", level: "Beginner", duration: "4 Weeks", mode: "Online", instructor: "", videoUrl: "" });
         await fetchData();
       }
     } catch (err) {
@@ -66,7 +94,8 @@ export default function AdminCourses() {
       level: course.level,
       duration: course.duration,
       mode: course.mode,
-      instructor: course.instructor
+      instructor: course.instructor,
+      videoUrl: course.videoUrl || ""
     });
     setIsModalOpen(true);
   };
@@ -85,7 +114,7 @@ export default function AdminCourses() {
 
   const openNewCourseModal = () => {
     setEditingCourseId(null);
-    setFormData({ title: "", desc: "", image: "", level: "Beginner", duration: "4 Weeks", mode: "Online", instructor: "" });
+    setFormData({ title: "", desc: "", image: "", level: "Beginner", duration: "4 Weeks", mode: "Online", instructor: "", videoUrl: "" });
     setIsModalOpen(true);
   };
 
@@ -98,7 +127,7 @@ export default function AdminCourses() {
         </div>
         <button 
           onClick={openNewCourseModal}
-          className="flex items-center gap-2 bg-[#185D46] hover:bg-[#124634] text-white px-6 py-3 rounded-xl font-medium transition-colors shadow-lg shadow-primary/20"
+          className="flex items-center gap-2 bg-primary hover:bg-[#124634] text-white px-6 py-3 rounded-xl font-medium transition-colors shadow-lg shadow-primary/20"
         >
           <Plus className="w-5 h-5" />
           Add New Course
@@ -112,7 +141,7 @@ export default function AdminCourses() {
             <input 
               type="text" 
               placeholder="Search courses..." 
-              className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-[#185D46] transition-all"
+              className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all"
             />
           </div>
         </div>
@@ -158,7 +187,7 @@ export default function AdminCourses() {
                     <td className="px-6 py-4 text-sm text-slate-600">{course.instructor}</td>
                     <td className="px-6 py-4 text-right">
                       <div className="flex items-center justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
-                        <button onClick={() => handleEdit(course)} className="p-2 rounded-lg text-slate-400 hover:text-[#185D46] hover:bg-primary/10 transition-colors">
+                        <button onClick={() => handleEdit(course)} className="p-2 rounded-lg text-slate-400 hover:text-primary hover:bg-primary/10 transition-colors">
                           <Edit2 className="w-4 h-4" />
                         </button>
                         <button onClick={() => handleDelete(course.id)} className="p-2 rounded-lg text-slate-400 hover:text-rose-600 hover:bg-rose-50 transition-colors">
@@ -178,7 +207,7 @@ export default function AdminCourses() {
           <p>Showing 1 to {courses.length} of {courses.length} entries</p>
           <div className="flex items-center gap-1">
             <button className="px-3 py-1.5 rounded-md hover:bg-slate-100 disabled:opacity-50" disabled>Prev</button>
-            <button className="px-3 py-1.5 rounded-md bg-[#185D46] text-white">1</button>
+            <button className="px-3 py-1.5 rounded-md bg-primary text-white">1</button>
             <button className="px-3 py-1.5 rounded-md hover:bg-slate-100 disabled:opacity-50" disabled>Next</button>
           </div>
         </div>
@@ -197,16 +226,16 @@ export default function AdminCourses() {
             <form onSubmit={handleAddSubmit} className="p-6 space-y-4">
               <div>
                 <label className="block text-sm font-semibold text-slate-700 mb-1">Title</label>
-                <input required value={formData.title} onChange={e => setFormData({...formData, title: e.target.value})} type="text" className="w-full border border-slate-200 rounded-xl px-4 py-2.5 outline-none focus:ring-2 focus:ring-primary/20 focus:border-[#185D46]" placeholder="Course Title" />
+                <input required value={formData.title} onChange={e => setFormData({...formData, title: e.target.value})} type="text" className="w-full border border-slate-200 rounded-xl px-4 py-2.5 outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary" placeholder="Course Title" />
               </div>
               <div>
                 <label className="block text-sm font-semibold text-slate-700 mb-1">Description</label>
-                <textarea required value={formData.desc} onChange={e => setFormData({...formData, desc: e.target.value})} className="w-full border border-slate-200 rounded-xl px-4 py-2.5 outline-none focus:ring-2 focus:ring-primary/20 focus:border-[#185D46]" rows={3} placeholder="Course description" />
+                <textarea required value={formData.desc} onChange={e => setFormData({...formData, desc: e.target.value})} className="w-full border border-slate-200 rounded-xl px-4 py-2.5 outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary" rows={3} placeholder="Course description" />
               </div>
               <div className="grid grid-cols-2 gap-4">
                 <div>
                   <label className="block text-sm font-semibold text-slate-700 mb-1">Level</label>
-                  <select required value={formData.level} onChange={e => setFormData({...formData, level: e.target.value})} className="w-full border border-slate-200 rounded-xl px-4 py-2.5 outline-none focus:ring-2 focus:ring-primary/20 focus:border-[#185D46] bg-white">
+                  <select required value={formData.level} onChange={e => setFormData({...formData, level: e.target.value})} className="w-full border border-slate-200 rounded-xl px-4 py-2.5 outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary bg-white">
                     <option value="Beginner">Beginner</option>
                     <option value="Intermediate">Intermediate</option>
                     <option value="Advanced">Advanced</option>
@@ -214,22 +243,40 @@ export default function AdminCourses() {
                 </div>
                 <div>
                   <label className="block text-sm font-semibold text-slate-700 mb-1">Duration</label>
-                  <input required value={formData.duration} onChange={e => setFormData({...formData, duration: e.target.value})} type="text" className="w-full border border-slate-200 rounded-xl px-4 py-2.5 outline-none focus:ring-2 focus:ring-primary/20 focus:border-[#185D46]" placeholder="e.g. 4 Weeks" />
+                  <input required value={formData.duration} onChange={e => setFormData({...formData, duration: e.target.value})} type="text" className="w-full border border-slate-200 rounded-xl px-4 py-2.5 outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary" placeholder="e.g. 4 Weeks" />
                 </div>
               </div>
               <div className="grid grid-cols-2 gap-4">
                 <div>
                   <label className="block text-sm font-semibold text-slate-700 mb-1">Mode</label>
-                  <input required value={formData.mode} onChange={e => setFormData({...formData, mode: e.target.value})} type="text" className="w-full border border-slate-200 rounded-xl px-4 py-2.5 outline-none focus:ring-2 focus:ring-primary/20 focus:border-[#185D46]" placeholder="e.g. Online" />
+                  <input required value={formData.mode} onChange={e => setFormData({...formData, mode: e.target.value})} type="text" className="w-full border border-slate-200 rounded-xl px-4 py-2.5 outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary" placeholder="e.g. Online" />
                 </div>
                 <div>
                   <label className="block text-sm font-semibold text-slate-700 mb-1">Instructor</label>
-                  <input required value={formData.instructor} onChange={e => setFormData({...formData, instructor: e.target.value})} type="text" className="w-full border border-slate-200 rounded-xl px-4 py-2.5 outline-none focus:ring-2 focus:ring-primary/20 focus:border-[#185D46]" placeholder="Instructor Name" />
+                  <input required value={formData.instructor} onChange={e => setFormData({...formData, instructor: e.target.value})} type="text" className="w-full border border-slate-200 rounded-xl px-4 py-2.5 outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary" placeholder="Instructor Name" />
+                </div>
+              </div>
+              <div>
+                <label className="block text-sm font-semibold text-slate-700 mb-1">Video URL (Optional)</label>
+                <div className="flex gap-2">
+                  <input value={formData.videoUrl} onChange={e => setFormData({...formData, videoUrl: e.target.value})} type="text" className="w-full border border-slate-200 rounded-xl px-4 py-2.5 outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary" placeholder="e.g. YouTube Video ID or URL" />
+                  <div className="relative flex-shrink-0">
+                    <input 
+                      type="file" 
+                      accept="video/*"
+                      onChange={handleFileUpload}
+                      className="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
+                      disabled={isUploading}
+                    />
+                    <button type="button" disabled={isUploading} className="h-full px-4 border border-slate-200 rounded-xl font-medium text-slate-600 bg-slate-50 hover:bg-slate-100 disabled:opacity-50 transition-colors">
+                      {isUploading ? "..." : "Upload"}
+                    </button>
+                  </div>
                 </div>
               </div>
               <div className="pt-4 flex justify-end gap-3">
                 <button type="button" onClick={() => setIsModalOpen(false)} className="px-6 py-2.5 rounded-xl font-medium text-slate-600 hover:bg-slate-100 transition-colors">Cancel</button>
-                <button type="submit" disabled={isSubmitting} className="px-6 py-2.5 rounded-xl font-medium bg-[#185D46] hover:bg-[#124634] text-white transition-colors disabled:opacity-50 flex items-center gap-2">
+                <button type="submit" disabled={isSubmitting} className="px-6 py-2.5 rounded-xl font-medium bg-primary hover:bg-[#124634] text-white transition-colors disabled:opacity-50 flex items-center gap-2">
                   {isSubmitting ? "Saving..." : "Save Course"}
                 </button>
               </div>

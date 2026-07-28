@@ -87,7 +87,7 @@ export default function KnowledgeHubTable() {
                         )}
                       </div>
                       <div>
-                        <h4 className="text-sm font-bold text-slate-800 line-clamp-1 group-hover:text-[#185D46] transition-colors">{article.title}</h4>
+                        <h4 className="text-sm font-bold text-slate-800 line-clamp-1 group-hover:text-primary transition-colors">{article.title}</h4>
                         <p className="text-xs text-slate-500 line-clamp-1 mt-0.5">{article.desc}</p>
                       </div>
                     </div>
@@ -118,7 +118,7 @@ export default function KnowledgeHubTable() {
                     <div className="flex items-center justify-end space-x-2 opacity-0 group-hover:opacity-100 transition-opacity">
                       <button 
                         onClick={() => { setEditingArticleId(article.id); setIsDrawerOpen(true); }}
-                        className="p-2 text-slate-400 hover:text-[#185D46] hover:bg-primary/10 rounded-lg transition-colors"
+                        className="p-2 text-slate-400 hover:text-primary hover:bg-primary/10 rounded-lg transition-colors"
                         title="Edit Article"
                       >
                         <Edit2 className="w-4 h-4" />

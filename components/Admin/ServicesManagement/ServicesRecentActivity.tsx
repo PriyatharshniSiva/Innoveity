@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 import { Clock, Plus, Edit2, Trash2, Image as ImageIcon, FolderKanban } from "lucide-react";
 
 const activities = [
-  { id: 1, title: "Added 'Cloud Infrastructure' Service", time: "1 hour ago", icon: Plus, color: "var(--color-primary)" },
+  { id: 1, title: "Added 'Cloud Infrastructure' Service", time: "1 hour ago", icon: Plus, color: "var(--color-brand-primary)" },
   { id: 2, title: "Updated 'Faculty Development'", time: "3 hours ago", icon: Edit2, color: "#0ea5e9" },
   { id: 3, title: "Changed Image for 'ESG Consulting'", time: "Yesterday", icon: ImageIcon, color: "var(--color-accent)" },
   { id: 4, title: "Deleted 'Legacy Systems'", time: "2 days ago", icon: Trash2, color: "#ef4444" },
@@ -18,10 +18,10 @@ export default function ServicesRecentActivity() {
     <div className="bg-white rounded-[24px] p-6 lg:p-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-slate-100">
       <div className="flex items-center justify-between mb-8">
         <h2 className="text-xl font-bold text-slate-800 flex items-center">
-          <Clock className="w-5 h-5 mr-2 text-[#185D46]" />
+          <Clock className="w-5 h-5 mr-2 text-primary" />
           Recent Activity
         </h2>
-        <Link href="/admin/activity" className="text-sm font-semibold text-[#185D46] hover:underline">View All</Link>
+        <Link href="/admin/activity" className="text-sm font-semibold text-primary hover:underline">View All</Link>
       </div>
 
       <div className="relative pl-4 space-y-6">

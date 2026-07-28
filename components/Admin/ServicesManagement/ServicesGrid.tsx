@@ -54,14 +54,14 @@ export default function ServicesGrid() {
               {service.image && service.image !== "/placeholder-service.jpg" ? (
                 <img src={service.image} alt={service.title} className="w-full h-full object-cover" />
               ) : (
-                <IconComponent className="w-7 h-7 text-[#185D46]" />
+                <IconComponent className="w-7 h-7 text-primary" />
               )}
             </div>
 
             {/* Content */}
             <div className="ml-5 flex-1 min-w-0">
               <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-3 mb-1">
-                <h3 className="text-base font-bold text-slate-800 dark:text-neutral-200 group-hover:text-[#185D46] dark:group-hover:text-white transition-colors truncate">
+                <h3 className="text-base font-bold text-slate-800 dark:text-neutral-200 group-hover:text-primary dark:group-hover:text-white transition-colors truncate">
                   {service.title}
                 </h3>
                 <div className="flex items-center gap-2 flex-shrink-0">
@@ -82,7 +82,7 @@ export default function ServicesGrid() {
             <div className="flex items-center space-x-2 ml-4">
               <button 
                 onClick={() => handleToggleFeatured(service.id)}
-                className={`p-2 rounded-lg transition-colors ${service.featured ? 'text-[#F59E0B] bg-accent/10 hover:bg-accent/20' : 'text-slate-400 hover:text-[#F59E0B] hover:bg-slate-100'}`}
+                className={`p-2 rounded-lg transition-colors ${service.featured ? 'text-accent bg-accent/10 hover:bg-accent/20' : 'text-slate-400 hover:text-accent hover:bg-slate-100'}`}
                 title={service.featured ? "Remove from Featured" : "Mark as Featured"}
               >
                 {service.featured ? <Star className="w-4 h-4 fill-current" /> : <StarOff className="w-4 h-4" />}
@@ -96,7 +96,7 @@ export default function ServicesGrid() {
               <button className="p-2 text-slate-400 hover:text-slate-700 hover:bg-slate-100 rounded-lg transition-colors" title="Duplicate">
                 <Copy className="w-4 h-4" />
               </button>
-              <button onClick={() => handleEdit(service.id)} className="p-2 text-slate-400 hover:text-[#185D46] hover:bg-primary/10 rounded-lg transition-colors" title="Edit">
+              <button onClick={() => handleEdit(service.id)} className="p-2 text-slate-400 hover:text-primary hover:bg-primary/10 rounded-lg transition-colors" title="Edit">
                 <Edit2 className="w-4 h-4" />
               </button>
               <button onClick={() => handleDelete(service.id)} className="p-2 text-slate-400 hover:text-red-600 hover:bg-red-50 rounded-lg transition-colors" title="Delete">

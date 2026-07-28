@@ -52,7 +52,7 @@ export default function AboutClient({ initialData, testimonials }: { initialData
   };
 
   return (
-    <div className="bg-white min-h-screen text-[#0F172A] selection:bg-[#185D46] selection:text-white">
+    <div className="bg-white min-h-screen text-secondary selection:bg-primary selection:text-white">
       
       {/* 1. Hero / About Split */}
       <section className="relative pt-12 pb-24 overflow-hidden">
@@ -70,8 +70,8 @@ export default function AboutClient({ initialData, testimonials }: { initialData
               transition={{ duration: 0.8, ease: "easeOut" }}
               className="space-y-6"
             >
-              <h1 className="text-5xl sm:text-6xl font-black text-[#0F172A] tracking-tight leading-[1.1]">
-                {overview?.titleLine1 || "About"} <span className="text-[#185D46]">{overview?.titleHighlight || "INNOVEITY"}</span>
+              <h1 className="text-5xl sm:text-6xl font-black text-secondary tracking-tight leading-[1.1]">
+                {overview?.titleLine1 || "About"} <span className="text-primary">{overview?.titleHighlight || "INNOVEITY"}</span>
               </h1>
               
               <div className="space-y-6 text-lg text-gray-600 font-medium leading-relaxed">
@@ -132,7 +132,7 @@ export default function AboutClient({ initialData, testimonials }: { initialData
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: false, margin: "-50px" }}
                 transition={{ duration: 0.6, delay: idx * 0.15, type: "spring", stiffness: 100 }}
-                className="bg-[#185D46] rounded-[20px] p-8 lg:p-10 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_50px_rgb(22,163,74,0.2)] border border-[#185D46] transition-all duration-500 hover:-translate-y-2 flex flex-col items-start text-left h-full group"
+                className="bg-primary rounded-[20px] p-8 lg:p-10 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_50px_rgb(22,163,74,0.2)] border border-primary transition-all duration-500 hover:-translate-y-2 flex flex-col items-start text-left h-full group"
               >
                 <div className="w-14 h-14 rounded-2xl bg-white/10 text-white flex items-center justify-center mb-8 group-hover:scale-110 group-hover:rotate-3 transition-transform duration-500">
                   {getIconSvg(card.iconName, "w-8 h-8")}
@@ -159,7 +159,7 @@ export default function AboutClient({ initialData, testimonials }: { initialData
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: false }}
-              className="text-4xl sm:text-5xl font-extrabold text-[#0F172A] tracking-tight"
+              className="text-4xl sm:text-5xl font-extrabold text-secondary tracking-tight"
             >
               <span style={{ color: "var(--color-brand-accent, #F59E0B)" }}>Our</span> Journey
             </motion.h2>
@@ -180,7 +180,7 @@ export default function AboutClient({ initialData, testimonials }: { initialData
             
             {/* Animated Central Line */}
             <motion.div 
-              className="absolute left-4 md:left-1/2 top-0 w-1 bg-[#185D46] -translate-x-1/2 rounded-full hidden sm:block origin-top shadow-[0_0_15px_rgb(22,163,74,0.5)]"
+              className="absolute left-4 md:left-1/2 top-0 w-1 bg-primary -translate-x-1/2 rounded-full hidden sm:block origin-top shadow-[0_0_15px_rgb(22,163,74,0.5)]"
               style={{ height: lineHeight }}
             />
 
@@ -196,7 +196,7 @@ export default function AboutClient({ initialData, testimonials }: { initialData
                       whileInView={{ scale: 1 }}
                       viewport={{ once: false, margin: "-100px" }}
                       transition={{ type: "spring", stiffness: 100, delay: 0.2 }}
-                      className="absolute left-4 md:left-1/2 w-8 h-8 rounded-full bg-white border-4 border-[#185D46] -translate-x-1/2 z-20 shadow-[0_0_15px_rgb(22,163,74,0.3)] hidden sm:block"
+                      className="absolute left-4 md:left-1/2 w-8 h-8 rounded-full bg-white border-4 border-primary -translate-x-1/2 z-20 shadow-[0_0_15px_rgb(22,163,74,0.3)] hidden sm:block"
                     />
 
                     <div className="hidden sm:block sm:w-1/2" />
@@ -209,15 +209,15 @@ export default function AboutClient({ initialData, testimonials }: { initialData
                       className={`w-full sm:w-1/2 pl-12 pr-4 sm:px-12 ${isEven ? 'text-left sm:text-left' : 'text-left sm:text-right'}`}
                     >
                       <div className={`bg-white rounded-[20px] p-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_50px_rgb(22,163,74,0.12)] border border-slate-100/50 transition-all duration-500 hover:-translate-y-2 relative group flex flex-col ${isEven ? 'items-start sm:items-start' : 'items-start sm:items-end'}`}>
-                        <div className={`absolute top-0 w-full h-1 bg-[#185D46] scale-x-0 group-hover:scale-x-100 transition-transform duration-500 ${isEven ? 'left-0 origin-left' : 'right-0 origin-right'} rounded-t-[20px]`} />
+                        <div className={`absolute top-0 w-full h-1 bg-primary scale-x-0 group-hover:scale-x-100 transition-transform duration-500 ${isEven ? 'left-0 origin-left' : 'right-0 origin-right'} rounded-t-[20px]`} />
 
                         <div className="flex items-center space-x-4 mb-6">
-                          <div className="w-14 h-14 rounded-[16px] bg-[#185D4620] text-[#185D46] flex items-center justify-center group-hover:scale-110 transition-transform duration-500">
+                          <div className="w-14 h-14 rounded-[16px] bg-[#185D4620] text-primary flex items-center justify-center group-hover:scale-110 transition-transform duration-500">
                             {getIconSvg(step.iconName, "w-8 h-8")}
                           </div>
-                          <h4 className="text-3xl font-black text-[#185D46]">{step.year}</h4>
+                          <h4 className="text-3xl font-black text-primary">{step.year}</h4>
                         </div>
-                        <h3 className="text-xl font-bold text-[#0F172A] mb-3">{step.title}</h3>
+                        <h3 className="text-xl font-bold text-secondary mb-3">{step.title}</h3>
                         <p className="text-gray-600 font-medium leading-relaxed">{step.description}</p>
                       </div>
                     </motion.div>
@@ -272,13 +272,13 @@ export default function AboutClient({ initialData, testimonials }: { initialData
                 transition={{ duration: 0.6, delay: idx * 0.15, type: "spring", stiffness: 100 }}
                 className="bg-white rounded-[20px] p-8 text-center shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-slate-100 hover:shadow-[0_20px_50px_rgb(22,163,74,0.12)] transition-all duration-300 hover:-translate-y-2 flex flex-col items-center justify-center group relative overflow-hidden h-[260px]"
               >
-                <div className="absolute top-0 left-0 w-full h-1 bg-[#185D46] scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left rounded-t-[20px]" />
+                <div className="absolute top-0 left-0 w-full h-1 bg-primary scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left rounded-t-[20px]" />
                 
                 <div className="flex flex-col items-center h-full w-full justify-center transform transition-transform duration-500 group-hover:-translate-y-6">
-                  <div className="text-[#185D46] mb-6 group-hover:scale-110 transition-transform duration-500">
+                  <div className="text-primary mb-6 group-hover:scale-110 transition-transform duration-500">
                     {getIconSvg(item.iconName, "w-10 h-10")}
                   </div>
-                  <h3 className="text-xl font-bold text-[#185D46]">
+                  <h3 className="text-xl font-bold text-primary">
                     {item.title}
                   </h3>
                 </div>

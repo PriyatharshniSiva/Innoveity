@@ -101,7 +101,7 @@ export default function ServiceSideDrawer() {
                 <label className="block text-sm font-semibold text-slate-700 mb-2">Service Title</label>
                 <input 
                   type="text" name="title" value={formData.title || ""} onChange={handleChange}
-                  className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-[#185D46] transition-all bg-slate-50 focus:bg-white"
+                  className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all bg-slate-50 focus:bg-white"
                 />
               </div>
 
@@ -109,7 +109,7 @@ export default function ServiceSideDrawer() {
                 <label className="block text-sm font-semibold text-slate-700 mb-2">Short Description</label>
                 <textarea 
                   name="description" value={formData.description || ""} onChange={handleChange} rows={3}
-                  className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-[#185D46] transition-all bg-slate-50 focus:bg-white resize-none"
+                  className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all bg-slate-50 focus:bg-white resize-none"
                 />
               </div>
 
@@ -118,7 +118,7 @@ export default function ServiceSideDrawer() {
                   <label className="block text-sm font-semibold text-slate-700 mb-2">Category</label>
                   <select 
                     name="categoryId" value={formData.categoryId || ""} onChange={handleChange}
-                    className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-[#185D46] transition-all bg-slate-50 focus:bg-white"
+                    className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all bg-slate-50 focus:bg-white"
                   >
                     {categories.map(c => (
                       <option key={c.id} value={c.id}>{c.name}</option>
@@ -130,7 +130,7 @@ export default function ServiceSideDrawer() {
                   <input 
                     type="text" name="iconName" value={formData.iconName || ""} onChange={handleChange}
                     placeholder="e.g. Shield"
-                    className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-[#185D46] transition-all bg-slate-50 focus:bg-white"
+                    className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all bg-slate-50 focus:bg-white"
                   />
                 </div>
               </div>
@@ -156,14 +156,14 @@ export default function ServiceSideDrawer() {
                   <label className="block text-sm font-semibold text-slate-700 mb-2">Button Text</label>
                   <input 
                     type="text" name="buttonText" value={formData.buttonText || ""} onChange={handleChange}
-                    className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-[#185D46] transition-all bg-slate-50 focus:bg-white"
+                    className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all bg-slate-50 focus:bg-white"
                   />
                 </div>
                 <div>
                   <label className="block text-sm font-semibold text-slate-700 mb-2">Button Link</label>
                   <input 
                     type="text" name="buttonLink" value={formData.buttonLink || ""} onChange={handleChange}
-                    className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-[#185D46] transition-all bg-slate-50 focus:bg-white"
+                    className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all bg-slate-50 focus:bg-white"
                   />
                 </div>
               </div>
@@ -175,7 +175,7 @@ export default function ServiceSideDrawer() {
                 </div>
                 <label className="relative inline-flex items-center cursor-pointer">
                   <input type="checkbox" name="featured" checked={formData.featured || false} onChange={handleChange} className="sr-only peer" />
-                  <div className="w-11 h-6 bg-slate-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-slate-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-[#F59E0B]"></div>
+                  <div className="w-11 h-6 bg-slate-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-slate-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-accent"></div>
                 </label>
               </div>
 
@@ -198,7 +198,7 @@ export default function ServiceSideDrawer() {
             <div className="p-6 border-t border-slate-100 bg-white">
               <button 
                 onClick={handleSave}
-                className="w-full py-3.5 bg-[#185D46] hover:bg-[#154d3a] text-white font-bold rounded-xl shadow-[0_4px_14px_0_rgba(24,93,70,0.39)] hover:shadow-[0_6px_20px_rgba(24,93,70,0.23)] transition-all flex items-center justify-center"
+                className="w-full py-3.5 bg-primary hover:bg-primary/90 text-white font-bold rounded-xl shadow-[0_4px_14px_0_rgba(24,93,70,0.39)] hover:shadow-[0_6px_20px_rgba(24,93,70,0.23)] transition-all flex items-center justify-center"
               >
                 <Save className="w-5 h-5 mr-2" />
                 Save Service

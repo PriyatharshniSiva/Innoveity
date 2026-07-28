@@ -39,11 +39,11 @@ export default function EventsClient({ courses }: { courses: any[] }) {
   };
 
   return (
-    <div className="min-h-screen bg-slate-50 text-[#0F172A] selection:bg-[#185D46] selection:text-white pb-24">
+    <div className="min-h-screen bg-slate-50 text-secondary selection:bg-primary selection:text-white pb-24">
       {/* Header */}
       <section className="relative pt-12 pb-24 px-4 sm:px-6 lg:px-8 overflow-hidden bg-white border-b border-slate-100">
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#185D4620] rounded-full blur-[120px] opacity-70 -z-10 translate-x-1/3 -translate-y-1/3 animate-pulse" style={{ animationDuration: '8s' }} />
-        <div className="absolute top-[20%] left-[10%] w-[400px] h-[400px] bg-[#185D46] rounded-full blur-[150px] opacity-10 -z-10 animate-pulse" style={{ animationDuration: '10s' }} />
+        <div className="absolute top-[20%] left-[10%] w-[400px] h-[400px] bg-primary rounded-full blur-[150px] opacity-10 -z-10 animate-pulse" style={{ animationDuration: '10s' }} />
         
         <div className="text-center space-y-6 max-w-5xl mx-auto relative z-10">
 
@@ -51,9 +51,9 @@ export default function EventsClient({ courses }: { courses: any[] }) {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-5xl sm:text-6xl md:text-7xl font-black text-[#0F172A] tracking-tight"
+            className="text-5xl sm:text-6xl md:text-7xl font-black text-secondary tracking-tight"
           >
-            Our <span className="text-[#185D46]">Courses</span>
+            Our <span className="text-primary">Courses</span>
           </motion.h1>
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
@@ -72,13 +72,13 @@ export default function EventsClient({ courses }: { courses: any[] }) {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.3 }}
-          className="bg-[#0F172A] rounded-[32px] p-8 md:p-12 flex flex-col md:flex-row md:items-center md:justify-between gap-8 shadow-[0_30px_60px_rgba(22,163,74,0.15)] border border-primary/20 hover:shadow-[0_40px_70px_rgba(22,163,74,0.25)] hover:border-primary/40 transition-all duration-500 overflow-hidden relative group"
+          className="bg-secondary rounded-[32px] p-8 md:p-12 flex flex-col md:flex-row md:items-center md:justify-between gap-8 shadow-[0_30px_60px_rgba(22,163,74,0.15)] border border-primary/20 hover:shadow-[0_40px_70px_rgba(22,163,74,0.25)] hover:border-primary/40 transition-all duration-500 overflow-hidden relative group"
         >
           {/* Background Glow inside banner */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-[#185D46] rounded-full blur-[150px] opacity-10 group-hover:opacity-30 transition-opacity duration-700 pointer-events-none" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-primary rounded-full blur-[150px] opacity-10 group-hover:opacity-30 transition-opacity duration-700 pointer-events-none" />
 
           <div className="space-y-4 max-w-3xl relative z-10">
-            <span className="text-[#F59E0B] text-xs font-bold uppercase tracking-widest bg-accent/10 px-3 py-1.5 rounded border border-accent/20">
+            <span className="text-accent text-xs font-bold uppercase tracking-widest bg-accent/10 px-3 py-1.5 rounded border border-accent/20">
               AICTE Affiliation
             </span>
             <h2 className="text-3xl sm:text-4xl font-extrabold !text-white tracking-tight">AICTE Affiliated Programs</h2>
@@ -87,7 +87,7 @@ export default function EventsClient({ courses }: { courses: any[] }) {
             </p>
           </div>
           <Link href="/contact" className="flex-shrink-0 relative z-10">
-            <button className="bg-[#185D46] text-white px-8 py-4 rounded-xl font-bold hover:bg-[#185D46] hover:shadow-[0_0_20px_rgba(22,163,74,0.4)] hover:-translate-y-1 transition-all duration-300">
+            <button className="bg-primary text-white px-8 py-4 rounded-xl font-bold hover:bg-primary hover:shadow-[0_0_20px_rgba(22,163,74,0.4)] hover:-translate-y-1 transition-all duration-300">
               Inquire About Enrollment
             </button>
           </Link>
@@ -101,8 +101,8 @@ export default function EventsClient({ courses }: { courses: any[] }) {
             onClick={() => setActiveCategory("All")}
             className={`flex items-center px-6 py-3.5 rounded-2xl text-base font-bold transition-all duration-300 cursor-pointer ${
               activeCategory === "All" 
-                ? "bg-[#185D46] text-white shadow-[0_10px_25px_-5px_rgba(16,185,129,0.3)]" 
-                : "bg-transparent text-primary/80 hover:text-[#185D46] hover:bg-slate-50/50"
+                ? "bg-primary text-white shadow-[0_10px_25px_-5px_rgba(16,185,129,0.3)]" 
+                : "bg-transparent text-primary/80 hover:text-primary hover:bg-slate-50/50"
             }`}
           >
             {/* Book Icon */}
@@ -116,8 +116,8 @@ export default function EventsClient({ courses }: { courses: any[] }) {
             onClick={() => setActiveCategory("ME")}
             className={`flex items-center px-6 py-3.5 rounded-2xl text-base font-bold transition-all duration-300 cursor-pointer ${
               activeCategory === "ME" 
-                ? "bg-[#185D46] text-white shadow-[0_10px_25px_-5px_rgba(16,185,129,0.3)]" 
-                : "bg-transparent text-primary/80 hover:text-[#185D46] hover:bg-slate-100/50"
+                ? "bg-primary text-white shadow-[0_10px_25px_-5px_rgba(16,185,129,0.3)]" 
+                : "bg-transparent text-primary/80 hover:text-primary hover:bg-slate-100/50"
             }`}
           >
             {/* Graduation Cap Icon */}
@@ -132,8 +132,8 @@ export default function EventsClient({ courses }: { courses: any[] }) {
             onClick={() => setActiveCategory("Other")}
             className={`flex items-center px-6 py-3.5 rounded-2xl text-base font-bold transition-all duration-300 cursor-pointer ${
               activeCategory === "Other" 
-                ? "bg-[#185D46] text-white shadow-[0_10px_25px_-5px_rgba(16,185,129,0.3)]" 
-                : "bg-transparent text-primary/80 hover:text-[#185D46] hover:bg-slate-100/50"
+                ? "bg-primary text-white shadow-[0_10px_25px_-5px_rgba(16,185,129,0.3)]" 
+                : "bg-transparent text-primary/80 hover:text-primary hover:bg-slate-100/50"
             }`}
           >
             {/* Medal/Ribbon Icon */}
@@ -173,8 +173,8 @@ export default function EventsClient({ courses }: { courses: any[] }) {
                     Certified
                   </span>
                 </div>
-                <div className="flex items-center text-[#F59E0B] font-bold text-[14px]">
-                  <svg className="w-4 h-4 mr-1.5 text-[#F59E0B]" fill="currentColor" viewBox="0 0 20 20">
+                <div className="flex items-center text-accent font-bold text-[14px]">
+                  <svg className="w-4 h-4 mr-1.5 text-accent" fill="currentColor" viewBox="0 0 20 20">
                     <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                   </svg>
                   {course.rating}
@@ -182,7 +182,7 @@ export default function EventsClient({ courses }: { courses: any[] }) {
               </div>
 
               {/* Title & Description */}
-              <h3 className="text-[22px] font-bold text-[#0F172A] leading-snug mb-4 line-clamp-2 pr-2 group-hover:text-[#047857] transition-colors duration-300">
+              <h3 className="text-[22px] font-bold text-secondary leading-snug mb-4 line-clamp-2 pr-2 group-hover:text-[#047857] transition-colors duration-300">
                 {course.title}
               </h3>
               <p className="text-[#64748B] text-[15px] leading-relaxed mb-8 flex-1 line-clamp-3 pr-2">
@@ -309,7 +309,7 @@ export default function EventsClient({ courses }: { courses: any[] }) {
                   {/* Rating */}
                   <div className="text-center space-y-2 mb-8">
                     <div className="flex items-center justify-center space-x-2">
-                      <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-[#F59E0B]" viewBox="0 0 20 20" fill="currentColor">
+                      <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-accent" viewBox="0 0 20 20" fill="currentColor">
                         <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                       </svg>
                       <span className="font-bold text-lg text-[#047857]">{selectedCourse.rating} Rating</span>

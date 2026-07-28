@@ -18,8 +18,9 @@ export interface KnowledgeArticle {
   seoTitle: string;
   seoDescription: string;
   slug: string;
-  status: "Draft" | "Published";
+  status: "Published" | "Draft";
   views: number;
+  videoUrl?: string;
 }
 
 interface KnowledgeHubContextType {

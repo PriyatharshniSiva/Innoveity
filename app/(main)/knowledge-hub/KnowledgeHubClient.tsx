@@ -36,13 +36,13 @@ export default function KnowledgeHubClient({ articles }: { articles: any[] }) {
   };
 
   return (
-    <div className="min-h-screen bg-slate-50/50 text-[#0F172A] selection:bg-[#185D46] selection:text-white pb-24">
+    <div className="min-h-screen bg-slate-50/50 text-secondary selection:bg-primary selection:text-white pb-24">
       
       {/* 1. Premium Hero Section */}
       <section className="relative pt-12 pb-20 px-4 sm:px-6 lg:px-8 overflow-hidden bg-white">
         {/* Soft Glows */}
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#185D4620] rounded-full blur-[120px] opacity-70 -z-10 translate-x-1/3 -translate-y-1/3 animate-pulse" style={{ animationDuration: '8s' }} />
-        <div className="absolute top-[20%] left-[10%] w-[400px] h-[400px] bg-[#185D46] rounded-full blur-[150px] opacity-10 -z-10 animate-pulse" style={{ animationDuration: '10s' }} />
+        <div className="absolute top-[20%] left-[10%] w-[400px] h-[400px] bg-primary rounded-full blur-[150px] opacity-10 -z-10 animate-pulse" style={{ animationDuration: '10s' }} />
         
         <div className="max-w-4xl mx-auto text-center relative z-10 space-y-6">
 
@@ -51,9 +51,9 @@ export default function KnowledgeHubClient({ articles }: { articles: any[] }) {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-5xl sm:text-6xl md:text-7xl font-black text-[#0F172A] tracking-tight"
+            className="text-5xl sm:text-6xl md:text-7xl font-black text-secondary tracking-tight"
           >
-            Knowledge <span className="text-[#185D46]">Hub</span>
+            Knowledge <span className="text-primary">Hub</span>
           </motion.h1>
           
           <motion.p 
@@ -77,7 +77,7 @@ export default function KnowledgeHubClient({ articles }: { articles: any[] }) {
         >
           {/* Search Input */}
           <div className="relative w-full flex-1 max-w-md flex items-center group">
-            <svg xmlns="http://www.w3.org/2000/svg" className="absolute left-5 w-5 h-5 text-gray-400 group-focus-within:text-[#185D46] transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+            <svg xmlns="http://www.w3.org/2000/svg" className="absolute left-5 w-5 h-5 text-gray-400 group-focus-within:text-primary transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
             </svg>
             <input 
@@ -85,7 +85,7 @@ export default function KnowledgeHubClient({ articles }: { articles: any[] }) {
               placeholder="Search articles, topics..." 
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full pl-14 pr-6 py-4 bg-slate-50 border border-slate-200 rounded-[16px] text-[#0F172A] placeholder-gray-400 focus:outline-none focus:border-[#185D46] focus:ring-4 focus:ring-[#185D4620] text-base font-semibold transition-all shadow-inner"
+              className="w-full pl-14 pr-6 py-4 bg-slate-50 border border-slate-200 rounded-[16px] text-secondary placeholder-gray-400 focus:outline-none focus:border-primary focus:ring-4 focus:ring-[#185D4620] text-base font-semibold transition-all shadow-inner"
             />
           </div>
 
@@ -97,8 +97,8 @@ export default function KnowledgeHubClient({ articles }: { articles: any[] }) {
                 onClick={() => setSelectedCategory(cat)}
                 className={`px-5 py-2.5 rounded-[12px] text-sm font-bold whitespace-nowrap transition-all duration-300 ${
                   selectedCategory === cat
-                    ? "bg-[#185D46] text-white shadow-[0_8px_20px_rgb(22,163,74,0.3)] -translate-y-0.5"
-                    : "bg-transparent text-gray-500 hover:text-[#0F172A] hover:bg-slate-100"
+                    ? "bg-primary text-white shadow-[0_8px_20px_rgb(22,163,74,0.3)] -translate-y-0.5"
+                    : "bg-transparent text-gray-500 hover:text-secondary hover:bg-slate-100"
                 }`}
               >
                 {cat}
@@ -142,13 +142,13 @@ export default function KnowledgeHubClient({ articles }: { articles: any[] }) {
                       )}
                       <div className="absolute inset-0 bg-primary/10 group-hover:bg-transparent transition-colors duration-500" />
                       {/* Animated Reading Progress Bar */}
-                      <div className="absolute bottom-0 left-0 h-1 bg-[#185D46] w-0 group-hover:w-full transition-all duration-1000 ease-out" />
+                      <div className="absolute bottom-0 left-0 h-1 bg-primary w-0 group-hover:w-full transition-all duration-1000 ease-out" />
                     </Link>
 
                     <div className="p-6 sm:p-8 flex flex-col flex-1">
                       
                       {/* Date and Author */}
-                      <div className="flex justify-between items-center mb-5 text-[14px] sm:text-[15px] font-medium text-[#185D46]">
+                      <div className="flex justify-between items-center mb-5 text-[14px] sm:text-[15px] font-medium text-primary">
                         {course.nextBatch && (
                           <div className="flex items-center space-x-2">
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-[18px] w-[18px]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -167,22 +167,22 @@ export default function KnowledgeHubClient({ articles }: { articles: any[] }) {
                         )}
                       </div>
 
-                      <h3 className="text-xl sm:text-2xl font-extrabold text-[#0F172A] leading-snug mb-4 group-hover:text-[#185D46] transition-colors line-clamp-2">
+                      <h3 className="text-xl sm:text-2xl font-extrabold text-secondary leading-snug mb-4 group-hover:text-primary transition-colors line-clamp-2">
                         {course.title}
                       </h3>
                       
-                      <p className="text-[#334155] text-[16px] sm:text-[17px] leading-relaxed mb-8 flex-1 line-clamp-3">
+                      <p className="text-foreground text-[16px] sm:text-[17px] leading-relaxed mb-8 flex-1 line-clamp-3">
                         {course.desc}
                       </p>
                       
                       {/* Tag and Read More */}
                       <div className="flex justify-between items-center mt-auto pt-4 border-t border-slate-100">
                         {course.level && (
-                          <span className="bg-[#e6f4ea] text-[#185D46] font-bold text-xs sm:text-sm tracking-wide uppercase px-3 py-1.5 rounded-[6px]">
+                          <span className="bg-[#e6f4ea] text-primary font-bold text-xs sm:text-sm tracking-wide uppercase px-3 py-1.5 rounded-[6px]">
                             {course.level}
                           </span>
                         )}
-                        <Link href="/events" className="font-bold text-[#185D46] text-[15px] sm:text-[17px] flex items-center group-hover:translate-x-1 transition-transform cursor-pointer">
+                        <Link href="/events" className="font-bold text-primary text-[15px] sm:text-[17px] flex items-center group-hover:translate-x-1 transition-transform cursor-pointer">
                           Read More 
                           <svg xmlns="http://www.w3.org/2000/svg" className="h-[18px] w-[18px] ml-1.5 stroke-[2.5]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
@@ -207,7 +207,7 @@ export default function KnowledgeHubClient({ articles }: { articles: any[] }) {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                 </svg>
               </div>
-              <h3 className="text-2xl font-bold text-[#0F172A] mb-2">No articles found</h3>
+              <h3 className="text-2xl font-bold text-secondary mb-2">No articles found</h3>
               <p className="text-gray-500 font-medium">Try adjusting your search or category filters.</p>
             </motion.div>
           )}

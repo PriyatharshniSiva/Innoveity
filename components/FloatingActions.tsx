@@ -16,7 +16,7 @@ export default function FloatingActions() {
       {/* Floating Phone Call Icon */}
       <a
         href="tel:+918807708818"
-        className="w-12 h-12 sm:w-14 sm:h-14 bg-[#185D46] text-white rounded-full shadow-lg hover:bg-[#124836] transition-all duration-200 flex items-center justify-center group hover:scale-110 cursor-pointer"
+        className="w-12 h-12 sm:w-14 sm:h-14 bg-primary text-white rounded-full shadow-lg hover:bg-primary/90 transition-all duration-200 flex items-center justify-center group hover:scale-110 cursor-pointer"
         title="Call Us"
       >
         <svg

@@ -276,7 +276,7 @@ const initialState: HomeManagementContextType = {
   ourServices: {
     title: "Our Services",
     subtitle: "Comprehensive solutions bridging the gap between education and industry",
-    backgroundColor: "var(--color-primary)",
+    backgroundColor: "var(--color-brand-primary)",
     list: [
       {
         id: "1",
@@ -336,9 +336,9 @@ const initialState: HomeManagementContextType = {
         badge: "Institutions",
         title: "Comprehensive Training Solutions for Engineering Colleges & Universities",
         text: "Our AICTE-recognized faculty development programs and student placement training modules have helped engineering colleges achieve 60-85% improvement in campus placement statistics. We specialize in aptitude training, technical certifications, soft skills development, mock interview preparation, and industry connect programs aligned with NEP 2020 guidelines. Partner with INNOVEITY to enhance your institution's reputation and student success rates through evidence-based training methodologies.",
-        accent: "var(--color-primary)",
+        accent: "var(--color-brand-primary)",
         badgeBg: "bg-primary/5",
-        badgeText: "text-[#185D46]",
+        badgeText: "text-primary",
         iconPath: "M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253",
       },
       {
@@ -356,9 +356,9 @@ const initialState: HomeManagementContextType = {
         badge: "Sustainability",
         title: "ESG Implementation & Sustainability Consulting",
         text: "Navigate complex Environmental, Social, and Governance (ESG) requirements with INNOVEITY's comprehensive consulting services. We provide carbon footprint analysis, sustainability reporting, CSR-compliant training programs for MCA documentation, and complete ESG framework implementation across Tamil Nadu. Our CSR training initiatives qualify for company CSR spending under Schedule VII, helping you meet compliance requirements while creating meaningful social impact.",
-        accent: "var(--color-primary)",
+        accent: "var(--color-brand-primary)",
         badgeBg: "bg-primary/5",
-        badgeText: "text-[#185D46]",
+        badgeText: "text-primary",
         iconPath: "M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064",
       }
     ],
@@ -382,7 +382,7 @@ const initialState: HomeManagementContextType = {
         title: "Our Service Coverage Across Tamil Nadu",
         text: "INNOVEITY maintains a strong presence across major Tamil Nadu cities including Chennai, Coimbatore, Madurai, Trichy, Salem, Tiruchirappalli, and surrounding regions. Our regional expertise combined with local market knowledge enables us to deliver culturally relevant, context-appropriate training solutions that resonate with Tamil Nadu's unique educational and corporate landscape. Whether you're an engineering college in Chennai seeking to improve placement statistics, a manufacturing company in Coimbatore requiring safety training, or a corporate entity in Madurai looking for leadership development programs, INNOVEITY has the expertise and infrastructure to support your growth.",
         icon: "M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z M15 11a3 3 0 11-6 0 3 3 0 016 0z",
-        color: "var(--color-primary)",
+        color: "var(--color-brand-primary)",
         bg: "bg-primary/5",
       },
       {
@@ -398,12 +398,12 @@ const initialState: HomeManagementContextType = {
         title: "Measurable Results & ROI Tracking",
         text: "Unlike generic training providers, INNOVEITY emphasizes measurable outcomes and transparent ROI tracking. We employ Kirkpatrick's Four-Level Training Evaluation Model to assess Reaction (participant feedback), Learning (knowledge gained), Behavior (on-job application), and Results (business impact). Our clients receive comprehensive dashboards showing pre and post-training assessments, skill gap analysis, productivity improvements, and bottom-line business impact. This data-driven approach ensures your training investment delivers tangible returns and demonstrates clear value to stakeholders.",
         icon: "M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z",
-        color: "var(--color-primary)",
+        color: "var(--color-brand-primary)",
         bg: "bg-primary/5",
       }
     ],
     contactTitle: "Contact INNOVEITY Today",
-    contactDescription: "Ready to transform your institution or organization? Contact INNOVEITY at <span className=\"text-[#F59E0B] font-black\">+91 880 770 8818</span> or email <span className=\"text-[#F59E0B] font-black\">admin@innoveity.com</span> for a free consultation. Our team of experts will assess your specific needs and design a customized training solution that delivers measurable results. Join 50+ leading Tamil Nadu institutions and 100+ corporate clients who trust INNOVEITY for their training and development requirements. Visit our office at No:11 Ritherdon Avenue, Ritherdon Road Vepery, Chennai 600007, or schedule a virtual consultation to discuss how we can help you achieve your educational and business objectives.",
+    contactDescription: "Ready to transform your institution or organization? Contact INNOVEITY at <span className=\"text-accent font-black\">+91 880 770 8818</span> or email <span className=\"text-accent font-black\">admin@innoveity.com</span> for a free consultation. Our team of experts will assess your specific needs and design a customized training solution that delivers measurable results. Join 50+ leading Tamil Nadu institutions and 100+ corporate clients who trust INNOVEITY for their training and development requirements. Visit our office at No:11 Ritherdon Avenue, Ritherdon Road Vepery, Chennai 600007, or schedule a virtual consultation to discuss how we can help you achieve your educational and business objectives.",
   },
   setEdukaOverview: () => {},
   activeSection: "hero",

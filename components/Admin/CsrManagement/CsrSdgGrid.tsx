@@ -18,7 +18,7 @@ export default function CsrSdgGrid() {
     <div className="bg-white rounded-2xl border border-slate-100 shadow-sm overflow-hidden mb-8">
       <div className="p-4 border-b border-slate-100 flex items-center justify-between bg-slate-50/50">
         <h3 className="font-bold text-slate-800">UN SDGs Alignment</h3>
-        <button onClick={() => openDrawer("sdg")} className="text-sm font-bold text-[#F59E0B] hover:text-[#d97706] flex items-center">
+        <button onClick={() => openDrawer("sdg")} className="text-sm font-bold text-accent hover:text-[#d97706] flex items-center">
           <Plus className="w-4 h-4 mr-1" /> Add New
         </button>
       </div>
@@ -49,7 +49,7 @@ export default function CsrSdgGrid() {
             </div>
 
             <div className="flex items-center space-x-1 ml-4">
-              <button onClick={() => openDrawer("sdg", sdg.id)} className="p-2 text-slate-400 hover:text-[#185D46] hover:bg-primary/10 rounded-lg transition-colors">
+              <button onClick={() => openDrawer("sdg", sdg.id)} className="p-2 text-slate-400 hover:text-primary hover:bg-primary/10 rounded-lg transition-colors">
                 <Edit2 className="w-4 h-4" />
               </button>
               <button onClick={() => handleDelete(sdg.id)} className="p-2 text-slate-400 hover:text-red-600 hover:bg-red-50 rounded-lg transition-colors">

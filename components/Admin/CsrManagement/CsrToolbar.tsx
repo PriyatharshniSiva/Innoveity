@@ -13,7 +13,7 @@ export default function CsrToolbar() {
         onClick={() => openDrawer("initiative")}
         className="flex items-center gap-2 bg-white hover:bg-slate-50 text-slate-700 px-4 py-2.5 rounded-xl text-sm font-bold shadow-[0_2px_10px_rgba(0,0,0,0.02)] border border-slate-200 transition-all"
       >
-        <Plus className="w-4 h-4 text-[#185D46]" />
+        <Plus className="w-4 h-4 text-primary" />
         Add Initiative
       </button>
 
@@ -21,7 +21,7 @@ export default function CsrToolbar() {
         onClick={() => openDrawer("sdg")}
         className="flex items-center gap-2 bg-white hover:bg-slate-50 text-slate-700 px-4 py-2.5 rounded-xl text-sm font-bold shadow-[0_2px_10px_rgba(0,0,0,0.02)] border border-slate-200 transition-all"
       >
-        <Target className="w-4 h-4 text-[#F59E0B]" />
+        <Target className="w-4 h-4 text-accent" />
         Manage SDGs
       </button>
 

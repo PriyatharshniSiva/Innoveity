@@ -23,7 +23,7 @@ export default function CaseStudiesToolbar() {
           placeholder="Search case studies..."
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
-          className="w-full pl-11 pr-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-[#185D46] bg-slate-50 focus:bg-white transition-all text-sm font-medium"
+          className="w-full pl-11 pr-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary bg-slate-50 focus:bg-white transition-all text-sm font-medium"
         />
       </div>
 
@@ -59,14 +59,14 @@ export default function CaseStudiesToolbar() {
         <div className="flex items-center bg-slate-100 p-1 rounded-xl border border-slate-200">
           <button 
             onClick={() => setViewMode("Grid")}
-            className={`p-2 rounded-lg transition-all ${viewMode === "Grid" ? "bg-white shadow-sm text-[#185D46]" : "text-slate-400 hover:text-slate-600"}`}
+            className={`p-2 rounded-lg transition-all ${viewMode === "Grid" ? "bg-white shadow-sm text-primary" : "text-slate-400 hover:text-slate-600"}`}
             title="Grid View"
           >
             <LayoutGrid className="w-5 h-5" />
           </button>
           <button 
             onClick={() => setViewMode("Table")}
-            className={`p-2 rounded-lg transition-all ${viewMode === "Table" ? "bg-white shadow-sm text-[#185D46]" : "text-slate-400 hover:text-slate-600"}`}
+            className={`p-2 rounded-lg transition-all ${viewMode === "Table" ? "bg-white shadow-sm text-primary" : "text-slate-400 hover:text-slate-600"}`}
             title="Table View"
           >
             <List className="w-5 h-5" />

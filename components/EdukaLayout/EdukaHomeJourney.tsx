@@ -52,7 +52,7 @@ function ArrowBtn({
         transition={{ type: "spring", stiffness: 500, damping: 25 }}
       >
         <svg
-          className="w-5 h-5 sm:w-6 sm:h-6 text-[#185D46]"
+          className="w-5 h-5 sm:w-6 sm:h-6 text-primary"
           fill="none"
           stroke="currentColor"
           strokeWidth="2.2"
@@ -87,7 +87,7 @@ function ProgressDot({
       animate={{
         width: isActive ? 36 : 10,
         height: 10,
-        backgroundColor: isActive ? "var(--color-primary)" : "#CBD5E1",
+        backgroundColor: isActive ? "var(--color-brand-primary)" : "#CBD5E1",
       }}
       transition={{ type: "spring", stiffness: 300, damping: 28 }}
       className="rounded-full relative overflow-hidden focus:outline-none flex-shrink-0"
@@ -287,7 +287,7 @@ export default function EdukaHomeJourney({ data }: { data?: any }) {
                 ? "0 40px 100px rgba(12,74,65,0.18), 0 0 0 2px rgba(22,163,74,0.25)"
                 : "0 24px 70px rgba(12,74,65,0.12)",
               transition: "box-shadow 0.5s ease",
-              background: "var(--color-primary)10",
+              background: "var(--color-brand-primary)10",
             }}
             onMouseEnter={() => setImageHovered(true)}
             onMouseLeave={() => setImageHovered(false)}

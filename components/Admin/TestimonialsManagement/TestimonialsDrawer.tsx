@@ -101,7 +101,7 @@ export default function TestimonialsDrawer() {
                     required
                     rows={5}
                     placeholder="Enter the testimonial quote here..."
-                    className="w-full px-4 py-3 bg-white border border-slate-200 rounded-xl focus:ring-2 focus:ring-primary/20 focus:border-[#185D46] outline-none transition-all resize-none text-slate-700"
+                    className="w-full px-4 py-3 bg-white border border-slate-200 rounded-xl focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all resize-none text-slate-700"
                     value={quote}
                     onChange={e => setQuote(e.target.value)}
                   />
@@ -116,7 +116,7 @@ export default function TestimonialsDrawer() {
                     type="text"
                     required
                     placeholder="e.g. John Doe, CEO at TechCorp"
-                    className="w-full px-4 py-3 bg-white border border-slate-200 rounded-xl focus:ring-2 focus:ring-primary/20 focus:border-[#185D46] outline-none transition-all text-slate-700"
+                    className="w-full px-4 py-3 bg-white border border-slate-200 rounded-xl focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all text-slate-700"
                     value={author}
                     onChange={e => setAuthor(e.target.value)}
                   />
@@ -137,7 +137,7 @@ export default function TestimonialsDrawer() {
                 form="testimonial-form"
                 type="submit"
                 disabled={isSaving}
-                className="px-6 py-2.5 bg-[#185D46] hover:bg-[#154d3a] text-white font-bold rounded-xl shadow-[0_4px_14px_0_rgba(24,93,70,0.39)] hover:shadow-[0_6px_20px_rgba(24,93,70,0.23)] transition-all flex items-center disabled:opacity-50"
+                className="px-6 py-2.5 bg-primary hover:bg-primary/90 text-white font-bold rounded-xl shadow-[0_4px_14px_0_rgba(24,93,70,0.39)] hover:shadow-[0_6px_20px_rgba(24,93,70,0.23)] transition-all flex items-center disabled:opacity-50"
               >
                 {isSaving ? (
                   <span className="flex items-center">

@@ -67,13 +67,13 @@ export default function EdukaStrengths() {
               transition={{ duration: 0.6, delay: idx * 0.15, type: "spring", stiffness: 100 }}
               className="bg-white rounded-2xl p-8 text-center shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-xl transition-all duration-300 hover:-translate-y-2 flex flex-col items-center justify-center group border border-slate-100 relative overflow-hidden h-[260px]"
             >
-              <div className="absolute top-0 left-0 w-full h-1 bg-[#185D46] scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left rounded-t-2xl" />
+              <div className="absolute top-0 left-0 w-full h-1 bg-primary scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left rounded-t-2xl" />
 
               <div className="flex flex-col items-center justify-center h-full w-full transform transition-transform duration-500 group-hover:-translate-y-6">
-                <div className="text-[#185D46] mb-6 group-hover:scale-110 transition-transform duration-500">
+                <div className="text-primary mb-6 group-hover:scale-110 transition-transform duration-500">
                   {item.icon}
                 </div>
-                <h3 className="text-xl font-bold text-[#185D46]">
+                <h3 className="text-xl font-bold text-primary">
                   {item.title}
                 </h3>
               </div>

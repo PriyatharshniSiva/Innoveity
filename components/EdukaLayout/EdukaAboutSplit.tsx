@@ -66,7 +66,7 @@ export default function EdukaAboutSplit({
               whileInView={{ scale: 1 }}
               viewport={{ once: false }}
               transition={{ delay: 0.5, type: "spring" }}
-              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 lg:-translate-x-full lg:left-[10%] bg-[#185D46] text-white p-6 rounded-full shadow-2xl w-40 h-40 flex flex-col items-center justify-center text-center border-4 border-white z-20"
+              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 lg:-translate-x-full lg:left-[10%] bg-primary text-white p-6 rounded-full shadow-2xl w-40 h-40 flex flex-col items-center justify-center text-center border-4 border-white z-20"
             >
               <span className="text-4xl font-black">{experienceYears}</span>
               <span className="text-sm font-bold mt-1 uppercase tracking-wider">{experienceText}</span>
@@ -84,8 +84,8 @@ export default function EdukaAboutSplit({
         >
           {badge && (
             <div className="inline-flex items-center space-x-2">
-              <span className="w-8 h-[2px] bg-[#F59E0B]"></span>
-              <span className="text-[#185D46] font-bold tracking-widest text-sm uppercase">{badge}</span>
+              <span className="w-8 h-[2px] bg-accent"></span>
+              <span className="text-primary font-bold tracking-widest text-sm uppercase">{badge}</span>
             </div>
           )}
           
@@ -118,11 +118,11 @@ export default function EdukaAboutSplit({
                   whileHover={{ y: -5, scale: 1.02 }}
                   className="flex items-start space-x-4 p-3 rounded-xl border border-transparent hover:border-slate-100 hover:bg-slate-50/50 hover:shadow-md transition-all duration-300"
                 >
-                   <div className="w-12 h-12 rounded bg-slate-50 text-[#185D46] flex items-center justify-center flex-shrink-0 shadow-sm border border-slate-100 transition-transform duration-300">
+                   <div className="w-12 h-12 rounded bg-slate-50 text-primary flex items-center justify-center flex-shrink-0 shadow-sm border border-slate-100 transition-transform duration-300">
                       {item.icon}
                    </div>
                    <div>
-                      <h4 className="font-bold text-[#0F172A] mb-1">{item.title}</h4>
+                      <h4 className="font-bold text-secondary mb-1">{item.title}</h4>
                       <p className="text-sm text-slate-500 leading-relaxed">{item.desc}</p>
                    </div>
                 </motion.div>
@@ -131,7 +131,7 @@ export default function EdukaAboutSplit({
           )}
 
           {quote && (
-            <div className="bg-slate-50 border-l-4 border-[#185D46] p-6 rounded-r-lg">
+            <div className="bg-slate-50 border-l-4 border-primary p-6 rounded-r-lg">
                <p className="text-slate-700 font-medium italic text-sm">
                  &quot;{quote}&quot;
                </p>
@@ -154,12 +154,12 @@ export default function EdukaAboutSplit({
               
               {phone && (
                 <div className="flex items-center space-x-4">
-                   <div className="w-12 h-12 bg-slate-100 rounded-full flex items-center justify-center text-[#185D46]">
+                   <div className="w-12 h-12 bg-slate-100 rounded-full flex items-center justify-center text-primary">
                       <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
                    </div>
                    <div>
                       <p className="text-xs text-slate-500 font-bold uppercase tracking-wider">Call For Support</p>
-                      <p className="text-lg font-bold text-[#0F172A]">{phone}</p>
+                      <p className="text-lg font-bold text-secondary">{phone}</p>
                    </div>
                 </div>
               )}

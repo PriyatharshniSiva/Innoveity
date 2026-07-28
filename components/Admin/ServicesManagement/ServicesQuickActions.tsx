@@ -14,7 +14,7 @@ export default function ServicesQuickActions() {
   };
 
   const actions = [
-    { id: 1, title: "Add Service", icon: Plus, color: "var(--color-primary)", onClick: handleAddService },
+    { id: 1, title: "Add Service", icon: Plus, color: "var(--color-brand-primary)", onClick: handleAddService },
     { id: 2, title: "Upload Image", icon: ImagePlus, color: "#0ea5e9", onClick: () => {} },
     { id: 3, title: "Manage Categories", icon: FolderKanban, color: "var(--color-accent)", onClick: () => {} },
     { id: 4, title: "Featured Services", icon: Star, color: "#eab308", onClick: () => {} },
@@ -42,7 +42,7 @@ export default function ServicesQuickActions() {
             >
               <action.icon className="w-6 h-6" />
             </div>
-            <span className="text-sm font-semibold text-slate-700 group-hover:text-[#185D46] transition-colors leading-tight">
+            <span className="text-sm font-semibold text-slate-700 group-hover:text-primary transition-colors leading-tight">
               {action.title}
             </span>
           </motion.div>

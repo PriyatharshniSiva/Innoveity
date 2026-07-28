@@ -25,7 +25,7 @@ export default function CsrSideDrawer() {
         setSdgData(sdgs.find(s => s.id === editingId) || {});
       } else {
         setSdgData({
-          number: 1, title: "", description: "", color: "var(--color-primary)", status: "Active"
+          number: 1, title: "", description: "", color: "var(--color-brand-primary)", status: "Active"
         });
       }
     }
@@ -106,26 +106,26 @@ export default function CsrSideDrawer() {
                 <>
                   <div>
                     <label className="block text-sm font-semibold text-slate-700 mb-2">Title</label>
-                    <input type="text" name="title" value={initiativeData.title || ""} onChange={handleInitiativeChange} className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-[#185D46] transition-all" />
+                    <input type="text" name="title" value={initiativeData.title || ""} onChange={handleInitiativeChange} className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all" />
                   </div>
                   <div>
                     <label className="block text-sm font-semibold text-slate-700 mb-2">Description</label>
-                    <textarea name="description" value={initiativeData.description || ""} onChange={handleInitiativeChange} rows={3} className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-[#185D46] transition-all resize-none" />
+                    <textarea name="description" value={initiativeData.description || ""} onChange={handleInitiativeChange} rows={3} className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all resize-none" />
                   </div>
                   <div>
                     <label className="block text-sm font-semibold text-slate-700 mb-2">Key Impact</label>
-                    <input type="text" name="impact" value={initiativeData.impact || ""} onChange={handleInitiativeChange} className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-[#185D46] transition-all" />
+                    <input type="text" name="impact" value={initiativeData.impact || ""} onChange={handleInitiativeChange} className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all" />
                   </div>
                   <div className="grid grid-cols-2 gap-4">
                     <div>
                       <label className="block text-sm font-semibold text-slate-700 mb-2">Status</label>
-                      <select name="status" value={initiativeData.status || "Active"} onChange={handleInitiativeChange} className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-[#185D46] transition-all bg-white">
+                      <select name="status" value={initiativeData.status || "Active"} onChange={handleInitiativeChange} className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all bg-white">
                         <option value="Active">Active</option>
                         <option value="Hidden">Hidden</option>
                       </select>
                     </div>
                     <div className="flex items-center mt-8">
-                      <input type="checkbox" name="featured" checked={initiativeData.featured || false} onChange={handleInitiativeChange} className="w-5 h-5 rounded border-slate-300 text-[#185D46] focus:ring-[#185D46]" />
+                      <input type="checkbox" name="featured" checked={initiativeData.featured || false} onChange={handleInitiativeChange} className="w-5 h-5 rounded border-slate-300 text-primary focus:ring-primary" />
                       <span className="ml-2 text-sm font-semibold text-slate-700">Featured</span>
                     </div>
                   </div>
@@ -137,20 +137,20 @@ export default function CsrSideDrawer() {
                   <div className="grid grid-cols-2 gap-4">
                     <div>
                       <label className="block text-sm font-semibold text-slate-700 mb-2">SDG Number</label>
-                      <input type="number" name="number" value={sdgData.number || 1} onChange={handleSdgChange} className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-[#185D46] transition-all" />
+                      <input type="number" name="number" value={sdgData.number || 1} onChange={handleSdgChange} className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all" />
                     </div>
                     <div>
                       <label className="block text-sm font-semibold text-slate-700 mb-2">Color</label>
-                      <input type="color" name="color" value={sdgData.color || "var(--color-primary)"} onChange={handleSdgChange} className="w-full h-12 rounded-xl border border-slate-200 cursor-pointer p-1" />
+                      <input type="color" name="color" value={sdgData.color || "var(--color-brand-primary)"} onChange={handleSdgChange} className="w-full h-12 rounded-xl border border-slate-200 cursor-pointer p-1" />
                     </div>
                   </div>
                   <div>
                     <label className="block text-sm font-semibold text-slate-700 mb-2">Goal Title</label>
-                    <input type="text" name="title" value={sdgData.title || ""} onChange={handleSdgChange} className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-[#185D46] transition-all" />
+                    <input type="text" name="title" value={sdgData.title || ""} onChange={handleSdgChange} className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all" />
                   </div>
                   <div>
                     <label className="block text-sm font-semibold text-slate-700 mb-2">Description</label>
-                    <textarea name="description" value={sdgData.description || ""} onChange={handleSdgChange} rows={4} className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-[#185D46] transition-all resize-none" />
+                    <textarea name="description" value={sdgData.description || ""} onChange={handleSdgChange} rows={4} className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all resize-none" />
                   </div>
                 </>
               )}
@@ -168,7 +168,7 @@ export default function CsrSideDrawer() {
               <div className="p-6 border-t border-slate-100 bg-white">
                 <button 
                   onClick={handleSave}
-                  className="w-full py-3.5 bg-[#185D46] hover:bg-[#154d3a] text-white font-bold rounded-xl shadow-[0_4px_14px_0_rgba(24,93,70,0.39)] hover:shadow-[0_6px_20px_rgba(24,93,70,0.23)] transition-all flex items-center justify-center"
+                  className="w-full py-3.5 bg-primary hover:bg-primary/90 text-white font-bold rounded-xl shadow-[0_4px_14px_0_rgba(24,93,70,0.39)] hover:shadow-[0_6px_20px_rgba(24,93,70,0.23)] transition-all flex items-center justify-center"
                 >
                   <Save className="w-5 h-5 mr-2" />
                   Save Changes

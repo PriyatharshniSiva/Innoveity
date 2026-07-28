@@ -62,7 +62,7 @@ export default function EdukaStatsParallax({ stats, backgroundImage }: EdukaStat
       />
       
       {/* Teal Overlay */}
-      <div className="absolute inset-0 z-10 bg-[#185D46]/90 mix-blend-multiply" />
+      <div className="absolute inset-0 z-10 bg-primary/90 mix-blend-multiply" />
       
       <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         {/* Section Heading */}
@@ -97,7 +97,7 @@ export default function EdukaStatsParallax({ stats, backgroundImage }: EdukaStat
               <div className="text-5xl sm:text-6xl font-bold text-white mb-3 tracking-tight">
                 <AnimatedCounter value={stat.value} />
               </div>
-              <div className="text-sm text-[#F59E0B] font-bold tracking-widest uppercase">
+              <div className="text-sm text-accent font-bold tracking-widest uppercase">
                 {stat.label}
               </div>
             </motion.div>

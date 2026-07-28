@@ -74,9 +74,9 @@ export default function EdukaMissionGrid() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: false, margin: "-50px" }}
               transition={{ duration: 0.6, delay: idx * 0.15, type: "spring", stiffness: 100 }}
-              className="bg-[#185D46] rounded-2xl p-8 lg:p-10 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 flex flex-col items-start text-left h-full"
+              className="bg-primary rounded-2xl p-8 lg:p-10 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 flex flex-col items-start text-left h-full"
             >
-              <div className="text-[#F59E0B] mb-12">
+              <div className="text-accent mb-12">
                 {card.icon}
               </div>
               

@@ -57,7 +57,7 @@ export default function FloatingContactWidget({ initialOptions }: { initialOptio
       id: "email",
       label: "Email Us",
       href: "mailto:contact@innoveity.com",
-      color: "bg-[#F59E0B]",
+      color: "bg-accent",
       iconType: "Mail"
     },
     {

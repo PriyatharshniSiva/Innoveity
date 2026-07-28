@@ -11,7 +11,7 @@ export default function CaseStudiesActivity() {
       message: 'Published "Corporate L&D Overhaul at Tech Mahindra"',
       time: "2 hours ago",
       icon: CheckCircle2,
-      color: "text-[#185D46]",
+      color: "text-primary",
       bg: "bg-primary/10"
     },
     {

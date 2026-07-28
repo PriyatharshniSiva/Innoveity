@@ -43,7 +43,7 @@ export default function ThemeManagementClient({ initialData }: { initialData: an
       id: "email",
       label: "Email Us",
       href: "mailto:contact@innoveity.com",
-      color: "bg-[#F59E0B]",
+      color: "bg-accent",
       iconType: "Mail"
     },
     {
@@ -145,7 +145,7 @@ export default function ThemeManagementClient({ initialData }: { initialData: an
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-white dark:bg-[#0a0a0a] p-6 rounded-[24px] shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-slate-100 dark:border-white/5 relative z-20">
         <div>
           <h1 className="text-2xl font-black text-slate-800 dark:text-white tracking-tight flex items-center gap-2">
-            <Palette className="w-6 h-6 text-[#185D46]" />
+            <Palette className="w-6 h-6 text-primary" />
             Theme Settings
           </h1>
           <p className="text-sm font-semibold text-slate-500 mt-1">Manage global site appearance and visual theme colors.</p>
@@ -161,7 +161,7 @@ export default function ThemeManagementClient({ initialData }: { initialData: an
           <button
             onClick={handleSave}
             disabled={isSaving}
-            className="flex items-center gap-2 px-6 py-2.5 bg-[#185D46] hover:bg-[#0f3d2e] text-white rounded-xl font-bold transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5 disabled:opacity-70"
+            className="flex items-center gap-2 px-6 py-2.5 bg-primary hover:bg-[#0f3d2e] text-white rounded-xl font-bold transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5 disabled:opacity-70"
           >
             {isSaving ? <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" /> : <Save className="w-5 h-5" />}
             {isSaving ? "Saving..." : "Save Theme"}
@@ -179,7 +179,7 @@ export default function ThemeManagementClient({ initialData }: { initialData: an
                 <div 
                   key={key} 
                   onClick={() => openPicker(key as any)}
-                  className={`p-4 rounded-xl border-2 transition-all cursor-pointer group flex items-center gap-4 ${activeColorKey === key ? 'border-[#185D46] bg-slate-50 shadow-md' : 'border-slate-100 hover:border-slate-300'}`}
+                  className={`p-4 rounded-xl border-2 transition-all cursor-pointer group flex items-center gap-4 ${activeColorKey === key ? 'border-primary bg-slate-50 shadow-md' : 'border-slate-100 hover:border-slate-300'}`}
                 >
                   <div 
                     className="w-12 h-12 rounded-full border border-slate-200 shadow-inner group-hover:scale-105 transition-transform" 
@@ -207,7 +207,7 @@ export default function ThemeManagementClient({ initialData }: { initialData: an
                         type="text"
                         value={opt.label}
                         onChange={(e) => handleOptionChange(idx, "label", e.target.value)}
-                        className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#185D46]/20 focus:border-[#185D46] transition-all bg-white"
+                        className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all bg-white"
                       />
                     </div>
                     <div>
@@ -216,7 +216,7 @@ export default function ThemeManagementClient({ initialData }: { initialData: an
                         type="text"
                         value={opt.href}
                         onChange={(e) => handleOptionChange(idx, "href", e.target.value)}
-                        className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#185D46]/20 focus:border-[#185D46] transition-all bg-white"
+                        className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all bg-white"
                       />
                     </div>
                     <div>
@@ -225,7 +225,7 @@ export default function ThemeManagementClient({ initialData }: { initialData: an
                         type="text"
                         value={opt.color}
                         onChange={(e) => handleOptionChange(idx, "color", e.target.value)}
-                        className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#185D46]/20 focus:border-[#185D46] transition-all bg-white"
+                        className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all bg-white"
                       />
                     </div>
                   </div>
@@ -240,7 +240,7 @@ export default function ThemeManagementClient({ initialData }: { initialData: an
           <div className="bg-white rounded-[24px] shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-slate-100 overflow-hidden sticky top-24">
             <div className="p-4 border-b border-slate-100 bg-slate-50">
               <h2 className="text-sm font-bold text-slate-800 flex items-center gap-2">
-                <Smartphone className="w-4 h-4 text-[#185D46]" />
+                <Smartphone className="w-4 h-4 text-primary" />
                 Live Preview
               </h2>
             </div>

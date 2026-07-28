@@ -22,7 +22,7 @@ export default function CaseStudiesTestimonials() {
         </div>
         <button 
           onClick={() => { setEditingId(null); setIsDrawerOpen(true); }}
-          className="px-5 py-2.5 bg-[#185D46] hover:bg-[#154d3a] text-white font-bold rounded-xl shadow-sm hover:shadow-md transition-all flex items-center"
+          className="px-5 py-2.5 bg-primary hover:bg-primary/90 text-white font-bold rounded-xl shadow-sm hover:shadow-md transition-all flex items-center"
         >
           <Plus className="w-4 h-4 mr-2" />
           Add Testimonial

@@ -33,7 +33,7 @@ function ServicesManagementContent() {
             <button 
               onClick={saveAllChanges}
               disabled={isSaving}
-              className="px-6 py-2.5 bg-[#185D46] hover:bg-[#154d3a] text-white font-bold rounded-xl shadow-[0_4px_14px_0_rgba(24,93,70,0.39)] hover:shadow-[0_6px_20px_rgba(24,93,70,0.23)] transition-all flex items-center disabled:opacity-70 disabled:cursor-not-allowed"
+              className="px-6 py-2.5 bg-primary hover:bg-primary/90 text-white font-bold rounded-xl shadow-[0_4px_14px_0_rgba(24,93,70,0.39)] hover:shadow-[0_6px_20px_rgba(24,93,70,0.23)] transition-all flex items-center disabled:opacity-70 disabled:cursor-not-allowed"
             >
               {isSaving ? (
                 <>

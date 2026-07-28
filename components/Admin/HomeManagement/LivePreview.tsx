@@ -71,7 +71,7 @@ export default function LivePreview() {
             title={
               <>
                 {hero.titleLine1} <br />
-                <span className="text-[#F59E0B]">{hero.titleHighlight}</span>
+                <span className="text-accent">{hero.titleHighlight}</span>
               </>
             }
             description={hero.description}
@@ -86,15 +86,15 @@ export default function LivePreview() {
 
           {/* Corporate Highlights Section */}
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-            <section className="bg-gradient-to-br from-[#185D4610]/30 to-[#f0f9ff]/20 backdrop-blur-xl rounded-[24px] p-8 md:p-12 border border-[#185D4630] border-l-[6px] border-l-[#185D46] shadow-[0_20px_50px_rgba(12,74,65,0.05)] relative overflow-hidden group">
-              <h2 className="text-3xl md:text-4xl font-extrabold text-[#185D46] mb-6 tracking-tight leading-tight">
+            <section className="bg-gradient-to-br from-[#185D4610]/30 to-[#f0f9ff]/20 backdrop-blur-xl rounded-[24px] p-8 md:p-12 border border-[#185D4630] border-l-[6px] border-l-primary shadow-[0_20px_50px_rgba(12,74,65,0.05)] relative overflow-hidden group">
+              <h2 className="text-3xl md:text-4xl font-extrabold text-primary mb-6 tracking-tight leading-tight">
                 Leading Corporate Training & College Development Partner in Tamil Nadu
               </h2>
               <p className="text-lg text-slate-600 mb-10 leading-relaxed font-medium">
                 INNOVEITY transforms institutions and organizations through proven training solutions. We've achieved 85% average placement improvement across 50+ engineering colleges and trained 2000+ students annually in Chennai, Coimbatore, Madurai, and throughout Tamil Nadu.
               </p>
               <div className="mb-10">
-                <h3 className="font-bold text-[#185D46] mb-6 text-xl tracking-wide">
+                <h3 className="font-bold text-primary mb-6 text-xl tracking-wide">
                   Key Highlights:
                 </h3>
                 <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4">
@@ -109,13 +109,13 @@ export default function LivePreview() {
                     "ROI guarantee: 200-300% for corporate L&D programs"
                   ].map((item, idx) => (
                     <li key={idx} className="flex items-start text-slate-700">
-                      <span className="text-[#185D46] font-black text-xl mr-3 mt-0.5 leading-none">✓</span>
+                      <span className="text-primary font-black text-xl mr-3 mt-0.5 leading-none">✓</span>
                       <span className="font-semibold leading-relaxed text-base md:text-lg">{item}</span>
                     </li>
                   ))}
                 </ul>
               </div>
-              <div className="inline-block cursor-pointer px-8 py-4 bg-[#185D46] hover:bg-primary/90 text-white font-bold text-lg rounded-xl shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-xl flex items-center justify-center">
+              <div className="inline-block cursor-pointer px-8 py-4 bg-primary hover:bg-primary/90 text-white font-bold text-lg rounded-xl shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-xl flex items-center justify-center">
                 Schedule Free Consultation
               </div>
             </section>
@@ -125,7 +125,7 @@ export default function LivePreview() {
           <div 
             className="w-full bg-[#f4faf6] border-y border-primary/20/50 relative py-12"
             style={{
-              backgroundImage: 'radial-gradient(var(--color-primary)30 1.5px, transparent 1.5px)',
+              backgroundImage: 'radial-gradient(var(--color-brand-primary)30 1.5px, transparent 1.5px)',
               backgroundSize: '32px 32px'
             }}
           >

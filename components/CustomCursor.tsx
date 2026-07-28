@@ -69,7 +69,7 @@ export default function CustomCursor() {
     <>
       {/* Small inner dot */}
       <motion.div
-        className="fixed top-0 left-0 w-2 h-2 bg-[#185D46] rounded-full pointer-events-none z-[9999] -translate-x-1/2 -translate-y-1/2"
+        className="fixed top-0 left-0 w-2 h-2 bg-primary rounded-full pointer-events-none z-[9999] -translate-x-1/2 -translate-y-1/2"
         style={{
           x: cursorX,
           y: cursorY,
@@ -77,14 +77,14 @@ export default function CustomCursor() {
       />
       {/* Larger trailing circle */}
       <motion.div
-        className="fixed top-0 left-0 rounded-full border border-[#185D46] pointer-events-none z-[9998] -translate-x-1/2 -translate-y-1/2"
+        className="fixed top-0 left-0 rounded-full border border-primary pointer-events-none z-[9998] -translate-x-1/2 -translate-y-1/2"
         style={{
           x: cursorXSpring,
           y: cursorYSpring,
           width: hovered ? 48 : 24,
           height: hovered ? 48 : 24,
           backgroundColor: hovered ? "rgba(24, 93, 70, 0.15)" : "rgba(24, 93, 70, 0)",
-          borderColor: hovered ? "var(--color-primary)" : "rgba(24, 93, 70, 0.6)",
+          borderColor: hovered ? "var(--color-brand-primary)" : "rgba(24, 93, 70, 0.6)",
         }}
         animate={{
           scale: hovered ? 1.25 : 1,

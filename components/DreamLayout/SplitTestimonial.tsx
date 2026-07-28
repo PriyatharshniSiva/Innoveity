@@ -46,7 +46,7 @@ export default function SplitTestimonial({ title, testimonials }: SplitTestimoni
           </div>
           
           {/* Decorative quotes */}
-          <div className="absolute -top-6 -left-6 text-8xl text-[#f59e0b] opacity-30 select-none font-serif leading-none">
+          <div className="absolute -top-6 -left-6 text-8xl text-accent opacity-30 select-none font-serif leading-none">
             &quot;
           </div>
         </div>
@@ -59,7 +59,7 @@ export default function SplitTestimonial({ title, testimonials }: SplitTestimoni
 
           <div className="flex space-x-1">
             {[...Array(5)].map((_, i) => (
-              <svg key={i} className="w-5 h-5 text-[#f59e0b] fill-current" viewBox="0 0 20 20">
+              <svg key={i} className="w-5 h-5 text-accent fill-current" viewBox="0 0 20 20">
                 <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
               </svg>
             ))}
@@ -92,7 +92,7 @@ export default function SplitTestimonial({ title, testimonials }: SplitTestimoni
               <button 
                 key={idx}
                 onClick={() => setActiveIdx(idx)}
-                className={`relative w-14 h-14 rounded-xl overflow-hidden transition-all duration-300 ${activeIdx === idx ? 'ring-2 ring-[#185D46] ring-offset-2 scale-110' : 'opacity-50 hover:opacity-100'}`}
+                className={`relative w-14 h-14 rounded-xl overflow-hidden transition-all duration-300 ${activeIdx === idx ? 'ring-2 ring-primary ring-offset-2 scale-110' : 'opacity-50 hover:opacity-100'}`}
               >
                 <img src={t.image} alt={t.name} className="w-full h-full object-cover" />
               </button>

@@ -9,6 +9,15 @@ export default function AdminTopbar() {
   const pathname = usePathname();
   const { theme, toggleTheme } = useAdminTheme();
 
+  const [adminName, setAdminName] = React.useState("Admin User");
+  
+  React.useEffect(() => {
+    const storedName = localStorage.getItem('adminName');
+    if (storedName) {
+      setAdminName(storedName);
+    }
+  }, []);
+
   // Format breadcrumb from pathname
   const pathParts = pathname.split('/').filter(Boolean);
   const currentPage = pathParts.length > 1 
@@ -31,7 +40,7 @@ export default function AdminTopbar() {
           <div className="flex items-center gap-2 mt-1 text-xs font-bold text-slate-500 dark:text-neutral-500 uppercase tracking-widest transition-colors duration-300">
             <span className="text-slate-400 dark:text-neutral-600">Admin</span>
             <span className="text-slate-300 dark:text-neutral-800">/</span>
-            <span className="text-[#185D46] dark:text-white">{currentPage}</span>
+            <span className="text-primary dark:text-white">{currentPage}</span>
           </div>
         </div>
       </div>
@@ -51,7 +60,7 @@ export default function AdminTopbar() {
         </div>
 
         <div className="hidden md:flex items-center gap-2 text-xs font-bold text-slate-500 dark:text-neutral-400 bg-white dark:bg-white/5 px-4 py-2.5 rounded-2xl border border-slate-100 dark:border-white/5 shadow-[0_2px_10px_rgba(0,0,0,0.02)] dark:shadow-none transition-colors duration-300">
-          <Clock className="w-4 h-4 text-[#F59E0B] dark:text-neutral-500" />
+          <Clock className="w-4 h-4 text-accent dark:text-neutral-500" />
           {currentDate}
         </div>
         
@@ -59,37 +68,36 @@ export default function AdminTopbar() {
           {/* Theme Toggle Button */}
           <button 
             onClick={toggleTheme}
-            className="relative p-2.5 rounded-xl text-slate-400 dark:text-neutral-500 hover:text-[#185D46] dark:hover:text-white hover:bg-primary/10 dark:hover:bg-white/10 transition-colors"
+            className="relative p-2.5 rounded-xl text-slate-400 dark:text-neutral-500 hover:text-primary dark:hover:text-white hover:bg-primary/10 dark:hover:bg-white/10 transition-colors"
             title={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}
           >
             {theme === 'light' ? <Moon className="w-5 h-5" /> : <Sun className="w-5 h-5" />}
           </button>
 
           {/* Quick Actions */}
-          <button className="relative p-2.5 rounded-xl text-slate-400 dark:text-neutral-500 hover:text-[#F59E0B] dark:hover:text-white hover:bg-accent/10 dark:hover:bg-white/10 transition-colors">
+          <button className="relative p-2.5 rounded-xl text-slate-400 dark:text-neutral-500 hover:text-accent dark:hover:text-white hover:bg-accent/10 dark:hover:bg-white/10 transition-colors">
             <MessageSquare className="w-5 h-5" />
-            <span className="absolute top-2 right-2 w-2 h-2 bg-[#F59E0B] dark:bg-white rounded-full"></span>
+            <span className="absolute top-2 right-2 w-2 h-2 bg-accent dark:bg-white rounded-full"></span>
           </button>
           
-          <button className="relative p-2.5 rounded-xl text-slate-400 dark:text-neutral-500 hover:text-[#185D46] dark:hover:text-white hover:bg-primary/10 dark:hover:bg-white/10 transition-colors">
+          <button className="relative p-2.5 rounded-xl text-slate-400 dark:text-neutral-500 hover:text-primary dark:hover:text-white hover:bg-primary/10 dark:hover:bg-white/10 transition-colors">
             <Bell className="w-5 h-5" />
-            <span className="absolute top-2 right-2 w-2.5 h-2.5 bg-[#185D46] dark:bg-white rounded-full border-2 border-white dark:border-[#0a0a0a]"></span>
+            <span className="absolute top-2 right-2 w-2.5 h-2.5 bg-primary dark:bg-white rounded-full border-2 border-white dark:border-[#0a0a0a]"></span>
           </button>
           
           <div className="w-px h-8 bg-slate-100 dark:bg-white/10 mx-2 transition-colors duration-300"></div>
           
           <div className="flex items-center gap-3 pl-2 cursor-pointer group hover:bg-slate-50 dark:hover:bg-white/5 p-1.5 rounded-2xl transition-colors border border-transparent hover:border-slate-100 dark:hover:border-white/5">
             <div className="text-right hidden sm:block">
-              <p className="text-sm font-bold text-slate-700 dark:text-neutral-200 leading-none group-hover:text-[#185D46] dark:group-hover:text-white transition-colors tracking-wide">Admin User</p>
-              <p className="text-xs font-semibold text-slate-400 dark:text-neutral-500 mt-1">Superadmin</p>
+              <p className="text-sm font-bold text-slate-700 dark:text-neutral-200 leading-none group-hover:text-primary dark:group-hover:text-white transition-colors tracking-wide">{adminName}</p>
+              <p className="text-xs font-semibold text-slate-400 dark:text-neutral-500 mt-1">Admin</p>
             </div>
             <div className="flex items-center gap-2">
               <div className="w-10 h-10 rounded-xl bg-primary/10 dark:bg-white/10 p-0.5 shadow-sm dark:shadow-none group-hover:shadow group-hover:bg-white/20 transition-all group-hover:scale-105">
                 <div className="w-full h-full rounded-[10px] bg-white dark:bg-black overflow-hidden flex items-center justify-center">
-                  <img src={theme === 'dark' ? "https://ui-avatars.com/api/?name=Admin&background=000&color=fff&bold=true" : "https://ui-avatars.com/api/?name=Admin&background=185D46&color=fff&bold=true"} alt="Avatar" className="w-full h-full object-cover" />
+                  <img src={theme === 'dark' ? `https://ui-avatars.com/api/?name=${encodeURIComponent(adminName)}&background=000&color=fff&bold=true` : `https://ui-avatars.com/api/?name=${encodeURIComponent(adminName)}&background=185D46&color=fff&bold=true`} alt="Avatar" className="w-full h-full object-cover" />
                 </div>
               </div>
-              <ChevronDown className="w-4 h-4 text-slate-400 dark:text-neutral-500 group-hover:text-slate-600 dark:group-hover:text-neutral-300 transition-colors hidden sm:block" />
             </div>
           </div>
         </div>

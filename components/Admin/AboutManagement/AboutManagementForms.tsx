@@ -53,7 +53,7 @@ export default function AboutManagementForms() {
           className="w-full flex items-center justify-between p-6 bg-white hover:bg-slate-50 transition-colors"
         >
           <div className="flex items-center space-x-3">
-            <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center text-[#185D46]">
+            <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center text-primary">
               <AlignLeft className="w-5 h-5" />
             </div>
             <h3 className="text-lg font-bold text-slate-800 font-sans">Company Overview</h3>
@@ -75,14 +75,14 @@ export default function AboutManagementForms() {
                     <label className="block text-sm font-semibold text-slate-700 mb-2">Title (Line 1)</label>
                     <input 
                       type="text" name="titleLine1" value={overview.titleLine1} onChange={handleOverviewChange}
-                      className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-[#185D46] transition-all bg-slate-50 focus:bg-white"
+                      className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all bg-slate-50 focus:bg-white"
                     />
                   </div>
                   <div>
                     <label className="block text-sm font-semibold text-slate-700 mb-2">Title (Highlight)</label>
                     <input 
                       type="text" name="titleHighlight" value={overview.titleHighlight} onChange={handleOverviewChange}
-                      className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-[#185D46] transition-all bg-slate-50 focus:bg-white"
+                      className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all bg-slate-50 focus:bg-white"
                     />
                   </div>
                   
@@ -95,7 +95,7 @@ export default function AboutManagementForms() {
                           value={paragraph} 
                           onChange={(e) => handleDescriptionChange(index, e.target.value)} 
                           rows={3}
-                          className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-[#185D46] transition-all bg-slate-50 focus:bg-white resize-none"
+                          className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all bg-slate-50 focus:bg-white resize-none"
                         />
                       ))}
                     </div>
@@ -132,7 +132,7 @@ export default function AboutManagementForms() {
           className="w-full flex items-center justify-between p-6 bg-white hover:bg-slate-50 transition-colors"
         >
           <div className="flex items-center space-x-3">
-            <div className="w-10 h-10 rounded-xl bg-accent/10 flex items-center justify-center text-[#F59E0B]">
+            <div className="w-10 h-10 rounded-xl bg-accent/10 flex items-center justify-center text-accent">
               <Flag className="w-5 h-5" />
             </div>
             <h3 className="text-lg font-bold text-slate-800 font-sans">Journey Timeline</h3>
@@ -158,18 +158,18 @@ export default function AboutManagementForms() {
                         <input 
                           type="text" value={step.year} onChange={(e) => handleJourneyChange(step.id, "year", e.target.value)}
                           placeholder="Year (e.g. 2018)"
-                          className="w-32 px-3 py-2 rounded-lg border border-slate-200 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-[#185D46] transition-all bg-white"
+                          className="w-32 px-3 py-2 rounded-lg border border-slate-200 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all bg-white"
                         />
                         <input 
                           type="text" value={step.title} onChange={(e) => handleJourneyChange(step.id, "title", e.target.value)}
                           placeholder="Title"
-                          className="flex-1 px-3 py-2 rounded-lg border border-slate-200 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-[#185D46] transition-all bg-white"
+                          className="flex-1 px-3 py-2 rounded-lg border border-slate-200 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all bg-white"
                         />
                       </div>
                       <textarea
                         value={step.description} onChange={(e) => handleJourneyChange(step.id, "description", e.target.value)}
                         placeholder="Description" rows={2}
-                        className="w-full px-3 py-2 rounded-lg border border-slate-200 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-[#185D46] transition-all bg-white resize-none"
+                        className="w-full px-3 py-2 rounded-lg border border-slate-200 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all bg-white resize-none"
                       />
                     </div>
                     
@@ -178,7 +178,7 @@ export default function AboutManagementForms() {
                     </button>
                   </div>
                 ))}
-                <button className="w-full py-3 border-2 border-dashed border-slate-200 rounded-xl text-slate-500 font-semibold flex items-center justify-center hover:border-[#F59E0B] hover:text-[#F59E0B] transition-colors bg-slate-50 hover:bg-accent/5">
+                <button className="w-full py-3 border-2 border-dashed border-slate-200 rounded-xl text-slate-500 font-semibold flex items-center justify-center hover:border-accent hover:text-accent transition-colors bg-slate-50 hover:bg-accent/5">
                   <Plus className="w-5 h-5 mr-2" />
                   Add Milestone
                 </button>
@@ -208,15 +208,15 @@ export default function AboutManagementForms() {
               <div className="p-6 space-y-4">
                 <div>
                   <label className="block text-sm font-semibold text-slate-700 mb-2">Our Mission</label>
-                  <textarea rows={3} value={missionVision.mission} onChange={e => setMissionVision({...missionVision, mission: e.target.value})} className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-[#185D46] bg-slate-50 focus:bg-white resize-none" />
+                  <textarea rows={3} value={missionVision.mission} onChange={e => setMissionVision({...missionVision, mission: e.target.value})} className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary bg-slate-50 focus:bg-white resize-none" />
                 </div>
                 <div>
                   <label className="block text-sm font-semibold text-slate-700 mb-2">Our Vision</label>
-                  <textarea rows={3} value={missionVision.vision} onChange={e => setMissionVision({...missionVision, vision: e.target.value})} className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-[#185D46] bg-slate-50 focus:bg-white resize-none" />
+                  <textarea rows={3} value={missionVision.vision} onChange={e => setMissionVision({...missionVision, vision: e.target.value})} className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary bg-slate-50 focus:bg-white resize-none" />
                 </div>
                 <div>
                   <label className="block text-sm font-semibold text-slate-700 mb-2">Our Values</label>
-                  <textarea rows={3} value={missionVision.values} onChange={e => setMissionVision({...missionVision, values: e.target.value})} className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-[#185D46] bg-slate-50 focus:bg-white resize-none" />
+                  <textarea rows={3} value={missionVision.values} onChange={e => setMissionVision({...missionVision, values: e.target.value})} className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary bg-slate-50 focus:bg-white resize-none" />
                 </div>
               </div>
             </motion.div>
@@ -231,7 +231,7 @@ export default function AboutManagementForms() {
           className="w-full flex items-center justify-between p-6 bg-white hover:bg-slate-50 transition-colors"
         >
           <div className="flex items-center space-x-3">
-            <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center text-[#185D46]">
+            <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center text-primary">
               <MessageSquare className="w-5 h-5" />
             </div>
             <h3 className="text-lg font-bold text-slate-800 font-sans">Client Feedback</h3>
@@ -257,7 +257,7 @@ export default function AboutManagementForms() {
                         const newFeedback = [...clientFeedback];
                         newFeedback[idx].quote = e.target.value;
                         setClientFeedback(newFeedback);
-                      }} className="w-full px-3 py-2 rounded-xl border border-slate-200 focus:bg-white focus:outline-none focus:border-[#185D46] transition-colors text-sm" />
+                      }} className="w-full px-3 py-2 rounded-xl border border-slate-200 focus:bg-white focus:outline-none focus:border-primary transition-colors text-sm" />
                     </div>
                     <div className="grid grid-cols-2 gap-3">
                       <div>
@@ -266,7 +266,7 @@ export default function AboutManagementForms() {
                           const newFeedback = [...clientFeedback];
                           newFeedback[idx].name = e.target.value;
                           setClientFeedback(newFeedback);
-                        }} className="w-full px-3 py-2 rounded-xl border border-slate-200 focus:bg-white focus:outline-none focus:border-[#185D46] transition-colors text-sm" />
+                        }} className="w-full px-3 py-2 rounded-xl border border-slate-200 focus:bg-white focus:outline-none focus:border-primary transition-colors text-sm" />
                       </div>
                       <div>
                         <label className="block text-xs font-semibold text-slate-500 mb-1">Date/Verification</label>
@@ -274,7 +274,7 @@ export default function AboutManagementForms() {
                           const newFeedback = [...clientFeedback];
                           newFeedback[idx].date = e.target.value;
                           setClientFeedback(newFeedback);
-                        }} className="w-full px-3 py-2 rounded-xl border border-slate-200 focus:bg-white focus:outline-none focus:border-[#185D46] transition-colors text-sm" />
+                        }} className="w-full px-3 py-2 rounded-xl border border-slate-200 focus:bg-white focus:outline-none focus:border-primary transition-colors text-sm" />
                       </div>
                     </div>
                   </div>
@@ -282,7 +282,7 @@ export default function AboutManagementForms() {
 
                 <button 
                   onClick={() => setClientFeedback([...clientFeedback, { id: Date.now().toString(), quote: "", name: "", date: "Verified" }])}
-                  className="w-full py-3 border-2 border-dashed border-primary/20 text-[#185D46] rounded-xl font-semibold hover:bg-primary/5 transition-colors flex items-center justify-center"
+                  className="w-full py-3 border-2 border-dashed border-primary/20 text-primary rounded-xl font-semibold hover:bg-primary/5 transition-colors flex items-center justify-center"
                 >
                   <Plus className="w-5 h-5 mr-2" />
                   Add Testimonial
@@ -327,7 +327,7 @@ export default function AboutManagementForms() {
                           const newStrengths = [...strengths];
                           newStrengths[idx].title = e.target.value;
                           setStrengths(newStrengths);
-                        }} className="w-full px-3 py-2 rounded-xl border border-slate-200 focus:bg-white focus:outline-none focus:border-[#185D46] transition-colors text-sm" />
+                        }} className="w-full px-3 py-2 rounded-xl border border-slate-200 focus:bg-white focus:outline-none focus:border-primary transition-colors text-sm" />
                       </div>
                       <div>
                         <label className="block text-xs font-semibold text-slate-500 mb-1">Icon Name</label>
@@ -335,7 +335,7 @@ export default function AboutManagementForms() {
                           const newStrengths = [...strengths];
                           newStrengths[idx].iconName = e.target.value;
                           setStrengths(newStrengths);
-                        }} className="w-full px-3 py-2 rounded-xl border border-slate-200 focus:bg-white focus:outline-none focus:border-[#185D46] transition-colors text-sm" />
+                        }} className="w-full px-3 py-2 rounded-xl border border-slate-200 focus:bg-white focus:outline-none focus:border-primary transition-colors text-sm" />
                       </div>
                     </div>
                     <div>
@@ -344,14 +344,14 @@ export default function AboutManagementForms() {
                         const newStrengths = [...strengths];
                         newStrengths[idx].description = e.target.value;
                         setStrengths(newStrengths);
-                      }} className="w-full px-3 py-2 rounded-xl border border-slate-200 focus:bg-white focus:outline-none focus:border-[#185D46] transition-colors text-sm" />
+                      }} className="w-full px-3 py-2 rounded-xl border border-slate-200 focus:bg-white focus:outline-none focus:border-primary transition-colors text-sm" />
                     </div>
                   </div>
                 ))}
 
                 <button 
                   onClick={() => setStrengths([...strengths, { id: Date.now().toString(), title: "", description: "", iconName: "Star" }])}
-                  className="w-full py-3 border-2 border-dashed border-primary/20 text-[#185D46] rounded-xl font-semibold hover:bg-primary/5 transition-colors flex items-center justify-center"
+                  className="w-full py-3 border-2 border-dashed border-primary/20 text-primary rounded-xl font-semibold hover:bg-primary/5 transition-colors flex items-center justify-center"
                 >
                   <Plus className="w-5 h-5 mr-2" />
                   Add Strength

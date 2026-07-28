@@ -95,11 +95,11 @@ export default function EdukaPresence({ data }: { data?: any }) {
                 transition={{ duration: 0.6, delay: idx * 0.15 }}
                 className="flex items-start gap-6 group"
               >
-                <div className="flex-shrink-0 w-12 h-12 bg-slate-50 text-[#185D46] rounded-2xl flex items-center justify-center border border-slate-100 group-hover:bg-[#185D46] group-hover:text-white group-hover:border-transparent transition-all duration-300 group-hover:scale-110 shadow-sm">
+                <div className="flex-shrink-0 w-12 h-12 bg-slate-50 text-primary rounded-2xl flex items-center justify-center border border-slate-100 group-hover:bg-primary group-hover:text-white group-hover:border-transparent transition-all duration-300 group-hover:scale-110 shadow-sm">
                   {getIcon(item.iconName)}
                 </div>
                 <div className="space-y-1">
-                  <h3 className="text-xl font-bold text-[#185D46] group-hover:text-[#185D46] transition-colors">
+                  <h3 className="text-xl font-bold text-primary group-hover:text-primary transition-colors">
                     {item.title}
                   </h3>
                   <p className="text-gray-500 font-medium text-sm sm:text-base leading-relaxed">

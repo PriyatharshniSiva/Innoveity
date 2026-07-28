@@ -38,7 +38,7 @@ const AnimatedCounter = ({ value, label }: { value: string, label: string }) => 
       className="bg-white border border-slate-100 p-8 rounded-[24px] shadow-[0_4px_24px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_50px_rgba(22,163,74,0.1)] hover:-translate-y-2 hover:border-primary/20 transition-all duration-300 relative overflow-hidden group"
     >
       <div className="absolute top-0 right-0 w-32 h-32 bg-[#185D4620] rounded-full blur-[40px] opacity-0 group-hover:opacity-50 transition-opacity duration-500 -translate-y-1/2 translate-x-1/2" />
-      <motion.div className="text-4xl sm:text-5xl font-black text-[#F59E0B] mb-3 relative z-10">
+      <motion.div className="text-4xl sm:text-5xl font-black text-accent mb-3 relative z-10">
         {!isNaN(numValue) ? <motion.span>{rounded}</motion.span> : value}
       </motion.div>
       <div className="text-xs sm:text-sm text-gray-500 font-bold tracking-widest uppercase relative z-10">{label}</div>
@@ -127,11 +127,11 @@ export default function CsrClient({ data }: { data: any }) {
   ];
 
   return (
-    <div className="min-h-screen bg-slate-50 overflow-hidden selection:bg-[#185D46] selection:text-white pb-24">
+    <div className="min-h-screen bg-slate-50 overflow-hidden selection:bg-primary selection:text-white pb-24">
       {/* 1. Premium Header with Soft Backgrounds */}
       <section className="relative pt-12 pb-24 px-4 sm:px-6 lg:px-8 overflow-hidden bg-white border-b border-slate-100">
         <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#185D4620] rounded-full blur-[150px] opacity-70 -z-10 translate-x-1/3 -translate-y-1/3 animate-pulse" style={{ animationDuration: '8s' }} />
-        <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-[#185D46] rounded-full blur-[150px] opacity-10 -z-10 -translate-x-1/3 translate-y-1/3 animate-pulse" style={{ animationDuration: '10s' }} />
+        <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-primary rounded-full blur-[150px] opacity-10 -z-10 -translate-x-1/3 translate-y-1/3 animate-pulse" style={{ animationDuration: '10s' }} />
         
         <div className="text-center space-y-6 max-w-4xl mx-auto relative z-10">
 
@@ -140,9 +140,9 @@ export default function CsrClient({ data }: { data: any }) {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-5xl sm:text-6xl md:text-7xl font-black text-[#0F172A] tracking-tight"
+            className="text-5xl sm:text-6xl md:text-7xl font-black text-secondary tracking-tight"
           >
-            {data?.hero?.titleLine1 || "CSR & ESG"} <span className="text-[#185D46]">{data?.hero?.titleHighlight || "Impact"}</span>
+            {data?.hero?.titleLine1 || "CSR & ESG"} <span className="text-primary">{data?.hero?.titleHighlight || "Impact"}</span>
           </motion.h1>
           
           <motion.p 
@@ -189,7 +189,7 @@ export default function CsrClient({ data }: { data: any }) {
             <div className="space-y-8 relative">
               <div className="flex items-center justify-between mb-8">
                 <h3 className="text-xl font-bold text-gray-900 tracking-tight">CO₂ Emissions Reduced (Tons)</h3>
-                <div className="px-3 py-1 bg-primary/10 text-[#185D46] rounded-full text-xs font-bold uppercase tracking-wider">
+                <div className="px-3 py-1 bg-primary/10 text-primary rounded-full text-xs font-bold uppercase tracking-wider">
                   +312% Growth
                 </div>
               </div>
@@ -204,12 +204,12 @@ export default function CsrClient({ data }: { data: any }) {
                   {/* Defs for gradients */}
                   <defs>
                     <linearGradient id="co2Gradient" x1="0" y1="0" x2="0" y2="1">
-                      <stop offset="0%" stopColor="var(--color-primary)" stopOpacity="0.2" />
-                      <stop offset="100%" stopColor="var(--color-primary)" stopOpacity="0" />
+                      <stop offset="0%" stopColor="var(--color-brand-primary)" stopOpacity="0.2" />
+                      <stop offset="100%" stopColor="var(--color-brand-primary)" stopOpacity="0" />
                     </linearGradient>
                     <linearGradient id="co2Line" x1="0" y1="0" x2="1" y2="0">
                       <stop offset="0%" stopColor="#4ADE80" />
-                      <stop offset="100%" stopColor="var(--color-primary)" />
+                      <stop offset="100%" stopColor="var(--color-brand-primary)" />
                     </linearGradient>
                   </defs>
 
@@ -248,7 +248,7 @@ export default function CsrClient({ data }: { data: any }) {
                       key={i}
                       cx={pt.cx} cy={pt.cy} r={pt.latest ? "3" : "2"}
                       fill="#FFFFFF"
-                      stroke="var(--color-primary)"
+                      stroke="var(--color-brand-primary)"
                       strokeWidth="1.5"
                       initial={{ scale: 0, opacity: 0 }}
                       whileInView={{ scale: 1, opacity: 1 }}
@@ -270,7 +270,7 @@ export default function CsrClient({ data }: { data: any }) {
                     <div key={i} className="absolute transform -translate-x-1/2 -translate-y-[150%]" style={{ left: pt.left, top: pt.top }}>
                       <ChartInlineCounter 
                         value={pt.val} 
-                        className={`text-sm font-black ${pt.latest ? 'text-[#185D46] drop-shadow-[0_2px_4px_rgba(22,163,74,0.2)]' : 'text-gray-600'}`} 
+                        className={`text-sm font-black ${pt.latest ? 'text-primary drop-shadow-[0_2px_4px_rgba(22,163,74,0.2)]' : 'text-gray-600'}`} 
                       />
                     </div>
                   ))}
@@ -288,7 +288,7 @@ export default function CsrClient({ data }: { data: any }) {
             <div className="space-y-8 relative">
               <div className="flex items-center justify-between mb-8">
                 <h3 className="text-xl font-bold text-gray-900 tracking-tight">Green Jobs Enabled</h3>
-                <div className="px-3 py-1 bg-accent/10 text-[#F59E0B] rounded-full text-xs font-bold uppercase tracking-wider">
+                <div className="px-3 py-1 bg-accent/10 text-accent rounded-full text-xs font-bold uppercase tracking-wider">
                   +300% Growth
                 </div>
               </div>
@@ -369,7 +369,7 @@ export default function CsrClient({ data }: { data: any }) {
                     <div key={i} className="absolute transform -translate-x-1/2 -translate-y-[150%]" style={{ left: pt.left, top: pt.top }}>
                       <ChartInlineCounter 
                         value={pt.val} 
-                        className={`text-sm font-black ${pt.latest ? 'text-[#F59E0B] drop-shadow-[0_2px_4px_rgba(245,158,11,0.2)]' : 'text-gray-600'}`} 
+                        className={`text-sm font-black ${pt.latest ? 'text-accent drop-shadow-[0_2px_4px_rgba(245,158,11,0.2)]' : 'text-gray-600'}`} 
                       />
                     </div>
                   ))}
@@ -409,7 +409,7 @@ export default function CsrClient({ data }: { data: any }) {
             whileInView={{ height: '100%' }}
             viewport={{ once: false, margin: "-100px" }}
             transition={{ duration: 1.5, ease: "easeOut" }}
-            className="absolute left-4 md:left-1/2 top-0 w-1 bg-gradient-to-b from-[#185D46] to-[#185D4620] -translate-x-1/2 rounded-full hidden md:block" 
+            className="absolute left-4 md:left-1/2 top-0 w-1 bg-gradient-to-b from-primary to-[#185D4620] -translate-x-1/2 rounded-full hidden md:block" 
           />
 
           <div className="space-y-16">
@@ -429,7 +429,7 @@ export default function CsrClient({ data }: { data: any }) {
                   
                   {/* Timeline Dot */}
                   <div className="hidden md:flex w-10 h-10 absolute left-1/2 -translate-x-1/2 items-center justify-center">
-                    <div className="w-5 h-5 rounded-full bg-[#185D46] ring-4 ring-[#185D4620] shadow-lg z-10" />
+                    <div className="w-5 h-5 rounded-full bg-primary ring-4 ring-[#185D4620] shadow-lg z-10" />
                   </div>
 
                   {/* Card Content */}
@@ -437,11 +437,11 @@ export default function CsrClient({ data }: { data: any }) {
                     <div className="bg-white border border-slate-100 p-8 md:p-10 rounded-[32px] shadow-[0_8px_30px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_50px_rgba(22,163,74,0.1)] transition-all duration-300 hover:-translate-y-2 group relative overflow-hidden">
                       <div className="absolute -right-10 -top-10 w-32 h-32 bg-accent/5 rounded-full blur-2xl group-hover:bg-accent/10 transition-colors" />
                       
-                      <h3 className="text-2xl md:text-3xl font-extrabold text-[#0F172A] tracking-tight mb-4 group-hover:text-[#185D46] transition-colors">{ini.title}</h3>
+                      <h3 className="text-2xl md:text-3xl font-extrabold text-secondary tracking-tight mb-4 group-hover:text-primary transition-colors">{ini.title}</h3>
                       <p className="text-gray-600 text-base md:text-lg leading-relaxed font-medium mb-8">{ini.desc}</p>
                       
-                      <div className="bg-primary/5 rounded-2xl p-5 border-l-4 border-[#185D46]">
-                        <span className="text-[#185D46] block text-xs font-bold uppercase tracking-[0.15em] mb-2">Key Impact</span>
+                      <div className="bg-primary/5 rounded-2xl p-5 border-l-4 border-primary">
+                        <span className="text-primary block text-xs font-bold uppercase tracking-[0.15em] mb-2">Key Impact</span>
                         <div className="text-gray-900 font-bold text-sm md:text-base">{ini.impact}</div>
                       </div>
                     </div>
@@ -472,10 +472,10 @@ export default function CsrClient({ data }: { data: any }) {
               className="bg-white border border-slate-100 rounded-[32px] p-8 shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-[0_20px_40px_rgba(22,163,74,0.08)] hover:-translate-y-2 hover:border-primary/20 transition-all duration-300 flex flex-col justify-between group"
             >
               <div>
-                <div className="w-16 h-16 rounded-2xl bg-[#185D4620] text-[#185D46] font-black text-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                <div className="w-16 h-16 rounded-2xl bg-[#185D4620] text-primary font-black text-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                   0{idx + 4}
                 </div>
-                <h3 className="text-xl font-extrabold text-[#0F172A] mb-4 tracking-tight group-hover:text-[#185D46] transition-colors">{sdg.goal}</h3>
+                <h3 className="text-xl font-extrabold text-secondary mb-4 tracking-tight group-hover:text-primary transition-colors">{sdg.goal}</h3>
                 <p className="text-gray-600 text-sm md:text-base leading-relaxed font-medium">{sdg.desc}</p>
               </div>
             </motion.div>
@@ -489,11 +489,11 @@ export default function CsrClient({ data }: { data: any }) {
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: false }}
-          className="bg-[#0F172A] text-white rounded-[40px] p-10 md:p-20 text-center shadow-[0_30px_60px_rgba(15,23,42,0.3)] space-y-8 relative overflow-hidden group"
+          className="bg-secondary text-white rounded-[40px] p-10 md:p-20 text-center shadow-[0_30px_60px_rgba(15,23,42,0.3)] space-y-8 relative overflow-hidden group"
         >
           {/* Animated Background Orbs */}
-          <div className="absolute -bottom-32 -left-32 w-96 h-96 bg-[#185D46] rounded-full blur-[100px] opacity-20 group-hover:opacity-40 transition-opacity duration-700" />
-          <div className="absolute -top-32 -right-32 w-96 h-96 bg-[#F59E0B] rounded-full blur-[100px] opacity-10 group-hover:opacity-30 transition-opacity duration-700" />
+          <div className="absolute -bottom-32 -left-32 w-96 h-96 bg-primary rounded-full blur-[100px] opacity-20 group-hover:opacity-40 transition-opacity duration-700" />
+          <div className="absolute -top-32 -right-32 w-96 h-96 bg-accent rounded-full blur-[100px] opacity-10 group-hover:opacity-30 transition-opacity duration-700" />
           
           <h2 className="text-4xl md:text-5xl font-black !text-white tracking-tight relative z-10">
             {data?.cta?.title || "Join Our Impact Journey"}
@@ -503,7 +503,7 @@ export default function CsrClient({ data }: { data: any }) {
           </p>
           <div className="pt-4 relative z-10">
             <Link href={data?.cta?.buttonLink || "/contact"} className="inline-block">
-              <button className="bg-[#185D46] text-white px-10 py-5 rounded-2xl font-bold text-lg hover:bg-[#185D46] hover:shadow-[0_0_30px_rgba(22,163,74,0.4)] hover:-translate-y-1 transition-all duration-300">
+              <button className="bg-primary text-white px-10 py-5 rounded-2xl font-bold text-lg hover:bg-primary hover:shadow-[0_0_30px_rgba(22,163,74,0.4)] hover:-translate-y-1 transition-all duration-300">
                 {data?.cta?.buttonText || "Get in Touch"}
               </button>
             </Link>

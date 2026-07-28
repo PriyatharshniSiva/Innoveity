@@ -15,6 +15,7 @@ model KnowledgeArticle {
   level      String
   nextBatch  String
   instructor String
+  videoUrl   String?
   createdAt  DateTime @default(now())
   updatedAt  DateTime @updatedAt
 }
@@ -33,6 +34,7 @@ model Course {
   instructor       String
   features         String
   certification    String
+  videoUrl         String?
   createdAt        DateTime @default(now())
   updatedAt        DateTime @updatedAt
 }

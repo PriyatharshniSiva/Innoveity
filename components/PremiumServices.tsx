@@ -181,7 +181,7 @@ export default function PremiumServices({ data }: { data?: any }) {
                 }}
               >
                 {/* Dark Overlay for readability */}
-                <div className="absolute inset-0 bg-[#0F172A]/55 group-hover:bg-[#0F172A]/40 transition-colors duration-500"></div>
+                <div className="absolute inset-0 bg-secondary/55 group-hover:bg-secondary/40 transition-colors duration-500"></div>
 
                 {/* Category badge */}
                 <span className="relative z-10 mb-5 inline-flex items-center px-3 py-1 rounded-full text-[10px] font-extrabold tracking-widest uppercase bg-white/15 text-white/90 backdrop-blur-sm border border-white/20 shadow-sm">
@@ -215,7 +215,7 @@ export default function PremiumServices({ data }: { data?: any }) {
 
               {/* ── Content ── */}
               <div className="p-8 flex flex-col flex-grow text-left bg-white">
-                <h3 className="text-xl font-bold text-[#185D46] mb-3 group-hover:text-[#185D46] transition-colors duration-300">
+                <h3 className="text-xl font-bold text-primary mb-3 group-hover:text-primary transition-colors duration-300">
                   {srv.title}
                 </h3>
                 <p className="text-gray-500 text-base leading-relaxed mb-6 flex-grow font-medium">
@@ -225,7 +225,7 @@ export default function PremiumServices({ data }: { data?: any }) {
                 {/* Learn More link with animated arrow */}
                 <Link
                   href="/services"
-                  className="inline-flex items-center gap-1.5 text-[#185D46] font-bold text-sm tracking-wide hover:text-[#185D46] transition-colors group/link"
+                  className="inline-flex items-center gap-1.5 text-primary font-bold text-sm tracking-wide hover:text-primary transition-colors group/link"
                 >
                   <span>Learn More</span>
                   <motion.span

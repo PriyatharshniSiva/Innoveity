@@ -45,7 +45,7 @@ export default function TestimonialsList() {
         <p className="text-slate-500 mb-6 max-w-sm mx-auto">There are currently no testimonials to display. Click the button above to add your first one.</p>
         <button 
           onClick={() => { setEditingId(null); setIsDrawerOpen(true); }}
-          className="px-6 py-2.5 bg-[#185D46] text-white font-bold rounded-xl shadow-[0_4px_14px_0_rgba(24,93,70,0.39)] hover:shadow-[0_6px_20px_rgba(24,93,70,0.23)] transition-all"
+          className="px-6 py-2.5 bg-primary text-white font-bold rounded-xl shadow-[0_4px_14px_0_rgba(24,93,70,0.39)] hover:shadow-[0_6px_20px_rgba(24,93,70,0.23)] transition-all"
         >
           Add Testimonial
         </button>
@@ -67,7 +67,7 @@ export default function TestimonialsList() {
             className="bg-white rounded-3xl p-8 border border-slate-100 shadow-[0_8px_30px_rgb(0,0,0,0.04)] flex flex-col justify-between group hover:border-primary/30 transition-all duration-300"
           >
             <div>
-              <div className="mb-6 opacity-20 text-[#185D46] group-hover:opacity-40 transition-opacity">
+              <div className="mb-6 opacity-20 text-primary group-hover:opacity-40 transition-opacity">
                 <Quote className="w-10 h-10" />
               </div>
               <blockquote className="text-slate-700 text-lg mb-6 leading-relaxed font-medium">
@@ -83,7 +83,7 @@ export default function TestimonialsList() {
               <div className="flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
                 <button
                   onClick={() => { setEditingId(t.id); setIsDrawerOpen(true); }}
-                  className="p-2 text-slate-400 hover:text-[#185D46] hover:bg-primary/10 rounded-lg transition-colors"
+                  className="p-2 text-slate-400 hover:text-primary hover:bg-primary/10 rounded-lg transition-colors"
                   title="Edit"
                 >
                   <Edit2 className="w-4 h-4" />

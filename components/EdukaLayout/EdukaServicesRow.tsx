@@ -46,14 +46,18 @@ export default function EdukaServicesRow({ data }: { data?: any }) {
   };
 
   return (
-    <section className="pt-[50px] pb-24 px-4 sm:px-6 lg:px-8 bg-[#185D46] border-t border-emerald-950 relative overflow-hidden" style={{ backgroundColor: data?.backgroundColor || "var(--color-primary)" }}>
+    <section className="pt-[50px] pb-24 px-4 sm:px-6 lg:px-8 bg-primary border-t border-emerald-950 relative overflow-hidden" style={{ backgroundColor: (data?.backgroundColor === 'var(--color-primary)' ? 'var(--color-brand-primary)' : data?.backgroundColor) || "var(--color-brand-primary)" }}>
       {/* Glow Effects */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/25 rounded-full blur-[150px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto relative z-10 space-y-16">
         {/* Heading */}
         <div className="text-center max-w-3xl mx-auto space-y-4">
-          <h2 className="text-4xl sm:text-5xl font-extrabold !text-white tracking-tight">
+          <h2 className={`text-4xl sm:text-5xl font-extrabold tracking-tight ${
+              (!data?.backgroundColor || data.backgroundColor === 'var(--color-primary)' || data.backgroundColor === 'var(--color-brand-primary)' || data.backgroundColor.toLowerCase() === '#185d46')
+                ? '!text-white'
+                : '!text-gray-900'
+            }`}>
             {(() => {
               const text = data?.title || "Our Services";
               if (typeof text === 'string' && text.includes("Our ")) {
@@ -69,7 +73,11 @@ export default function EdukaServicesRow({ data }: { data?: any }) {
               return text;
             })()}
           </h2>
-          <p className="text-emerald-100 text-lg font-medium">
+          <p className={`text-lg font-medium ${
+            (!data?.backgroundColor || data.backgroundColor === 'var(--color-primary)' || data.backgroundColor === 'var(--color-brand-primary)' || data.backgroundColor.toLowerCase() === '#185d46')
+              ? '!text-emerald-100'
+              : '!text-gray-600'
+          }`}>
             {data?.subtitle || "Comprehensive solutions bridging the gap between education and industry"}
           </p>
         </div>
@@ -86,10 +94,10 @@ export default function EdukaServicesRow({ data }: { data?: any }) {
               whileHover={{ y: -8, scale: 1.01, boxShadow: "0 25px 50px -12px rgba(24, 93, 70, 0.08)" }}
               className="bg-white rounded-[24px] p-10 text-center border border-slate-100 hover:border-primary/20 transition-all duration-300 flex flex-col items-center shadow-[0_8px_30px_rgb(0,0,0,0.02)] h-full cursor-pointer group"
             >
-              <div className="w-16 h-16 bg-[#F8FAFC] text-[#185D46] rounded-full flex items-center justify-center mb-6 group-hover:bg-[#185D46] group-hover:text-white transition-all duration-300 border border-slate-100 shadow-sm">
+              <div className="w-16 h-16 bg-[#F8FAFC] text-primary rounded-full flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-white transition-all duration-300 border border-slate-100 shadow-sm">
                 {getIcon(srv.iconName)}
               </div>
-              <h3 className="text-2xl font-bold text-[#185D46] mb-4 group-hover:text-[#185D46] transition-colors duration-300">
+              <h3 className="text-2xl font-bold text-primary mb-4 group-hover:text-primary transition-colors duration-300">
                 {srv.title}
               </h3>
               <p className="text-gray-500 text-base leading-relaxed font-medium">

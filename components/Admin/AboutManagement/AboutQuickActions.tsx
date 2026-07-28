@@ -7,7 +7,7 @@ import { Edit3, ImagePlus, Trophy, Users, FileText, MonitorPlay } from "lucide-r
 import { useAboutManagement } from "./AboutManagementState";
 
 const actions = [
-  { id: 1, title: "Edit Company Story", icon: Edit3, color: "var(--color-primary)", action: "overview" },
+  { id: 1, title: "Edit Company Story", icon: Edit3, color: "var(--color-brand-primary)", action: "overview" },
   { id: 2, title: "Upload Images", icon: ImagePlus, color: "#0ea5e9", action: "gallery" },
   { id: 3, title: "Add Achievement", icon: Trophy, color: "var(--color-accent)", action: "journey" },
   { id: 4, title: "Manage Team", icon: Users, color: "#8b5cf6", action: "team" },
@@ -39,7 +39,7 @@ export default function AboutQuickActions() {
             >
               <action.icon className="w-6 h-6" />
             </div>
-            <span className="text-sm font-semibold text-slate-700 group-hover:text-[#185D46] transition-colors leading-tight">
+            <span className="text-sm font-semibold text-slate-700 group-hover:text-primary transition-colors leading-tight">
               {action.title}
             </span>
           </motion.div>

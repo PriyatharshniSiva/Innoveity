@@ -22,7 +22,8 @@ export async function POST(request: Request) {
         image: body.image || "https://images.pexels.com/photos/1181671/pexels-photo-1181671.jpeg?auto=compress&cs=tinysrgb&w=800",
         level: body.level || "GENERAL",
         nextBatch: body.nextBatch || new Date().toLocaleDateString(),
-        instructor: body.instructor || "Guest Author"
+        instructor: body.instructor || "Guest Author",
+        videoUrl: body.videoUrl || ""
       }
     });
     return NextResponse.json(newArticle);

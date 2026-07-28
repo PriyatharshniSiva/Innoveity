@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { Lock, Mail, ArrowRight, Loader2 } from "lucide-react";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 export default function LoginPage() {
   const router = useRouter();
@@ -27,6 +28,10 @@ export default function LoginPage() {
       const data = await res.json();
 
       if (res.ok) {
+        if (!localStorage.getItem('adminName')) {
+          localStorage.setItem('adminName', 'Admin User');
+        }
+        localStorage.setItem('adminEmail', email);
         router.push("/admin");
       } else {
         setError(data.error || "Failed to login");
@@ -51,7 +56,7 @@ export default function LoginPage() {
         className="w-full max-w-md p-8 bg-white/80 backdrop-blur-2xl rounded-3xl shadow-2xl border border-white relative z-10 mx-4"
       >
         <div className="text-center mb-10">
-          <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#185D46] to-[#0f3d2e] flex items-center justify-center shadow-xl mx-auto mb-6 transform -rotate-6">
+          <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-primary to-[#0f3d2e] flex items-center justify-center shadow-xl mx-auto mb-6 transform -rotate-6">
             <span className="text-white font-black text-3xl transform rotate-6">I</span>
           </div>
           <h1 className="text-2xl font-black text-slate-800 tracking-tight">Admin Portal</h1>
@@ -80,7 +85,7 @@ export default function LoginPage() {
                 required
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="w-full pl-11 pr-4 py-3.5 bg-slate-50 border border-slate-200 rounded-xl outline-none focus:ring-4 focus:ring-primary/10 focus:border-[#185D46] focus:bg-white transition-all font-medium text-slate-700 placeholder-slate-400"
+                className="w-full pl-11 pr-4 py-3.5 bg-slate-50 border border-slate-200 rounded-xl outline-none focus:ring-4 focus:ring-primary/10 focus:border-primary focus:bg-white transition-all font-medium text-slate-700 placeholder-slate-400"
                 placeholder="admin@innoveity.com"
               />
             </div>
@@ -97,7 +102,7 @@ export default function LoginPage() {
                 required
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                className="w-full pl-11 pr-4 py-3.5 bg-slate-50 border border-slate-200 rounded-xl outline-none focus:ring-4 focus:ring-primary/10 focus:border-[#185D46] focus:bg-white transition-all font-medium text-slate-700 placeholder-slate-400"
+                className="w-full pl-11 pr-4 py-3.5 bg-slate-50 border border-slate-200 rounded-xl outline-none focus:ring-4 focus:ring-primary/10 focus:border-primary focus:bg-white transition-all font-medium text-slate-700 placeholder-slate-400"
                 placeholder="••••••••"
               />
             </div>
@@ -106,7 +111,7 @@ export default function LoginPage() {
           <button
             type="submit"
             disabled={isLoading}
-            className="w-full mt-8 py-3.5 bg-[#185D46] hover:bg-[#124634] text-white rounded-xl font-bold shadow-lg shadow-primary/20 transition-all flex items-center justify-center gap-2 group disabled:opacity-70"
+            className="w-full mt-8 py-3.5 bg-primary hover:bg-[#124634] text-white rounded-xl font-bold shadow-lg shadow-primary/20 transition-all flex items-center justify-center gap-2 group disabled:opacity-70"
           >
             {isLoading ? (
               <Loader2 className="w-5 h-5 animate-spin" />
@@ -117,6 +122,15 @@ export default function LoginPage() {
               </>
             )}
           </button>
+
+          <div className="mt-6 text-center">
+            <p className="text-sm font-medium text-slate-500">
+              Don't have an account?{" "}
+              <Link href="/admin/signup" className="text-primary font-bold hover:underline transition-all">
+                Sign Up
+              </Link>
+            </p>
+          </div>
         </form>
       </motion.div>
     </div>

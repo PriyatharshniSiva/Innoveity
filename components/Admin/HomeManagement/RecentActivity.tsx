@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 import { Clock, Image as ImageIcon, GraduationCap, FileText, CheckCircle2, ChevronRight } from "lucide-react";
 
 const activities = [
-  { id: 1, title: "Home Page Hero updated", time: "2 hours ago", icon: CheckCircle2, color: "var(--color-primary)" },
+  { id: 1, title: "Home Page Hero updated", time: "2 hours ago", icon: CheckCircle2, color: "var(--color-brand-primary)" },
   { id: 2, title: "Uploaded 3 Journey Images", time: "5 hours ago", icon: ImageIcon, color: "#0ea5e9" },
   { id: 3, title: "Added new course: Problem Solving", time: "1 day ago", icon: GraduationCap, color: "var(--color-accent)" },
   { id: 4, title: "Published blog: Future of ESG", time: "2 days ago", icon: FileText, color: "#8b5cf6" },
@@ -20,10 +20,10 @@ export default function RecentActivity() {
       
       <div className="flex items-center justify-between mb-8 relative z-10">
         <h2 className="text-xl font-bold text-slate-900 dark:text-white flex items-center font-sans tracking-tight">
-          <Clock className="w-5 h-5 mr-2.5 text-[#185D46] dark:text-emerald-400" />
+          <Clock className="w-5 h-5 mr-2.5 text-primary dark:text-emerald-400" />
           Recent Activity
         </h2>
-        <Link href="/admin/activity" className="text-sm font-bold text-[#185D46] dark:text-emerald-400 hover:text-[#114332] dark:hover:text-emerald-300 transition-colors flex items-center group">
+        <Link href="/admin/activity" className="text-sm font-bold text-primary dark:text-emerald-400 hover:text-[#114332] dark:hover:text-emerald-300 transition-colors flex items-center group">
           View All <ChevronRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
         </Link>
       </div>

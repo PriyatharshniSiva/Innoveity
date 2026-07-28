@@ -38,8 +38,8 @@ export default function AboutLivePreview() {
             <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#185D4620] rounded-full blur-[120px] opacity-50 -z-10 translate-x-1/3 -translate-y-1/3" />
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
               <div className="space-y-6">
-                <h1 className="text-5xl font-black text-[#0F172A] tracking-tight leading-[1.1]">
-                  {overview.titleLine1} <span className="text-[#185D46]">{overview.titleHighlight}</span>
+                <h1 className="text-5xl font-black text-secondary tracking-tight leading-[1.1]">
+                  {overview.titleLine1} <span className="text-primary">{overview.titleHighlight}</span>
                 </h1>
                 <div className="space-y-6 text-lg text-gray-600 font-medium leading-relaxed">
                   {overview.description.map((p, idx) => (
@@ -60,7 +60,7 @@ export default function AboutLivePreview() {
           {/* Timeline Simulation */}
           <section className="py-24 bg-white relative overflow-hidden">
             <div className="text-center mb-24 space-y-4">
-              <h2 className="text-4xl font-extrabold text-[#0F172A] tracking-tight">Our Journey</h2>
+              <h2 className="text-4xl font-extrabold text-secondary tracking-tight">Our Journey</h2>
               <p className="text-gray-500 text-lg max-w-2xl mx-auto font-medium">Key milestones in our mission to transform education.</p>
             </div>
 
@@ -71,17 +71,17 @@ export default function AboutLivePreview() {
                   const isEven = idx % 2 === 0;
                   return (
                     <div key={step.id} className={`relative flex items-center ${isEven ? 'flex-row-reverse' : ''}`}>
-                      <div className="absolute left-1/2 w-8 h-8 rounded-full bg-white border-4 border-[#185D46] -translate-x-1/2 z-20" />
+                      <div className="absolute left-1/2 w-8 h-8 rounded-full bg-white border-4 border-primary -translate-x-1/2 z-20" />
                       <div className="w-1/2" />
                       <div className={`w-1/2 px-12 ${isEven ? 'text-left' : 'text-right'}`}>
                         <div className={`bg-white rounded-[20px] p-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-slate-100 flex flex-col ${isEven ? 'items-start' : 'items-end'}`}>
                           <div className="flex items-center space-x-4 mb-6">
-                            <div className="w-14 h-14 rounded-[16px] bg-[#185D4620] text-[#185D46] flex items-center justify-center">
+                            <div className="w-14 h-14 rounded-[16px] bg-[#185D4620] text-primary flex items-center justify-center">
                               {getIcon(step.iconName)}
                             </div>
-                            <h4 className="text-3xl font-black text-[#185D46]">{step.year}</h4>
+                            <h4 className="text-3xl font-black text-primary">{step.year}</h4>
                           </div>
-                          <h3 className="text-xl font-bold text-[#0F172A] mb-3">{step.title}</h3>
+                          <h3 className="text-xl font-bold text-secondary mb-3">{step.title}</h3>
                           <p className="text-gray-600 font-medium leading-relaxed">{step.description}</p>
                         </div>
                       </div>
@@ -121,7 +121,7 @@ export default function AboutLivePreview() {
           </section>
 
           {/* Statistics Simulation */}
-          <section className="py-24 bg-[#185D46] text-white">
+          <section className="py-24 bg-primary text-white">
             <div className="max-w-6xl mx-auto px-8">
               <div className="grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
                 {statistics.map((stat) => (
@@ -145,7 +145,7 @@ export default function AboutLivePreview() {
           <section className="py-24 bg-white relative overflow-hidden">
             <div className="max-w-6xl mx-auto px-8 relative z-10">
               <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-                <h2 className="text-4xl sm:text-5xl font-extrabold text-[#0F172A] tracking-tight">
+                <h2 className="text-4xl sm:text-5xl font-extrabold text-secondary tracking-tight">
                   Our Strengths
                 </h2>
                 <p className="text-gray-500 text-lg md:text-xl font-medium">
@@ -159,13 +159,13 @@ export default function AboutLivePreview() {
                     key={item.id}
                     className="bg-white rounded-[20px] p-8 text-center shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-slate-100 hover:shadow-[0_20px_50px_rgb(22,163,74,0.12)] transition-all duration-300 hover:-translate-y-2 flex flex-col items-center justify-center group relative overflow-hidden h-[260px]"
                   >
-                    <div className="absolute top-0 left-0 w-full h-1 bg-[#185D46] scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left rounded-t-[20px]" />
+                    <div className="absolute top-0 left-0 w-full h-1 bg-primary scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left rounded-t-[20px]" />
                     
                     <div className="flex flex-col items-center h-full w-full justify-center transform transition-transform duration-500 group-hover:-translate-y-6">
-                      <div className="w-16 h-16 rounded-full bg-primary/5 flex items-center justify-center text-[#185D46] mb-6 group-hover:scale-110 transition-transform duration-500">
+                      <div className="w-16 h-16 rounded-full bg-primary/5 flex items-center justify-center text-primary mb-6 group-hover:scale-110 transition-transform duration-500">
                         {getIcon(item.iconName)}
                       </div>
-                      <h3 className="text-xl font-bold text-[#185D46]">
+                      <h3 className="text-xl font-bold text-primary">
                         {item.title}
                       </h3>
                     </div>
@@ -195,7 +195,7 @@ export default function AboutLivePreview() {
                     </div>
                     <div className="p-6 text-center">
                       <h4 className="text-lg font-bold text-slate-800 mb-1">{member.name}</h4>
-                      <p className="text-sm font-medium text-[#185D46]">{member.role}</p>
+                      <p className="text-sm font-medium text-primary">{member.role}</p>
                     </div>
                   </div>
                 ))}

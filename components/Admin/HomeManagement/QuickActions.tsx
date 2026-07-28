@@ -7,7 +7,7 @@ import { ImagePlus, MessageSquarePlus, Target, Video, BarChart2, MessageCircleQu
 import { useHomeManagement } from "./HomeManagementState";
 
 const actions = [
-  { id: 1, title: "Add Hero Banner", icon: ImagePlus, color: "var(--color-primary)", action: "hero" },
+  { id: 1, title: "Add Hero Banner", icon: ImagePlus, color: "var(--color-brand-primary)", action: "hero" },
   { id: 2, title: "Upload Journey Image", icon: Video, color: "#0ea5e9", action: "hero" },
   { id: 3, title: "Add Impact Card", icon: Target, color: "#8b5cf6", action: "stats" },
   { id: 4, title: "Add Testimonial", icon: MessageSquarePlus, color: "#f43f5e", action: "testimonials" },
@@ -42,7 +42,7 @@ export default function QuickActions() {
             >
               <action.icon className="w-6 h-6" />
             </div>
-            <span className="text-sm font-bold text-slate-700 dark:text-neutral-300 group-hover:text-[#185D46] dark:group-hover:text-white transition-colors relative z-10 font-sans">
+            <span className="text-sm font-bold text-slate-700 dark:text-neutral-300 group-hover:text-primary dark:group-hover:text-white transition-colors relative z-10 font-sans">
               {action.title}
             </span>
           </motion.div>

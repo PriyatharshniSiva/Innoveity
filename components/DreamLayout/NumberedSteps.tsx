@@ -42,7 +42,7 @@ export default function NumberedSteps({ title, description, steps, images }: Num
               whileInView={{ scaleY: 1 }}
               viewport={{ once: false, margin: "-100px" }}
               transition={{ duration: 1, ease: "easeInOut", delay: 0.2 }}
-              className="absolute left-6 top-8 bottom-8 w-[2px] bg-[#185D46] -z-10 hidden sm:block origin-top"
+              className="absolute left-6 top-8 bottom-8 w-[2px] bg-primary -z-10 hidden sm:block origin-top"
             />
             
             {steps.map((step, idx) => (
@@ -55,15 +55,15 @@ export default function NumberedSteps({ title, description, steps, images }: Num
                 className="flex items-start gap-6 group"
               >
                 <motion.div 
-                  whileHover={{ scale: 1.1, borderColor: "var(--color-primary)", backgroundColor: "var(--color-primary)10" }}
+                  whileHover={{ scale: 1.1, borderColor: "var(--color-brand-primary)", backgroundColor: "var(--color-brand-primary)10" }}
                   className="flex-shrink-0 w-12 h-12 bg-white rounded-full border-2 border-gray-200 flex items-center justify-center shadow-sm transition-all duration-300 relative z-10"
                 >
-                  <span className="text-xl font-bold text-gray-900 group-hover:text-[#185D46] transition-colors">
+                  <span className="text-xl font-bold text-gray-900 group-hover:text-primary transition-colors">
                     {step.number}
                   </span>
                 </motion.div>
                 <div className="pt-2 space-y-2">
-                  <h3 className="text-xl font-bold text-gray-900 group-hover:text-[#185D46] transition-colors">
+                  <h3 className="text-xl font-bold text-gray-900 group-hover:text-primary transition-colors">
                     {step.title}
                   </h3>
                   <p className="text-gray-500 text-sm leading-relaxed font-medium">

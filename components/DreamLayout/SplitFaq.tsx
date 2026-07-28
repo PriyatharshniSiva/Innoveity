@@ -31,13 +31,13 @@ export default function SplitFaq({ title, subtitle, faqs, images }: SplitFaqProp
           <div className="absolute top-0 left-0 w-48 h-48 rounded-[30px] overflow-hidden shadow-lg">
             <img src={images[0] || "https://images.pexels.com/photos/1181675/pexels-photo-1181675.jpeg"} className="w-full h-full object-cover" alt="FAQ 1" />
           </div>
-          <div className="absolute top-8 right-12 w-32 h-32 bg-[#185D46] rounded-[30px] flex items-center justify-center shadow-lg transform rotate-6">
+          <div className="absolute top-8 right-12 w-32 h-32 bg-primary rounded-[30px] flex items-center justify-center shadow-lg transform rotate-6">
             <div className="text-center text-white">
               <span className="text-3xl font-bold block">18+</span>
               <span className="text-xs">Years Exp.</span>
             </div>
           </div>
-          <div className="absolute bottom-12 left-12 w-28 h-28 bg-[#f59e0b] rounded-[30px] flex items-center justify-center shadow-lg transform -rotate-3">
+          <div className="absolute bottom-12 left-12 w-28 h-28 bg-accent rounded-[30px] flex items-center justify-center shadow-lg transform -rotate-3">
             <div className="text-center text-white">
               <span className="text-2xl font-bold block">4+</span>
               <span className="text-xs">Awards</span>
@@ -60,10 +60,10 @@ export default function SplitFaq({ title, subtitle, faqs, images }: SplitFaqProp
                 onClick={() => setOpenIdx(openIdx === idx ? null : idx)}
                 className="w-full text-left px-6 py-5 flex items-center justify-between focus:outline-none"
               >
-                <span className={`font-bold pr-4 ${openIdx === idx ? 'text-[#185D46]' : 'text-gray-900'}`}>
+                <span className={`font-bold pr-4 ${openIdx === idx ? 'text-primary' : 'text-gray-900'}`}>
                   {faq.question}
                 </span>
-                <span className={`flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center transition-colors ${openIdx === idx ? 'bg-[#185D46] text-white' : 'bg-white text-gray-400 border border-gray-200'}`}>
+                <span className={`flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center transition-colors ${openIdx === idx ? 'bg-primary text-white' : 'bg-white text-gray-400 border border-gray-200'}`}>
                   {openIdx === idx ? '−' : '+'}
                 </span>
               </button>

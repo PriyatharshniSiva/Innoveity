@@ -19,7 +19,7 @@ export default function ServicesLivePreview() {
           
           {/* Services Hero Simulation */}
           <section className="relative py-24 px-8 text-center bg-slate-50">
-            <h1 className="text-5xl font-black text-[#0F172A] mb-8">Our <span className="text-[#185D46]">Services</span></h1>
+            <h1 className="text-5xl font-black text-secondary mb-8">Our <span className="text-primary">Services</span></h1>
             <p className="text-xl text-gray-500 max-w-3xl mx-auto">Live preview of your categorized services from the management grid.</p>
           </section>
 
@@ -33,7 +33,7 @@ export default function ServicesLivePreview() {
             return (
               <section key={category.id} className={`py-24 px-8 ${bgClass} relative overflow-hidden`}>
                 <div className="max-w-7xl mx-auto">
-                  <h2 className="text-4xl font-extrabold text-center text-[#0F172A] mb-16 tracking-tight">
+                  <h2 className="text-4xl font-extrabold text-center text-secondary mb-16 tracking-tight">
                     {category.name}
                   </h2>
                   
@@ -44,13 +44,13 @@ export default function ServicesLivePreview() {
                       
                       return (
                         <div key={card.id} className="bg-white rounded-[20px] p-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-slate-100 flex flex-col items-center text-center relative overflow-hidden h-auto min-h-[300px]">
-                          <div className="absolute top-0 left-0 w-full h-1 bg-[#185D46] rounded-t-[20px]" />
+                          <div className="absolute top-0 left-0 w-full h-1 bg-primary rounded-t-[20px]" />
                           
                           <div className="flex flex-col items-center w-full justify-start mt-2 mb-6">
-                            <div className="w-20 h-20 rounded-full bg-[#185D4620] text-[#185D46] flex items-center justify-center mb-5 shadow-sm shrink-0">
+                            <div className="w-20 h-20 rounded-full bg-[#185D4620] text-primary flex items-center justify-center mb-5 shadow-sm shrink-0">
                               <IconComponent className="w-10 h-10" />
                             </div>
-                            <h3 className="text-xl font-bold text-[#0F172A] min-h-[56px] flex items-center justify-center">{card.title}</h3>
+                            <h3 className="text-xl font-bold text-secondary min-h-[56px] flex items-center justify-center">{card.title}</h3>
                           </div>
 
                           <div className="w-full mt-auto">

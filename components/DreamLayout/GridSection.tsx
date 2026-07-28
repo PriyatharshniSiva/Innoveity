@@ -57,7 +57,7 @@ export default function GridSection({ title, subtitle, items }: GridSectionProps
 
             {/* Content Area */}
             <div className="p-6 flex flex-col flex-grow">
-              <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-[#185D46] transition-colors">
+              <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-primary transition-colors">
                 {item.title}
               </h3>
               <p className="text-gray-500 text-sm leading-relaxed mb-6 flex-grow">
@@ -66,7 +66,7 @@ export default function GridSection({ title, subtitle, items }: GridSectionProps
               
               {item.footer && (
                 <div className="pt-4 border-t border-gray-100 flex items-center text-sm font-medium text-gray-700">
-                  <span className="text-[#f59e0b] mr-2">✦</span>
+                  <span className="text-accent mr-2">✦</span>
                   {item.footer}
                 </div>
               )}

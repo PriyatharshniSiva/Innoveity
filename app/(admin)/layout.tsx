@@ -20,7 +20,7 @@ export default function AdminLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.className} bg-[#F4F7F6] dark:bg-[#0a0a0a] text-slate-800 dark:text-neutral-200 min-h-screen flex selection:bg-[#185D46] selection:text-white dark:selection:bg-white dark:selection:text-black overflow-hidden transition-colors duration-300`}>
+      <body className={`${inter.className} bg-[#F4F7F6] dark:bg-[#0a0a0a] text-slate-800 dark:text-neutral-200 min-h-screen flex selection:bg-primary selection:text-white dark:selection:bg-white dark:selection:text-black overflow-hidden transition-colors duration-300`}>
         <AdminThemeProvider>
           <ToastProvider>
             {/* Left Sidebar */}

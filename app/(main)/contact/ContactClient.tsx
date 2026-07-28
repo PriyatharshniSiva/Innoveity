@@ -34,7 +34,7 @@ const FloatingInput = ({ label, type, name, required = false, icon }: { label: s
   return (
     <div className="relative group">
       {icon && (
-        <div className={`absolute left-4 top-[18px] transition-colors duration-300 z-20 ${focused ? 'text-[#185D46]' : 'text-gray-400'}`}>
+        <div className={`absolute left-4 top-[18px] transition-colors duration-300 z-20 ${focused ? 'text-primary' : 'text-gray-400'}`}>
           {icon}
         </div>
       )}
@@ -48,12 +48,12 @@ const FloatingInput = ({ label, type, name, required = false, icon }: { label: s
           setHasValue(e.target.value.length > 0);
         }}
         onChange={(e) => setHasValue(e.target.value.length > 0)}
-        className={`w-full bg-slate-50 border-2 border-transparent focus:bg-white focus:border-primary/30 focus:shadow-[0_0_15px_rgba(22,163,74,0.08)] rounded-[16px] text-[#0F172A] font-semibold transition-all pt-7 pb-3 peer relative z-10 ${icon ? 'pl-12 pr-4' : 'px-5'}`}
+        className={`w-full bg-slate-50 border-2 border-transparent focus:bg-white focus:border-primary/30 focus:shadow-[0_0_15px_rgba(22,163,74,0.08)] rounded-[16px] text-secondary font-semibold transition-all pt-7 pb-3 peer relative z-10 ${icon ? 'pl-12 pr-4' : 'px-5'}`}
       />
       <label
         className={`absolute transition-all duration-300 pointer-events-none z-20 ${
           focused || hasValue 
-            ? "top-2.5 text-[11px] font-bold text-[#185D46] uppercase tracking-wider" 
+            ? "top-2.5 text-[11px] font-bold text-primary uppercase tracking-wider" 
             : "top-4 text-gray-400 text-[15px] font-medium"
         } ${icon ? 'left-12' : 'left-5'}`}
       >
@@ -79,24 +79,24 @@ const FloatingSelect = ({ label, name, required = false }: { label: string, name
         }}
         onChange={(e) => setHasValue(e.target.value !== "")}
         defaultValue=""
-        className={`w-full bg-slate-50 border-2 border-transparent focus:bg-white focus:border-primary/30 focus:shadow-[0_0_15px_rgba(22,163,74,0.08)] rounded-[16px] text-[#0F172A] font-semibold transition-all pt-7 pb-3 px-5 appearance-none peer relative z-10 ${hasValue ? '' : 'text-transparent'}`}
+        className={`w-full bg-slate-50 border-2 border-transparent focus:bg-white focus:border-primary/30 focus:shadow-[0_0_15px_rgba(22,163,74,0.08)] rounded-[16px] text-secondary font-semibold transition-all pt-7 pb-3 px-5 appearance-none peer relative z-10 ${hasValue ? '' : 'text-transparent'}`}
       >
         <option value="" disabled hidden>Select type</option>
-        <option value="course_enrollment" className="text-[#0F172A]">Course Enrollment</option>
-        <option value="corporate_training" className="text-[#0F172A]">Corporate Training</option>
-        <option value="college_partnership" className="text-[#0F172A]">College Partnership</option>
-        <option value="general_inquiry" className="text-[#0F172A]">General Inquiry</option>
+        <option value="course_enrollment" className="text-secondary">Course Enrollment</option>
+        <option value="corporate_training" className="text-secondary">Corporate Training</option>
+        <option value="college_partnership" className="text-secondary">College Partnership</option>
+        <option value="general_inquiry" className="text-secondary">General Inquiry</option>
       </select>
       <label
         className={`absolute transition-all duration-300 pointer-events-none z-20 ${
           focused || hasValue 
-            ? "top-2.5 text-[11px] font-bold text-[#185D46] uppercase tracking-wider left-5" 
+            ? "top-2.5 text-[11px] font-bold text-primary uppercase tracking-wider left-5" 
             : "top-4 text-gray-400 text-[15px] font-medium left-5"
         }`}
       >
         {label} {required && <span className="text-[#f97316]">*</span>}
       </label>
-      <div className={`absolute right-4 top-5 pointer-events-none transition-colors z-20 ${focused ? 'text-[#185D46]' : 'text-gray-400'}`}>
+      <div className={`absolute right-4 top-5 pointer-events-none transition-colors z-20 ${focused ? 'text-primary' : 'text-gray-400'}`}>
         <ChevronDown size={20} />
       </div>
     </div>
@@ -116,12 +116,12 @@ const FloatingTextarea = ({ label, name, required = false }: { label: string, na
         onFocus={() => setFocused(true)}
         onBlur={() => setFocused(false)}
         onChange={(e) => setValue(e.target.value)}
-        className="w-full bg-slate-50 border-2 border-transparent focus:bg-white focus:border-primary/30 focus:shadow-[0_0_15px_rgba(22,163,74,0.08)] rounded-[20px] text-[#0F172A] font-semibold transition-all pt-7 pb-3 px-5 resize-none peer relative z-10"
+        className="w-full bg-slate-50 border-2 border-transparent focus:bg-white focus:border-primary/30 focus:shadow-[0_0_15px_rgba(22,163,74,0.08)] rounded-[20px] text-secondary font-semibold transition-all pt-7 pb-3 px-5 resize-none peer relative z-10"
       ></textarea>
       <label
         className={`absolute transition-all duration-300 pointer-events-none z-20 ${
           focused || value.length > 0
-            ? "top-3 text-[11px] font-bold text-[#185D46] uppercase tracking-wider left-5" 
+            ? "top-3 text-[11px] font-bold text-primary uppercase tracking-wider left-5" 
             : "top-5 text-gray-400 text-[15px] font-medium left-5"
         }`}
       >
@@ -183,13 +183,13 @@ export default function ContactClient({ data }: { data: any }) {
     name: o.name,
     type: o.branchType || o.type,
     address: typeof o.address === 'string' ? [o.address, o.city, o.pincode].filter(Boolean) : o.address,
-    color: o.color
+    color: o.color === 'var(--color-primary)' ? 'var(--color-brand-primary)' : o.color
   })) : [
     {
       name: "Main Office",
       type: "Headquarters",
       address: ["No:11 Ritherdon Avenue, Ritherdon Road", "Vepery, Chennai - 600007", "Tamil Nadu, India"],
-      color: "var(--color-primary)"
+      color: "var(--color-brand-primary)"
     },
     {
       name: "Branch Offices",
@@ -225,10 +225,10 @@ export default function ContactClient({ data }: { data: any }) {
         <div className="text-center mb-24 max-w-4xl mx-auto">
 
           
-          <motion.h1 variants={itemVariants} className="text-4xl md:text-5xl lg:text-[56px] font-black text-[#0F172A] leading-[1.1] mb-6 tracking-tight">
+          <motion.h1 variants={itemVariants} className="text-4xl md:text-5xl lg:text-[56px] font-black text-secondary leading-[1.1] mb-6 tracking-tight">
             {data?.hero?.titleLine1 || "Corporate Training & College Development"}<br className="hidden md:block" />
             <span className="inline-block px-4 font-light text-gray-300">|</span>
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#185D46] to-[#185D46]">{data?.hero?.titleLine2 || "Chennai Tamil Nadu"}</span>
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary">{data?.hero?.titleLine2 || "Chennai Tamil Nadu"}</span>
           </motion.h1>
           
           <motion.p variants={itemVariants} className="text-[#475569] md:text-[19px] max-w-3xl mx-auto mb-16 leading-relaxed font-medium">
@@ -255,10 +255,10 @@ export default function ContactClient({ data }: { data: any }) {
                   whileHover={{ y: -5 }}
                   className="bg-white p-8 rounded-[24px] shadow-[0_4px_24px_rgba(0,0,0,0.02)] hover:shadow-[0_20px_40px_rgba(22,163,74,0.08)] transition-all duration-300 flex flex-col items-center justify-center border border-slate-100 group"
                 >
-                  <div className="text-[#185D46] mb-5 bg-primary/10 p-4 rounded-[16px] group-hover:scale-110 transition-transform duration-300 group-hover:bg-[#185D46] group-hover:text-white">
+                  <div className="text-primary mb-5 bg-primary/10 p-4 rounded-[16px] group-hover:scale-110 transition-transform duration-300 group-hover:bg-primary group-hover:text-white">
                     <IconComponent className="w-6 h-6" />
                   </div>
-                  <h3 className="text-3xl font-black text-[#0F172A] mb-1">{stat.value}</h3>
+                  <h3 className="text-3xl font-black text-secondary mb-1">{stat.value}</h3>
                   <p className="text-gray-500 font-bold text-sm tracking-wide uppercase">{stat.label}</p>
                 </motion.div>
               );
@@ -283,7 +283,7 @@ export default function ContactClient({ data }: { data: any }) {
                   exit={{ opacity: 0, scale: 0.95, filter: "blur(10px)" }}
                   transition={{ duration: 0.4 }}
                 >
-                  <h2 className="text-3xl font-black text-[#0F172A] mb-2">{data?.form?.title || "Get Free Consultation"}</h2>
+                  <h2 className="text-3xl font-black text-secondary mb-2">{data?.form?.title || "Get Free Consultation"}</h2>
                   <p className="text-gray-500 mb-10 font-medium">{data?.form?.subtitle || "We usually respond within 24 hours."}</p>
                   
                   <form className="space-y-5" onSubmit={handleSubmit}>
@@ -303,7 +303,7 @@ export default function ContactClient({ data }: { data: any }) {
                         whileTap={isSubmitting ? {} : { scale: 0.98 }}
                         type="submit" 
                         disabled={isSubmitting}
-                        className="w-full bg-gradient-to-r from-[#185D46] to-[#185D46] hover:from-[#f97316] hover:to-[#ea580c] text-white font-black text-[17px] py-5 rounded-[20px] transition-all duration-500 relative overflow-hidden group flex items-center justify-center min-h-[64px] cursor-pointer shadow-[0_8px_20px_rgba(22,163,74,0.2)]"
+                        className="w-full bg-gradient-to-r from-primary to-primary hover:from-[#f97316] hover:to-[#ea580c] text-white font-black text-[17px] py-5 rounded-[20px] transition-all duration-500 relative overflow-hidden group flex items-center justify-center min-h-[64px] cursor-pointer shadow-[0_8px_20px_rgba(22,163,74,0.2)]"
                       >
                         <AnimatePresence mode="wait">
                           {isSubmitting ? (
@@ -354,12 +354,12 @@ export default function ContactClient({ data }: { data: any }) {
                       initial={{ pathLength: 0 }}
                       animate={{ pathLength: 1 }}
                       transition={{ duration: 0.6, delay: 0.4 }}
-                      xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"
+                      xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--color-brand-primary)" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"
                     >
                       <polyline points="20 6 9 17 4 12"></polyline>
                     </motion.svg>
                   </motion.div>
-                  <h3 className="text-3xl font-black text-[#0F172A] mb-4">Request Sent!</h3>
+                  <h3 className="text-3xl font-black text-secondary mb-4">Request Sent!</h3>
                   <p className="text-gray-500 font-medium max-w-md">
                     Thank you for reaching out. Our team will review your requirements and get back to you within 24 hours.
                   </p>
@@ -379,12 +379,12 @@ export default function ContactClient({ data }: { data: any }) {
               whileHover={{ y: -5, scale: 1.02 }}
               className="bg-white p-7 rounded-[24px] shadow-[0_4px_24px_rgba(0,0,0,0.02)] hover:shadow-[0_20px_40px_rgba(22,163,74,0.08)] border border-slate-100 flex items-center gap-6 transition-all duration-300 group cursor-pointer"
             >
-              <div className="bg-primary/10 p-4 rounded-[16px] text-[#185D46] group-hover:bg-[#185D46] group-hover:text-white transition-colors duration-300 shrink-0">
+              <div className="bg-primary/10 p-4 rounded-[16px] text-primary group-hover:bg-primary group-hover:text-white transition-colors duration-300 shrink-0">
                 <Phone className="w-7 h-7" />
               </div>
               <div>
                 <h3 className="text-sm font-bold text-gray-400 uppercase tracking-wider mb-1">Call Us</h3>
-                <p className="text-xl font-black text-[#0F172A]">{data?.settings?.phonePrimary || data?.contactInfo?.phone || "+91 880 770 8818"}</p>
+                <p className="text-xl font-black text-secondary">{data?.settings?.phonePrimary || data?.contactInfo?.phone || "+91 880 770 8818"}</p>
               </div>
             </motion.div>
 
@@ -402,7 +402,7 @@ export default function ContactClient({ data }: { data: any }) {
                 {((data?.settings?.emailPrimary || data?.settings?.emailSecondary) 
                   ? [data.settings.emailPrimary, data.settings.emailSecondary].filter(Boolean) 
                   : (data?.contactInfo?.emails || ["info@innoveity.com", "admin@innoveity.com"])).map((email: string, i: number) => (
-                  <p key={i} className="text-[17px] font-bold text-[#0F172A] mb-0.5">{email}</p>
+                  <p key={i} className="text-[17px] font-bold text-secondary mb-0.5">{email}</p>
                 ))}
               </div>
             </motion.div>
@@ -413,7 +413,7 @@ export default function ContactClient({ data }: { data: any }) {
               whileHover={{ y: -5, scale: 1.02 }}
               className="bg-white p-7 rounded-[24px] shadow-[0_4px_24px_rgba(0,0,0,0.02)] hover:shadow-[0_20px_40px_rgba(12,74,65,0.08)] border border-slate-100 flex items-center gap-6 transition-all duration-300 group cursor-pointer"
             >
-              <div className="bg-primary/10 p-4 rounded-[16px] text-[#185D46] group-hover:bg-[#185D46] group-hover:text-white transition-colors duration-300 shrink-0">
+              <div className="bg-primary/10 p-4 rounded-[16px] text-primary group-hover:bg-primary group-hover:text-white transition-colors duration-300 shrink-0">
                 <Clock className="w-7 h-7" />
               </div>
               <div>
@@ -421,7 +421,7 @@ export default function ContactClient({ data }: { data: any }) {
                 {((data?.settings?.hoursWeekday || data?.settings?.hoursWeekend)
                   ? [data.settings.hoursWeekday, data.settings.hoursWeekend].filter(Boolean)
                   : (data?.contactInfo?.hours || ["Mon - Fri: 9 AM - 6 PM", "Saturday: 10 AM - 4 PM"])).map((hour: string, i: number) => (
-                  <p key={i} className="text-[16px] font-bold text-[#0F172A] mb-0.5">{hour}</p>
+                  <p key={i} className="text-[16px] font-bold text-secondary mb-0.5">{hour}</p>
                 ))}
               </div>
             </motion.div>
@@ -451,7 +451,7 @@ export default function ContactClient({ data }: { data: any }) {
                 href={data?.settings?.mapLat ? `https://maps.google.com/?q=${data.settings.mapLat},${data.settings.mapLng}` : (data?.map?.link || "https://maps.google.com/?q=Chennai")}
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="absolute bottom-6 right-6 bg-white hover:bg-slate-50 text-[#0F172A] font-bold text-sm px-6 py-4 rounded-2xl shadow-[0_10px_30px_rgba(0,0,0,0.15)] flex items-center gap-3 transition-transform hover:-translate-y-1 z-10"
+                className="absolute bottom-6 right-6 bg-white hover:bg-slate-50 text-secondary font-bold text-sm px-6 py-4 rounded-2xl shadow-[0_10px_30px_rgba(0,0,0,0.15)] flex items-center gap-3 transition-transform hover:-translate-y-1 z-10"
               >
                 {data?.map?.linkText || "Open in Google Maps"}
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="text-[#f97316]"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
@@ -463,31 +463,76 @@ export default function ContactClient({ data }: { data: any }) {
         {/* Office Locations */}
         <motion.div 
           variants={containerVariants}
-          className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8"
+          className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8"
         >
           {offices.map((office: any, i: number) => (
             <motion.div 
               key={i}
               variants={itemVariants}
-              whileHover={{ y: -8 }}
-              className={`bg-white p-8 rounded-[24px] shadow-[0_4px_24px_rgba(0,0,0,0.03)] hover:shadow-[0_20px_40px_rgba(22,163,74,0.08)] border border-slate-100 border-t-4 border-t-transparent hover:border-t-[${office.color}] transition-all duration-300 relative group`}
+              whileHover={{ y: -12, scale: 1.02 }}
+              className="relative group bg-white rounded-[32px] p-8 md:p-10 transition-all duration-500 hover:shadow-[0_40px_80px_rgba(0,0,0,0.06)] border border-slate-100 overflow-hidden flex flex-col h-full z-10"
             >
-              <div className={`w-12 h-12 bg-[${office.color}]/10 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-[${office.color}] group-hover:text-white text-[${office.color}] transition-colors duration-300`}>
-                <MapPin className="w-6 h-6" />
+              {/* Animated Gradient Background on Hover */}
+              <div 
+                className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 rounded-[32px] pointer-events-none"
+                style={{ 
+                  background: `radial-gradient(circle at top right, ${office.color}15, transparent 70%)`, 
+                  zIndex: -1 
+                }} 
+              />
+              <div 
+                className="absolute bottom-0 left-0 w-full h-1.5 opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-y-full group-hover:translate-y-0"
+                style={{ backgroundColor: office.color }}
+              />
+
+              {/* Watermark Icon */}
+              <div 
+                className="absolute -right-6 -top-6 opacity-[0.03] group-hover:opacity-[0.06] group-hover:rotate-12 transition-all duration-700 pointer-events-none"
+                style={{ color: office.color }}
+              >
+                <MapPin className="w-48 h-48" />
               </div>
-              <h3 className="text-xl font-black text-[#0F172A] mb-2 flex items-center gap-2">
-                {office.name} <span className={`w-2 h-2 rounded-full bg-[${office.color}]`}></span>
+
+              {/* Icon Container */}
+              <div 
+                className="w-16 h-16 rounded-[20px] flex items-center justify-center mb-8 transition-transform duration-500 group-hover:scale-110 group-hover:-rotate-3 shadow-sm relative overflow-hidden"
+              >
+                <div 
+                  className="absolute inset-0 opacity-10 group-hover:opacity-20 transition-opacity duration-500"
+                  style={{ backgroundColor: office.color }} 
+                />
+                <MapPin className="w-8 h-8 relative z-10 transition-colors duration-500" style={{ color: office.color }} />
+              </div>
+
+              <h3 className="text-2xl font-black text-secondary mb-5 flex items-center gap-3">
+                {office.name}
+                <span 
+                  className="w-2.5 h-2.5 rounded-full animate-pulse shadow-sm"
+                  style={{ backgroundColor: office.color, boxShadow: `0 0 12px ${office.color}80` }}
+                />
               </h3>
-              <div className="text-gray-500 font-medium space-y-1 mb-4">
+              
+              <div className="text-slate-500 font-medium space-y-3 mb-8 flex-grow">
                 {office.address.map((line: string, j: number) => (
-                  <p key={j} className="flex items-center gap-2">
-                    {office.name === "Branch Offices" && <span className="w-1.5 h-1.5 rounded-full bg-slate-300"></span>}
-                    {line}
+                  <p key={j} className="flex items-start gap-3">
+                    <span 
+                      className="mt-2 w-1.5 h-1.5 rounded-full shrink-0 transition-transform duration-300 group-hover:scale-150" 
+                      style={{ backgroundColor: office.color, opacity: 0.6 }} 
+                    />
+                    <span className="leading-relaxed text-[15px] group-hover:text-slate-700 transition-colors duration-300">{line}</span>
                   </p>
                 ))}
               </div>
+
               {office.type && (
-                <p className={`text-[${office.color}] font-bold text-sm tracking-wide uppercase mt-6`}>{office.type}</p>
+                <div className="mt-auto pt-6 border-t border-slate-100/80">
+                  <p 
+                    className="font-bold text-[13px] tracking-[0.2em] uppercase flex items-center gap-3"
+                    style={{ color: office.color }}
+                  >
+                    {office.type}
+                  </p>
+                </div>
               )}
             </motion.div>
           ))}

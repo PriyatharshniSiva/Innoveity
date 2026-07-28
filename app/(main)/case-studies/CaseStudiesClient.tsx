@@ -49,7 +49,7 @@ function NavArrow({
       className={`w-12 h-12 sm:w-14 sm:h-14 rounded-full border-2 flex items-center justify-center transition-all duration-200 cursor-pointer ${
         disabled
           ? "border-slate-200 text-slate-300 cursor-not-allowed bg-white"
-          : "border-[#185D46] text-[#185D46] bg-white hover:bg-[#185D46] hover:text-white shadow-md"
+          : "border-primary text-primary bg-white hover:bg-primary hover:text-white shadow-md"
       }`}
       aria-label={direction === "prev" ? "Previous case study" : "Next case study"}
     >
@@ -74,7 +74,7 @@ function VideoPlayer({ videoId, isPlaying, onPlay }: { videoId: string; isPlayin
     <div
       className="relative w-full aspect-video rounded-[24px] overflow-hidden shadow-[0_24px_60px_rgba(0,0,0,0.18)] cursor-pointer group border border-white/10"
       onClick={onPlay}
-      style={{ background: "linear-gradient(135deg, var(--color-primary) 0%, #0f2d28 100%)" }}
+      style={{ background: "linear-gradient(135deg, var(--color-brand-primary) 0%, #0f2d28 100%)" }}
     >
       {isPlaying ? (
         <iframe
@@ -103,7 +103,7 @@ function VideoPlayer({ videoId, isPlaying, onPlay }: { videoId: string; isPlayin
               className="relative w-20 h-20 bg-white/95 backdrop-blur-md rounded-full flex items-center justify-center shadow-2xl border-4 border-white"
             >
               <div className="absolute inset-0 rounded-full bg-white animate-ping opacity-15" style={{ animationDuration: "3s" }} />
-              <svg className="w-9 h-9 text-[#185D46] ml-1" fill="currentColor" viewBox="0 0 24 24">
+              <svg className="w-9 h-9 text-primary ml-1" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.347a1.125 1.125 0 0 1 0 1.972l-11.54 6.347c-.75.412-1.667-.13-1.667-.986V5.653Z" />
               </svg>
             </motion.div>
@@ -112,8 +112,8 @@ function VideoPlayer({ videoId, isPlaying, onPlay }: { videoId: string; isPlayin
           {/* Bottom label */}
           <div className="absolute bottom-5 left-5 right-5 flex items-center justify-between z-10">
             <div className="flex items-center gap-2.5 bg-white/90 backdrop-blur-md px-4 py-2.5 rounded-xl shadow-lg">
-              <div className="w-2 h-2 rounded-full bg-[#185D46] animate-pulse" />
-              <span className="text-[#0F172A] font-bold text-sm tracking-wide">Case Study Video</span>
+              <div className="w-2 h-2 rounded-full bg-primary animate-pulse" />
+              <span className="text-secondary font-bold text-sm tracking-wide">Case Study Video</span>
             </div>
             <span className="text-white/70 text-xs font-semibold bg-black/30 backdrop-blur-sm px-3 py-1.5 rounded-lg">
               Watch Full Story →
@@ -167,20 +167,20 @@ export default function CaseStudiesClient({ caseStudies, testimonials }: { caseS
   };
 
   return (
-    <div className="min-h-screen bg-white text-[#0F172A] selection:bg-[#185D46] selection:text-white">
+    <div className="min-h-screen bg-white text-secondary selection:bg-primary selection:text-white">
 
       {/* ── 1. Hero ── */}
       <section className="relative pt-12 pb-8 px-4 sm:px-6 lg:px-8 overflow-hidden">
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#185D4620] rounded-full blur-[120px] opacity-70 -z-10 translate-x-1/3 -translate-y-1/3 animate-pulse" style={{ animationDuration: "8s" }} />
-        <div className="absolute top-[20%] left-[10%] w-[400px] h-[400px] bg-[#185D46] rounded-full blur-[150px] opacity-10 -z-10 animate-pulse" style={{ animationDuration: "10s" }} />
+        <div className="absolute top-[20%] left-[10%] w-[400px] h-[400px] bg-primary rounded-full blur-[150px] opacity-10 -z-10 animate-pulse" style={{ animationDuration: "10s" }} />
 
         <div className="max-w-4xl mx-auto text-center relative z-10 space-y-6">
 
           <motion.h1
             initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-5xl sm:text-6xl md:text-7xl font-black text-[#0F172A] tracking-tight"
+            className="text-5xl sm:text-6xl md:text-7xl font-black text-secondary tracking-tight"
           >
-            Case <span className="text-[#185D46]">Studies</span>
+            Case <span className="text-primary">Studies</span>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.2 }}
@@ -227,12 +227,12 @@ export default function CaseStudiesClient({ caseStudies, testimonials }: { caseS
                   <div className="space-y-4">
                     <motion.span
                       {...fadeUp(0)}
-                      className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-extrabold tracking-widest uppercase bg-primary/5 text-[#185D46] border border-primary/20"
+                      className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-extrabold tracking-widest uppercase bg-primary/5 text-primary border border-primary/20"
                     >
-                      <span className="w-1.5 h-1.5 rounded-full bg-[#185D46] inline-block" />
+                      <span className="w-1.5 h-1.5 rounded-full bg-primary inline-block" />
                       {cs.type}
                     </motion.span>
-                    <motion.h2 {...fadeUp(0.06)} className="text-2xl sm:text-3xl xl:text-4xl font-extrabold text-[#0F172A] tracking-tight leading-[1.2]">
+                    <motion.h2 {...fadeUp(0.06)} className="text-2xl sm:text-3xl xl:text-4xl font-extrabold text-secondary tracking-tight leading-[1.2]">
                       {cs.title}
                     </motion.h2>
                   </div>
@@ -240,11 +240,11 @@ export default function CaseStudiesClient({ caseStudies, testimonials }: { caseS
                   {/* Challenge + Solution */}
                   <div className="space-y-6">
                     <motion.div {...fadeUp(0.12)}>
-                      <p className="text-xs font-extrabold text-[#185D46] uppercase tracking-widest mb-2">The Challenge</p>
+                      <p className="text-xs font-extrabold text-primary uppercase tracking-widest mb-2">The Challenge</p>
                       <p className="text-slate-600 leading-relaxed font-medium">{cs.challenge}</p>
                     </motion.div>
                     <motion.div {...fadeUp(0.18)}>
-                      <p className="text-xs font-extrabold text-[#185D46] uppercase tracking-widest mb-2">Our Solution</p>
+                      <p className="text-xs font-extrabold text-primary uppercase tracking-widest mb-2">Our Solution</p>
                       <p className="text-slate-600 leading-relaxed font-medium">{cs.solution}</p>
                     </motion.div>
                   </div>
@@ -255,7 +255,7 @@ export default function CaseStudiesClient({ caseStudies, testimonials }: { caseS
                     animate={{ opacity: 1, x: 0 }}
                     exit={{ opacity: 0, x: 20 }}
                     transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1], delay: 0.22 }}
-                    className="border-l-4 border-[#F59E0B] pl-6 py-3 bg-gradient-to-r from-amber-50/60 to-transparent rounded-r-2xl"
+                    className="border-l-4 border-accent pl-6 py-3 bg-gradient-to-r from-amber-50/60 to-transparent rounded-r-2xl"
                   >
                     <p className="italic text-slate-700 text-base sm:text-lg font-semibold leading-relaxed">
                       &ldquo;{cs.quote}&rdquo;
@@ -264,7 +264,7 @@ export default function CaseStudiesClient({ caseStudies, testimonials }: { caseS
                 </div>
 
                 {/* ── RIGHT: Results + video ── */}
-                <div className="lg:w-[48%] flex flex-col relative" style={{ background: "var(--color-primary)", minHeight: "420px" }}>
+                <div className="lg:w-[48%] flex flex-col relative" style={{ background: "var(--color-brand-primary)", minHeight: "420px" }}>
                   {/* Glow blobs */}
                   <div className="absolute top-0 right-0 w-64 h-64 rounded-full pointer-events-none" style={{ background: "rgba(22,163,74,0.18)", filter: "blur(80px)" }} />
                   <div className="absolute bottom-0 left-0 w-48 h-48 rounded-full pointer-events-none" style={{ background: "rgba(245,158,11,0.12)", filter: "blur(60px)" }} />
@@ -283,7 +283,7 @@ export default function CaseStudiesClient({ caseStudies, testimonials }: { caseS
                         >
                           <div
                             className="flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center"
-                            style={{ background: "var(--color-primary)", boxShadow: "0 0 16px rgba(22,163,74,0.5)" }}
+                            style={{ background: "var(--color-brand-primary)", boxShadow: "0 0 16px rgba(22,163,74,0.5)" }}
                           >
                             <svg className="w-5 h-5" fill="none" stroke="white" strokeWidth="2.5" viewBox="0 0 24 24">
                               <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
@@ -322,7 +322,7 @@ export default function CaseStudiesClient({ caseStudies, testimonials }: { caseS
                 style={{
                   width: i === activeIdx ? "32px" : "10px",
                   height: "10px",
-                  background: i === activeIdx ? "var(--color-primary)" : "#CBD5E1",
+                  background: i === activeIdx ? "var(--color-brand-primary)" : "#CBD5E1",
                   opacity: i === activeIdx ? 1 : 0.6,
                 }}
               />
@@ -341,21 +341,38 @@ export default function CaseStudiesClient({ caseStudies, testimonials }: { caseS
             <p className="text-xl text-primary/80 max-w-3xl mx-auto">Hear from the leaders and innovators we've had the privilege to work with</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="bg-white rounded-xl shadow-lg border border-slate-100 p-8">
-              <p className="text-primary/90 italic text-lg leading-relaxed">
-                "INNOVEITY's comprehensive faculty development program revolutionized our teaching methodologies. Our students are now industry-ready from day one."
-              </p>
-            </div>
-            <div className="bg-white rounded-xl shadow-lg border border-slate-100 p-8">
-              <p className="text-primary/90 italic text-lg leading-relaxed">
-                "The ESG consulting provided by INNOVEITY helped us achieve carbon neutrality ahead of schedule while improving employee satisfaction scores."
-              </p>
-            </div>
-            <div className="bg-white rounded-xl shadow-lg border border-slate-100 p-8">
-              <p className="text-primary/90 italic text-lg leading-relaxed">
-                "This program transformed our team's capabilities and significantly improved our productivity and innovation metrics."
-              </p>
-            </div>
+            {testimonials && testimonials.length > 0 ? (
+              testimonials.map((testimonial, idx) => (
+                <div key={testimonial.id || idx} className="bg-white rounded-xl shadow-lg border border-slate-100 p-8 flex flex-col justify-between">
+                  <p className="text-primary/90 italic text-lg leading-relaxed mb-4">
+                    "{testimonial.quote.replace(/^"|"$/g, '')}"
+                  </p>
+                  {testimonial.author && (
+                    <p className="text-sm font-bold text-slate-500 text-right mt-auto">
+                      — {testimonial.author}
+                    </p>
+                  )}
+                </div>
+              ))
+            ) : (
+              <>
+                <div className="bg-white rounded-xl shadow-lg border border-slate-100 p-8">
+                  <p className="text-primary/90 italic text-lg leading-relaxed">
+                    "INNOVEITY's comprehensive faculty development program revolutionized our teaching methodologies. Our students are now industry-ready from day one."
+                  </p>
+                </div>
+                <div className="bg-white rounded-xl shadow-lg border border-slate-100 p-8">
+                  <p className="text-primary/90 italic text-lg leading-relaxed">
+                    "The ESG consulting provided by INNOVEITY helped us achieve carbon neutrality ahead of schedule while improving employee satisfaction scores."
+                  </p>
+                </div>
+                <div className="bg-white rounded-xl shadow-lg border border-slate-100 p-8">
+                  <p className="text-primary/90 italic text-lg leading-relaxed">
+                    "This program transformed our team's capabilities and significantly improved our productivity and innovation metrics."
+                  </p>
+                </div>
+              </>
+            )}
           </div>
         </div>
       </section>

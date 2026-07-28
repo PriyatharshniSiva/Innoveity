@@ -19,6 +19,7 @@ export async function PUT(request: Request, { params }: { params: Promise<{ id: 
         duration: body.duration,
         mode: body.mode,
         instructor: body.instructor,
+        videoUrl: body.videoUrl,
       }
     });
     

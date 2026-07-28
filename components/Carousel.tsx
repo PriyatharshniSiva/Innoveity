@@ -86,7 +86,7 @@ export default function Carousel() {
           <div className="flex-1 max-w-[240px]">
             <div className="h-1.5 w-full bg-slate-200 rounded-full overflow-hidden shadow-inner">
               <motion.div 
-                className="h-full bg-gradient-to-r from-[#185D46] to-[#185D46]"
+                className="h-full bg-gradient-to-r from-primary to-primary"
                 initial={{ width: 0 }}
                 animate={{ width: `${progress}%` }}
                 transition={{ duration: 0.1, ease: "linear" }}
@@ -100,7 +100,7 @@ export default function Carousel() {
                 initial={{ y: -20, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 exit={{ y: 20, opacity: 0 }}
-                className="text-[#0F172A] text-xl"
+                className="text-secondary text-xl"
               >
                 {String(activeIndex + 1).padStart(2, '0')}
               </motion.span>
@@ -177,7 +177,7 @@ export default function Carousel() {
           {/* Glassmorphism circular arrow buttons */}
           <button 
             ref={setPrevEl}
-            className="absolute left-0 lg:-left-6 top-[45%] -translate-y-1/2 w-16 h-16 bg-white/70 hover:bg-white backdrop-blur-xl border border-white/50 shadow-[0_8px_30px_rgba(0,0,0,0.1)] rounded-full flex items-center justify-center z-30 transition-all duration-300 hover:scale-110 hover:shadow-[0_0_25px_rgba(22,163,74,0.3)] text-[#0F172A] hover:text-[#185D46] opacity-0 group-hover/carousel:opacity-100 -translate-x-8 group-hover/carousel:translate-x-0 cursor-pointer disabled:opacity-0"
+            className="absolute left-0 lg:-left-6 top-[45%] -translate-y-1/2 w-16 h-16 bg-white/70 hover:bg-white backdrop-blur-xl border border-white/50 shadow-[0_8px_30px_rgba(0,0,0,0.1)] rounded-full flex items-center justify-center z-30 transition-all duration-300 hover:scale-110 hover:shadow-[0_0_25px_rgba(22,163,74,0.3)] text-secondary hover:text-primary opacity-0 group-hover/carousel:opacity-100 -translate-x-8 group-hover/carousel:translate-x-0 cursor-pointer disabled:opacity-0"
             aria-label="Previous image"
           >
             <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="m15 18-6-6 6-6"/></svg>
@@ -185,7 +185,7 @@ export default function Carousel() {
           
           <button 
             ref={setNextEl}
-            className="absolute right-0 lg:-right-6 top-[45%] -translate-y-1/2 w-16 h-16 bg-white/70 hover:bg-white backdrop-blur-xl border border-white/50 shadow-[0_8px_30px_rgba(0,0,0,0.1)] rounded-full flex items-center justify-center z-30 transition-all duration-300 hover:scale-110 hover:shadow-[0_0_25px_rgba(22,163,74,0.3)] text-[#0F172A] hover:text-[#185D46] opacity-0 group-hover/carousel:opacity-100 translate-x-8 group-hover/carousel:translate-x-0 cursor-pointer disabled:opacity-0"
+            className="absolute right-0 lg:-right-6 top-[45%] -translate-y-1/2 w-16 h-16 bg-white/70 hover:bg-white backdrop-blur-xl border border-white/50 shadow-[0_8px_30px_rgba(0,0,0,0.1)] rounded-full flex items-center justify-center z-30 transition-all duration-300 hover:scale-110 hover:shadow-[0_0_25px_rgba(22,163,74,0.3)] text-secondary hover:text-primary opacity-0 group-hover/carousel:opacity-100 translate-x-8 group-hover/carousel:translate-x-0 cursor-pointer disabled:opacity-0"
             aria-label="Next image"
           >
             <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="m9 18 6-6-6-6"/></svg>
@@ -215,7 +215,7 @@ export default function Carousel() {
         .swiper-custom-bullet-active {
           width: 40px;
           border-radius: 6px;
-          background-color: var(--color-primary);
+          background-color: var(--color-brand-primary);
           opacity: 1;
           box-shadow: 0 0 15px rgba(22,163,74,0.4);
         }

@@ -62,16 +62,16 @@ export default function EdukaHero({
   };
 
   return (
-    <section className="relative w-full overflow-hidden bg-white text-[#0F172A] pt-[50px] pb-16 lg:pb-24">
+    <section className="relative w-full overflow-hidden bg-white text-secondary pt-[50px] pb-16 lg:pb-24">
       
       {/* Soft Animated Mesh Gradient Background */}
       <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
         {/* Base light green glow */}
         <div className="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-[#185D4620] rounded-full blur-[120px] opacity-70 animate-pulse" style={{ animationDuration: '8s' }} />
         {/* Soft sunrise orange accent */}
-        <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-[#F59E0B] rounded-full blur-[150px] opacity-20" />
+        <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-accent rounded-full blur-[150px] opacity-20" />
         {/* Subtle primary green glow in center */}
-        <div className="absolute top-[20%] right-[20%] w-[30%] h-[40%] bg-[#185D46] rounded-full blur-[150px] opacity-20 animate-pulse" style={{ animationDuration: '10s' }} />
+        <div className="absolute top-[20%] right-[20%] w-[30%] h-[40%] bg-primary rounded-full blur-[150px] opacity-20 animate-pulse" style={{ animationDuration: '10s' }} />
       </div>
 
       {/* Floating Abstract Shapes */}
@@ -99,7 +99,7 @@ export default function EdukaHero({
             {subtitle && (
               <motion.span 
                 variants={itemVariants}
-                className="inline-block px-4 py-1.5 rounded-full bg-[#185D4620] text-[#185D46] font-extrabold text-xs tracking-[0.2em] uppercase border border-primary/20 shadow-sm"
+                className="inline-block px-4 py-1.5 rounded-full bg-[#185D4620] text-primary font-extrabold text-xs tracking-[0.2em] uppercase border border-primary/20 shadow-sm"
               >
                 {subtitle}
               </motion.span>
@@ -107,7 +107,7 @@ export default function EdukaHero({
             
             <motion.h1 
               variants={itemVariants}
-              className="text-5xl sm:text-6xl lg:text-7xl font-black text-[#0F172A] leading-[1.1] tracking-tight"
+              className="text-5xl sm:text-6xl lg:text-7xl font-black text-secondary leading-[1.1] tracking-tight"
             >
               {title}
             </motion.h1>
@@ -128,7 +128,7 @@ export default function EdukaHero({
                   <motion.button 
                     whileHover={{ y: -4, scale: 1.02, boxShadow: "0 20px 25px -5px rgba(24, 93, 70, 0.35), 0 10px 10px -5px rgba(24, 93, 70, 0.3)" }}
                     whileTap={{ scale: 0.98 }}
-                    className="group relative w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-[#185D46] to-[#185D46] text-white font-bold text-lg rounded-xl shadow-lg transition-all duration-300 overflow-hidden flex items-center justify-center cursor-pointer"
+                    className="group relative w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-primary to-primary text-white font-bold text-lg rounded-xl shadow-lg transition-all duration-300 overflow-hidden flex items-center justify-center cursor-pointer"
                   >
                     <span className="relative z-10">{primaryButtonText}</span>
                     <svg className="relative z-10 w-5 h-5 ml-2 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
@@ -143,7 +143,7 @@ export default function EdukaHero({
                     <motion.button 
                       whileHover={{ y: -4, scale: 1.02, backgroundColor: "rgba(24, 93, 70, 0.08)", borderColor: "rgba(24, 93, 70, 0.8)" }}
                       whileTap={{ scale: 0.98 }}
-                      className="group w-full sm:w-auto px-8 py-4 bg-white text-[#185D46] border-2 border-primary/20 font-bold text-lg rounded-xl transition-all duration-300 flex items-center justify-center cursor-pointer"
+                      className="group w-full sm:w-auto px-8 py-4 bg-white text-primary border-2 border-primary/20 font-bold text-lg rounded-xl transition-all duration-300 flex items-center justify-center cursor-pointer"
                     >
                       {secondaryButtonText}
                     </motion.button>
@@ -194,12 +194,12 @@ export default function EdukaHero({
                   transition={{ delay: 1, duration: 0.5, type: "spring" }}
                   className="absolute bottom-4 -left-6 bg-white/90 backdrop-blur-xl border border-white p-4 rounded-2xl shadow-xl flex items-center gap-4"
                 >
-                  <div className="w-12 h-12 rounded-full bg-[#185D4620] flex items-center justify-center text-[#185D46]">
+                  <div className="w-12 h-12 rounded-full bg-[#185D4620] flex items-center justify-center text-primary">
                     <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
                   </div>
                   <div>
                     <p className="text-sm font-bold text-gray-500 uppercase tracking-wider">Placement Rate</p>
-                    <p className="text-2xl font-black text-[#0F172A]">85%<span className="text-[#185D46] text-lg">+</span></p>
+                    <p className="text-2xl font-black text-secondary">85%<span className="text-primary text-lg">+</span></p>
                   </div>
                 </motion.div>
               </motion.div>
