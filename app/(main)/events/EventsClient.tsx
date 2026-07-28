@@ -220,15 +220,20 @@ export default function EventsClient({ courses }: { courses: any[] }) {
       <AnimatePresence>
         {selectedCourse && (
           <div 
-            className="fixed inset-0 bg-slate-900/60 backdrop-blur-md z-[100] flex items-center justify-center p-4 sm:p-6 md:p-10 overflow-y-auto"
-            onClick={() => setSelectedCourse(null)}
+            className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6"
+            aria-labelledby="modal-title" 
+            role="dialog" 
+            aria-modal="true"
           >
+            {/* Backdrop */}
+            <div className="fixed inset-0 bg-slate-900/60 backdrop-blur-md transition-opacity" onClick={() => setSelectedCourse(null)}></div>
+
             {/* Modal Box */}
             <motion.div 
               initial={{ opacity: 0, scale: 0.95, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.95, y: 20 }}
-              className="bg-[#F3F4F6] rounded-[32px] w-full max-w-4xl shadow-2xl relative overflow-hidden flex flex-col md:flex-row p-5 md:p-8 text-left gap-6 md:gap-8"
+              className="relative z-10 bg-[#F3F4F6] rounded-[32px] w-full max-w-4xl max-h-[90vh] overflow-y-auto shadow-2xl flex flex-col md:flex-row p-4 md:p-6 gap-4 md:gap-6 scrollbar-hide"
               onClick={(e) => e.stopPropagation()}
             >
               {/* Close Button */}
@@ -243,30 +248,30 @@ export default function EventsClient({ courses }: { courses: any[] }) {
               </button>
 
               {/* Left Column */}
-              <div className="flex-1 space-y-6 md:space-y-8">
+              <div className="flex-1 space-y-4 md:space-y-5">
                 {/* Title and Badges */}
-                <div className="space-y-3 md:space-y-4 pr-4 md:pr-6">
-                  <div className="flex flex-wrap items-center gap-3">
-                    <h2 className="text-2xl sm:text-3xl font-bold text-[#047857] tracking-tight leading-snug">
+                <div className="space-y-2 pr-4 md:pr-6">
+                  <div className="flex flex-wrap items-center gap-2 md:gap-3">
+                    <h2 className="text-xl sm:text-2xl font-bold text-primary tracking-tight leading-snug">
                       {selectedCourse.title}
                     </h2>
-                    <span className="bg-[#A7F3D0]/60 text-[#047857] text-sm font-bold px-4 py-1.5 rounded-full flex-shrink-0">
+                    <span className="bg-primary/20 text-primary text-sm font-bold px-4 py-1.5 rounded-full flex-shrink-0">
                       AICTE Affiliated
                     </span>
                     {/* Book Icon */}
-                    <svg className="w-7 h-7 text-[#047857] ml-auto hidden sm:block flex-shrink-0" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                    <svg className="w-7 h-7 text-primary ml-auto hidden sm:block flex-shrink-0" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
                     </svg>
                   </div>
-                  <p className="text-slate-600 text-sm sm:text-base leading-relaxed max-w-2xl">
+                  <p className="text-slate-600 text-[13px] sm:text-sm leading-relaxed max-w-2xl">
                     {selectedCourse.desc}
                   </p>
                 </div>
 
                 {/* Course Features */}
-                <div className="space-y-4">
-                  <h3 className="text-xl font-bold text-[#047857]">Course Features</h3>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div className="space-y-2">
+                  <h3 className="text-lg font-bold text-primary">Course Features</h3>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                     {(() => {
                         let features = [];
                         try {
@@ -277,25 +282,25 @@ export default function EventsClient({ courses }: { courses: any[] }) {
                         if (!Array.isArray(features)) features = [features];
                         return features.map((feature: any, fIdx: number) => (
                       <div key={fIdx} className="flex items-center space-x-3">
-                        <svg className="w-6 h-6 text-[#059669] flex-shrink-0" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                        <svg className="w-5 h-5 text-primary flex-shrink-0" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                         </svg>
-                        <span className="text-slate-700 text-base font-medium">{feature}</span>
+                        <span className="text-slate-700 text-[13px] font-medium">{feature}</span>
                       </div>
                     ))})()}
                   </div>
                 </div>
 
                 {/* AICTE Certification */}
-                <div className="space-y-3 md:space-y-4">
-                  <h3 className="text-lg md:text-xl font-bold text-[#047857]">AICTE Certification</h3>
-                  <div className="bg-[#ECFDF5] rounded-xl p-5 md:p-6 border border-[#A7F3D0] flex items-start space-x-3 md:space-x-4">
-                    <svg className="w-7 h-7 text-[#059669] flex-shrink-0 mt-1" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                <div className="space-y-2">
+                  <h3 className="text-base md:text-lg font-bold text-primary">AICTE Certification</h3>
+                  <div className="bg-primary/5 rounded-xl p-3 md:p-4 border border-primary/20 flex items-start space-x-3">
+                    <svg className="w-6 h-6 text-primary flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                     </svg>
-                    <div className="space-y-2">
-                      <h4 className="font-bold text-[#047857] text-lg">Industry-Recognized Certificate</h4>
-                      <p className="text-slate-600 text-base leading-relaxed">
+                    <div className="space-y-1">
+                      <h4 className="font-bold text-primary text-sm md:text-base">Industry-Recognized Certificate</h4>
+                      <p className="text-slate-600 text-[13px] leading-relaxed">
                         {selectedCourse.certification}
                       </p>
                     </div>
@@ -305,20 +310,20 @@ export default function EventsClient({ courses }: { courses: any[] }) {
 
               {/* Right Column (Sidebar details card) */}
               <div className="w-full md:w-[280px] lg:w-[320px] flex-shrink-0">
-                <div className="bg-white rounded-3xl p-6 lg:p-8 shadow-xl space-y-5 lg:space-y-6">
+                <div className="bg-white rounded-3xl p-4 lg:p-6 shadow-xl space-y-4">
                   {/* Rating */}
-                  <div className="text-center space-y-2 mb-8">
+                  <div className="text-center space-y-1 mb-5">
                     <div className="flex items-center justify-center space-x-2">
                       <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-accent" viewBox="0 0 20 20" fill="currentColor">
                         <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                       </svg>
-                      <span className="font-bold text-lg text-[#047857]">{selectedCourse.rating} Rating</span>
+                      <span className="font-bold text-base text-primary">{selectedCourse.rating} Rating</span>
                     </div>
-                    <p className="text-slate-500 text-sm">{selectedCourse.studentsEnrolled.replace(" students enrolled", "")} students enrolled</p>
+                    <p className="text-slate-500 text-[13px]">{selectedCourse.studentsEnrolled.replace(" students enrolled", "")} students enrolled</p>
                   </div>
 
                   {/* Details list */}
-                  <div className="space-y-5 text-base text-[#047857] font-medium">
+                  <div className="space-y-3 text-[13px] text-primary font-medium">
                     {/* Duration */}
                     <div className="flex items-center space-x-4">
                       <svg className="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
@@ -351,21 +356,21 @@ export default function EventsClient({ courses }: { courses: any[] }) {
                   </div>
 
                   {/* Action buttons */}
-                  <div className="space-y-4 pt-6">
+                  <div className="space-y-3 pt-4">
                     <Link href="/contact" className="block w-full">
-                      <button className="w-full bg-[#059669] text-white py-3.5 rounded-xl font-bold hover:bg-[#047857] hover:shadow-lg transition-all duration-300 text-base cursor-pointer">
+                      <button className="w-full bg-primary text-white py-2.5 rounded-xl font-bold hover:bg-primary/90 hover:shadow-lg transition-all duration-300 text-[14px] cursor-pointer">
                         Enroll Now
                       </button>
                     </Link>
                     <Link href="/contact" className="block w-full">
-                      <button className="w-full border-2 border-[#059669] text-[#059669] py-3 rounded-xl font-bold hover:bg-[#059669]/5 transition-colors duration-300 text-base cursor-pointer">
+                      <button className="w-full border-2 border-primary text-primary py-2 rounded-xl font-bold hover:bg-primary/5 transition-colors duration-300 text-[14px] cursor-pointer">
                         Download Brochure
                       </button>
                     </Link>
                   </div>
                 </div>
               </div>
-            </motion.div>
+                </motion.div>
           </div>
         )}
       </AnimatePresence>
