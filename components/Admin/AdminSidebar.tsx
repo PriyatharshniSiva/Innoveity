@@ -7,7 +7,7 @@ import {
   LayoutDashboard, Home, Info, Briefcase, FileText, BookOpen, GraduationCap, 
   Heart, Mail, Image as ImageIcon, MessageSquare, HelpCircle, BarChart2, 
   Send, Users, Shield, HardDrive, Activity, Settings, User, LogOut,
-  ChevronLeft, ChevronRight
+  ChevronLeft, ChevronRight, Search
 } from "lucide-react";
 import { motion } from "framer-motion";
 
@@ -38,6 +38,7 @@ export default function AdminSidebar() {
         { name: "Our Courses", href: "/admin/courses", icon: GraduationCap },
         { name: "CSR", href: "/admin/csr", icon: Heart },
         { name: "Contact", href: "/admin/contact", icon: Mail },
+        { name: "SEO Management", href: "/admin/seo", icon: Search },
         { name: "Theme Settings", href: "/admin/theme-settings", icon: Settings },
       ]
     },

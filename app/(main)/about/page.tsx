@@ -2,8 +2,14 @@ import React from "react";
 import { PrismaClient } from "@prisma/client";
 import AboutClient from "./AboutClient";
 
+import { getSeoMetadata } from "@/lib/seo";
+
 const prisma = new PrismaClient();
 export const revalidate = 0;
+
+export async function generateMetadata() {
+  return await getSeoMetadata("about");
+}
 
 export default async function About() {
   let aboutData = null;

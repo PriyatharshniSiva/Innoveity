@@ -15,9 +15,15 @@ import EdukaOverview from '@/components/EdukaLayout/EdukaOverview';
 import FAQAccordion from '@/components/FAQAccordion';
 import { PrismaClient } from '@prisma/client';
 
+import { getSeoMetadata } from "@/lib/seo";
+
 const prisma = new PrismaClient();
 
 export const revalidate = 0; // Ensure live data fetching
+
+export async function generateMetadata() {
+  return await getSeoMetadata("home");
+}
 
 export default async function Home() {
   const homeData = await prisma.homeContent.findUnique({

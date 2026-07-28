@@ -1,0 +1,8 @@
+import React from "react";
+import SeoClient from "./SeoClient";
+
+export const dynamic = 'force-dynamic';
+
+export default function SeoManagementPage() {
+  return <SeoClient />;
+}

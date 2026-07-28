@@ -106,3 +106,28 @@ model ThemeSettings {
   contentJson String
   updatedAt   DateTime @updatedAt
 }
+
+model SeoSettings {
+  id            Int      @id @default(autoincrement())
+  page          String   @unique
+  title         String?
+  description   String?
+  canonicalUrl  String?
+  ogTitle       String?
+  ogDescription String?
+  ogImage       String?
+  indexPage     Boolean  @default(true)
+  followLinks   Boolean  @default(true)
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+}
+
+model GlobalSeoSettings {
+  id                 Int      @id @default(1)
+  websiteName        String?
+  defaultTitle       String?
+  defaultDescription String?
+  defaultOgImage     String?
+  organizationLogo   String?
+  updatedAt          DateTime @updatedAt
+}

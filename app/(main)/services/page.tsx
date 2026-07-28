@@ -2,8 +2,14 @@ import React from 'react';
 import { PrismaClient } from '@prisma/client';
 import ServicesClient from './ServicesClient';
 
+import { getSeoMetadata } from "@/lib/seo";
+
 const prisma = new PrismaClient();
 export const revalidate = 0;
+
+export async function generateMetadata() {
+  return await getSeoMetadata("services");
+}
 
 export default async function Services() {
   const servicesData = await prisma.servicesContent.findUnique({
