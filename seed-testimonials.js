@@ -1,36 +1,36 @@
 const { PrismaClient } = require('@prisma/client');
 const prisma = new PrismaClient();
 
-async function main() {
-  console.log("Seeding testimonials...");
-  
-  const testimonials = [
+const testimonials = [
     {
-      quote: "INNOVEITY's comprehensive faculty development program revolutionized our teaching methodologies. Our students are now industry-ready from day one.",
-      author: ""
+      quote: 'Exceptional training programs! INNOVEITY transformed our organization with their innovative approach to skill development. Highly recommended for corporate training.',
+      author: 'Rajesh Kumar'
     },
     {
-      quote: "The ESG consulting provided by INNOVEITY helped us achieve carbon neutrality ahead of schedule while improving employee satisfaction scores.",
-      author: ""
+      quote: 'Outstanding ESG consulting services. Their tree plantation initiative helped us achieve our sustainability goals effectively. Professional and impactful work.',
+      author: 'Priya Sharma'
     },
     {
-      quote: "This program transformed our team's capabilities and significantly improved our productivity and innovation metrics.",
-      author: ""
+      quote: 'Excellent leadership development programs. The training methodology is innovative and results-oriented. Our team\'s performance improved significantly.',
+      author: 'Dr. Amit Patel'
+    },
+    {
+      quote: 'INNOVEITY delivered beyond expectations. Their industrial safety training programs are comprehensive and well-structured. Great team to work with.',
+      author: 'Sarah Johnson'
+    },
+    {
+      quote: 'Impressed with their change management expertise. The consultants are knowledgeable and the implementation was smooth. Definitely recommend their services.',
+      author: 'Vikram Singh'
     }
-  ];
+];
 
+async function main() {
   for (const t of testimonials) {
-    await prisma.testimonial.create({ data: t });
+    await prisma.testimonial.create({
+      data: t
+    });
   }
-  
-  console.log("Seeded successfully!");
+  console.log('Successfully seeded testimonials!');
 }
 
-main()
-  .catch(e => {
-    console.error(e);
-    process.exit(1);
-  })
-  .finally(async () => {
-    await prisma.$disconnect();
-  });
+main().catch(console.error).finally(() => prisma.$disconnect());

@@ -10,6 +10,7 @@ export async function GET() {
     });
     
     const testimonialsData = await prisma.testimonial.findMany({
+      where: { page: "case-studies" },
       orderBy: { id: "asc" }
     });
 

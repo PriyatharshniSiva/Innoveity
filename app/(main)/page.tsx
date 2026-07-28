@@ -46,6 +46,7 @@ export default async function Home() {
   })) || [];
 
   const testimonialsData = await prisma.testimonial.findMany({
+    where: { page: "home" },
     orderBy: { id: "desc" }
   });
 

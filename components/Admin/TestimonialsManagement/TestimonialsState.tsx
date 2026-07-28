@@ -19,11 +19,12 @@ interface TestimonialsContextType {
   setEditingId: React.Dispatch<React.SetStateAction<number | null>>;
   refreshTestimonials: () => void;
   isLoading: boolean;
+  pageContext: string;
 }
 
 const TestimonialsContext = createContext<TestimonialsContextType | undefined>(undefined);
 
-export function TestimonialsProvider({ children }: { children: React.ReactNode }) {
+export function TestimonialsProvider({ children, pageContext = "case-studies" }: { children: React.ReactNode, pageContext?: string }) {
   const [testimonials, setTestimonials] = useState<Testimonial[]>([]);
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   const [editingId, setEditingId] = useState<number | null>(null);
@@ -31,7 +32,7 @@ export function TestimonialsProvider({ children }: { children: React.ReactNode }
 
   const refreshTestimonials = () => {
     setIsLoading(true);
-    fetch('/api/testimonials')
+    fetch(`/api/testimonials?page=${pageContext}`)
       .then(res => res.json())
       .then(data => {
         if (data && data.testimonials) {
@@ -44,14 +45,15 @@ export function TestimonialsProvider({ children }: { children: React.ReactNode }
 
   useEffect(() => {
     refreshTestimonials();
-  }, []);
+  }, [pageContext]);
 
   return (
     <TestimonialsContext.Provider value={{
       testimonials, setTestimonials,
       isDrawerOpen, setIsDrawerOpen,
       editingId, setEditingId,
-      refreshTestimonials, isLoading
+      refreshTestimonials, isLoading,
+      pageContext
     }}>
       {children}
     </TestimonialsContext.Provider>

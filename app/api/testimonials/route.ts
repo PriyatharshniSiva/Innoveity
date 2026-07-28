@@ -3,9 +3,13 @@ import { prisma } from "@/lib/prisma";
 
 export const dynamic = 'force-dynamic';
 
-export async function GET() {
+export async function GET(request: Request) {
   try {
+    const { searchParams } = new URL(request.url);
+    const page = searchParams.get("page") || "case-studies";
+    
     const testimonials = await prisma.testimonial.findMany({
+      where: { page },
       orderBy: { id: "desc" }
     });
     return NextResponse.json({ testimonials });
@@ -21,6 +25,7 @@ export async function POST(request: Request) {
       data: {
         quote: body.quote,
         author: body.author,
+        page: body.page || "case-studies",
       }
     });
     return NextResponse.json(newTestimonial);

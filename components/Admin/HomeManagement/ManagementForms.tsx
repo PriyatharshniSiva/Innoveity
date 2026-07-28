@@ -834,36 +834,7 @@ export default function ManagementForms() {
         </AnimatePresence>
       </div>
 
-      {/* Placeholder for other sections to fulfill the prompt design requirements visually */}
-      {["Our Journey Gallery", "Hero Video"].map((title, idx) => (
-        <div key={idx} className="bg-white rounded-[24px] shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-slate-100 overflow-hidden">
-          <button onClick={() => toggleSection(title)} className="w-full flex items-center justify-between p-6 bg-white hover:bg-slate-50 transition-colors">
-            <div className="flex items-center space-x-3">
-              <div className="w-10 h-10 rounded-xl bg-slate-100 flex items-center justify-center text-slate-500">
-                <LinkIcon className="w-5 h-5" />
-              </div>
-              <h3 className="text-lg font-bold text-slate-800 font-sans">{title}</h3>
-            </div>
-            <ChevronDown className={`w-5 h-5 text-slate-400 transition-transform duration-300 ${activeSection === title ? "rotate-180" : ""}`} />
-          </button>
-          <AnimatePresence>
-            {activeSection === title && (
-              <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: "auto", opacity: 1 }} exit={{ height: 0, opacity: 0 }} className="border-t border-slate-100">
-                <div className="p-6">
-                  <div className="text-slate-500 font-medium text-sm mb-4">
-                    Configure the settings for {title} below.
-                  </div>
-                  <div className="grid grid-cols-1 gap-4">
-                    <input type="text" placeholder="Section Title" className="w-full px-4 py-3 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:outline-none focus:border-primary transition-colors" />
-                    <textarea placeholder="Section Description" rows={3} className="w-full px-4 py-3 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:outline-none focus:border-primary transition-colors" />
-                    <button className="px-6 py-2 bg-slate-100 text-slate-600 rounded-xl font-bold hover:bg-slate-200 transition-colors w-max">Save Changes</button>
-                  </div>
-                </div>
-              </motion.div>
-            )}
-          </AnimatePresence>
-        </div>
-      ))}
+
     </div>
   );
 }

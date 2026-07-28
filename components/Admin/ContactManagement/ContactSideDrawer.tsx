@@ -25,7 +25,15 @@ export default function ContactSideDrawer() {
         setEnquiryData(enq);
         if (enq.status === "Unread") {
           // Auto mark as read
-          setEnquiries(prev => prev.map(e => e.id === editingId ? { ...e, status: "Read" } : e));
+          const updatedEnquiries = enquiries.map(e => e.id === editingId ? { ...e, status: "Read" as const } : e);
+          setEnquiries(updatedEnquiries);
+          
+          // Persist to database immediately
+          fetch('/api/contact', {
+            method: 'PUT',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ offices, enquiries: updatedEnquiries, settings })
+          }).catch(err => console.error("Failed to mark as read:", err));
         }
       }
     } else if (editingType === "settings") {

@@ -21,6 +21,7 @@ export default async function About() {
 
   // Also fetch testimonials for EdukaTestimonials
   const testimonialsData = await prisma.testimonial.findMany({
+    where: { page: "about" },
     orderBy: { id: "desc" }
   });
 

@@ -7,7 +7,7 @@ import { useTestimonials } from "./TestimonialsState";
 import { useToast } from "@/components/Admin/Toast";
 
 export default function TestimonialsDrawer() {
-  const { isDrawerOpen, setIsDrawerOpen, editingId, testimonials, refreshTestimonials } = useTestimonials();
+  const { isDrawerOpen, setIsDrawerOpen, editingId, testimonials, refreshTestimonials, pageContext } = useTestimonials();
   
   const [quote, setQuote] = useState("");
   const [author, setAuthor] = useState("");
@@ -31,7 +31,7 @@ export default function TestimonialsDrawer() {
 
   const handleSave = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!quote || !author) return;
+    if (!quote) return;
 
     setIsSaving(true);
     try {
@@ -41,7 +41,7 @@ export default function TestimonialsDrawer() {
       const res = await fetch(url, {
         method,
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ quote, author })
+        body: JSON.stringify({ quote, author, page: pageContext })
       });
 
       if (res.ok) {
@@ -110,11 +110,10 @@ export default function TestimonialsDrawer() {
                 <div>
                   <label className="block text-sm font-semibold text-slate-700 mb-2 flex items-center gap-2">
                     <User className="w-4 h-4 text-slate-400" />
-                    Author Name
+                    Author Name <span className="text-slate-400 font-normal text-xs ml-auto">(Optional)</span>
                   </label>
                   <input
                     type="text"
-                    required
                     placeholder="e.g. John Doe, CEO at TechCorp"
                     className="w-full px-4 py-3 bg-white border border-slate-200 rounded-xl focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all text-slate-700"
                     value={author}
@@ -150,7 +149,7 @@ export default function TestimonialsDrawer() {
                 ) : (
                   <>
                     <Save className="w-4 h-4 mr-2" />
-                    Save Testimonial
+                    Save
                   </>
                 )}
               </button>

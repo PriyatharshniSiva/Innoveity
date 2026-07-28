@@ -6,7 +6,7 @@ import { useCsr, InitiativeItem, SdgItem } from "./CsrState";
 import { X, Save, ImagePlus } from "lucide-react";
 
 export default function CsrSideDrawer() {
-  const { isDrawerOpen, closeDrawer, editingType, editingId, initiatives, setInitiatives, sdgs, setSdgs } = useCsr();
+  const { isDrawerOpen, closeDrawer, editingType, editingId, initiatives, setInitiatives, sdgs, setSdgs, chartData, setChartData } = useCsr();
   
   const [initiativeData, setInitiativeData] = useState<Partial<InitiativeItem>>({});
   const [sdgData, setSdgData] = useState<Partial<SdgItem>>({});
@@ -156,7 +156,72 @@ export default function CsrSideDrawer() {
               )}
 
               {editingType === "chart" && (
-                <div className="text-center py-12 text-slate-500">Chart editor coming soon...</div>
+                <div className="flex flex-col gap-4">
+                  <p className="text-sm text-slate-500 mb-2">Update the yearly impact metrics shown on the CSR dashboard.</p>
+                  {chartData.map((data, index) => (
+                    <div key={data.id} className="p-4 bg-slate-50 border border-slate-100 rounded-xl space-y-3">
+                      <div className="flex justify-between items-center">
+                        <div className="flex items-center gap-2">
+                          <input 
+                            type="text" 
+                            value={data.year} 
+                            onChange={(e) => {
+                              const newChartData = [...chartData];
+                              newChartData[index].year = e.target.value;
+                              setChartData(newChartData);
+                            }}
+                            className="font-bold text-slate-700 bg-transparent border-b border-transparent hover:border-slate-300 focus:border-primary focus:outline-none w-20"
+                          />
+                          <span className="font-bold text-slate-700">Data</span>
+                        </div>
+                        <button 
+                          onClick={() => {
+                            const newChartData = chartData.filter((_, i) => i !== index);
+                            setChartData(newChartData);
+                          }}
+                          className="text-red-400 hover:text-red-600 p-1 hover:bg-red-50 rounded-lg transition-colors"
+                          title="Delete entry"
+                        >
+                          <X className="w-4 h-4" />
+                        </button>
+                      </div>
+                      <div className="grid grid-cols-2 gap-3">
+                        <div>
+                          <label className="block text-xs font-semibold text-slate-500 mb-1">CO2 Reduction</label>
+                          <input type="number" value={data.co2Value} onChange={(e) => {
+                            const newChartData = [...chartData];
+                            newChartData[index].co2Value = parseInt(e.target.value) || 0;
+                            setChartData(newChartData);
+                          }} className="w-full px-3 py-2 text-sm rounded-lg border border-slate-200 focus:border-primary focus:ring-1 focus:ring-primary outline-none" />
+                        </div>
+                        <div>
+                          <label className="block text-xs font-semibold text-slate-500 mb-1">Jobs Created</label>
+                          <input type="number" value={data.jobsValue} onChange={(e) => {
+                            const newChartData = [...chartData];
+                            newChartData[index].jobsValue = parseInt(e.target.value) || 0;
+                            setChartData(newChartData);
+                          }} className="w-full px-3 py-2 text-sm rounded-lg border border-slate-200 focus:border-primary focus:ring-1 focus:ring-primary outline-none" />
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                  
+                  <button 
+                    onClick={() => {
+                      const lastYear = chartData.length > 0 ? parseInt(chartData[chartData.length - 1].year) : new Date().getFullYear() - 1;
+                      const newChartData = [...chartData, { 
+                        id: Math.random().toString(36).substring(7), 
+                        year: isNaN(lastYear) ? "" : (lastYear + 1).toString(), 
+                        co2Value: 0, 
+                        jobsValue: 0 
+                      }];
+                      setChartData(newChartData);
+                    }}
+                    className="w-full py-3 rounded-xl border-2 border-dashed border-slate-200 text-slate-500 font-bold hover:border-primary hover:text-primary transition-colors flex items-center justify-center gap-2 mt-2"
+                  >
+                    + Add Data Point
+                  </button>
+                </div>
               )}
               
               {editingType === "gallery" && (

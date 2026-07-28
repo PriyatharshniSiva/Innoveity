@@ -24,7 +24,8 @@ export default async function CaseStudies() {
   });
 
   const testimonials = await prisma.testimonial.findMany({
-    orderBy: { id: "asc" }
+    where: { page: "case-studies" },
+    orderBy: { id: "desc" }
   });
 
   return <CaseStudiesClient caseStudies={parsedCaseStudies} testimonials={testimonials} />;

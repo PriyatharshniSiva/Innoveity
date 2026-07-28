@@ -57,8 +57,8 @@ export default function Navbar() {
               <div className="h-[44px] sm:h-[52px] flex items-center justify-center shrink-0">
                  <img src="/iinvlogo.png" alt="Logo Icon" className="w-auto h-full object-contain scale-[1.5]" />
               </div>
-              <div className="h-[44px] sm:h-[52px] flex items-center justify-center shrink-0">
-                 <img src="/innvlog2.png" alt="INNOVEITY Text" className="w-auto h-full object-contain scale-[1.5] origin-left" />
+              <div className="h-[44px] sm:h-[52px] flex items-center justify-center shrink-0 ml-1">
+                 <img src="/innvlog2.png" alt="INNOVEITY Text" className="w-auto h-full object-contain scale-[2] origin-left" />
               </div>
             </Link>
 

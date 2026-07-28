@@ -58,6 +58,7 @@ model Testimonial {
   id        Int      @id @default(autoincrement())
   quote     String
   author    String
+  page      String   @default("case-studies")
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }
