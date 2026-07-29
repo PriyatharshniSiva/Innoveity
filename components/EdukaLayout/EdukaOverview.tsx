@@ -341,7 +341,7 @@ export default function EdukaOverview({ data }: { data?: any }) {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: false }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="relative z-10 text-primary max-w-3xl mx-auto text-base sm:text-lg leading-relaxed font-medium text-justify"
+              className="relative z-10 text-white/90 max-w-3xl mx-auto text-base sm:text-lg leading-relaxed font-medium text-justify"
               dangerouslySetInnerHTML={{
                 __html: data?.contactDescription || `Ready to transform your institution or organization? Contact INNOVEITY at <span class="text-accent font-black">+91 880 770 8818</span> or email <span class="text-accent font-black">admin@innoveity.com</span> for a free consultation. Our team of experts will assess your specific needs and design a customized training solution that delivers measurable results. Join 50+ leading Tamil Nadu institutions and 100+ corporate clients who trust INNOVEITY for their training and development requirements. Visit our office at No:11 Ritherdon Avenue, Ritherdon Road Vepery, Chennai 600007, or schedule a virtual consultation to discuss how we can help you achieve your educational and business objectives.`
               }}
