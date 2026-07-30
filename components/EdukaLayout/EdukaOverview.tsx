@@ -7,7 +7,7 @@ const fadeUp = (delay = 0) => ({
   initial: { opacity: 0, y: 32, scale: 0.97 },
   whileInView: { opacity: 1, y: 0, scale: 1 },
   viewport: { once: false, margin: "-60px" },
-  transition: { duration: 0.72, ease: [0.16, 1, 0.3, 1], delay },
+  transition: { duration: 0.72, ease: [0.16, 1, 0.3, 1] as [number, number, number, number], delay },
 });
 
 export default function EdukaOverview({ data }: { data?: any }) {
@@ -131,7 +131,7 @@ export default function EdukaOverview({ data }: { data?: any }) {
 
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
-            {divisionCards.map((card, idx) => (
+            {divisionCards.map((card: any, idx: number) => (
               <motion.div
                 key={idx}
                 {...fadeUp(idx * 0.12)}
@@ -222,7 +222,7 @@ export default function EdukaOverview({ data }: { data?: any }) {
 
             {/* Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-              {chooseItems.map((item, idx) => (
+              {chooseItems.map((item: any, idx: number) => (
                 <motion.div
                   key={idx}
                   initial={{ opacity: 0, x: -16 }}
@@ -256,7 +256,7 @@ export default function EdukaOverview({ data }: { data?: any }) {
 
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
-            {coreDetails.map((col, idx) => (
+            {coreDetails.map((col: any, idx: number) => (
               <motion.div
                 key={idx}
                 {...fadeUp(idx * 0.12)}

@@ -120,14 +120,14 @@ export default function ThemeManagementClient({ initialData }: { initialData: an
   const handleColorChange = (newHsva: any) => {
     setHsva(newHsva);
     if (activeColorKey) {
-      setColors(prev => ({ ...prev, [activeColorKey]: hsvaToHex(newHsva) }));
+      setColors((prev: any) => ({ ...prev, [activeColorKey]: hsvaToHex(newHsva) }));
     }
   };
 
   const handlePresetSelect = (hex: string) => {
     if (activeColorKey) {
       setHsva(hexToHsva(hex));
-      setColors(prev => ({ ...prev, [activeColorKey]: hex }));
+      setColors((prev: any) => ({ ...prev, [activeColorKey]: hex }));
     }
   };
 
@@ -175,13 +175,13 @@ export default function ThemeManagementClient({ initialData }: { initialData: an
                 >
                   <div 
                     className="w-12 h-12 rounded-full border border-slate-200 shadow-inner group-hover:scale-105 transition-transform" 
-                    style={{ backgroundColor: val }}
+                    style={{ backgroundColor: val as string }}
                   />
                   <div>
                     <p className="text-sm font-bold text-slate-800 capitalize">{key}</p>
                     <div className="flex items-center gap-1.5 mt-0.5">
-                      <p className="text-xs text-slate-500 font-mono uppercase">{val}</p>
-                      <span className="text-[10px] bg-slate-100 text-slate-500 px-1.5 py-0.5 rounded-full font-medium">{getColorName(val)}</span>
+                      <p className="text-xs text-slate-500 font-mono uppercase">{val as string}</p>
+                      <span className="text-[10px] bg-slate-100 text-slate-500 px-1.5 py-0.5 rounded-full font-medium">{getColorName(val as string)}</span>
                     </div>
                   </div>
                 </div>

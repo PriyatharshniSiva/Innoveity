@@ -30,5 +30,5 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     };
   }).filter(Boolean);
 
-  return sitemapEntries;
+  return sitemapEntries as MetadataRoute.Sitemap;
 }

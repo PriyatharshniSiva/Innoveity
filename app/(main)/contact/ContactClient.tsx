@@ -13,8 +13,8 @@ const Mail = ({ className }: { className?: string }) => (
 const Clock = ({ className }: { className?: string }) => (
   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
 );
-const MapPin = ({ className }: { className?: string }) => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+const MapPin = ({ className, style, color }: { className?: string, style?: React.CSSProperties, color?: string }) => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke={color || "currentColor"} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className} style={style}><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
 );
 const ChevronDown = ({ size, className }: { size?: number, className?: string }) => (
   <svg xmlns="http://www.w3.org/2000/svg" width={size || 24} height={size || 24} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><polyline points="6 9 12 15 18 9"></polyline></svg>
@@ -501,7 +501,7 @@ export default function ContactClient({ data }: { data: any }) {
                   className="absolute inset-0 opacity-10 group-hover:opacity-20 transition-opacity duration-500"
                   style={{ backgroundColor: office.color }} 
                 />
-                <MapPin className="w-8 h-8 relative z-10 transition-colors duration-500" style={{ color: office.color }} />
+                <MapPin className="w-8 h-8 relative z-10 transition-colors duration-500" color={office.color} />
               </div>
 
               <h3 className="text-2xl font-black text-secondary mb-5 flex items-center gap-3">

@@ -30,5 +30,11 @@
     ".next/dev/types/**/*.ts",
     "**/*.mts"
   ],
-  "exclude": ["node_modules"]
+  "exclude": [
+    "node_modules",
+    "add_courses.ts",
+    "update_course.ts",
+    "delete_course.ts",
+    "prisma.config.ts"
+  ]
 }

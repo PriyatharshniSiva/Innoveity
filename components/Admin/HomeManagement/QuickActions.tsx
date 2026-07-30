@@ -34,7 +34,7 @@ export default function QuickActions() {
             className="bg-white dark:bg-[#111] rounded-[20px] p-5 flex flex-col items-center justify-center text-center cursor-pointer border border-slate-100 dark:border-white/5 shadow-lg shadow-slate-200/40 dark:shadow-black/40 hover:shadow-xl hover:shadow-primary/10 dark:hover:shadow-black/60 transition-all duration-300 group overflow-hidden relative"
           >
             <div className="absolute inset-0 bg-gradient-to-br from-white/50 to-transparent dark:from-white/5 pointer-events-none" />
-            <div className="absolute -top-10 -right-10 w-24 h-24 bg-gradient-to-br opacity-0 group-hover:opacity-10 transition-opacity duration-500 rounded-full blur-2xl" style={{ from: action.color, to: 'transparent' }} />
+            <div className="absolute -top-10 -right-10 w-24 h-24 opacity-0 group-hover:opacity-10 transition-opacity duration-500 rounded-full blur-2xl" style={{ backgroundColor: action.color }} />
             
             <div 
               className="w-14 h-14 rounded-full flex items-center justify-center mb-4 transition-transform duration-500 group-hover:rotate-12 group-hover:scale-110 shadow-inner relative z-10"

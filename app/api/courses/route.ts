@@ -32,9 +32,13 @@ export async function POST(request: Request) {
         level: body.level || "Beginner",
         duration: body.duration || "4 Weeks",
         mode: body.mode || "Online",
-        instructor: body.instructor || "Guest Instructor",
+        instructor: body.instructor || "Expert Instructor",
         videoUrl: body.videoUrl || "",
-        features: JSON.stringify(["Certificate of Completion", "24/7 Support"])
+        features: JSON.stringify(body.features || []),
+        rating: body.rating || "5.0",
+        studentsEnrolled: body.studentsEnrolled || "0",
+        nextBatch: body.nextBatch || "TBA",
+        certification: body.certification || "Yes",
       }
     });
     

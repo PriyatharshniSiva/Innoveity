@@ -17,7 +17,10 @@ export async function PUT(request: Request, { params }: { params: Promise<{ id: 
         challenge: body.challenge,
         solution: body.solution,
         results: JSON.stringify(body.results || []),
-        image: body.image,
+        quote: body.quote,
+        quoteAuthor: body.quoteAuthor,
+        videoId: body.videoId,
+        accentColor: body.accentColor,
       }
     });
     

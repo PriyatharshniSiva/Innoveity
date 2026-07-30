@@ -46,7 +46,7 @@ export default function FAQAccordion({ data }: { data?: any }) {
   return (
     <div className="w-full max-w-3xl mx-auto">
       <div className="space-y-4">
-        {faqs.map((faq, index) => {
+        {faqs.map((faq: any, index: number) => {
           const isOpen = openIndex === index;
           const isReadMore = readMoreIndex === index;
 

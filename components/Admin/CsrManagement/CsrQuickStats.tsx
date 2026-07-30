@@ -32,7 +32,7 @@ export default function CsrQuickStats() {
             <p className="text-xs font-bold text-slate-500 uppercase tracking-wider mb-1">{stat.title}</p>
             <div className="flex items-baseline text-2xl font-black text-slate-800">
               <CountUp end={stat.value} duration={2} separator="," />
-              {stat.suffix && <span className="ml-1 text-lg">{stat.suffix}</span>}
+              {(stat as any).suffix && <span className="ml-1 text-lg">{(stat as any).suffix}</span>}
             </div>
           </div>
         </motion.div>

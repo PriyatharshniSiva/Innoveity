@@ -77,7 +77,7 @@ export default function PremiumServices({ data }: { data?: any }) {
       opacity: 1,
       y: 0,
       transition: {
-        type: "spring",
+        type: "spring" as const,
         stiffness: 260,
         damping: 20,
       },
@@ -167,7 +167,7 @@ export default function PremiumServices({ data }: { data?: any }) {
                 scale: 1.012,
                 boxShadow: `0 32px 64px -12px ${srv.glowColor}, 0 0 0 1.5px rgba(16,185,129,0.18)`,
               }}
-              transition={{ type: "spring", stiffness: 260, damping: 22 }}
+              transition={{ type: "spring" as const, stiffness: 260, damping: 22 }}
               className="group relative bg-white rounded-[24px] border border-slate-100/80 overflow-hidden flex flex-col cursor-pointer"
               style={{
                 boxShadow: "0 4px 24px -4px rgba(0,0,0,0.06), 0 1px 4px rgba(0,0,0,0.03)",

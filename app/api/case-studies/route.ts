@@ -38,8 +38,10 @@ export async function POST(request: Request) {
         challenge: body.challenge || "",
         solution: body.solution || "",
         results: JSON.stringify(body.results || []),
-        image: body.image || "https://images.pexels.com/photos/1181671/pexels-photo-1181671.jpeg?auto=compress&cs=tinysrgb&w=800",
-        order: body.order || 1
+        quote: body.quote || "",
+        quoteAuthor: body.quoteAuthor || "",
+        videoId: body.videoId || "",
+        accentColor: body.accentColor || "#10B981"
       }
     });
     
