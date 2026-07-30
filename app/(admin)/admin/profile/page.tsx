@@ -85,9 +85,9 @@ export default function ProfileManagement() {
 
           <div className="bg-gradient-to-br from-primary to-[#0f3d2e] rounded-3xl p-6 text-white shadow-lg relative overflow-hidden group cursor-pointer">
             <div className="absolute -right-6 -top-6 w-24 h-24 bg-white/10 rounded-full blur-2xl group-hover:bg-white/20 transition-all" />
-            <Shield className="w-8 h-8 mb-4 text-primary/80" />
-            <h3 className="font-bold text-lg mb-1">Two-Factor Auth</h3>
-            <p className="text-primary/80 text-sm font-medium mb-4">Enhance your account security by enabling 2FA.</p>
+            <Shield className="w-8 h-8 mb-4 text-white/80" />
+            <h3 className="font-bold text-lg mb-1 text-white">Two-Factor Auth</h3>
+            <p className="text-white/80 text-sm font-medium mb-4">Enhance your account security by enabling 2FA.</p>
             <button className="bg-white/10 hover:bg-white/20 text-white font-bold py-2 px-4 rounded-xl text-sm transition-colors w-full border border-white/20">
               Enable Now
             </button>
@@ -119,7 +119,7 @@ export default function ProfileManagement() {
               </div>
 
               <div>
-                <label className="block text-sm font-bold text-slate-700 dark:text-neutral-300 mb-2">Email Address</label>
+                <label className="block text-sm font-bold text-slate-700 dark:text-neutral-300 mb-2">Username</label>
                 <div className="relative">
                   <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
                     <Mail className="w-5 h-5 text-slate-400 dark:text-neutral-500" />

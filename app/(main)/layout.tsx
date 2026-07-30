@@ -4,6 +4,7 @@ import "../globals.css";
 import Navbar from "@/components/Navbar";
 import SmoothScroll from "@/components/SmoothScroll";
 import FloatingContactWidget from "@/components/FloatingContactWidget";
+import AutoLogout from "@/components/AutoLogout";
 import { PrismaClient } from "@prisma/client";
 
 const prisma = new PrismaClient();
@@ -68,6 +69,7 @@ export default async function RootLayout({
           color: 'var(--foreground)'
         }}
       >
+        <AutoLogout />
         <Navbar />
         <SmoothScroll />
         <main className="relative">{children}</main>

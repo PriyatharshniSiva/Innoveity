@@ -5,6 +5,7 @@ import AdminSidebar from "@/components/Admin/AdminSidebar";
 import AdminTopbar from "@/components/Admin/AdminTopbar";
 import { AdminThemeProvider } from "@/components/Admin/AdminThemeProvider";
 import { ToastProvider } from "@/components/Admin/Toast";
+import SessionGuard from "@/components/Admin/SessionGuard";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -55,6 +56,7 @@ export default async function AdminLayout({
       <body className={`${inter.className} bg-[#F4F7F6] dark:bg-[#0a0a0a] text-slate-800 dark:text-neutral-200 min-h-screen flex selection:bg-primary selection:text-white dark:selection:bg-white dark:selection:text-black overflow-hidden transition-colors duration-300`}>
         <AdminThemeProvider>
           <ToastProvider>
+            <SessionGuard />
             {/* Left Sidebar */}
             <AdminSidebar />
 
