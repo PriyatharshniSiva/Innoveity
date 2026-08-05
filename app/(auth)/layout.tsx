@@ -9,9 +9,9 @@ export const metadata: Metadata = {
   description: "Secure login for the INNOVEITY admin portal",
 };
 
-import { PrismaClient } from "@prisma/client";
+import { prisma } from "@/lib/prisma";
 
-const prisma = new PrismaClient();
+
 export const revalidate = 0;
 
 export default async function AuthLayout({

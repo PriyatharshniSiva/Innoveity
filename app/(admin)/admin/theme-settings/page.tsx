@@ -1,8 +1,8 @@
 import React from "react";
-import { PrismaClient } from "@prisma/client";
+import { prisma } from "@/lib/prisma";
 import ThemeManagementClient from "@/components/Admin/ThemeManagement/ThemeManagementClient";
 
-const prisma = new PrismaClient();
+
 export const revalidate = 0;
 
 export default async function ThemeSettingsPage() {

@@ -14,9 +14,9 @@ export const metadata: Metadata = {
   description: "Enterprise Admin Dashboard",
 };
 
-import { PrismaClient } from "@prisma/client";
+import { prisma } from "@/lib/prisma";
 
-const prisma = new PrismaClient();
+
 export const revalidate = 0;
 
 export default async function AdminLayout({

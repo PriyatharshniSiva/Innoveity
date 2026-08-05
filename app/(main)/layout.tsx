@@ -5,9 +5,9 @@ import Navbar from "@/components/Navbar";
 import SmoothScroll from "@/components/SmoothScroll";
 import FloatingContactWidget from "@/components/FloatingContactWidget";
 import AutoLogout from "@/components/AutoLogout";
-import { PrismaClient } from "@prisma/client";
+import { prisma } from "@/lib/prisma";
 
-const prisma = new PrismaClient();
+
 export const revalidate = 0; // Ensure live data fetching for theme settings
 
 const inter = Inter({

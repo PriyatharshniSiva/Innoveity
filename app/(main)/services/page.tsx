@@ -1,10 +1,10 @@
 import React from 'react';
-import { PrismaClient } from '@prisma/client';
+import { prisma } from "@/lib/prisma";
 import ServicesClient from './ServicesClient';
 
 import { getSeoMetadata } from "@/lib/seo";
 
-const prisma = new PrismaClient();
+
 export const revalidate = 0;
 
 export async function generateMetadata() {
