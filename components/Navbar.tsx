@@ -53,11 +53,11 @@ export default function Navbar() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             {/* Logo */}
-            <Link href="/" className="flex items-center gap-1 sm:gap-2 pl-2">
+            <Link href="/" className="flex items-center pl-2">
               <div className="h-[44px] sm:h-[52px] flex items-center justify-center shrink-0">
                  <img src="/iinvlogo.png" alt="Logo Icon" className="w-auto h-full object-contain scale-[1.5]" />
               </div>
-              <div className="h-[44px] sm:h-[52px] flex items-center justify-center shrink-0 ml-1">
+              <div className="h-[44px] sm:h-[52px] flex items-center justify-center shrink-0 -ml-2 sm:-ml-1">
                  <img src="/innvlog2.png" alt="INNOVEITY Text" className="w-auto h-full object-contain scale-[2] origin-left" />
               </div>
             </Link>
