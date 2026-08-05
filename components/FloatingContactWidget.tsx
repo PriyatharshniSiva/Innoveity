@@ -105,7 +105,7 @@ export default function FloatingContactWidget({ initialOptions }: { initialOptio
                 </span>
 
                 {/* Button */}
-                <div className={`flex items-center justify-center w-12 h-12 rounded-full text-white shadow-lg ${option.color} hover:scale-110 active:scale-95 transition-transform duration-200 overflow-hidden relative`}>
+                <div className={`flex items-center justify-center w-12 h-12 rounded-full text-white shadow-lg ${option.color === 'bg-[#F59E0B]' || option.color === 'bg-accent' ? 'bg-amber-500' : option.color} hover:scale-110 active:scale-95 transition-transform duration-200 overflow-hidden relative`}>
                   <div className="absolute inset-0 bg-white opacity-0 hover:opacity-20 transition-opacity duration-300"></div>
                   {defaultIcons[option.id] || defaultIcons["email"]}
                 </div>
