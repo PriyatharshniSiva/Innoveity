@@ -3,13 +3,48 @@ import { SignJWT } from "jose";
 
 const JWT_SECRET = process.env.JWT_SECRET || "innoveity-super-secret-jwt-key";
 
+import { prisma } from "@/lib/prisma";
+import bcrypt from "bcryptjs";
+
 export async function POST(request: Request) {
   try {
     const body = await request.json();
     
-    // In a real application, you would verify the credentials against a database
-    // For now, allow any login
-    console.log("Mock Login for:", body.email);
+    const { email, password } = body;
+    
+    // Check if any admin exists in the database
+    let adminUser = await prisma.admin.findFirst();
+    
+    // If no admin exists, create the default one
+    if (!adminUser) {
+      const hashedPassword = await bcrypt.hash("admin@123", 10);
+      adminUser = await prisma.admin.create({
+        data: {
+          email: "admin",
+          password: hashedPassword,
+          name: "Admin User",
+        }
+      });
+    }
+
+    // Verify credentials
+    if (email !== adminUser.email) {
+      return NextResponse.json(
+        { error: "Invalid username or password" },
+        { status: 401 }
+      );
+    }
+
+    const isPasswordValid = await bcrypt.compare(password, adminUser.password);
+    
+    if (!isPasswordValid) {
+      return NextResponse.json(
+        { error: "Invalid username or password" },
+        { status: 401 }
+      );
+    }
+
+    console.log("Successful Login for:", email);
 
     // Create a JWT token
     const token = await new SignJWT({ email: body.email, role: "admin" })

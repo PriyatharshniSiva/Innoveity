@@ -29,11 +29,11 @@ export default function QuickStats() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: idx * 0.1 }}
           whileHover={{ y: -5 }}
-          className="bg-white dark:bg-[#111] rounded-[24px] p-6 border border-slate-100 dark:border-white/5 shadow-xl shadow-slate-200/40 dark:shadow-black/40 relative overflow-hidden group cursor-pointer"
+          className="bg-white dark:bg-white/5 backdrop-blur-xl rounded-[24px] p-6 border border-slate-200 dark:border-white/10 shadow-xl shadow-slate-200/50 dark:shadow-black/40 hover:shadow-[0_0_20px_rgba(56,189,248,0.3)] relative overflow-hidden group cursor-pointer"
         >
           {/* Subtle background glow effect on hover */}
           <div 
-            className="absolute top-0 right-0 w-32 h-32 rounded-full blur-[60px] opacity-0 group-hover:opacity-20 transition-opacity duration-700 pointer-events-none"
+            className="absolute top-0 right-0 w-32 h-32 rounded-full blur-[60px] opacity-0 group-hover:opacity-30 transition-opacity duration-700 pointer-events-none"
             style={{ backgroundColor: stat.color }}
           />
 
@@ -44,14 +44,14 @@ export default function QuickStats() {
             >
               <stat.icon className="w-7 h-7" style={{ color: stat.color }} />
             </div>
-            <div className="flex items-center text-xs font-bold text-primary dark:text-primary/90 bg-primary/10 dark:bg-primary/10 px-3 py-1.5 rounded-full">
+            <div className="flex items-center text-xs font-bold text-primary bg-primary/20 px-3 py-1.5 rounded-full">
               <TrendingUp className="w-3.5 h-3.5 mr-1.5" />
               {stat.trend}
             </div>
           </div>
           
           <div className="relative z-10">
-            <h3 className="text-slate-500 dark:text-neutral-400 text-sm font-bold uppercase tracking-wider mb-2 font-sans">{stat.title}</h3>
+            <h3 className="text-slate-500 dark:text-white/60 text-sm font-bold uppercase tracking-wider mb-2 font-sans">{stat.title}</h3>
             <div className="text-4xl font-black text-slate-900 dark:text-white font-sans tracking-tight">
               <CountUp end={stat.count} separator="," duration={2.5} />
             </div>

@@ -5,8 +5,8 @@ import { Montserrat, Inter } from 'next/font/google';
 import { motion } from 'framer-motion';
 import "./globals.css";
 
-const montserrat = Montserrat({ subsets: ['latin'], weight: ['800', '900'] });
-const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
+const montserrat = Montserrat({ subsets: ['latin'], weight: ['800', '900'], preload: false });
+const inter = Inter({ subsets: ['latin'], variable: '--font-inter', preload: false });
 
 export default function GlobalNotFound() {
   return (

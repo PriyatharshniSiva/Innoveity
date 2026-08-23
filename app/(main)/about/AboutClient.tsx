@@ -70,7 +70,7 @@ export default function AboutClient({ initialData, testimonials }: { initialData
               transition={{ duration: 0.8, ease: "easeOut" }}
               className="space-y-6"
             >
-              <h1 className="text-5xl sm:text-6xl font-black text-secondary tracking-tight leading-[1.1]">
+              <h1 className="text-5xl sm:text-6xl font-black tracking-tight leading-[1.1]" style={{ color: "#000000" }}>
                 {overview?.titleLine1 || "About"} <span className="text-primary">{overview?.titleHighlight || "INNOVEITY"}</span>
               </h1>
               
@@ -105,7 +105,8 @@ export default function AboutClient({ initialData, testimonials }: { initialData
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: false }}
-              className="text-4xl sm:text-5xl font-extrabold text-[var(--color-brand-primary, var(--color-brand-secondary, #0F172A))] tracking-tight"
+              className="text-4xl sm:text-5xl font-extrabold tracking-tight"
+              style={{ color: "#000000" }}
             >
               <span style={{ color: "var(--color-brand-accent, var(--color-brand-accent, #F59E0B))" }}>Our </span>Foundation
             </motion.h2>
@@ -159,7 +160,8 @@ export default function AboutClient({ initialData, testimonials }: { initialData
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: false }}
-              className="text-4xl sm:text-5xl font-extrabold text-secondary tracking-tight"
+              className="text-4xl sm:text-5xl font-extrabold tracking-tight"
+              style={{ color: "#000000" }}
             >
               <span style={{ color: "var(--color-brand-accent, var(--color-brand-accent, #F59E0B))" }}>Our</span> Journey
             </motion.h2>
@@ -247,7 +249,8 @@ export default function AboutClient({ initialData, testimonials }: { initialData
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: false }}
-              className="text-4xl sm:text-5xl font-extrabold text-[var(--color-brand-primary, var(--color-brand-secondary, #0F172A))] tracking-tight"
+              className="text-4xl sm:text-5xl font-extrabold tracking-tight"
+              style={{ color: "#000000" }}
             >
               <span style={{ color: "var(--color-brand-accent, var(--color-brand-accent, #F59E0B))" }}>Our </span>Strengths
             </motion.h2>

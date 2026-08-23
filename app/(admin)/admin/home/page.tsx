@@ -13,7 +13,7 @@ function HomeManagementContent() {
   const { isSaving, saveAllChanges } = useHomeManagement();
 
   return (
-    <div className="min-h-screen bg-slate-50 dark:bg-[#0a0a0a] pb-20 font-sans">
+    <div className="min-h-screen bg-transparent pb-20 font-sans">
       
       {/* Top Header */}
       <div className="bg-white/80 dark:bg-black/50 backdrop-blur-2xl border-b border-slate-200 dark:border-white/10 sticky top-0 z-50">

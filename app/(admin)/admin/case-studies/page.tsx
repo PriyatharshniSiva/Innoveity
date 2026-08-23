@@ -10,12 +10,44 @@ import CaseStudiesTable from "@/components/Admin/CaseStudiesManagement/CaseStudi
 import CaseStudiesDrawer from "@/components/Admin/CaseStudiesManagement/CaseStudiesDrawer";
 import CaseStudiesActivity from "@/components/Admin/CaseStudiesManagement/CaseStudiesActivity";
 import CaseStudiesTestimonials from "@/components/Admin/CaseStudiesManagement/CaseStudiesTestimonials";
+import DeleteCaseStudyModal from "@/components/Admin/CaseStudiesManagement/DeleteCaseStudyModal";
 import Link from "next/link";
 import { AnimatePresence } from "framer-motion";
 import { TestimonialsProvider } from "@/components/Admin/TestimonialsManagement/TestimonialsState";
 
 function CaseStudiesContent() {
-  const { viewMode, setIsDrawerOpen, setEditingCaseStudyId } = useCaseStudies();
+  const { viewMode, setIsDrawerOpen, setEditingCaseStudyId, caseStudies, setCaseStudies } = useCaseStudies();
+  const fileInputRef = React.useRef<HTMLInputElement>(null);
+
+  const handleExport = () => {
+    // Keep function signature for potential future use or if something else references it, but we can also just remove it.
+    // Let's actually remove it entirely since it's only used by the button.
+  };
+
+  const handleImport = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const fileReader = new FileReader();
+    if (event.target.files && event.target.files[0]) {
+      fileReader.readAsText(event.target.files[0], "UTF-8");
+      fileReader.onload = e => {
+        try {
+          const importedData = JSON.parse(e.target?.result as string);
+          if (Array.isArray(importedData)) {
+            // Very basic validation, could be improved
+            setCaseStudies([...caseStudies, ...importedData]);
+            alert("Successfully imported case studies!");
+          } else {
+            alert("Invalid file format. Expected an array of case studies.");
+          }
+        } catch (error) {
+          alert("Error parsing JSON file.");
+        }
+      };
+    }
+    // Reset input so the same file can be imported again if needed
+    if (fileInputRef.current) {
+      fileInputRef.current.value = "";
+    }
+  };
 
   return (
     <div className="min-h-screen bg-[#F8FAFC] pb-20 animate-in fade-in duration-500">
@@ -29,14 +61,21 @@ function CaseStudiesContent() {
           </div>
           
           <div className="flex items-center space-x-3">
-            <button className="px-4 py-2 bg-slate-50 hover:bg-slate-100 text-slate-600 font-semibold rounded-xl border border-slate-200 transition-colors flex items-center shadow-sm">
+            <input 
+              type="file" 
+              accept=".json" 
+              className="hidden" 
+              ref={fileInputRef} 
+              onChange={handleImport} 
+            />
+            <button 
+              onClick={() => fileInputRef.current?.click()}
+              className="px-4 py-2 bg-slate-50 hover:bg-slate-100 text-slate-600 font-semibold rounded-xl border border-slate-200 transition-colors flex items-center shadow-sm"
+            >
               <Download className="w-4 h-4 mr-2" />
               Import
             </button>
-            <button className="px-4 py-2 bg-slate-50 hover:bg-slate-100 text-slate-600 font-semibold rounded-xl border border-slate-200 transition-colors flex items-center shadow-sm">
-              <Upload className="w-4 h-4 mr-2" />
-              Export
-            </button>
+
             <Link href="/case-studies" target="_blank">
               <button className="px-4 py-2 bg-slate-50 hover:bg-slate-100 text-slate-600 font-semibold rounded-xl border border-slate-200 transition-colors flex items-center shadow-sm">
                 <MonitorPlay className="w-4 h-4 mr-2" />
@@ -79,6 +118,9 @@ function CaseStudiesContent() {
       
       {/* Editor Drawer */}
       <CaseStudiesDrawer />
+
+      {/* Delete Confirmation Modal */}
+      <DeleteCaseStudyModal />
 
     </div>
   );

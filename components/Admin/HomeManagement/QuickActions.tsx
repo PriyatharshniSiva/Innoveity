@@ -31,10 +31,10 @@ export default function QuickActions() {
             whileHover={{ y: -5, scale: 1.02 }}
             whileTap={{ scale: 0.95 }}
             onClick={() => setActiveSection(action.action)}
-            className="bg-white dark:bg-[#111] rounded-[20px] p-5 flex flex-col items-center justify-center text-center cursor-pointer border border-slate-100 dark:border-white/5 shadow-lg shadow-slate-200/40 dark:shadow-black/40 hover:shadow-xl hover:shadow-primary/10 dark:hover:shadow-black/60 transition-all duration-300 group overflow-hidden relative"
+            className="bg-white dark:bg-white/5 backdrop-blur-xl rounded-[20px] p-5 flex flex-col items-center justify-center text-center cursor-pointer border border-slate-200 dark:border-white/10 shadow-slate-200/50 dark:shadow-lg hover:shadow-[0_0_20px_rgba(56,189,248,0.3)] transition-all duration-300 group overflow-hidden relative"
           >
-            <div className="absolute inset-0 bg-gradient-to-br from-white/50 to-transparent dark:from-white/5 pointer-events-none" />
-            <div className="absolute -top-10 -right-10 w-24 h-24 opacity-0 group-hover:opacity-10 transition-opacity duration-500 rounded-full blur-2xl" style={{ backgroundColor: action.color }} />
+            <div className="absolute inset-0 bg-gradient-to-br from-slate-100/50 dark:from-white/10 to-transparent pointer-events-none" />
+            <div className="absolute -top-10 -right-10 w-24 h-24 opacity-0 group-hover:opacity-20 transition-opacity duration-500 rounded-full blur-2xl" style={{ backgroundColor: action.color }} />
             
             <div 
               className="w-14 h-14 rounded-full flex items-center justify-center mb-4 transition-transform duration-500 group-hover:rotate-12 group-hover:scale-110 shadow-inner relative z-10"
@@ -42,7 +42,7 @@ export default function QuickActions() {
             >
               <action.icon className="w-6 h-6" />
             </div>
-            <span className="text-sm font-bold text-slate-700 dark:text-neutral-300 group-hover:text-primary dark:group-hover:text-white transition-colors relative z-10 font-sans">
+            <span className="text-sm font-bold text-slate-700 dark:text-white/80 group-hover:text-primary transition-colors relative z-10 font-sans">
               {action.title}
             </span>
           </motion.div>

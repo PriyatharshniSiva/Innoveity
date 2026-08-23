@@ -19,12 +19,15 @@ export default async function CaseStudies() {
   const parsedCaseStudies = caseStudiesData.map(cs => {
     let results = [];
     try {
-      results = JSON.parse(cs.results);
+      const parsed = JSON.parse(cs.results);
+      results = Array.isArray(parsed) ? parsed : [];
     } catch (e) {
       results = [];
     }
     return {
       ...cs,
+      createdAt: cs.createdAt.toISOString(),
+      updatedAt: cs.updatedAt.toISOString(),
       results
     };
   });
@@ -33,6 +36,12 @@ export default async function CaseStudies() {
     where: { page: "case-studies" },
     orderBy: { id: "desc" }
   });
+  
+  const safeTestimonials = testimonials.map(t => ({
+    ...t,
+    createdAt: t.createdAt.toISOString(),
+    updatedAt: t.updatedAt.toISOString()
+  }));
 
-  return <CaseStudiesClient caseStudies={parsedCaseStudies} testimonials={testimonials} />;
+  return <CaseStudiesClient caseStudies={parsedCaseStudies} testimonials={safeTestimonials} />;
 }

@@ -6,7 +6,7 @@ import { usePathname } from "next/navigation";
 import { Plus_Jakarta_Sans } from 'next/font/google';
 import { motion, useScroll } from 'framer-motion';
 
-const jakarta = Plus_Jakarta_Sans({ subsets: ['latin'], weight: ['700', '800'] });
+const jakarta = Plus_Jakarta_Sans({ subsets: ['latin'], weight: ['700', '800'], preload: false });
 
 export default function Navbar() {
   const pathname = usePathname();

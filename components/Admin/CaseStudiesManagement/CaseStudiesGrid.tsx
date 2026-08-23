@@ -13,7 +13,9 @@ export default function CaseStudiesGrid() {
     categoryFilter, 
     statusFilter,
     setEditingCaseStudyId,
-    setIsDrawerOpen
+    setIsDrawerOpen,
+    setCaseStudies,
+    setDeletingCaseStudyId
   } = useCaseStudies();
 
   // Filter logic
@@ -79,15 +81,15 @@ export default function CaseStudiesGrid() {
               )}
 
               {/* Quick Actions Dropdown (Simulated via hover for simplicity, or just simple buttons on hover) */}
-              <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20">
                 <div className="bg-white/90 backdrop-blur-md rounded-xl p-1 flex items-center space-x-1 shadow-lg border border-white/50">
-                  <button onClick={() => { setEditingCaseStudyId(study.id); setIsDrawerOpen(true); }} className="p-2 text-slate-600 hover:text-primary hover:bg-white rounded-lg transition-colors" title="Edit">
+                  <button onClick={(e) => { e.preventDefault(); e.stopPropagation(); setEditingCaseStudyId(study.id); setIsDrawerOpen(true); }} className="p-2 text-slate-600 hover:text-primary hover:bg-white rounded-lg transition-colors" title="Edit">
                     <Edit2 className="w-4 h-4" />
                   </button>
-                  <button className="p-2 text-slate-600 hover:text-blue-600 hover:bg-white rounded-lg transition-colors" title="Preview">
+                  <button onClick={(e) => { e.preventDefault(); e.stopPropagation(); }} className="p-2 text-slate-600 hover:text-blue-600 hover:bg-white rounded-lg transition-colors" title="Preview">
                     <Eye className="w-4 h-4" />
                   </button>
-                  <button className="p-2 text-slate-600 hover:text-rose-600 hover:bg-white rounded-lg transition-colors" title="Delete">
+                  <button onClick={(e) => { e.preventDefault(); e.stopPropagation(); setDeletingCaseStudyId(study.id); }} className="p-2 text-slate-600 hover:text-rose-600 hover:bg-white rounded-lg transition-colors" title="Delete">
                     <Trash2 className="w-4 h-4" />
                   </button>
                 </div>

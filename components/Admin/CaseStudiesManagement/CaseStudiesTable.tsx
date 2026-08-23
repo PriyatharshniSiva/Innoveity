@@ -12,7 +12,9 @@ export default function CaseStudiesTable() {
     categoryFilter, 
     statusFilter,
     setEditingCaseStudyId,
-    setIsDrawerOpen
+    setIsDrawerOpen,
+    setCaseStudies,
+    setDeletingCaseStudyId
   } = useCaseStudies();
 
   // Filter logic
@@ -96,15 +98,15 @@ export default function CaseStudiesTable() {
                   </span>
                 </td>
                 <td className="px-6 py-4 text-right">
-                  <div className="flex items-center justify-end space-x-2 opacity-0 group-hover:opacity-100 transition-opacity">
-                    <button onClick={() => { setEditingCaseStudyId(study.id); setIsDrawerOpen(true); }} className="p-2 text-slate-400 hover:text-primary hover:bg-primary/10 rounded-lg transition-colors">
+                  <div className="flex items-center justify-end space-x-2 transition-opacity">
+                    <button onClick={(e) => { e.preventDefault(); e.stopPropagation(); setEditingCaseStudyId(study.id); setIsDrawerOpen(true); }} className="p-2 text-slate-400 hover:text-primary hover:bg-primary/10 rounded-lg transition-colors">
                       <Edit2 className="w-4 h-4" />
                     </button>
-                    <button className="p-2 text-slate-400 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors">
+                    <button onClick={(e) => { e.preventDefault(); e.stopPropagation(); }} className="p-2 text-slate-400 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors">
                       <Eye className="w-4 h-4" />
                     </button>
-                    <button className="p-2 text-slate-400 hover:text-slate-700 hover:bg-slate-100 rounded-lg transition-colors">
-                      <MoreHorizontal className="w-4 h-4" />
+                    <button onClick={(e) => { e.preventDefault(); e.stopPropagation(); setDeletingCaseStudyId(study.id); }} className="p-2 text-slate-400 hover:text-rose-600 hover:bg-rose-50 rounded-lg transition-colors">
+                      <Trash2 className="w-4 h-4" />
                     </button>
                   </div>
                 </td>

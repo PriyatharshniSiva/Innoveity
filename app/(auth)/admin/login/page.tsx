@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { Lock, User, Loader2 } from "lucide-react";
+import { Lock, User, Loader2, Eye, EyeOff } from "lucide-react";
 import { useRouter } from "next/navigation";
 
 export default function LoginPage() {
@@ -12,6 +12,7 @@ export default function LoginPage() {
   const [error, setError] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [isLightOn, setIsLightOn] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -161,14 +162,21 @@ export default function LoginPage() {
                   <Lock className="w-5 h-5 text-slate-500" />
                 </div>
                 <input
-                  type="password"
+                  type={showPassword ? "text" : "password"}
                   required
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  className="w-full pl-11 pr-4 py-3.5 bg-[#222] border border-[#333] rounded-xl outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all font-medium placeholder-slate-500"
+                  className="w-full pl-11 pr-12 py-3.5 bg-[#222] border border-[#333] rounded-xl outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all font-medium placeholder-slate-500"
                   style={{ color: 'white' }}
                   placeholder="••••••••"
                 />
+                <button
+                  type="button"
+                  onClick={() => setShowPassword(!showPassword)}
+                  className="absolute inset-y-0 right-0 pr-4 flex items-center text-slate-500 hover:text-slate-300 transition-colors"
+                >
+                  {showPassword ? <EyeOff className="w-5 h-5" /> : <Eye className="w-5 h-5" />}
+                </button>
               </div>
             </div>
 
@@ -184,12 +192,6 @@ export default function LoginPage() {
               )}
             </button>
 
-            <div className="text-center mt-6 text-sm text-slate-400 font-medium">
-              Don't have an account?{" "}
-              <a href="/admin/signup" className="text-primary hover:text-primary/80 font-bold transition-colors">
-                Sign up
-              </a>
-            </div>
           </form>
         </motion.div>
       </div>

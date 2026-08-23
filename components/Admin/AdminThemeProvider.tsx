@@ -16,11 +16,9 @@ export function AdminThemeProvider({ children }: { children: React.ReactNode }) 
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    // Load theme from localStorage on mount
-    const savedTheme = localStorage.getItem("adminTheme") as Theme | null;
-    if (savedTheme) {
-      setTheme(savedTheme);
-    }
+    // Force light theme initially as requested
+    setTheme("light");
+    localStorage.setItem("adminTheme", "light");
     setMounted(true);
   }, []);
 
@@ -41,9 +39,7 @@ export function AdminThemeProvider({ children }: { children: React.ReactNode }) 
 
   return (
     <AdminThemeContext.Provider value={{ theme, toggleTheme }}>
-      {/* We apply the `.dark` class to a wrapper div. 
-          The @custom-variant dark in globals.css makes it apply to children. */}
-      <div className={`${theme === 'dark' ? 'dark' : ''} h-full w-full flex`}>
+      <div className={`${theme === 'dark' ? 'dark' : ''} flex-1 min-h-screen w-full flex bg-slate-50 dark:bg-[#0A0E39] text-slate-800 dark:text-white transition-colors duration-300`}>
         {children}
       </div>
     </AdminThemeContext.Provider>

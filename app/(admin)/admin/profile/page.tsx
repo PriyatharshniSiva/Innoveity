@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { User, Mail, Lock, Camera, Shield, CheckCircle2 } from "lucide-react";
+import { User, Mail, Lock, Camera, Shield, CheckCircle2, Eye, EyeOff } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 export default function ProfileManagement() {
@@ -11,33 +11,58 @@ export default function ProfileManagement() {
   const [newPassword, setNewPassword] = useState("");
   const [isSaving, setIsSaving] = useState(false);
   const [showSuccess, setShowSuccess] = useState(false);
+  const [error, setError] = useState("");
+  const [showCurrentPassword, setShowCurrentPassword] = useState(false);
+  const [showNewPassword, setShowNewPassword] = useState(false);
 
   useEffect(() => {
     setName(localStorage.getItem('adminName') || "Admin User");
     setEmail(localStorage.getItem('adminEmail') || "admin@innoveity.com");
   }, []);
 
-  const handleSave = (e: React.FormEvent) => {
+  const handleSave = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSaving(true);
+    setError("");
     
-    // Simulate API call
-    setTimeout(() => {
-      localStorage.setItem('adminName', name);
-      localStorage.setItem('adminEmail', email);
-      
-      // Dispatch custom event to update topbar/sidebar if needed
-      window.dispatchEvent(new Event('storage'));
-      
+    try {
+      const res = await fetch("/api/auth/profile", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ 
+          name, 
+          email, 
+          currentPassword, 
+          newPassword 
+        })
+      });
+
+      const data = await res.json();
+
+      if (res.ok) {
+        localStorage.setItem('adminName', data.admin.name);
+        localStorage.setItem('adminEmail', data.admin.email);
+        
+        // Dispatch custom event to update topbar/sidebar if needed
+        window.dispatchEvent(new Event('storage'));
+        
+        setShowSuccess(true);
+        setCurrentPassword("");
+        setNewPassword("");
+        
+        setTimeout(() => {
+          setShowSuccess(false);
+          // Force a reload to reflect changes in other components since they read on mount
+          window.location.reload();
+        }, 1500);
+      } else {
+        setError(data.error || "Failed to update profile");
+      }
+    } catch (err) {
+      setError("An unexpected error occurred");
+    } finally {
       setIsSaving(false);
-      setShowSuccess(true);
-      
-      setTimeout(() => {
-        setShowSuccess(false);
-        // Force a reload to reflect changes in other components since they read on mount
-        window.location.reload();
-      }, 1500);
-    }, 1000);
+    }
   };
 
   return (
@@ -100,6 +125,16 @@ export default function ProfileManagement() {
             <h3 className="text-xl font-bold text-slate-800 dark:text-white mb-6 flex items-center gap-2">
               <User className="w-5 h-5 text-primary dark:text-neutral-400" /> Personal Information
             </h3>
+
+            {error && (
+              <motion.div 
+                initial={{ opacity: 0, height: 0 }}
+                animate={{ opacity: 1, height: 'auto' }}
+                className="bg-rose-500/10 border border-rose-500/30 text-rose-500 text-sm font-bold px-4 py-3 rounded-xl mb-6 flex items-center"
+              >
+                {error}
+              </motion.div>
+            )}
             
             <div className="space-y-6">
               <div>
@@ -122,10 +157,10 @@ export default function ProfileManagement() {
                 <label className="block text-sm font-bold text-slate-700 dark:text-neutral-300 mb-2">Username</label>
                 <div className="relative">
                   <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-                    <Mail className="w-5 h-5 text-slate-400 dark:text-neutral-500" />
+                    <User className="w-5 h-5 text-slate-400 dark:text-neutral-500" />
                   </div>
                   <input
-                    type="email"
+                    type="text"
                     required
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
@@ -149,12 +184,19 @@ export default function ProfileManagement() {
                     <Lock className="w-5 h-5 text-slate-400 dark:text-neutral-500" />
                   </div>
                   <input
-                    type="password"
+                    type={showCurrentPassword ? "text" : "password"}
                     value={currentPassword}
                     onChange={(e) => setCurrentPassword(e.target.value)}
                     placeholder="Leave blank to keep current"
-                    className="w-full pl-11 pr-4 py-3 bg-slate-50 dark:bg-white/5 border border-slate-200 dark:border-white/10 rounded-xl outline-none focus:ring-4 focus:ring-primary/10 dark:focus:ring-white/5 focus:border-primary dark:focus:border-white/20 text-slate-700 dark:text-neutral-200 transition-all font-medium"
+                    className="w-full pl-11 pr-12 py-3 bg-slate-50 dark:bg-white/5 border border-slate-200 dark:border-white/10 rounded-xl outline-none focus:ring-4 focus:ring-primary/10 dark:focus:ring-white/5 focus:border-primary dark:focus:border-white/20 text-slate-700 dark:text-neutral-200 transition-all font-medium"
                   />
+                  <button
+                    type="button"
+                    onClick={() => setShowCurrentPassword(!showCurrentPassword)}
+                    className="absolute inset-y-0 right-0 pr-4 flex items-center text-slate-400 hover:text-slate-600 dark:hover:text-slate-300 transition-colors"
+                  >
+                    {showCurrentPassword ? <EyeOff className="w-5 h-5" /> : <Eye className="w-5 h-5" />}
+                  </button>
                 </div>
               </div>
 
@@ -165,12 +207,19 @@ export default function ProfileManagement() {
                     <Lock className="w-5 h-5 text-slate-400 dark:text-neutral-500" />
                   </div>
                   <input
-                    type="password"
+                    type={showNewPassword ? "text" : "password"}
                     value={newPassword}
                     onChange={(e) => setNewPassword(e.target.value)}
                     placeholder="Enter new password"
-                    className="w-full pl-11 pr-4 py-3 bg-slate-50 dark:bg-white/5 border border-slate-200 dark:border-white/10 rounded-xl outline-none focus:ring-4 focus:ring-primary/10 dark:focus:ring-white/5 focus:border-primary dark:focus:border-white/20 text-slate-700 dark:text-neutral-200 transition-all font-medium"
+                    className="w-full pl-11 pr-12 py-3 bg-slate-50 dark:bg-white/5 border border-slate-200 dark:border-white/10 rounded-xl outline-none focus:ring-4 focus:ring-primary/10 dark:focus:ring-white/5 focus:border-primary dark:focus:border-white/20 text-slate-700 dark:text-neutral-200 transition-all font-medium"
                   />
+                  <button
+                    type="button"
+                    onClick={() => setShowNewPassword(!showNewPassword)}
+                    className="absolute inset-y-0 right-0 pr-4 flex items-center text-slate-400 hover:text-slate-600 dark:hover:text-slate-300 transition-colors"
+                  >
+                    {showNewPassword ? <EyeOff className="w-5 h-5" /> : <Eye className="w-5 h-5" />}
+                  </button>
                 </div>
               </div>
             </div>

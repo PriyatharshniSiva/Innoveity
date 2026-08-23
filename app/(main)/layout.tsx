@@ -13,11 +13,13 @@ export const revalidate = 0; // Ensure live data fetching for theme settings
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
+  preload: false,
 });
 
 const playfair = Playfair_Display({
   variable: "--font-serif",
   subsets: ["latin"],
+  preload: false,
 });
 
 export const metadata: Metadata = {

@@ -46,16 +46,16 @@ export function ToastProvider({ children }: { children: ReactNode }) {
               initial={{ opacity: 0, y: -20, scale: 0.9 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: -20, scale: 0.9, transition: { duration: 0.2 } }}
-              className={`pointer-events-auto flex items-center gap-3 px-5 py-3.5 rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.12)] border backdrop-blur-md min-w-[300px] max-w-md ${
+              className={`pointer-events-auto flex items-center gap-3 px-5 py-3.5 rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.12)] border backdrop-blur-xl min-w-[300px] max-w-md ${
                 t.type === "success"
-                  ? "bg-primary/10 dark:bg-secondary/90 border-primary/20 dark:border-primary/80 text-primary dark:text-primary"
+                  ? "bg-emerald-50/95 dark:bg-emerald-950/90 border-emerald-200 dark:border-emerald-800 text-emerald-700 dark:text-emerald-400"
                   : t.type === "error"
-                  ? "bg-red-50/90 dark:bg-red-950/90 border-red-100 dark:border-red-800 text-red-800 dark:text-red-100"
-                  : "bg-white/90 dark:bg-neutral-900/90 border-slate-100 dark:border-neutral-800 text-slate-800 dark:text-neutral-100"
+                  ? "bg-rose-50/95 dark:bg-rose-950/90 border-rose-200 dark:border-rose-800 text-rose-700 dark:text-rose-400"
+                  : "bg-white/95 dark:bg-slate-900/90 border-slate-200 dark:border-slate-800 text-slate-800 dark:text-slate-100"
               }`}
             >
-              {t.type === "success" && <CheckCircle className="w-5 h-5 text-primary shrink-0" />}
-              {t.type === "error" && <AlertCircle className="w-5 h-5 text-red-500 shrink-0" />}
+              {t.type === "success" && <CheckCircle className="w-5 h-5 text-emerald-600 shrink-0" />}
+              {t.type === "error" && <AlertCircle className="w-5 h-5 text-rose-500 shrink-0" />}
               {t.type === "info" && <AlertCircle className="w-5 h-5 text-blue-500 shrink-0" />}
               
               <span className="font-semibold text-sm leading-snug">{t.message}</span>

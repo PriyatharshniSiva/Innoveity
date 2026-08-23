@@ -38,7 +38,7 @@ export default function AboutLivePreview() {
             <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-primary/20 rounded-full blur-[120px] opacity-50 -z-10 translate-x-1/3 -translate-y-1/3" />
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
               <div className="space-y-6">
-                <h1 className="text-5xl font-black text-secondary tracking-tight leading-[1.1]">
+                <h1 className="text-5xl font-black tracking-tight leading-[1.1]" style={{ color: "#000000" }}>
                   {overview.titleLine1} <span className="text-primary">{overview.titleHighlight}</span>
                 </h1>
                 <div className="space-y-6 text-lg text-gray-600 font-medium leading-relaxed">

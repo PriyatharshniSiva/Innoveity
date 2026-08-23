@@ -54,6 +54,8 @@ interface CaseStudiesContextType {
   setIsDrawerOpen: React.Dispatch<React.SetStateAction<boolean>>;
   editingCaseStudyId: string | null;
   setEditingCaseStudyId: React.Dispatch<React.SetStateAction<string | null>>;
+  deletingCaseStudyId: string | null;
+  setDeletingCaseStudyId: React.Dispatch<React.SetStateAction<string | null>>;
   partnerQuotes: any[];
   setPartnerQuotes: React.Dispatch<React.SetStateAction<any[]>>;
 }
@@ -170,6 +172,7 @@ export function CaseStudiesProvider({ children }: { children: React.ReactNode })
   const [statusFilter, setStatusFilter] = useState("All");
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   const [editingCaseStudyId, setEditingCaseStudyId] = useState<string | null>(null);
+  const [deletingCaseStudyId, setDeletingCaseStudyId] = useState<string | null>(null);
   const [partnerQuotes, setPartnerQuotes] = useState<any[]>([]);
 
   React.useEffect(() => {
@@ -224,6 +227,7 @@ export function CaseStudiesProvider({ children }: { children: React.ReactNode })
       statusFilter, setStatusFilter,
       isDrawerOpen, setIsDrawerOpen,
       editingCaseStudyId, setEditingCaseStudyId,
+      deletingCaseStudyId, setDeletingCaseStudyId,
       partnerQuotes, setPartnerQuotes
     }}>
       {children}

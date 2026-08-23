@@ -59,19 +59,23 @@ export default function AdminSidebar() {
     <motion.aside 
       initial={false}
       animate={{ width: isCollapsed ? 80 : 280 }}
-      className="bg-white dark:bg-[#050505] text-slate-800 dark:text-neutral-300 flex flex-col h-screen sticky top-0 shadow-[4px_0_24px_rgba(0,0,0,0.02)] dark:shadow-[4px_0_24px_rgba(0,0,0,0.5)] z-50 border-r border-slate-100 dark:border-white/5 shrink-0 transition-colors duration-300"
+      className="bg-white dark:bg-[#0A0E39]/80 backdrop-blur-xl text-slate-800 dark:text-white flex flex-col h-screen sticky top-0 shadow-2xl z-50 border-r border-slate-200 dark:border-white/10 shrink-0 transition-colors duration-300"
     >
       {/* Logo Area */}
-      <div className="h-20 flex items-center px-6 border-b border-slate-100 dark:border-white/5 justify-between shrink-0 transition-colors duration-300">
-        <div className={`flex items-center gap-3 overflow-hidden ${isCollapsed ? 'opacity-0 w-0' : 'opacity-100 w-auto'} transition-all duration-300`}>
-          <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-primary to-[#0f3d2e] dark:from-white dark:to-white flex items-center justify-center shadow-lg dark:shadow-[0_0_15px_rgba(255,255,255,0.1)] shrink-0 transition-all duration-300">
-            <span className="text-white dark:text-black font-black text-lg transition-colors duration-300">I</span>
+      <div className="h-20 flex items-center px-6 border-b border-slate-200 dark:border-white/10 justify-between shrink-0 transition-colors duration-300">
+        <div className="flex items-center transition-all duration-300">
+          <div className="h-[44px] flex items-center justify-center shrink-0">
+            <img src="/iinvlogo.png" alt="Logo Icon" className="w-auto h-full object-contain scale-[1.3]" />
           </div>
-          <span className="text-slate-800 dark:text-white font-bold text-lg tracking-tight whitespace-nowrap transition-colors duration-300">Admin<span className="text-primary dark:text-neutral-500 transition-colors duration-300">Panel</span></span>
+          {!isCollapsed && (
+            <div className="h-[44px] flex items-center justify-center shrink-0 -ml-4">
+              <img src="/innvlog2.png" alt="INNOVEITY Text" className="w-auto h-full object-contain scale-[1.8] origin-left" />
+            </div>
+          )}
         </div>
         <button 
           onClick={() => setIsCollapsed(!isCollapsed)}
-          className="p-2 rounded-lg hover:bg-slate-50 dark:hover:bg-white/5 text-slate-400 dark:text-neutral-500 hover:text-primary dark:hover:text-white transition-colors shrink-0"
+          className="p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-white/10 text-slate-400 dark:text-white/50 hover:text-primary dark:hover:text-primary transition-colors shrink-0"
         >
           {isCollapsed ? <ChevronRight className="w-5 h-5" /> : <ChevronLeft className="w-5 h-5" />}
         </button>
@@ -82,7 +86,7 @@ export default function AdminSidebar() {
         {menuGroups.map((group, i) => (
           <div key={i} className="px-4">
             {!isCollapsed && (
-              <p className="text-[10px] font-extrabold text-slate-400 dark:text-neutral-600 uppercase tracking-widest mb-3 px-3 transition-colors duration-300">
+              <p className="text-[10px] font-extrabold text-slate-500 dark:text-white/40 uppercase tracking-widest mb-3 px-3 transition-colors duration-300">
                 {group.title}
               </p>
             )}
@@ -96,17 +100,17 @@ export default function AdminSidebar() {
                     title={isCollapsed ? item.name : ""}
                     className={`flex items-center gap-3 px-3 py-2.5 rounded-xl transition-all group relative ${
                       isActive 
-                        ? 'bg-primary/5 dark:bg-white text-primary dark:text-black font-bold dark:shadow-[0_0_20px_rgba(255,255,255,0.1)]' 
-                        : 'hover:bg-slate-50 dark:hover:bg-white/5 hover:text-secondary dark:hover:text-white text-slate-500 dark:text-neutral-400 font-medium'
+                        ? 'bg-primary/10 dark:bg-primary/20 text-primary dark:text-white font-bold shadow-[0_0_20px_rgba(56,189,248,0.3)]' 
+                        : 'hover:bg-slate-100 dark:hover:bg-white/10 hover:text-slate-900 dark:hover:text-white text-slate-600 dark:text-white/60 font-medium'
                     }`}
                   >
                     {isActive && (
                       <motion.div 
                         layoutId="activeIndicator"
-                        className="absolute left-0 w-[3px] h-6 bg-primary dark:bg-black rounded-r-full transition-colors duration-300"
+                        className="absolute left-0 w-[3px] h-6 bg-primary rounded-r-full transition-colors duration-300"
                       />
                     )}
-                    <item.icon className={`w-5 h-5 shrink-0 transition-colors duration-300 ${isActive ? 'text-primary dark:text-black' : 'text-slate-400 dark:text-neutral-500 group-hover:text-accent dark:group-hover:text-white'}`} />
+                    <item.icon className={`w-5 h-5 shrink-0 transition-colors duration-300 ${isActive ? 'text-primary' : 'text-slate-400 dark:text-white/40 group-hover:text-primary'}`} />
                     {!isCollapsed && (
                       <span className="text-sm whitespace-nowrap tracking-wide">{item.name}</span>
                     )}
@@ -119,26 +123,26 @@ export default function AdminSidebar() {
       </div>
 
       {/* Bottom Profile */}
-      <div className="p-4 border-t border-slate-100 dark:border-white/5 shrink-0 bg-slate-50/50 dark:bg-white/[0.02] transition-colors duration-300">
+      <div className="p-4 border-t border-slate-200 dark:border-white/10 shrink-0 bg-slate-50 dark:bg-white/5 transition-colors duration-300">
         <Link 
           href="/admin/profile" 
-          className={`flex items-center gap-3 px-3 py-3 rounded-xl hover:bg-white dark:hover:bg-white/5 hover:shadow-sm border border-transparent hover:border-slate-100 dark:hover:border-transparent transition-all ${isCollapsed ? 'justify-center' : ''}`}
+          className={`flex items-center gap-3 px-3 py-3 rounded-xl hover:bg-slate-100 dark:hover:bg-white/10 hover:shadow-sm border border-transparent hover:border-slate-200 dark:hover:border-white/10 transition-all ${isCollapsed ? 'justify-center' : ''}`}
         >
-          <div className="w-9 h-9 rounded-full bg-primary/10 dark:bg-white flex items-center justify-center shrink-0 transition-colors duration-300">
-            <User className="w-4 h-4 text-primary dark:text-black transition-colors duration-300" />
+          <div className="w-9 h-9 rounded-full bg-primary/10 dark:bg-primary/20 flex items-center justify-center shrink-0 transition-colors duration-300">
+            <User className="w-4 h-4 text-primary transition-colors duration-300" />
           </div>
           {!isCollapsed && (
             <div className="flex-1 min-w-0">
-              <p className="text-sm font-bold text-slate-800 dark:text-white truncate transition-colors duration-300">{adminName}</p>
-              <p className="text-xs text-slate-500 dark:text-neutral-500 truncate font-medium transition-colors duration-300">{adminEmail}</p>
+              <p className="text-sm font-bold text-slate-900 dark:text-white truncate transition-colors duration-300">{adminName}</p>
+              <p className="text-xs text-slate-500 dark:text-white/50 truncate font-medium transition-colors duration-300">{adminEmail}</p>
             </div>
           )}
         </Link>
         <button 
           onClick={handleLogout}
-          className={`mt-2 flex items-center gap-3 px-3 py-2.5 w-full rounded-xl hover:bg-rose-50 dark:hover:bg-red-500/10 hover:text-rose-600 dark:hover:text-red-500 text-slate-500 dark:text-neutral-500 transition-colors group font-medium ${isCollapsed ? 'justify-center' : ''}`}
+          className={`mt-2 flex items-center gap-3 px-3 py-2.5 w-full rounded-xl hover:bg-rose-50 dark:hover:bg-rose-500/20 hover:text-rose-500 dark:hover:text-rose-400 text-slate-500 dark:text-white/50 transition-colors group font-medium ${isCollapsed ? 'justify-center' : ''}`}
         >
-          <LogOut className="w-5 h-5 shrink-0 text-slate-400 dark:text-neutral-600 group-hover:text-rose-500 dark:group-hover:text-red-500 transition-colors" />
+          <LogOut className="w-5 h-5 shrink-0 text-slate-400 dark:text-white/40 group-hover:text-rose-500 dark:group-hover:text-rose-400 transition-colors" />
           {!isCollapsed && <span className="text-sm whitespace-nowrap tracking-wide">Sign Out</span>}
         </button>
       </div>
