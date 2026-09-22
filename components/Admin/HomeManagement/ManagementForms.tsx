@@ -110,6 +110,22 @@ export default function ManagementForms() {
                       </label>
                     </div>
                   </div>
+
+                  <div className="pt-2">
+                    <label className="flex items-center space-x-3 cursor-pointer">
+                      <div className="relative">
+                        <input 
+                          type="checkbox" 
+                          className="sr-only" 
+                          checked={hero.showBrochure}
+                          onChange={(e) => setHero({ ...hero, showBrochure: e.target.checked })}
+                        />
+                        <div className={`block w-14 h-8 rounded-full transition-colors ${hero.showBrochure ? 'bg-primary' : 'bg-slate-200'}`}></div>
+                        <div className={`absolute left-1 top-1 bg-white w-6 h-6 rounded-full transition-transform ${hero.showBrochure ? 'transform translate-x-6' : ''}`}></div>
+                      </div>
+                      <span className="text-sm font-semibold text-slate-700">Show Brochure Card (Internship Call)</span>
+                    </label>
+                  </div>
                 </div>
               </div>
             </motion.div>

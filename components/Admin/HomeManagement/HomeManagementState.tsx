@@ -9,6 +9,7 @@ interface HeroState {
   primaryButtonText: string;
   secondaryButtonText: string;
   backgroundImage: string;
+  showBrochure: boolean;
 }
 
 interface StatItem {
@@ -159,7 +160,8 @@ const initialState: HomeManagementContextType = {
     description: "Transforming education through innovative solutions, corporate training, and sustainable development initiatives across India.",
     primaryButtonText: "About Us",
     secondaryButtonText: "Learn More",
-    backgroundImage: "/inv1.jpg"
+    backgroundImage: "/inv1.jpg",
+    showBrochure: true
   },
   setHero: () => {},
   stats: [

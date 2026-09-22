@@ -51,14 +51,14 @@ export default function Navbar() {
           : "bg-transparent border-transparent"
       }`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16">
+          <div className="flex justify-between items-center h-20">
             {/* Logo */}
             <Link href="/" className="flex items-center pl-2">
-              <div className="h-[44px] sm:h-[52px] flex items-center justify-center shrink-0">
-                 <img src="/iinvlogo.png" alt="Logo Icon" className="w-auto h-full object-contain scale-[1.5]" />
+              <div className="h-[56px] sm:h-[64px] flex items-center justify-center shrink-0">
+                 <img src="/iinvlogo.png" alt="Logo Icon" className="w-auto h-full object-contain scale-[1.3]" />
               </div>
-              <div className="h-[44px] sm:h-[52px] flex items-center justify-center shrink-0 -ml-2 sm:-ml-1">
-                 <img src="/innvlog2.png" alt="INNOVEITY Text" className="w-auto h-full object-contain scale-[2] origin-left" />
+              <div className="h-[56px] sm:h-[64px] flex items-center justify-center shrink-0 -ml-2 sm:-ml-1">
+                 <img src="/innvlog2.png" alt="INNOVEITY Text" className="w-auto h-full object-contain scale-[1.8] origin-left" />
               </div>
             </Link>
 
@@ -70,7 +70,7 @@ export default function Navbar() {
                   <Link
                     key={link.href}
                     href={link.href}
-                    className={`font-semibold text-base transition-colors flex items-center relative py-1.5 group ${
+                    className={`font-semibold text-lg transition-colors flex items-center relative py-1.5 group ${
                       isActive ? "text-accent" : "text-gray-700 hover:text-accent"
                     }`}
                   >

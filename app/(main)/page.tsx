@@ -78,6 +78,7 @@ export default async function Home() {
         secondaryButtonText={heroSecondaryBtn}
         secondaryButtonLink="/services"
         backgroundImage={heroBg}
+        showBrochure={data?.hero?.showBrochure ?? true}
       />
 
       <EdukaHomeJourney data={data?.homeJourney} />
