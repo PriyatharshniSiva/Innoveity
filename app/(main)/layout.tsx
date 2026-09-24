@@ -65,7 +65,7 @@ export default async function RootLayout({
         )}
       </head>
       <body
-        className={`${inter.variable} ${playfair.variable} font-sans min-h-screen pt-20 antialiased overflow-x-hidden`}
+        className={`${inter.variable} ${playfair.variable} font-sans min-h-screen pt-24 antialiased overflow-x-hidden`}
         style={{
           backgroundColor: 'var(--background)',
           color: 'var(--foreground)'

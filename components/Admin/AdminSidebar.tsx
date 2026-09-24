@@ -62,22 +62,23 @@ export default function AdminSidebar() {
       className="bg-white dark:bg-[#0A0E39]/80 backdrop-blur-xl text-slate-800 dark:text-white flex flex-col h-screen sticky top-0 shadow-2xl z-50 border-r border-slate-200 dark:border-white/10 shrink-0 transition-colors duration-300"
     >
       {/* Logo Area */}
-      <div className="h-20 flex items-center px-6 border-b border-slate-200 dark:border-white/10 justify-between shrink-0 transition-colors duration-300">
-        <div className="flex items-center transition-all duration-300">
-          <div className="h-[44px] flex items-center justify-center shrink-0">
-            <img src="/iinvlogo.png" alt="Logo Icon" className="w-auto h-full object-contain scale-[1.3]" />
-          </div>
-          {!isCollapsed && (
-            <div className="h-[44px] flex items-center justify-center shrink-0 -ml-4">
-              <img src="/innvlog2.png" alt="INNOVEITY Text" className="w-auto h-full object-contain scale-[1.8] origin-left" />
+      <div className={`h-20 flex items-center ${isCollapsed ? 'px-2 justify-between' : 'px-5 justify-between'} border-b border-slate-200 dark:border-white/10 shrink-0 transition-colors duration-300`}>
+        <div className="flex items-center overflow-hidden transition-all duration-300">
+          {isCollapsed ? (
+            <div className="h-8 w-8 flex items-center justify-center shrink-0 ml-1">
+              <img src="/new-logo-symbol.png" alt="INNOVEITY" className="h-full w-auto object-contain" />
+            </div>
+          ) : (
+            <div className="h-10 flex items-center shrink-0">
+              <img src="/new-logo-processed.png" alt="INNOVEITY" className="h-full w-auto max-w-[175px] object-contain" />
             </div>
           )}
         </div>
         <button 
           onClick={() => setIsCollapsed(!isCollapsed)}
-          className="p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-white/10 text-slate-400 dark:text-white/50 hover:text-primary dark:hover:text-primary transition-colors shrink-0"
+          className="p-1.5 rounded-lg hover:bg-slate-100 dark:hover:bg-white/10 text-slate-400 dark:text-white/50 hover:text-primary dark:hover:text-primary transition-colors shrink-0"
         >
-          {isCollapsed ? <ChevronRight className="w-5 h-5" /> : <ChevronLeft className="w-5 h-5" />}
+          {isCollapsed ? <ChevronRight className="w-4 h-4" /> : <ChevronLeft className="w-5 h-5" />}
         </button>
       </div>
 

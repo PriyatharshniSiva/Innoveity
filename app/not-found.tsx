@@ -20,13 +20,8 @@ export default function GlobalNotFound() {
               transition={{ duration: 0.5 }}
             >
               <div className="flex justify-center mb-8">
-                <Link href="/" className="flex items-center gap-1 sm:gap-2">
-                  <div className="h-[52px] flex items-center justify-center shrink-0">
-                     <img src="/iinvlogo.png" alt="Logo Icon" className="w-auto h-full object-contain scale-[1.5]" />
-                  </div>
-                  <div className="h-[52px] flex items-center justify-center shrink-0">
-                     <img src="/innvlog2.png" alt="INNOVEITY Text" className="w-auto h-full object-contain scale-[1.5] origin-left" />
-                  </div>
+                <Link href="/" className="flex items-center">
+                  <img src="/new-logo-processed.png" alt="INNOVEITY" className="h-12 w-auto object-contain" />
                 </Link>
               </div>
               

@@ -51,15 +51,10 @@ export default function Navbar() {
           : "bg-transparent border-transparent"
       }`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-20">
+          <div className="flex justify-between items-center h-24">
             {/* Logo */}
-            <Link href="/" className="flex items-center pl-2">
-              <div className="h-[56px] sm:h-[64px] flex items-center justify-center shrink-0">
-                 <img src="/iinvlogo.png" alt="Logo Icon" className="w-auto h-full object-contain scale-[1.3]" />
-              </div>
-              <div className="h-[56px] sm:h-[64px] flex items-center justify-center shrink-0 -ml-2 sm:-ml-1">
-                 <img src="/innvlog2.png" alt="INNOVEITY Text" className="w-auto h-full object-contain scale-[1.8] origin-left" />
-              </div>
+            <Link href="/" className="flex items-center pl-2 h-full py-2">
+              <img src="/new-logo-processed.png" alt="INNOVEITY Logo" className="w-auto h-full max-h-[65px] object-contain" />
             </Link>
 
             {/* Desktop Nav */}
