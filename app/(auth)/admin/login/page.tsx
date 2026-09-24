@@ -108,7 +108,7 @@ export default function LoginPage() {
             transition={{ duration: 0.5 }}
             className="absolute bottom-[-100px] left-1/2 -translate-x-1/2 flex items-center justify-center z-20 pointer-events-none w-full"
           >
-            <img src="/innvlog2.png" alt="Innoveity" className="h-24 w-auto object-contain drop-shadow-2xl brightness-125" />
+            <img src="/new-logo-processed.png" alt="Innoveity" className="h-24 w-auto object-contain drop-shadow-2xl brightness-125" />
           </motion.div>
         </div>
       </div>
